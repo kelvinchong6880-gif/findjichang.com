@@ -1,7 +1,28 @@
 # 第 10 步：GitHub 与 Cloudflare 上线准备
 
-状态：实施中（本地准备已完成，等待账号连接与真实部署验收）  
+状态：实施完成，等待确认锁定  
 日期：2026-08-18
+
+## 实施结果
+
+- GitHub 私有仓库：`kelvinchong6880-gif/findjichang.com`。
+- 默认分支：`main`，本地分支已跟踪 `origin/main`。
+- Cloudflare Pages 项目：`findjichang-com`。
+- 预发布地址：`https://findjichang-com.pages.dev`。
+- Cloudflare 已连接 GitHub，后续推送会自动触发构建和部署。
+- Analytics Engine 已启用，`CLICK_EVENTS` 绑定随 `wrangler.toml` 成功发布。
+- 正式域名尚未绑定，Bing、IndexNow 和公开收录尚未启用。
+
+## 真实环境验收结果
+
+- Cloudflare 使用 Node 24.13.1 与 pnpm 11.19.0 成功构建。
+- Astro 检查为 0 错误、0 警告、0 提示；87 个页面成功生成。
+- 92 个部署文件上传成功，Pages Function 编译和发布成功。
+- Cloudflare 成功解析 6 条响应头规则。
+- 预发布首页返回 HTTP 200，并包含 CSP、Permissions Policy、Referrer Policy、MIME 保护和防嵌入响应头。
+- 首页保持 `noindex, follow`，`sitemap-pages.xml` 的 `<loc>` 数量为 0。
+- `/go/weifeng/?from=/&placement=hero` 返回 HTTP 302，并跳转到锁定的微风推广地址。
+- `/go/not-a-brand/` 返回 HTTP 404。
 
 ## 当前边界
 
