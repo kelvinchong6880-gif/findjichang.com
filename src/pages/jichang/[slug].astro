@@ -12,12 +12,15 @@ const Content = rendered?.Content;
 const pagePath = `/jichang/${brand.slug}/`;
 const isWeifeng = brand.slug === 'weifeng';
 const isSogo = brand.slug === 'sogo-yun';
-const articleVerdict = isWeifeng ? '套餐已核验，体验仍待核验' : isSogo ? '九种套餐已核验，体验仍待核验' : '资料已汇总，关键项目待核验';
-const articleVerdictNote = isWeifeng ? '套餐来自登录后官方面板截图；线路质量、晚高峰与解锁能力仍缺少完整证据。' : isSogo ? '套餐来自登录后官方面板截图；卡片与详情的个别数字不一致，付款前仍需确认。' : '官方公开信息与第三方样本已分开标注；当前套餐和晚高峰仍需验证。';
+const isFeimao = brand.slug === 'feimao-yun';
+const articleVerdict = isWeifeng ? '套餐已核验，体验仍待核验' : isSogo ? '九种套餐已核验，体验仍待核验' : isFeimao ? '晚高峰有样本，长期表现待核验' : '资料已汇总，关键项目待核验';
+const articleVerdictNote = isWeifeng ? '套餐来自登录后官方面板截图；线路质量、晚高峰与解锁能力仍缺少完整证据。' : isSogo ? '套餐来自登录后官方面板截图；卡片与详情的个别数字不一致，付款前仍需确认。' : isFeimao ? '7月单次测试中香港较强；8月持续监测出现恶化信号，不宜只看一次峰值。' : '官方公开信息与第三方样本已分开标注；当前套餐和晚高峰仍需验证。';
 const tocItems = isWeifeng ? [
   ['#微风机场是什么','品牌概况'],['#套餐与价格登录后官方面板截图已核验','套餐与价格'],['#线路和节点覆盖','线路与节点'],['#速度与稳定性','速度与稳定性'],['#注册前检查清单','注册前检查'],
-] : [
+] : isSogo ? [
   ['#sogo云是什么','品牌概况'],['#登录后官方面板的九种套餐','套餐与价格'],['#客户端和使用方式','客户端'],['#线路节点与解锁能力','线路与节点'],['#适合谁与主要风险','适用与风险'],
+] : [
+  ['#飞猫云是什么','品牌概况'],['#套餐与价格资料','套餐与价格'],['#线路与节点','线路与节点'],['#晚高峰表现与持续监测','测速与趋势'],['#注册前检查清单','注册前检查'],
 ];
 ---
 <BaseLayout title={entry?.data.title ?? `${brand.name}机场测评｜找机场`} description={entry?.data.description ?? `${brand.name}机场的独立测评页面。`} indexable={false}>
