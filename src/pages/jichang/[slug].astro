@@ -15,8 +15,8 @@ const isSogo = brand.slug === 'sogo-yun';
 const isFeimao = brand.slug === 'feimao-yun';
 const isMuguang = brand.slug === 'muguang';
 const isWuyou = brand.slug === 'wuyou';
-const articleVerdict = isWeifeng ? '套餐已核验，体验仍待核验' : isSogo ? '九种套餐已核验，体验仍待核验' : isFeimao ? '七种套餐已核验，长期表现待核验' : isMuguang ? '九种套餐已核验，部分流量待确认' : isWuyou ? '有晚间样本，官方套餐待核验' : '资料已汇总，关键项目待核验';
-const articleVerdictNote = isWeifeng ? '套餐来自登录后官方面板截图；线路质量、晚高峰与解锁能力仍缺少完整证据。' : isSogo ? '套餐来自登录后官方面板截图；卡片与详情的个别数字不一致，付款前仍需确认。' : isFeimao ? '套餐来自登录后官方面板截图；7月晚高峰样本与8月监测趋势需要结合判断。' : isMuguang ? '九种套餐来自登录后官方面板截图；标准版与年付轻量版存在流量口径矛盾。' : isWuyou ? '套餐、速度和解锁截图均由服务商提供；活动价格与测试环境仍需复核。' : '官方公开信息与第三方样本已分开标注；当前套餐和晚高峰仍需验证。';
+const articleVerdict = isWeifeng ? '套餐已核验，体验仍待核验' : isSogo ? '九种套餐已核验，体验仍待核验' : isFeimao ? '七种套餐已核验，长期表现待核验' : isMuguang ? '九种套餐已核验，部分流量待确认' : isWuyou ? '七种套餐已核验，体验仍待核验' : '资料已汇总，关键项目待核验';
+const articleVerdictNote = isWeifeng ? '套餐来自登录后官方面板截图；线路质量、晚高峰与解锁能力仍缺少完整证据。' : isSogo ? '套餐来自登录后官方面板截图；卡片与详情的个别数字不一致，付款前仍需确认。' : isFeimao ? '套餐来自登录后官方面板截图；7月晚高峰样本与8月监测趋势需要结合判断。' : isMuguang ? '九种套餐来自登录后官方面板截图；标准版与年付轻量版存在流量口径矛盾。' : isWuyou ? '七种套餐来自登录后官方面板截图；速度与解锁仍是服务商提供的单次样本。' : '官方公开信息与第三方样本已分开标注；当前套餐和晚高峰仍需验证。';
 const tocItems = isWeifeng ? [
   ['#微风机场是什么','品牌概况'],['#套餐与价格登录后官方面板截图已核验','套餐与价格'],['#线路和节点覆盖','线路与节点'],['#速度与稳定性','速度与稳定性'],['#注册前检查清单','注册前检查'],
 ] : isSogo ? [
