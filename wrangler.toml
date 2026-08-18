@@ -1,0 +1,7 @@
+name = "findjichang-com"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-08-18"
+
+[[analytics_engine_datasets]]
+binding = "CLICK_EVENTS"
+dataset = "findjichang_click_events"

@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AffiliateButton from '../../components/AffiliateButton.astro';
+import { brands, type Brand } from '../../data/brands';
+export function getStaticPaths() { return brands.map((brand) => ({ params: { slug: brand.slug }, props: { brand } })); }
+const { brand } = Astro.props as { brand: Brand };
+const pagePath = `/jichang/${brand.slug}/`;
+---
+<BaseLayout title={`${brand.name}机场测评｜找机场`} description={`${brand.name}机场的独立测评页面。`}>
+  <main class="page-shell detail-page">
+    <Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场测评',href:'/jichang/'},{label:`${brand.name}机场测评`}]} />
+    <section class="review-hero">
+      <div>
+        <div class="detail-meta"><span class="badge">品牌测评</span><span>优先级 {brand.rank}</span><span>资料状态：核验中</span></div>
+        <h1>{brand.name}机场测评</h1>
+        <p>价格、套餐、线路和使用表现将在内容阶段依据可核验资料逐项填写。</p>
+        <div class="hero-actions"><AffiliateButton brand={brand} placement="hero" sourcePage={pagePath} /><a class="button button-secondary" href={`/speed-test/${brand.slug}/`}>查看测速资料</a></div>
+        <small>推广披露：通过注册链接注册，本站可能获得佣金。点击只代表注册意向，不代表已经注册。</small>
+      </div>
+      <aside class="verdict-card"><span>编辑结论</span><strong>等待资料核验</strong><p>在关键价格与服务信息完成核验前，我们不会给出推荐结论。</p></aside>
+    </section>
+    <section class="content-layout">
+      <article><div class="content-placeholder"><h2>测评内容结构</h2><div class="skeleton-lines"><i></i><i></i><i></i></div><p>下一内容阶段将依次补充套餐与价格、优点与不足、节点线路、流媒体及 AI 服务、适用人群和常见问题。</p></div></article>
+      <aside class="toc-card"><b>本页目录</b><a href="#">结论摘要</a><a href="#">套餐与价格</a><a href="#">优点与不足</a><a href="#">线路与节点</a><a href="#">适合谁</a></aside>
+    </section>
+  </main>
+</BaseLayout>
+

@@ -1,0 +1,24 @@
+{
+  "name": "findjichang-com",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "validate": "node scripts/validate-site.mjs && node scripts/test-go-route.mjs",
+    "deploy:check": "pnpm build && pnpm validate",
+    "indexnow": "node scripts/indexnow.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.9.10",
+    "@tailwindcss/vite": "4.3.3",
+    "astro": "7.2.2",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3"
+  }
+}

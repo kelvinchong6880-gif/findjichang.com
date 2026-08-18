@@ -1,0 +1,3 @@
+period,brand,outbound_clicks,registrations,paid_users,commission,click_to_registration_rate,registration_to_paid_rate,source,notes
+YYYY-WW,weifeng,,,,,,,Bing/Cloudflare/affiliate dashboard,weekly example
+YYYY-MM,weifeng,,,,,,,Bing/Cloudflare/affiliate dashboard,monthly example

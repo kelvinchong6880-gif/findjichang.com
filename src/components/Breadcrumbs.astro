@@ -1,0 +1,13 @@
+---
+interface Item { label: string; href?: string }
+const { items } = Astro.props as { items: Item[] };
+import JsonLd from './JsonLd.astro';
+import { absoluteUrl } from '../lib/structured-data';
+const breadcrumbData = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.label, item: absoluteUrl(item.href ?? Astro.url.pathname) })) };
+---
+<nav aria-label="面包屑" class="breadcrumbs">
+  <ol>
+    {items.map((item, index) => <li>{item.href ? <a href={item.href}>{item.label}</a> : <span aria-current="page">{item.label}</span>}{index < items.length - 1 && <span aria-hidden="true">/</span>}</li>)}
+  </ol>
+</nav>
+<JsonLd data={breadcrumbData} />

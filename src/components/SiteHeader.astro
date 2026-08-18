@@ -1,0 +1,14 @@
+---
+import { primaryNavigation } from '../data/navigation';
+import Logo from './Logo.astro';
+---
+<header class="site-header">
+  <div class="nav-shell">
+    <a href="/" aria-label="找机场首页"><Logo /></a>
+    <nav class="desktop-nav" aria-label="主导航">
+      {primaryNavigation.map((item) => <a class:list={[Astro.url.pathname === item.href && 'active']} href={item.href}>{item.label}</a>)}
+    </nav>
+    <a class="button button-small desktop-cta" href="/recommend/">查看推荐 <span>→</span></a>
+    <details class="mobile-menu"><summary aria-label="打开导航菜单"><span></span><span></span><span></span></summary><nav aria-label="手机导航">{primaryNavigation.map((item) => <a href={item.href}>{item.label}</a>)}</nav></details>
+  </div>
+</header>

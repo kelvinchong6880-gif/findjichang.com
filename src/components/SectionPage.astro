@@ -1,0 +1,15 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro';
+import JsonLd from './JsonLd.astro';
+import { collectionSchema } from '../lib/structured-data';
+interface Props { title: string; description: string; eyebrow?: string }
+const { title, description, eyebrow = '找机场' } = Astro.props;
+---
+<main class="page-shell section-page">
+  <JsonLd data={collectionSchema(title, description, Astro.url.pathname)} />
+  <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: title }]} />
+  <p class="eyebrow">{eyebrow}</p>
+  <h1>{title}</h1>
+  <p class="section-lead">{description}</p>
+  <slot />
+</main>

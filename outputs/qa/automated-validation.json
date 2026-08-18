@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-08-18T08:51:25.405Z",
+  "htmlPages": 87,
+  "reviewRoutes": 36,
+  "speedRoutes": 36,
+  "brands": 36,
+  "failures": [],
+  "warnings": [],
+  "pass": [
+    "36 个品牌测评路由",
+    "36 个测速资料路由",
+    "36 个品牌资料",
+    "开发阶段 Sitemap 为空",
+    "robots.txt 允许抓取并指向 Sitemap"
+  ],
+  "status": "passed"
+}

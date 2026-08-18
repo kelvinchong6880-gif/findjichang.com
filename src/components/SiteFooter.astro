@@ -1,0 +1,12 @@
+---
+import { footerNavigation } from '../data/navigation';
+import Logo from './Logo.astro';
+---
+<footer class="site-footer">
+  <div class="footer-shell">
+    <div class="footer-intro"><a href="/"><Logo /></a><p>把复杂的机场信息，整理成容易看懂的选择依据。</p></div>
+    <nav aria-label="页脚导航">{footerNavigation.map((item) => <a href={item.href}>{item.label}</a>)}</nav>
+    <div class="disclosure"><strong>推广披露</strong><p>本站部分链接为第三方推广链接。你通过链接注册时，我们可能获得佣金，但不会因此提高你的价格。服务信息可能变化，请在购买前自行核实。</p></div>
+  </div>
+  <div class="footer-bottom"><span>© {new Date().getFullYear()} 找机场</span><span>资料用于选择参考，不构成服务保证</span></div>
+</footer>

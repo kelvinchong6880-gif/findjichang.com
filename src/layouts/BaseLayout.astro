@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../config/site';
+import JsonLd from '../components/JsonLd.astro';
+import { organizationSchema, websiteSchema } from '../lib/structured-data';
+
+interface Props {
+  title: string;
+  description: string;
+  socialImage?: string | null;
+  indexable?: boolean;
+}
+
+const isDetailPage = /^\/(jichang|speed-test)\/[^/]+\/$/.test(Astro.url.pathname);
+const { title, description, socialImage, indexable = !isDetailPage } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, site.url);
+const resolvedSocialImage = socialImage === undefined ? (isDetailPage ? null : '/og.png') : socialImage;
+const socialImageUrl = resolvedSocialImage ? new URL(resolvedSocialImage, site.url) : null;
+const robots = site.allowIndexing && indexable ? 'index, follow' : 'noindex, follow';
+const cloudflareAnalyticsToken = import.meta.env.PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN;
+const bingSiteAuth = import.meta.env.PUBLIC_BING_SITE_AUTH;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <meta name="bingbot" content={robots} />
+    {bingSiteAuth && <meta name="msvalidate.01" content={bingSiteAuth} />}
+    <link rel="canonical" href={canonicalUrl} />
+    <title>{title}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    {socialImageUrl && <meta property="og:image" content={socialImageUrl} />}
+    <meta name="twitter:card" content={socialImageUrl ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImageUrl && <meta name="twitter:image" content={socialImageUrl} />}
+    {Astro.url.pathname === '/' && <JsonLd data={[websiteSchema(), organizationSchema()]} />}
+    {cloudflareAnalyticsToken && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: cloudflareAnalyticsToken })}></script>}
+  </head>
+  <body>
+    <div class="flex min-h-screen flex-col">
+      <SiteHeader />
+      <slot />
+      <SiteFooter />
+    </div>
+  </body>
+</html>

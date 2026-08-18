@@ -1,0 +1,8 @@
+---
+const { compact = false } = Astro.props;
+---
+<span class="brand-logo" aria-label="找机场">
+  <span class="brand-mark" aria-hidden="true"><i></i><b></b><em></em></span>
+  {!compact && <span class="brand-word">找机场</span>}
+</span>
+

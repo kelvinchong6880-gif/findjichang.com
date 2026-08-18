@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# Astro build output
+dist/
+.astro/
+.codex-temp/
+
+# local environment variables
+.env
+.env.*
+!.env.example
+
+# logs and operating-system files
+*.log
+.DS_Store
+Thumbs.db
+.wrangler/
+
+# editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
