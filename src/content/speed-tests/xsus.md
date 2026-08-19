@@ -27,6 +27,14 @@ brandSlug: xsus
 reviewSlug: xsus
 keywords: [XSUS测速, XSUS机场测速, XSUS速度, XSUS晚高峰, XSUS节点]
 sources:
+  - label: XSUS官方套餐页
+    publisher: XSUS
+    url: https://xsus.cloud/plan
+    sourceType: official
+    collectedAt: 2026-08-19
+    supports: [用户提供的官方套餐截图确认十种套餐、价格、流量、IP限制与页面所列权益]
+    mayBeOutdated: true
+    notes: 原图不公开；线路与解锁权益是官方销售说明，不是测速证明。
   - label: 机场测速原始记录
     publisher: Siilas
     url: https://siilas.com/test/
@@ -86,6 +94,14 @@ Siilas测速中心公开了XSUS在 **2026年7月18日和8月12日** 的香港、
 7月18日香港记录为ChatGPT不可用，8月12日却写为流畅。与此同时，Siilas方法页称香港节点按当前实测统一标为ChatGPT不可用。这三处信息不一致，可能来自记录规则更新、不同出口IP或数据维护差异。
 
 在资料站解释前，本站不把8月12日的“流畅”扩展为香港节点可解锁，也不把7月18日结果扩展为永久不可用。香港ChatGPT状态标记为 **第三方记录冲突，待重新核验**。
+
+## 官方套餐与测试入口
+
+用户于2026年8月19日提供XSUS官方套餐页截图。循环套餐包括12元/月168GB、24元/月336GB、30元/月420GB和70元/月1024GB；企业专线套餐为52元/季50GB/月、88元/季100GB/月。另有65元188GB、82元240GB、122元400GB和260元1024GB四种不限时总流量包。
+
+所有套餐页面均写有最多5个IP；不限时包是固定总流量而非无限流量，并注明不可叠加、不可累计。官方页面的IEPL、低延迟、Netflix、Disney与AI解锁属于销售权益，不能用来填补上述第三方测速缺口。
+
+如果用户要复测本文结果，12元月付档是成本最低的短期入口；企业专线与普通循环套餐应分开测试，不能把企业套餐结果代表基础套餐。
 
 ## 官方入口调整信息
 
