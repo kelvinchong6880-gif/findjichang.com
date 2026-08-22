@@ -31,7 +31,7 @@ speedTestSlug: "quanqiu-cloud"
 devices: ["windows", "macos", "ios", "android", "router"]
 clients: ["clash-verge", "shadowrocket", "surge", "v2rayng"]
 useCases: ["streaming", "ai", "gaming", "stable", "budget", "large-traffic"]
-lineTypes: ["bgp"]
+lineTypes: ["iplc"]
 ---
 
 **【2026独家深度测评】全球云机场怎么样？BGP 智能优化、专线级出口、全节点 1 倍率硬核解析**
