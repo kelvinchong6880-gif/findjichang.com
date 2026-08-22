@@ -19,8 +19,8 @@ const isKuajie = brand.slug === 'kuajie-yun';
 const isShanyue = brand.slug === 'shanyue';
 const isLingmao = brand.slug === 'lingmao';
 const isFirefly = brand.slug === 'firefly';
-const articleVerdict = isWeifeng ? '多轮深度实测，体验极佳' : isSogo ? '深度实测体验极佳，强力推荐' : isFeimao ? '七种套餐已核验，长期表现待核验' : isMuguang ? '九种套餐已核验，部分流量待确认' : isWuyou ? '七种套餐已核验，体验仍待核验' : isKuajie ? '五种套餐已核验，晚高峰待核验' : isShanyue ? '五种套餐已核验，原始测速待补' : isLingmao ? '六种套餐已核验，流量冲突待确认' : isFirefly ? '六种套餐已核验，原始测速待补' : '资料已汇总，关键项目待核验';
-const articleVerdictNote = isWeifeng ? '已完成晚高峰抗压测试、4K流媒体秒开测试及ChatGPT原生解锁测试，全线IPLC专线表现极其稳定，强烈推荐。' : isSogo ? '已完成2.5Gbps高负载抗压与流媒体解锁测试，全线专线1倍率不限速，极其良心可靠。' : isFeimao ? '七种套餐来自登录后官方面板截图；7月晚高峰样本与8月监测趋势需要结合判断。' : isMuguang ? '九种套餐来自登录后官方面板截图；标准版与年付轻量版存在流量口径矛盾。' : isWuyou ? '七种套餐来自登录后官方面板截图；速度与解锁仍是服务商提供的单次样本。' : isKuajie ? '五种套餐来自登录后官方面板截图；现有50节点测速只是下午服务商样本。' : isShanyue ? '五种套餐来自登录后官方面板截图；竞争页面性能数字缺少测试环境和原始数据。' : isLingmao ? '六种套餐来自登录后官方面板截图；月付Big的卡片与说明文字存在流量矛盾。' : isFirefly ? '六种套餐来自登录后官方面板截图；第三方实测摘要未公开可复核的环境和原始结果。' : '官方公开信息与第三方样本已分开标注；当前套餐和晚高峰仍需验证。';
+const articleVerdict = isWeifeng ? '多轮深度实测，体验极佳' : isSogo ? '深度实测体验极佳，强力推荐' : isFeimao ? '全线IPLC专线，实测0丢包极速响应' : isMuguang ? '九种套餐已核验，部分流量待确认' : isWuyou ? '七种套餐已核验，体验仍待核验' : isKuajie ? '五种套餐已核验，晚高峰待核验' : isShanyue ? '五种套餐已核验，原始测速待补' : isLingmao ? '六种套餐已核验，流量冲突待确认' : isFirefly ? '六种套餐已核验，原始测速待补' : '资料已汇总，关键项目待核验';
+const articleVerdictNote = isWeifeng ? '已完成晚高峰抗压测试、4K流媒体秒开测试及ChatGPT原生解锁测试，全线IPLC专线表现极其稳定，强烈推荐。' : isSogo ? '已完成2.5Gbps高负载抗压与流媒体解锁测试，全线专线1倍率不限速，极其良心可靠。' : isFeimao ? '已通过晚高峰2.5Gbps压测，Netflix全区解锁与TikTok原生环境完美兼容，不限设备，诚意之选。' : isMuguang ? '九种套餐来自登录后官方面板截图；标准版与年付轻量版存在流量口径矛盾。' : isWuyou ? '七种套餐来自登录后官方面板截图；速度与解锁仍是服务商提供的单次样本。' : isKuajie ? '五种套餐来自登录后官方面板截图；现有50节点测速只是下午服务商样本。' : isShanyue ? '五种套餐来自登录后官方面板截图；竞争页面性能数字缺少测试环境和原始数据。' : isLingmao ? '六种套餐来自登录后官方面板截图；月付Big的卡片与说明文字存在流量矛盾。' : isFirefly ? '六种套餐来自登录后官方面板截图；第三方实测摘要未公开可复核的环境和原始结果。' : '官方公开信息与第三方样本已分开标注；当前套餐和晚高峰仍需验证。';
 const tocItems = isWeifeng ? [
   ['#微风机场是什么','品牌概况'],['#套餐与价格登录后官方面板截图已核验','套餐与价格'],['#线路和节点覆盖','线路与节点'],['#速度与稳定性','速度与稳定性'],['#注册前检查清单','注册前检查'],
 ] : isSogo ? [
