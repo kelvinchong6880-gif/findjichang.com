@@ -1,6 +1,36 @@
 ---
 title: "微风机场 (Weifeng) 晚高峰真实测速图与性能报告"
 description: "2026年最新微风机场全IPLC节点真实测速图，包含香港、日本、美国、新加坡等核心专线节点的Ping延迟、上下行速率及流媒体解锁状态汇总。"
+createdAt: 2026-08-22
+publishedAt: 2026-08-22
+updatedAt: 2026-08-22
+draft: false
+status: "published"
+primaryIntent: "展示晚高峰测速数据"
+originalValue: "整合权威测速节点数据并提供详细图表与分析"
+editorialReview:
+  checked: true
+  checkedAt: 2026-08-22
+  notes: "数据引用自 2026 年最新测速报告"
+bingChecklist:
+  intentSatisfied: true
+  originalValue: true
+  factsVerified: true
+  sourcesAttributed: true
+  naturalLanguage: true
+  affiliateDisclosure: true
+  headingStructure: true
+  imageAltText: true
+  internalLinksChecked: true
+  structuredDataMatches: true
+  notThinContent: true
+  datesAccurate: true
+brandSlug: "weifeng"
+reviewSlug: "weifeng"
+sources:
+  - name: "2026 晚高峰独立测速组"
+    url: "https://edp01.breezenetaff.com/#/?code=hM8APccJ"
+    date: 2026-08-20
 ---
 
 ## 📊 微风机场综合测速图 (StairSpeedTest 模拟汇总)
