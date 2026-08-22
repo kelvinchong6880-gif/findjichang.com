@@ -42,6 +42,7 @@ export const brands: Brand[] = [
   ['xxyun', 'xxyun', 'https://www.xx-yun.com/?code=pi9fB906'],
   ['大哥云', 'dageyun', 'https://a03.dgy02.com/#/register?code=wojBN2a4'],
   ['网际快车', 'flashget-cloud', 'https://NGYHGO.快车.com'],
+  ['山水云', 'shanshui-cloud', 'https://ss2.byvvcsx.com/#/register?code=Rh44jFWe'],
 ].map(([name, slug, affiliateUrl], index) => ({ name, slug, affiliateUrl, rank: index + 1, affiliateLinkStatus: 'unchecked' as const, affiliateLinkCheckedAt: null, avatar: ['weifeng', 'sogo-yun', 'feimao-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao', 'xingdaomeng', 'weitu-cloud', 'guangsu', 'u1s1', 'jilian-cloud', 'quanqiu-cloud', 'guangnian', 'yifan', 'ermao'].includes(slug) ? `/images/brands/${slug}${['shanyue', 'wuyou'].includes(slug) ? '.jpg' : '.png'}` : undefined }));
 
 export const getBrand = (slug: string) => brands.find((brand) => brand.slug === slug);
