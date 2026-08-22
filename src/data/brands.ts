@@ -19,6 +19,7 @@ export const brands: Brand[] = [
   ['灵猫', 'lingmao', 'https://edp01.civetaff.com/#/?code=CYg7QSJo'],
   ['星岛梦', 'xingdaomeng', 'https://kfccbb.xingdaomeng.com/#/?code=0YcwWgSw'],
   ['唯兔云', 'weitu-cloud', 'https://fast.v2yunvipaff.com/#/?code=nbBJVFQP'],
+  ['光速云', 'guangsu', 'https://mdlky.gsyaff.com/#/?code=5PLKd4WN'],
 ].map(([name, slug, affiliateUrl], index) => ({ name, slug, affiliateUrl, rank: index + 1, affiliateLinkStatus: 'unchecked' as const, affiliateLinkCheckedAt: null }));
 
 export const getBrand = (slug: string) => brands.find((brand) => brand.slug === slug);
