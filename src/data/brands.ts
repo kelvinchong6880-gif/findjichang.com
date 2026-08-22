@@ -5,6 +5,7 @@ export interface Brand {
   affiliateUrl: string;
   affiliateLinkStatus: 'unchecked' | 'active' | 'broken';
   affiliateLinkCheckedAt: string | null;
+  avatar?: string;
 }
 
 export const brands: Brand[] = [
@@ -26,6 +27,6 @@ export const brands: Brand[] = [
   ['光年梯', 'guangnian', 'https://ggmq.gntaff.com/#/?code=hTN6UF4T'],
   ['一翻云', 'yifan', 'https://wzjc.1flyunaff.cc/#/?code=0tH3Mmch'],
   ['二猫云', 'ermao', 'https://wzjc.2maoyunaff.cc/#/?code=bvsFDmSt'],
-].map(([name, slug, affiliateUrl], index) => ({ name, slug, affiliateUrl, rank: index + 1, affiliateLinkStatus: 'unchecked' as const, affiliateLinkCheckedAt: null }));
+].map(([name, slug, affiliateUrl], index) => ({ name, slug, affiliateUrl, rank: index + 1, affiliateLinkStatus: 'unchecked' as const, affiliateLinkCheckedAt: null, avatar: slug === 'weifeng' ? '/images/brands/weifeng.png' : undefined }));
 
 export const getBrand = (slug: string) => brands.find((brand) => brand.slug === slug);
