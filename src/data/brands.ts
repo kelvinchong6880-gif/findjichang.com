@@ -6,6 +6,7 @@ export interface Brand {
   affiliateLinkStatus: 'unchecked' | 'active' | 'broken';
   affiliateLinkCheckedAt: string | null;
   avatar?: string;
+  minPrice?: string;
 }
 
 export const brands: Brand[] = [
@@ -45,6 +46,55 @@ export const brands: Brand[] = [
   ['山水云', 'shanshui-cloud', 'https://ss2.byvvcsx.com/#/register?code=Rh44jFWe'],
   ['老猫云', 'laomao-cloud', 'https://222.22laomao.com/#/register?code=jcPU1grl'],
   ['气泡云', 'qipao-cloud', 'https://x1.qipaoyun.xyz/#/register?code=UtKCpyVa'],
-].map(([name, slug, affiliateUrl], index) => ({ name, slug, affiliateUrl, rank: index + 1, affiliateLinkStatus: 'unchecked' as const, affiliateLinkCheckedAt: null, avatar: ['weifeng', 'sogo-yun', 'feimao-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao', 'xingdaomeng', 'weitu-cloud', 'guangsu', 'u1s1', 'jilian-cloud', 'quanqiu-cloud', 'guangnian', 'yifan', 'ermao', 'yuzhou-cloud', 'edgenova', 'kexin-cloud', 'sujie', 'kuaili', 'flyv', 'tizi-cloud', 'langwang-cloud', 'lingdong-cloud', 'invisible-man', 'flybit', 'xsus', 'xxyun', 'dageyun', 'flashget-cloud', 'shanshui-cloud', 'laomao-cloud', 'qipao-cloud'].includes(slug) ? `/images/brands/${slug}${['shanyue', 'wuyou', 'edgenova', 'invisible-man'].includes(slug) ? '.jpg' : '.png'}` : undefined }));
+].map(([name, slug, affiliateUrl], index) => {
+  const minPrices: Record<string, string> = {
+    "dageyun": "¥7.33/月起",
+    "edgenova": "¥9.9/月起",
+    "ermao": "¥7.4/月起",
+    "feimao-yun": "¥7/月起",
+    "firefly": "¥8/月起",
+    "flashget-cloud": "¥28/月起",
+    "flybit": "¥12.3/月起",
+    "flyv": "¥25/月起",
+    "guangnian": "¥7.4/月起",
+    "guangsu": "¥23/月起",
+    "invisible-man": "¥24/月起",
+    "jilian-cloud": "¥8/月起",
+    "kexin-cloud": "¥15/月起",
+    "kuaili": "¥15/月起",
+    "kuajie-yun": "¥8/月起",
+    "langwang-cloud": "¥30/月起",
+    "laomao-cloud": "¥15/月起",
+    "lingdong-cloud": "¥20/月起",
+    "lingmao": "¥7/月起",
+    "muguang": "¥9/月起",
+    "qipao-cloud": "¥9.9/月起",
+    "quanqiu-cloud": "¥8.25/月起",
+    "shanshui-cloud": "¥7.3/月起",
+    "shanyue": "¥8/月起",
+    "sogo-yun": "¥8.1/月起",
+    "sujie": "¥25/月起",
+    "tizi-cloud": "¥25/月起",
+    "u1s1": "¥8/月起",
+    "weifeng": "¥11.4/月起",
+    "weitu-cloud": "¥6.6/月起",
+    "wuyou": "¥6.5/月起",
+    "xingdaomeng": "¥8/月起",
+    "xsus": "¥12/月起",
+    "xxyun": "¥9.99/月起",
+    "yifan": "¥8.1/月起",
+    "yuzhou-cloud": "¥25/月起"
+};
+  return { 
+    name, 
+    slug, 
+    affiliateUrl, 
+    rank: index + 1, 
+    affiliateLinkStatus: 'unchecked' as const, 
+    affiliateLinkCheckedAt: null, 
+    minPrice: minPrices[slug] || '待核验',
+    avatar: ['weifeng', 'sogo-yun', 'feimao-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao', 'xingdaomeng', 'weitu-cloud', 'guangsu', 'u1s1', 'jilian-cloud', 'quanqiu-cloud', 'guangnian', 'yifan', 'ermao', 'yuzhou-cloud', 'edgenova', 'kexin-cloud', 'sujie', 'kuaili', 'flyv', 'tizi-cloud', 'langwang-cloud', 'lingdong-cloud', 'invisible-man', 'flybit', 'xsus', 'xxyun', 'dageyun', 'flashget-cloud', 'shanshui-cloud', 'laomao-cloud', 'qipao-cloud'].includes(slug) ? `/images/brands/${slug}${['shanyue', 'wuyou', 'edgenova', 'invisible-man'].includes(slug) ? '.jpg' : '.png'}` : undefined 
+  };
+});
 
 export const getBrand = (slug: string) => brands.find((brand) => brand.slug === slug);
