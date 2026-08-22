@@ -31,7 +31,7 @@ speedTestSlug: "lingdong-cloud"
 devices: ["windows", "macos", "ios", "android", "router"]
 clients: ["clash-verge", "shadowrocket", "surge", "v2rayng", "sing-box"]
 useCases: ["streaming", "ai", "gaming", "stable", "budget", "large-traffic"]
-lineTypes: ["bgp", "transit"]
+lineTypes: ["transit"]
 ---
 
 **2026 灵动机场深度测评：BGP 专线高速不限速，原生 IP 解锁 AI 与流媒体，从轻量到独享的全景指南**
