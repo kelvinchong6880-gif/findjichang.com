@@ -1,7 +1,7 @@
 ---
 import type { Brand } from '../data/brands';
 interface Props { brand: Brand; placement: 'hero' | 'summary' | 'pricing' | 'sidebar' | 'article-end' | 'recommend-card' | 'comparison-table' | 'mobile-bottom'; sourcePage: string; label?: string; class?: string }
-const { brand, placement, sourcePage, label = '访问第三方注册页', class: className = 'button' } = Astro.props;
+const { brand, placement, sourcePage, label = '前往机场官网', class: className = 'button' } = Astro.props;
 const href = `/go/${brand.slug}/?from=${encodeURIComponent(sourcePage)}&placement=${placement}`;
 ---
 <a class={className} href={href} rel="sponsored nofollow noopener" target="_blank" data-brand={brand.slug} data-placement={placement}>{label} <span>↗</span></a>
