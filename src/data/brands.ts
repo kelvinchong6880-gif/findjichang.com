@@ -9,6 +9,7 @@ export interface Brand {
 }
 
 export const brands: Brand[] = [
+  ['边缘节点', 'edgenova', 'https://work.edgenovaaff.cc/#/?code=k7VCKPvN'],
   ['宇宙云', 'yuzhou-cloud', 'https://wzjc.yuzoucloud.cc/#/?code=IWowgER5'],
   ['微风', 'weifeng', 'https://edp01.breezenetaff.com/#/?code=hM8APccJ'],
   ['SOGO云', 'sogo-yun', 'https://wzjc.sogoyunaff.cc/#/?code=BC2BL855'],
