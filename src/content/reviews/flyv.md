@@ -30,8 +30,8 @@ brandSlug: "flyv"
 speedTestSlug: "flyv"
 devices: ["windows", "macos", "ios", "android", "router"]
 clients: ["clash-verge", "shadowrocket", "surge", "v2rayng", "sing-box"]
-useCases: ["streaming", "ai", "gaming", "stable", "budget", "large-traffic", "business"]
-lineTypes: ["iepl", "bgp"]
+useCases: ["streaming", "ai", "gaming", "stable", "budget", "large-traffic"]
+lineTypes: ["iepl"]
 ---
 
 **2026 飞V (FlyV) 机场深度评测：三网 BGP 融合调度 + 全 IEPL 专线，原生 IP 解锁 8K 与 AI 生产力，独享专线定制全景解析**
