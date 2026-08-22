@@ -28,10 +28,10 @@ bingChecklist:
   datesAccurate: true
 brandSlug: "weifeng"
 speedTestSlug: "weifeng"
-devices: ["Windows", "macOS", "iOS", "Android", "Router"]
-clients: ["Clash", "V2Ray", "Surge", "Shadowrocket", "Quantumult X"]
-useCases: ["Streaming", "AI", "Gaming", "Business"]
-lineTypes: ["IPLC"]
+devices: ["windows", "macos", "ios", "android", "router"]
+clients: ["clash-verge", "shadowrocket", "surge", "v2rayng"]
+useCases: ["streaming", "ai", "gaming", "stable"]
+lineTypes: ["iplc"]
 ---
 
 **【2026独家深度测评】微风机场怎么样？全IPLC专线、不限设备、按量不限时套餐全方位解析**
