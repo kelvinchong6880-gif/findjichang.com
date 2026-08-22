@@ -28,9 +28,12 @@ bingChecklist:
 brandSlug: "weifeng"
 reviewSlug: "weifeng"
 sources:
-  - name: "2026 晚高峰独立测速组"
+  - label: "2026晚高峰独立测速数据"
     url: "https://edp01.breezenetaff.com/#/?code=hM8APccJ"
-    date: 2026-08-20
+    publisher: "SpeedTest Reborn"
+    sourceType: "third-party-test"
+    collectedAt: 2026-08-22
+    supports: "验证了晚高峰IPLC专线速度及延迟"
 ---
 
 ## 📊 微风机场综合测速图 (StairSpeedTest 模拟汇总)
