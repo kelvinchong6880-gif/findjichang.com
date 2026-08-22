@@ -61,6 +61,9 @@ const speedTests = defineCollection({
       device: z.string(), network: z.string(), client: z.string(), period: z.string(),
       originalScreenshot: z.string().optional(), screenshotEdited: z.boolean().default(false),
     }).optional(),
+    summary: z.object({
+      ping: z.string(), download: z.string(), upload: z.string(), packetLoss: z.string()
+    }).optional(),
   }),
 });
 
