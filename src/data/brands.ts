@@ -39,6 +39,7 @@ export const brands: Brand[] = [
   ['隐形人', 'invisible-man', 'https://varnexa.invisibleaff.com/#/?code=BtPRayAl'],
   ['Flybit', 'flybit', 'https://1.flybit.network/#/register?code=Aga7bd1s'],
   ['xsus', 'xsus', 'https://xsus.cloud/register?code=QQh1M1i9'],
+  ['xxyun', 'xxyun', 'https://www.xx-yun.com/?code=pi9fB906'],
 ].map(([name, slug, affiliateUrl], index) => ({ name, slug, affiliateUrl, rank: index + 1, affiliateLinkStatus: 'unchecked' as const, affiliateLinkCheckedAt: null, avatar: ['weifeng', 'sogo-yun', 'feimao-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao', 'xingdaomeng', 'weitu-cloud', 'guangsu', 'u1s1', 'jilian-cloud', 'quanqiu-cloud', 'guangnian', 'yifan', 'ermao'].includes(slug) ? `/images/brands/${slug}${['shanyue', 'wuyou'].includes(slug) ? '.jpg' : '.png'}` : undefined }));
 
 export const getBrand = (slug: string) => brands.find((brand) => brand.slug === slug);
