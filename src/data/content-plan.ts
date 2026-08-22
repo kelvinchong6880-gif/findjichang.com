@@ -13,6 +13,10 @@ export interface PlannedContent {
   relatedBrands: string[];
 }
 
-export const contentPlan: PlannedContent[] = [];
-export const firstPublishingBatch: PlannedContent[] = [];
+const brandContent: PlannedContent[] = brands.flatMap((brand) => [
+  { id: `review-${brand.slug}`, type: 'review', title: `${brand.name}机场测评`, path: `/jichang/${brand.slug}/`, priority: brand.rank * 2 - 1, status: 'published', relatedBrands: [brand.slug] },
+]);
+
+export const contentPlan: PlannedContent[] = [...brandContent];
+export const firstPublishingBatch: PlannedContent[] = contentPlan.filter((item) => item.priority <= 18);
 
