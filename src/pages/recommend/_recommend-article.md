@@ -9,6 +9,13 @@
 
 ---
 
+> **🚀 官方安全注册通道（防迷路快速直达）**
+> - 👉 **微风机场 (Weifeng)**：[点击前往官网体验 (无设备限制/顶级IPLC)](https://edp01.breezenetaff.com/#/?code=hM8APccJ)
+> - 👉 **sogo云 (Sogo Cloud)**：[点击前往官网体验 (¥8.1极低价/VLESS专线)](https://wzjc.sogoyunaff.cc/#/?code=BC2BL855)
+> - 👉 **飞猫云 (Feimao Cloud)**：[点击前往官网体验 (¥7平价黑马/原生全解锁)](https://flycat1.flycatvipaff.cc/#/?code=w5lO9fqB)
+
+---
+
 ## 二、 核心阵容亮相：微风、sogo云、飞猫云，谁是你的菜？
 
 在正式进入硬核的数据对比之前，我们先为这三家机场做一个极其精准的“人设画像”。买机场就像买车，只有明确了自己的真实需求，才不会花冤枉钱。
