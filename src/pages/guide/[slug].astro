@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map(entry => ({
+    params: { slug: entry.slug ?? entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<BaseLayout title={`${entry.data.title}｜找机场`} description={entry.data.description}>
+  <main class="page-shell detail-page">
+    <Breadcrumbs items={[{label:'首页',href:'/'},{label:'使用教程',href:'/guide/'},{label:entry.data.title}]} />
+    
+    <section class="review-hero" style="grid-template-columns: 1fr;">
+      <div>
+        <div class="detail-meta">
+          <span class="badge">客户端配置教程</span>
+          <span>更新日期：{entry.data.createdAt.toISOString().split('T')[0]}</span>
+        </div>
+        <h1>{entry.data.title}</h1>
+        <p>{entry.data.description}</p>
+      </div>
+    </section>
+    
+    <section class="content-layout" style="grid-template-columns: 1fr;">
+      <article class="article-content">
+        <Content />
+      </article>
+    </section>
+  </main>
+</BaseLayout>
