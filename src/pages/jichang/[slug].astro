@@ -10,6 +10,9 @@ const entry = (await getCollection('reviews')).find((item) => item.id === brand.
 const rendered = entry ? await render(entry) : null;
 const Content = rendered?.Content;
 const pagePath = `/jichang/${brand.slug}/`;
+const articleStatus = entry?.data.status === 'published' ? '已发布并持续更新' : '事实核验中';
+const articleVerdict = entry?.data.primaryIntent ?? '资料汇总与购买参考';
+const articleVerdictNote = entry?.data.originalValue ?? '请结合正文中的来源、测试条件和限制说明判断是否适合。';
 const isWeifeng = brand.slug === 'weifeng';
 const isSogo = brand.slug === 'sogo-yun';
 const isFeimao = brand.slug === 'feimao-yun';
@@ -19,17 +22,6 @@ const isKuajie = brand.slug === 'kuajie-yun';
 const isShanyue = brand.slug === 'shanyue';
 const isLingmao = brand.slug === 'lingmao';
 const isFirefly = brand.slug === 'firefly';
-const isXingdaomeng = brand.slug === 'xingdaomeng';
-const isWeitu = brand.slug === 'weitu-cloud';
-const isGuangsu = brand.slug === 'guangsu';
-const isU1s1 = brand.slug === 'u1s1';
-const isJilian = brand.slug === 'jilian-cloud';
-const isQuanqiu = brand.slug === 'quanqiu-cloud';
-const isGuangnian = brand.slug === 'guangnian';
-const isYifan = brand.slug === 'yifan';
-const isErmao = brand.slug === 'ermao';
-const articleVerdict = isWeifeng ? '多轮深度实测，体验极佳' : isSogo ? '深度实测体验极佳，强力推荐' : isFeimao ? '全线IPLC专线，实测0丢包极速响应' : isMuguang ? 'BGP智能路由加持，全时段极速体验' : isWuyou ? '纯血IPLC专线，1倍率极具性价比' : isKuajie ? '纯IPLC专线压测通过，性价比之王' : isShanyue ? '全节点1倍率不限速，晚高峰无缝秒开' : isLingmao ? '千兆IPLC专线实测，不限设备全解流媒体' : isFirefly ? '全IPLC实测不限速，长期主力推荐' : isXingdaomeng ? '2.5Gbps专线加持，提供永久不限时套餐' : isWeitu ? 'VLESS协议加备用直连，双重容灾稳定标杆' : isGuangsu ? '全球IPLC加持不限设备，晚高峰极限满速' : isU1s1 ? 'IEPL专线定期扩容，原生SS协议不限设备' : isJilian ? '2.5Gbps纯血IPLC，全节点1倍率不限设备' : isQuanqiu ? 'BGP专线级出口，智能优化不限设备' : isGuangnian ? '2.5Gbps峰值IPLC，三年付低至6折' : isYifan ? '自研客户端极速上手，全IEPL不限设备' : isErmao ? '全IEPL不限设备，99元永久不限时' : '资料已汇总，关键项目待核验';
-const articleVerdictNote = isWeifeng ? '已完成晚高峰抗压测试、4K流媒体秒开测试及ChatGPT原生解锁测试，全线IPLC专线表现极其稳定，强烈推荐。' : isSogo ? '已完成2.5Gbps高负载抗压与流媒体解锁测试，全线专线1倍率不限速，极其良心可靠。' : isFeimao ? '已通过晚高峰2.5Gbps压测，Netflix全区解锁与TikTok原生环境完美兼容，不限设备，诚意之选。' : isMuguang ? '经过晚高峰4K/8K拖拽实测，BGP多线调度极其稳定，纯SS协议不限设备，是长期主力的首选。' : isWuyou ? '经过晚高峰压测，纯IPLC物理专线表现稳定。提供永久不限时套餐及透明的1倍率计费，是长期防失联的优质选择。' : isKuajie ? '经过连续晚高峰高压测试，纯血IPLC专线表现亮眼。流媒体全区解锁且无设备限制，搭配长期6折优惠，极具性价比。' : isShanyue ? '经过晚高峰严苛压测，IPLC物理专线全程0丢包。不限速结合全节点1x倍率计费，是防失联的黄金标杆。' : isLingmao ? '已验证1000Mbps峰值带宽与全节点1x真实倍率。晚高峰0丢包且彻底解除设备限制，是多端合租与重度使用者的福音。' : isFirefly ? '已完成全天候高负载压测，单节点无设备上限且不限速，96元年付专线极具性价比。' : isXingdaomeng ? '经极限压测，2.5Gbps物理专线晚高峰毫无压力。提供极罕见的永久不限时与企业独享IP定制，实力极其强悍。' : isWeitu ? '已完成VLESS协议在纯IPLC专线下的高压测试。备用直连节点的设计构筑了坚固的防失联护城河，是全天候办公的优质保障。' : isGuangsu ? '经千兆宽带晚高峰实测，2.5Gbps带宽冗余充足，彻底0丢包。结合99元年付小包与不限设备特权，性价比极高。' : isU1s1 ? '已验证“每两月+200兆”扩容承诺。BGP+IEPL专线结合SS协议，将延迟和抗压性能拉满。有一说一，诚意十足。' : isJilian ? '已完成2.5Gbps极速压测，全IPLC架构实现晚高峰0丢包。全节点透明1倍率结合不限设备特权，绝对的高端T0首选。' : isQuanqiu ? '经晚高峰实测，BGP智能调度能有效降低跨网延迟。专线级网络结合轻量SS协议，解锁与抗压表现双优。' : isGuangnian ? '经过千兆宽带压测，2.5Gbps大带宽IPLC全节点跑满。结合3年付6折史诗级特惠，是长期主义者的不二之选。' : isYifan ? '完美兼容自研与第三方客户端，企业级IEPL线路抗压极强。结合不限制设备数量特权，全家共享极其划算。' : isErmao ? '晚高峰2.5Gbps测速全程0丢包。提供高性价比年付小包与不限时备用套餐，是极客与小白通吃的优质选择。' : '官方公开信息与第三方样本已分开标注；当前套餐和晚高峰仍需验证。';
 const tocItems = isWeifeng ? [
   ['#微风机场是什么','品牌概况'],['#套餐与价格登录后官方面板截图已核验','套餐与价格'],['#线路和节点覆盖','线路与节点'],['#速度与稳定性','速度与稳定性'],['#注册前检查清单','注册前检查'],
 ] : isSogo ? [
@@ -54,6 +46,6 @@ const tocItems = isWeifeng ? [
 ---
 <BaseLayout title={entry?.data.title ?? `${brand.name}机场测评｜找机场`} description={entry?.data.description ?? `${brand.name}机场的独立测评页面。`} indexable={false}>
 <main class="page-shell detail-page"><Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场测评',href:'/jichang/'},{label:`${brand.name}机场测评`}]} />
-<section class="review-hero"><div><div class="detail-meta"><span class="badge">品牌测评</span><span>优先级 {brand.rank}</span><span>资料状态：{Content ? '事实核验中' : '核验中'}</span></div><h1>{entry?.data.title ?? `${brand.name}机场测评`}</h1><p>{entry?.data.description ?? '价格、套餐、线路和使用表现将在内容阶段依据可核验资料逐项填写。'}</p><div class="hero-actions"><AffiliateButton brand={brand} placement="hero" sourcePage={pagePath} /><a class="button button-secondary" href={`/speed-test/${brand.slug}/`}>查看测速资料</a></div><small>推广披露：通过注册链接注册，本站可能获得佣金。点击只代表注册意向，不代表已经注册。</small></div><aside class="verdict-card"><span>编辑结论</span><strong>{Content ? articleVerdict : '等待资料核验'}</strong><p>{Content ? articleVerdictNote : '关键价格与服务信息核验前，不给出推荐结论。'}</p></aside></section>
+<section class="review-hero"><div><div class="detail-meta"><span class="badge">品牌测评</span><span>优先级 {brand.rank}</span><span>资料状态：{Content ? articleStatus : '核验中'}</span></div><h1>{entry?.data.title ?? `${brand.name}机场测评`}</h1><p>{entry?.data.description ?? '价格、套餐、线路和使用表现将在内容阶段依据可核验资料逐项填写。'}</p><div class="hero-actions"><AffiliateButton brand={brand} placement="hero" sourcePage={pagePath} /><a class="button button-secondary" href={`/speed-test/${brand.slug}/`}>查看测速资料</a></div><small>推广披露：通过注册链接注册，本站可能获得佣金。点击只代表注册意向，不代表已经注册。</small></div><aside class="verdict-card"><span>文章重点</span><strong>{Content ? articleVerdict : '等待资料核验'}</strong><p>{Content ? articleVerdictNote : '关键价格与服务信息核验前，不给出推荐结论。'}</p></aside></section>
 {Content ? <section class="content-layout"><article class="article-content"><Content /></article><aside class="toc-card"><b>本页目录</b>{tocItems.map(([href,label]) => <a href={href}>{label}</a>)}</aside></section> : <section class="content-layout"><article><div class="content-placeholder"><h2>测评内容结构</h2><div class="skeleton-lines"><i></i><i></i><i></i></div><p>后续补充套餐价格、优点不足、节点线路、流媒体及 AI 服务、适用人群和常见问题。</p></div></article><aside class="toc-card"><b>本页目录</b><a href="#">结论摘要</a><a href="#">套餐与价格</a><a href="#">线路与节点</a></aside></section>}
 </main></BaseLayout>

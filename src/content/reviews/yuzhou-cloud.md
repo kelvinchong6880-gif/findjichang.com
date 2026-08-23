@@ -36,7 +36,7 @@ lineTypes: ["iplc", "iepl"]
 
 **宇宙云机场深度测评：70+ 顶级专线、流媒体/AI 解锁与不限时套餐全方位解析**
 
-[官方注册入口：点击直达宇宙云官网注册体验](https://wzjc.yuzoucloud.cc/#/?code=IWowgER5)
+[官方注册入口：点击直达宇宙云官网注册体验](/go/yuzhou-cloud/?from=/jichang/yuzhou-cloud/&placement=article-end)
 
 在当今跨境办公、AI 生产力爆发（ChatGPT、Claude、Midjourney）以及海外流媒体（Netflix、Disney+、YouTube 4K）深度普及的背景下，拥有一条低延迟、高吞吐、晚高峰不卡顿的优质网络通道，已成为很多极客、跨境电商从业者、外贸人员及海外流媒体爱好者的刚需。
 
@@ -195,6 +195,6 @@ lineTypes: ["iplc", "iepl"]
 
 - **如果你是个人日常主力、自媒体运营、学生与办公族**：推荐直接入手 **「行星基础版（160GB/月，¥25）」**，性价比极高，完全满足日常 4K 与 AI 需求。
 - **如果你是跨境团队、重度流媒体/4K 视频发烧友**：推荐选择 **「恒星标准版（300GB/月，¥50）」** 或 **「星系专业版（700GB/月）」**。
-- **如果你只是备用出海、偶尔差旅、查文献资料**：闭眼入 **「行星基础版不限时版（120GB 永久有效，¥110）」**，一次购买长期无忧。
+- **如果你只是备用出海、偶尔差旅、查文献资料**：可作为候选 **「行星基础版不限时版（120GB 永久有效，¥110）」**，一次购买长期无忧。
 
-[👉 立即点击前往宇宙云官网体验 IEPL 专线极速网络](https://wzjc.yuzoucloud.cc/#/?code=IWowgER5)
+[👉 立即点击前往宇宙云官网体验 IEPL 专线极速网络](/go/yuzhou-cloud/?from=/jichang/yuzhou-cloud/&placement=article-end)

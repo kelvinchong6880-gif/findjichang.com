@@ -2,6 +2,8 @@
 title: "Shadowrocket Mac版下载与配置教程：完美支持M1/M2/M3苹果电脑"
 description: "2026最新苹果电脑翻墙指南！教您如何在 Mac (M1/M2/M3/M4 芯片) 上免费安装 iOS 版 Shadowrocket (小火箭)。涵盖外区 ID 下载技巧、机场节点订阅导入、全局路由分流及断网排障 Q&A。"
 createdAt: 2026-08-24T00:00:00
+draft: true
+status: drafting
 primaryIntent: "指导 Apple Silicon Mac 用户如何下载、安装并配置 iOS 版的 Shadowrocket（小火箭）。"
 originalValue: "利用 Apple Silicon 的兼容性，提供零成本在 Mac 运行小火箭的图文指南，解决外区下载隐藏与操作逻辑割裂问题。"
 keywords:
@@ -28,11 +30,11 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: true
+  sourcesAttributed: false
   naturalLanguage: true
-  affiliateDisclosure: true
+  affiliateDisclosure: false
   headingStructure: true
-  imageAltText: true
+  imageAltText: false
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
@@ -47,7 +49,7 @@ bingChecklist:
 
 ## 一、 核心前提：您的 Mac 电脑能运行小火箭吗？
 
-> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](/go/weifeng/?from=/guide/shadowrocket-mac-client-tutorial-guide/&placement=article-end)。
 
 
 由于 Shadowrocket 本质上是一款为 iOS (ARM 架构) 开发的 App，目前并没有单独开发 macOS 桌面版（x86 架构）。因此，并非所有 Mac 都能安装。
@@ -55,8 +57,8 @@ bingChecklist:
 ### 1. 确认您的 Mac 处理器芯片类型
 请点击 Mac 屏幕左上角的 **“苹果图标 ” -> “关于本机 (About This Mac)”**：
 
-*   **支持机型 (Apple Silicon)**：若芯片显示为 `Apple M1 / M2 / M3 / M4`（包含 Pro、Max 或 Ultra 版本），恭喜您，您的 Mac 完美支持直接安装运行小火箭！
-*   **不支持机型 (Intel 芯片)**：若处理器显示为 `Intel Core i5 / i7 / i9`，则无法安装 iOS 应用。建议您移步本站的《Clash Verge Rev Mac 版配置教程》或《V2rayU Mac 教程》。
+- **支持机型 (Apple Silicon)**：若芯片显示为 `Apple M1 / M2 / M3 / M4`（包含 Pro、Max 或 Ultra 版本），恭喜您，您的 Mac 完美支持直接安装运行小火箭！
+- **不支持机型 (Intel 芯片)**：若处理器显示为 `Intel Core i5 / i7 / i9`，则无法安装 iOS 应用。建议您移步本站的《Clash Verge Rev Mac 版配置教程》或《V2rayU Mac 教程》。
 
 ---
 
@@ -114,9 +116,9 @@ bingChecklist:
 ### 1. 选择全局路由模式 (Global Routing)
 
 在主界面的下半部分，找到“全局路由”选项，请务必将其设置为 **“配置 (Config)”**！
-*   **配置 (Config)**：智能分流模式。依靠小火箭内置的规则集，国内百度、淘宝直连，海外 Google、YouTube 走代理。（日常强烈推荐）
-*   **代理 (Proxy)**：即全局模式。所有流量一律走海外节点，仅在某些冷门海外网站打不开时临时切换。
-*   **直连 (Direct)**：关闭代理效果。
+- **配置 (Config)**：智能分流模式。依靠小火箭内置的规则集，国内百度、淘宝直连，海外 Google、YouTube 走代理。（日常强烈推荐）
+- **代理 (Proxy)**：即全局模式。所有流量一律走海外节点，仅在某些冷门海外网站打不开时临时切换。
+- **直连 (Direct)**：关闭代理效果。
 
 ### 2. 选择节点并启动
 1. 在节点列表中，点击一个延迟较低的节点（点击后左侧会出现一个橘色的圆点，代表已选中）。
@@ -132,34 +134,34 @@ bingChecklist:
 为什么有人对 Mac 版小火箭爱不释手，有人却觉得难用？
 
 ### 优势：
-*   **零成本与云同步**：只要 iOS 买过就能在 Mac 免费用，且 iCloud 会自动同步您在手机上添加的所有节点与分流规则，真正的无缝切换。
-*   **极低功耗**：由于是原生 ARM 架构的 App，在 M 系芯片上运行如丝般顺滑，几乎不耗电，且发热量极低。
-*   **协议全能**：兼容性极强，VLESS、Trojan、Hysteria2 等最新抗封锁协议通吃。
+- **零成本与云同步**：只要 iOS 买过就能在 Mac 免费用，且 iCloud 会自动同步您在手机上添加的所有节点与分流规则，真正的无缝切换。
+- **极低功耗**：由于是原生 ARM 架构的 App，在 M 系芯片上运行如丝般顺滑，几乎不耗电，且发热量极低。
+- **协议全能**：兼容性极强，VLESS、Trojan、Hysteria2 等最新抗封锁协议通吃。
 
 ### 缺点：
-*   **交互逻辑割裂**：它本质上仍是手机 App，部分操作（如长按、滑动）需要用鼠标模拟，体验不如原生 Mac 软件（如 Clash Verge）直观。
-*   **不支持复杂的终端接管**：无法像 Surge 那样提供高级的 TUN 底层增强接管，对终端命令行 (Terminal) 代理的支持较弱。
+- **交互逻辑割裂**：它本质上仍是手机 App，部分操作（如长按、滑动）需要用鼠标模拟，体验不如原生 Mac 软件（如 Clash Verge）直观。
+- **不支持复杂的终端接管**：无法像 Surge 那样提供高级的 TUN 底层增强接管，对终端命令行 (Terminal) 代理的支持较弱。
 
 ---
 
 ## 七、 常见问题与深度排障指南 (FAQ)
 
 ### Q1: 在 App Store 切换到了“iPhone 与 iPad App”，依然搜不到 Shadowrocket？
-*   **原因**：您当前登录的依然是中国大陆区的 Apple ID。国区已经下架了所有 VPN 类软件。
-*   **解决**：请务必退出当前账号，登录美区、港区或日区等海外 Apple ID 再行搜索。
+- **原因**：您当前登录的依然是中国大陆区的 Apple ID。国区已经下架了所有 VPN 类软件。
+- **解决**：请务必退出当前账号，登录美区、港区或日区等海外 Apple ID 再行搜索。
 
 ### Q2: 开启小火箭后，浏览器显示连通，但微信/钉钉无法收发消息？
-*   **原因**：全局路由可能误选成了“代理 (Proxy)”，或者机场节点对部分国内社交软件的 UDP 通讯进行了阻断。
-*   **解决**：将全局路由修改为 **“配置 (Config)”**；或者在小火箭设置中，将 UDP 转发功能开启。
+- **原因**：全局路由可能误选成了“代理 (Proxy)”，或者机场节点对部分国内社交软件的 UDP 通讯进行了阻断。
+- **解决**：将全局路由修改为 **“配置 (Config)”**；或者在小火箭设置中，将 UDP 转发功能开启。
 
 ### Q3: 每次打开电脑都要手动启动小火箭，能设置开机自启吗？
 
-*   **解决**：可以。打开 Mac 的“系统设置 -> 通用 -> 登录项”，点击“+”号，在“应用程序”文件夹中找到 Shadowrocket 并添加。这样每次开机小火箭都会静默启动。
+- **解决**：可以。打开 Mac 的“系统设置 -> 通用 -> 登录项”，点击“+”号，在“应用程序”文件夹中找到 Shadowrocket 并添加。这样每次开机小火箭都会静默启动。
 
 ### Q4: 节点全部显示超时 (Timeout)，无法连接？
 
-*   **排查 1**：新型 VLESS/Trojan 协议对时间戳极其敏感。前往 Mac 系统设置开启“自动设置日期与时间”，确保无误差。
-*   **排查 2**：机场订阅可能已失效。在小火箭中向右拖拽订阅卡片，点击“更新”重新拉取最新的节点 IP。
+- **排查 1**：新型 VLESS/Trojan 协议对时间戳极其敏感。前往 Mac 系统设置开启“自动设置日期与时间”，确保无误差。
+- **排查 2**：机场订阅可能已失效。在小火箭中向右拖拽订阅卡片，点击“更新”重新拉取最新的节点 IP。
 
 ---
 

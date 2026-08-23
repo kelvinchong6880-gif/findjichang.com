@@ -1,7 +1,9 @@
 ---
-title: "【2026最新】V2rayN 客户端下载与节点订阅导入图文教程（支持 Vmess/VLESS/Trojan）"
+title: "V2rayN 客户端下载与节点订阅导入图文教程（支持 Vmess/VLESS/Trojan）"
 description: "全面解析 2026 年最新版 V2rayN 电脑端下载、安装及配置教程。手把手教你一键导入 Vmess、VLESS (Reality)、Trojan 机场节点订阅。内含绕过大陆路由规则设置、TUN 虚拟网卡游戏加速及全套连不上网报错排查指南，Windows 科学上网必看。"
 createdAt: 2026-08-23T03:00:00
+draft: true
+status: drafting
 primaryIntent: "提供详尽的 V2rayN 下载、安装与配置图文教程，解决新手配置多协议代理时的疑难杂症。"
 originalValue: "全面涵盖从 Vmess/VLESS/Trojan 协议科普、订阅导入到高级 TUN 模式开启与报错自检手册，一站式解决 Windows 端科学上网需求。"
 keywords:
@@ -23,11 +25,11 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: true
+  sourcesAttributed: false
   naturalLanguage: true
-  affiliateDisclosure: true
+  affiliateDisclosure: false
   headingStructure: true
-  imageAltText: true
+  imageAltText: false
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
@@ -53,7 +55,7 @@ author: 找机场
 
 ## 一、 为什么在 2026 年依然推荐使用 V2rayN？
 
-> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](/go/weifeng/?from=/guide/v2rayn-windows-client-tutorial-vmess-vless-trojan/&placement=article-end)。
 
 
 在众多 Windows 代理软件中，V2rayN 拥有以下不可替代的硬核优势：
@@ -72,7 +74,7 @@ author: 找机场
 
 ### 1. 运行环境依赖要求
 V2rayN 是基于微软 .NET 框架开发的。如果您的电脑是较新的 Windows 10 或 Windows 11，通常已自带。但如果您在打开软件时报错，请先前往微软官网下载安装：
-*   **[Microsoft .NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0)** (请根据系统选择 x64 版本)。
+- **[Microsoft .NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0)** (请根据系统选择 x64 版本)。
 
 ### 2. 官方 GitHub 下载流程
 
@@ -132,9 +134,9 @@ V2rayN 是基于微软 .NET 框架开发的。如果您的电脑是较新的 Win
 ### 2. 设置路由模式 (Routing)
 
 在主界面的最下方状态栏，找到 **「路由 (Routing)」** 下拉菜单，这里有三个核心选项，决定了你的流量如何分配：
-*   **绕过大陆 (Bypass CN) - ⭐ 强烈推荐**：智能分流。访问国内网站（淘宝、百度）走本地直连网络，访问海外被墙网站走代理节点。国内外互不干扰，速度最快，最省机场流量。
-*   **全局 (Global)**：强制电脑所有流量都通过代理节点。访问国内网站会变慢，仅在特殊网络调试时使用。
-*   **黑名单/白名单**：根据自定义的高阶 JSON 规则进行匹配分流。
+- **绕过大陆 (Bypass CN) - ⭐ 强烈推荐**：智能分流。访问国内网站（淘宝、百度）走本地直连网络，访问海外被墙网站走代理节点。国内外互不干扰，速度最快，最省机场流量。
+- **全局 (Global)**：强制电脑所有流量都通过代理节点。访问国内网站会变慢，仅在特殊网络调试时使用。
+- **黑名单/白名单**：根据自定义的高阶 JSON 规则进行匹配分流。
 
 ### 3. 开启系统代理 (System Proxy)
 最后，也是最关键的一步，让 V2rayN 接管 Windows 网络：
@@ -185,27 +187,27 @@ V2rayN 的“系统代理”模式（红色图标）主要针对浏览器生效�
 
 ### 故障 1：点击更新订阅，日志提示“The operation has timed out”或“网络错误”
 
-*   **诊断分析**：您的本地宽带（尤其是移动宽带或校园网）屏蔽了机场订阅链接的域名。
-*   **解决对策**：
+- **诊断分析**：您的本地宽带（尤其是移动宽带或校园网）屏蔽了机场订阅链接的域名。
+- **解决对策**：
     1. 最简单的办法：手机开启 4G/5G 热点，电脑连接手机热点后再点击“更新订阅”。更新成功后切回宽带即可。
     2. 终极办法：在机场后台寻找备用的订阅地址（通常服务商会提供多个备用域名）。
 
 ### 故障 2：所有节点测试延迟都是 `-1`，或者日志疯狂报错
 
-*   **诊断分析**：这通常与 Windows 系统时间校验机制有关。科学上网协议要求本地时间与服务器时间的误差不得超过 90 秒，否则会导致 SSL 证书握手失败，直接断开。
-*   **解决对策**：
+- **诊断分析**：这通常与 Windows 系统时间校验机制有关。科学上网协议要求本地时间与服务器时间的误差不得超过 90 秒，否则会导致 SSL 证书握手失败，直接断开。
+- **解决对策**：
     1. 按 `Win + I` 打开系统设置，进入「时间和语言」->「日期和时间」。
     2. 开启「自动设置时间」，并点击下方的 **「立即同步」** 按钮。确保您的电脑时间分秒不差。
 
 ### 故障 3：软件开启了红色图标（系统代理），但浏览器依然打不开 Google？
-*   **诊断分析**：存在端口冲突，或者浏览器使用了顽固的第三方代理插件。
-*   **解决对策**：
+- **诊断分析**：存在端口冲突，或者浏览器使用了顽固的第三方代理插件。
+- **解决对策**：
     1. 检查电脑是否同时开着其他翻墙软件（如 [Clash Verge Rev](/guide/clash-verge-rev-windows-tutorial-2026)、蓝灯、UU加速器等），如果有，请彻底退出它们。
     2. 打开 V2rayN 的「设置」->「参数设置」->「核心基础设置」，将“本地监听端口 (Local Port)”从默认的 `10808` 修改为 `10819` 等冷门端口，保存后重启软件。
     3. 如果您在 Chrome/Edge 浏览器里安装了 `SwitchyOmega` 等代理管理插件，请将该插件设置为“系统代理”或直接禁用。
 
 ### 故障 4：提示 `Failed to start: 端口已被占用`
-*   **解决对策**：参考故障 3 中的修改本地监听端口方法；或打开任务管理器，强制结束所有 `v2ray.exe` 或 `xray.exe` 的幽灵后台进程。
+- **解决对策**：参考故障 3 中的修改本地监听端口方法；或打开任务管理器，强制结束所有 `v2ray.exe` 或 `xray.exe` 的幽灵后台进程。
 
 ---
 

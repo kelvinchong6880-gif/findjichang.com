@@ -2,6 +2,8 @@
 title: "Sing-box 安卓客户端使用教程：低耗电、高性能科学上网新选择 (2026最新)"
 description: "2026最新 Sing-box for Android (SFA) 新手小白配置教程！手把手教您最新 APK 安全下载安装、机场 JSON 订阅导入、VLESS-Reality 协议配置、智能分流与防杀后台设置，附带常见问题排障 Q&A，打造极速低耗电安卓翻墙体验。"
 createdAt: 2026-08-23T16:00:00
+draft: true
+status: drafting
 primaryIntent: "提供 Sing-box for Android (SFA) 的安全下载安装、JSON 订阅导入、协议配置及后台防杀设置等教程。"
 originalValue: "全面涵盖 Sing-box 的低耗电与前沿协议支持特性，提供专为新手设计的配置图文指南。"
 keywords:
@@ -29,11 +31,11 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: true
+  sourcesAttributed: false
   naturalLanguage: true
-  affiliateDisclosure: true
+  affiliateDisclosure: false
   headingStructure: true
-  imageAltText: true
+  imageAltText: false
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
@@ -46,15 +48,15 @@ bingChecklist:
 
 ## 一、 为什么选择 Sing-box？核心优势全面解析
 
-> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](/go/weifeng/?from=/guide/sing-box-android-client-tutorial-guide/&placement=article-end)。
 
 
 对于追求设备续航与极致速度的用户，Sing-box 在安卓端展现出了强大的竞争力：
 
-*   **极致轻量与超低功耗**：基于现代 Go 语言架构，优化了底层内存分配与垃圾回收机制。相比其他客户端，后台常驻时对手机电池的损耗降到了极低水平，完全告别“开代理手机发烫、电量尿崩”的困扰。
-*   **前沿抗封锁协议原生支持**：对 VLESS (Reality)、Hysteria 2、TUIC v5、Shadowsocks 2022 等新一代传输协议提供原生级支持，握手延迟更低、抗干扰能力更强。
-*   **独立规则集 (Rule-set) 智能路由**：引入了全新的规则集编译与分流逻辑，国内外流量毫秒级精准分离，国内网站秒开直连，海外流量安全出海。
-*   **纯粹开源与透明**：代码在 GitHub 完全开源，无任何捆绑广告、无隐私上报模块，安全可靠。
+- **极致轻量与超低功耗**：基于现代 Go 语言架构，优化了底层内存分配与垃圾回收机制。相比其他客户端，后台常驻时对手机电池的损耗降到了极低水平，完全告别“开代理手机发烫、电量尿崩”的困扰。
+- **前沿抗封锁协议原生支持**：对 VLESS (Reality)、Hysteria 2、TUIC v5、Shadowsocks 2022 等新一代传输协议提供原生级支持，握手延迟更低、抗干扰能力更强。
+- **独立规则集 (Rule-set) 智能路由**：引入了全新的规则集编译与分流逻辑，国内外流量毫秒级精准分离，国内网站秒开直连，海外流量安全出海。
+- **纯粹开源与透明**：代码在 GitHub 完全开源，无任何捆绑广告、无隐私上报模块，安全可靠。
 
 ---
 
@@ -65,8 +67,8 @@ bingChecklist:
 
 ### 1. 官方推荐下载渠道
 
-*   **GitHub Releases（推荐首选）**：访问 Sing-box 官方开源仓库的 Releases 页面，直接下载最新稳定版本的 `.apk` 文件。
-*   **Google Play 商店**：非中国大陆区的 Google Play 商店可直接搜索 `sing-box` 下载，支持官方静默自动更新。
+- **GitHub Releases（推荐首选）**：访问 Sing-box 官方开源仓库的 Releases 页面，直接下载最新稳定版本的 `.apk` 文件。
+- **Google Play 商店**：非中国大陆区的 Google Play 商店可直接搜索 `sing-box` 下载，支持官方静默自动更新。
 
 ### 2. APK 架构选型对照表（小白必看）
 在下载页面中，通常能看到不同架构命名的安装包，请根据手机芯片选择：
@@ -141,9 +143,9 @@ bingChecklist:
 
 ### 1. 核心运行模式
 
-*   **Rule (规则分流 - 推荐默认使用)**：严格依照配置文件中的规则库运作。访问国内网站走本地直连，海外网站走代理节点，广告域名直接拦截。
-*   **Global (全局代理)**：强制手机的所有流量无论目的地一律走选中的国外节点，仅在特殊未适配网站下临时使用。
-*   **Direct (全局直连)**：所有流量不走代理，直接本地物理网络连接。
+- **Rule (规则分流 - 推荐默认使用)**：严格依照配置文件中的规则库运作。访问国内网站走本地直连，海外网站走代理节点，广告域名直接拦截。
+- **Global (全局代理)**：强制手机的所有流量无论目的地一律走选中的国外节点，仅在特殊未适配网站下临时使用。
+- **Direct (全局直连)**：所有流量不走代理，直接本地物理网络连接。
 
 ### 2. 域名解析策略 (Domain Strategy) 建议
 在高级设置中，建议保持默认或选择 **“Prefer_IPv4 / IPIfNonMatch”**。当域名未命中已知规则时，客户端会将其解析为 IP 进行二次地域分流，有效防御当地运营商的 DNS 劫持与污染。
@@ -180,21 +182,21 @@ bingChecklist:
 
 ### Q1: 导入订阅时提示 “Parse config failed” 或 JSON 语法报错？
 
-*   **原因**：复制的链接并非标准的 Sing-box 格式，或者机场订阅后端模板存在语法缺失。
-*   **解决**：登录机场官网确认是否选择了“Sing-box 订阅”；若机场未提供原生链接，可通过第三方开源订阅转换工具（如 Subconverter），将通用链接转换为 Sing-box 格式后重新导入。
+- **原因**：复制的链接并非标准的 Sing-box 格式，或者机场订阅后端模板存在语法缺失。
+- **解决**：登录机场官网确认是否选择了“Sing-box 订阅”；若机场未提供原生链接，可通过第三方开源订阅转换工具（如 Subconverter），将通用链接转换为 Sing-box 格式后重新导入。
 
 ### Q2: 节点测速全部显示 Timeout（超时），但手机网络正常？
-*   **排查 1（时间误差）**：VLESS-Reality 等现代加密协议对系统时间校验极度敏感，误差超过 30 秒将无法完成握手。前往手机“设置 -> 系统时间”，关闭后重新开启“自动同步网络时间”。
-*   **排查 2（套餐状态）**：登录机场官网后台，检查账户套餐是否过期、可用流量是否耗尽。
-*   **排查 3（协议支持）**：确认您下载的 SFA 版本是否为最新版，旧版本可能不支持部分新协议语法。
+- **排查 1（时间误差）**：VLESS-Reality 等现代加密协议对系统时间校验极度敏感，误差超过 30 秒将无法完成握手。前往手机“设置 -> 系统时间”，关闭后重新开启“自动同步网络时间”。
+- **排查 2（套餐状态）**：登录机场官网后台，检查账户套餐是否过期、可用流量是否耗尽。
+- **排查 3（协议支持）**：确认您下载的 SFA 版本是否为最新版，旧版本可能不支持部分新协议语法。
 
 ### Q3: 开启代理后，国内 App 打得开，但 Google、YouTube 依然显示断网？
-*   **原因**：策略组默认选到了失效的节点，或者选到了 DIRECT 规则。
-*   **解决**：前往“Groups (策略组)”面板，手动展开 Proxy 组，点选一个测速延迟显示为绿色数字（如 `100ms`）的有效可用节点。
+- **原因**：策略组默认选到了失效的节点，或者选到了 DIRECT 规则。
+- **解决**：前往“Groups (策略组)”面板，手动展开 Proxy 组，点选一个测速延迟显示为绿色数字（如 `100ms`）的有效可用节点。
 
 ### Q4: 如何在 Sing-box 中配置 DoH/DoT 加密 DNS？
 
-*   **说明**：标准机场订阅通常已内置了优质的 DNS 配置。如需自定义，可在配置文件的 `dns.servers` 字段中添加如阿里公共 DoH (`https://dns.alidns.com/dns-query`) 或 Cloudflare DNS，从源头杜绝 DNS 劫持。
+- **说明**：标准机场订阅通常已内置了优质的 DNS 配置。如需自定义，可在配置文件的 `dns.servers` 字段中添加如阿里公共 DoH (`https://dns.alidns.com/dns-query`) 或 Cloudflare DNS，从源头杜绝 DNS 劫持。
 
 ---
 

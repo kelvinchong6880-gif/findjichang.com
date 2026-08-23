@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { isPublishable } from '../../lib/seo';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
@@ -14,7 +15,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
-<BaseLayout title={`${entry.data.title}｜找机场`} description={entry.data.description}>
+<BaseLayout title={`${entry.data.title}｜找机场`} description={entry.data.description} indexable={isPublishable(entry)}>
   <main class="page-shell detail-page">
     <Breadcrumbs items={[{label:'首页',href:'/'},{label:'使用教程',href:'/guide/'},{label:entry.data.title}]} />
     

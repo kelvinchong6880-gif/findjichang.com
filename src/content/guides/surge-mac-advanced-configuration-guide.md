@@ -2,6 +2,8 @@
 title: "Surge Mac版进阶使用教程：2026从节点导入到接管系统网络完整指南"
 description: "2026最新 Surge for Mac 进阶保姆级教程！深度讲解机场托管订阅导入、增强模式(Enhanced Mode)全局接管、旁路网关设置、模块化配置与 Q&A 断网排障，带您彻底掌握 Mac 代理天花板。"
 createdAt: 2026-08-23T21:00:00
+draft: true
+status: drafting
 primaryIntent: "提供针对 Surge Mac 版的进阶使用指南，包括订阅导入、Enhanced Mode 增强模式接管、网关模式与模块配置。"
 originalValue: "全面涵盖 Surge for Mac 作为高端代理与网络调试工具的核心高阶功能，提供图文保姆级排障指导。"
 keywords:
@@ -28,11 +30,11 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: true
+  sourcesAttributed: false
   naturalLanguage: true
-  affiliateDisclosure: true
+  affiliateDisclosure: false
   headingStructure: true
-  imageAltText: true
+  imageAltText: false
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
@@ -45,15 +47,15 @@ bingChecklist:
 
 ## 一、 深入认识 Surge Mac：为什么它是苹果生态的“网络天花板”？
 
-> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](/go/weifeng/?from=/guide/surge-mac-advanced-configuration-guide/&placement=article-end)。
 
 
 Surge Mac 售价高昂，但其强大的底层能力在业内几乎无出其右：
 
-*   **底层的 Enhanced Mode（增强模式）**：普通的系统代理只能接管部分遵循 macOS 代理协议的软件，而 Surge 的增强模式通过虚拟网卡（VIF）技术，从操作系统最底层捕获所有 TCP/UDP 流量，实现包括终端命令行、后台守护进程、Docker 容器以及网游在内的 100% 绝对接管。
-*   **局域网设备网关接管 (Gateway / Router Mode)**：Surge Mac 可以摇身一变成为局域网的“旁路由网关”，为家里的 Apple TV、PS5/Xbox 游戏主机、智能家居等无法安装代理软件的设备提供无感代理加速与分流。
-*   **极简优雅的模块系统 (Modules)**：无需手动修改庞大繁琐的配置文件，各种去广告脚本、流媒体解锁重写、DNS 增强规则均可通过“模块”一键安装与热插拔。
-*   **Surge Ponte 私有互联协议**：利用 iCloud 密钥在 Mac、iPhone 和 iPad 之间建立去中心化的安全虚拟专网，实现出门在外随时直连家里的 Mac。
+- **底层的 Enhanced Mode（增强模式）**：普通的系统代理只能接管部分遵循 macOS 代理协议的软件，而 Surge 的增强模式通过虚拟网卡（VIF）技术，从操作系统最底层捕获所有 TCP/UDP 流量，实现包括终端命令行、后台守护进程、Docker 容器以及网游在内的 100% 绝对接管。
+- **局域网设备网关接管 (Gateway / Router Mode)**：Surge Mac 可以摇身一变成为局域网的“旁路由网关”，为家里的 Apple TV、PS5/Xbox 游戏主机、智能家居等无法安装代理软件的设备提供无感代理加速与分流。
+- **极简优雅的模块系统 (Modules)**：无需手动修改庞大繁琐的配置文件，各种去广告脚本、流媒体解锁重写、DNS 增强规则均可通过“模块”一键安装与热插拔。
+- **Surge Ponte 私有互联协议**：利用 iCloud 密钥在 Mac、iPhone 和 iPad 之间建立去中心化的安全虚拟专网，实现出门在外随时直连家里的 Mac。
 
 ---
 
@@ -143,8 +145,8 @@ Surge 的模块化功能让各种去广告与功能解锁变得极其简单，�
 
 Surge 内置了顶级的网络诊断控制台，是分析网络问题、排查慢请求的利器。
 
-*   **实时请求查看器**：点击主面板的 **“活动 (Activity)”**，您可以实时观察到 Mac 上每一个应用（如 Chrome、Slack、Spotify）正在连接的目标域名、IP、使用的代理节点以及握手耗时。
-*   **规则匹配追踪**：点击任意一条请求，Surge 会清晰展示该请求命中了哪一条分流规则（例如命中了 `DOMAIN-SUFFIX,google.com` 并走了 `PROXY` 组），让分流故障一目了然。
+- **实时请求查看器**：点击主面板的 **“活动 (Activity)”**，您可以实时观察到 Mac 上每一个应用（如 Chrome、Slack、Spotify）正在连接的目标域名、IP、使用的代理节点以及握手耗时。
+- **规则匹配追踪**：点击任意一条请求，Surge 会清晰展示该请求命中了哪一条分流规则（例如命中了 `DOMAIN-SUFFIX,google.com` 并走了 `PROXY` 组），让分流故障一目了然。
 
 ---
 
@@ -152,21 +154,21 @@ Surge 内置了顶级的网络诊断控制台，是分析网络问题、排查�
 
 ### Q1: 开启增强模式后，Mac 无法连接局域网内的 NAS、打印机或本地开发服务 (localhost)？
 
-*   **原因**：本地流量被错误路由进了虚拟网卡。
-*   **解决**：在 Surge 配置文件或高级设置的 `[General]` 段落中，检查 `skip-proxy` 列表，确保包含以下地址：`127.0.0.1, localhost, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12`。
+- **原因**：本地流量被错误路由进了虚拟网卡。
+- **解决**：在 Surge 配置文件或高级设置的 `[General]` 段落中，检查 `skip-proxy` 列表，确保包含以下地址：`127.0.0.1, localhost, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12`。
 
 ### Q2: 导入托管配置后，所有节点测速均显示 Timeout（超时），完全断网？
 
-*   **排查 1（时间戳偏差）**：前往 Mac “系统设置 -> 通用 -> 日期与时间”，关闭再重新开启“自动设置时间”。新型加密协议对时间误差极度敏感。
-*   **排查 2（节点协议支持）**：部分老旧机场输出的托管配置格式可能存在语法缺失，确认机场是否原生支持 Surge 4/5 格式。
+- **排查 1（时间戳偏差）**：前往 Mac “系统设置 -> 通用 -> 日期与时间”，关闭再重新开启“自动设置时间”。新型加密协议对时间误差极度敏感。
+- **排查 2（节点协议支持）**：部分老旧机场输出的托管配置格式可能存在语法缺失，确认机场是否原生支持 Surge 4/5 格式。
 
 ### Q3: 电脑睡眠唤醒后，Surge 状态栏变灰，网络无响应？
-*   **解决**：这是 macOS 深度休眠时网络扩展挂起引起的。在 Surge 菜单栏图标中，点击 **“重启所有引擎 (Restart All Engines)”** 即可瞬间修复。
+- **解决**：这是 macOS 深度休眠时网络扩展挂起引起的。在 Surge 菜单栏图标中，点击 **“重启所有引擎 (Restart All Engines)”** 即可瞬间修复。
 
 ### Q4: 开启 MitM 后，部分银行网站或苹果 iCloud 登录提示“网络连接不安全”？
 
-*   **原因**：高敏感金融类或苹果核心服务使用了 SSL Pinning（证书锁定）技术，拒绝中间人解密。
-*   **解决**：在 Surge 的 MitM 主机名列表中，将这些域名加入排除名单（或在规则中对这类域名配置为不走 MitM）。
+- **原因**：高敏感金融类或苹果核心服务使用了 SSL Pinning（证书锁定）技术，拒绝中间人解密。
+- **解决**：在 Surge 的 MitM 主机名列表中，将这些域名加入排除名单（或在规则中对这类域名配置为不走 MitM）。
 
 ---
 

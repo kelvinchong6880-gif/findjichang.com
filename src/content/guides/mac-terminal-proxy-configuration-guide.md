@@ -2,6 +2,8 @@
 title: "Mac开启翻墙代理后终端无法联网？2026命令行代理设置保姆级教程"
 description: "2026最新 Mac 终端命令行代理设置指南！解决 Mac 开启代理后 Terminal、Git、Brew、Pip 依然断网问题。详解临时 export、zshrc 永久别名函数、SSH 代理配置与 Q&A 排障，手把手带您搞定命令行出海。"
 createdAt: 2026-08-23T23:00:00
+draft: true
+status: drafting
 primaryIntent: "提供解决 Mac 开启代理后终端仍无法连网问题的完整指南，包括配置终端代理环境变量和特殊开发工具的配置。"
 originalValue: "全面剖析终端不走系统代理的原因，提供从临时 export 到 .zshrc 函数别名再到 TUN 增强模式的多种实操方案，覆盖 Git, Brew, Pip 等高频开发工具。"
 keywords:
@@ -29,11 +31,11 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: true
+  sourcesAttributed: false
   naturalLanguage: true
-  affiliateDisclosure: true
+  affiliateDisclosure: false
   headingStructure: true
-  imageAltText: true
+  imageAltText: false
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
@@ -48,18 +50,18 @@ bingChecklist:
 
 ## 一、 深度解密：为什么 Mac 开启翻墙后终端默认不走代理？
 
-> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](/go/weifeng/?from=/guide/mac-terminal-proxy-configuration-guide/&placement=article-end)。
 
 
 要彻底解决问题，首先需要了解 macOS 的网络分层设计与底层通信机制：
 
 ### 1. GUI 应用与 CLI 工具的网络接管机制不同
-*   **浏览器 (Safari / Chrome)**：属于上层图形化应用，它们依赖 macOS 系统的 `CFNetwork` 框架。当您打开代理软件的“系统代理”开关时，软件会自动修改 macOS 的网络配置面板（系统设置 -> 网络 -> 代理），浏览器检测到这些系统级参数后，会自动将流量导向本地代理端口。
-*   **终端命令行工具 (curl, wget, git, brew, npm 等)**：继承自底层的 UNIX / BSD 体系。这类基于 POSIX 标准的命令行工具为了保证执行效率与安全性，**默认会完全无视 macOS 操作系统的 GUI 代理设置**！它们只认环境变量中显式声明的 `http_proxy`、`https_proxy` 和 `all_proxy`。
+- **浏览器 (Safari / Chrome)**：属于上层图形化应用，它们依赖 macOS 系统的 `CFNetwork` 框架。当您打开代理软件的“系统代理”开关时，软件会自动修改 macOS 的网络配置面板（系统设置 -> 网络 -> 代理），浏览器检测到这些系统级参数后，会自动将流量导向本地代理端口。
+- **终端命令行工具 (curl, wget, git, brew, npm 等)**：继承自底层的 UNIX / BSD 体系。这类基于 POSIX 标准的命令行工具为了保证执行效率与安全性，**默认会完全无视 macOS 操作系统的 GUI 代理设置**！它们只认环境变量中显式声明的 `http_proxy`、`https_proxy` 和 `all_proxy`。
 
 ### 2. ICMP 协议（Ping）与代理的区别
 很多新手在终端里输入 `ping google.com` 发现不通，就以为代理失败。
-*   **真相**：主流代理协议（Shadowsocks、VMess、VLESS、Trojan 等）绝大多数只支持 TCP 和 UDP 协议，而 `ping` 命令使用的是底层的 ICMP 协议。即使终端代理配置成功，ping 境外域名依然大概率是不通的，验证代理必须使用 `curl` 命令。
+- **真相**：主流代理协议（Shadowsocks、VMess、VLESS、Trojan 等）绝大多数只支持 TCP 和 UDP 协议，而 `ping` 命令使用的是底层的 ICMP 协议。即使终端代理配置成功，ping 境外域名依然大概率是不通的，验证代理必须使用 `curl` 命令。
 
 ---
 
@@ -111,7 +113,7 @@ curl -I https://www.google.com
 
 如果返回的 IP 地址为您当前代理节点的海外 IP（如香港、日本、美国），或者返回 `HTTP/2 200`，说明终端代理已经完美生效！
 
-*   **特性**：此方法仅对当前终端窗口有效，一旦关闭该终端窗口或新建标签页，环境变量会自动失效，不会对系统造成任何残留影响。
+- **特性**：此方法仅对当前终端窗口有效，一旦关闭该终端窗口或新建标签页，环境变量会自动失效，不会对系统造成任何残留影响。
 
 ---
 
@@ -127,8 +129,8 @@ macOS Catalina (10.15) 及更新的系统（包括 Monterey, Ventura, Sonoma, Se
 echo $SHELL
 ```
 
-*   若输出 `/bin/zsh`，则配置文件为 `~/.zshrc`。
-*   若输出 `/bin/bash`，则配置文件为 `~/.bash_profile`。
+- 若输出 `/bin/zsh`，则配置文件为 `~/.zshrc`。
+- 若输出 `/bin/bash`，则配置文件为 `~/.bash_profile`。
 
 ### 2. 编辑配置文件
 
@@ -156,8 +158,8 @@ source ~/.zshrc
 ```
 
 ### 4. 体验极速开关
-*   **开启代理**：在终端输入 `setproxy` 并回车，终端会自动注入代理变量并打印当前海外出口 IP。
-*   **关闭代理**：在终端输入 `unsetproxy` 并回车，终端会自动清除代理变量恢复本地直连。
+- **开启代理**：在终端输入 `setproxy` 并回车，终端会自动注入代理变量并打印当前海外出口 IP。
+- **关闭代理**：在终端输入 `unsetproxy` 并回车，终端会自动清除代理变量恢复本地直连。
 
 ---
 
@@ -244,33 +246,33 @@ pip config set global.proxy http://127.0.0.1:7890
 
 如果您觉得为每个命令行工具分别配置环境变量过于繁琐，最一劳永逸的方案是利用客户端的 **TUN 增强模式**从操作系统底层实现 100% 接管。
 
-*   **工作机制**：开启 TUN 模式后，代理软件会在 macOS 系统内核中注入一张名为 `utun` 的虚拟网卡，并将所有默认路由引流至该网卡。
-*   **体验**：无论是终端里的 `curl`、`git`、`brew`，还是后台守护进程与 Docker，无需在终端执行任何 export 命令，原生直接出海！
+- **工作机制**：开启 TUN 模式后，代理软件会在 macOS 系统内核中注入一张名为 `utun` 的虚拟网卡，并将所有默认路由引流至该网卡。
+- **体验**：无论是终端里的 `curl`、`git`、`brew`，还是后台守护进程与 Docker，无需在终端执行任何 export 命令，原生直接出海！
 
 **主流客户端一键开启步骤**：
-*   **Clash Verge Rev**：进入“设置” -> 授权安装“服务模式” -> 打开 **“TUN 模式”**。
-*   **Surge for Mac**：进入主界面高级设置 -> 开启 **“增强模式 (Enhanced Mode)”** 并输入 Mac 开机密码。
+- **Clash Verge Rev**：进入“设置” -> 授权安装“服务模式” -> 打开 **“TUN 模式”**。
+- **Surge for Mac**：进入主界面高级设置 -> 开启 **“增强模式 (Enhanced Mode)”** 并输入 Mac 开机密码。
 
 ---
 
 ## 七、 常见问题与深度排障指南 (FAQ / Q&A)
 
 ### Q1: 已经在终端输入了 setproxy，为什么 ping google.com 依然显示 100% Packet Loss 超时？
-*   **解答**：请勿使用 ping 测试代理！ping 发送的是 ICMP 数据包，而 HTTP / SOCKS5 代理只处理 TCP/UDP 应用层协议。测试终端代理连通性请统一使用 `curl -I https://www.google.com` 或 `curl https://ip.sb`。
+- **解答**：请勿使用 ping 测试代理！ping 发送的是 ICMP 数据包，而 HTTP / SOCKS5 代理只处理 TCP/UDP 应用层协议。测试终端代理连通性请统一使用 `curl -I https://www.google.com` 或 `curl https://ip.sb`。
 
 ### Q2: 运行 curl 时报错 curl: (7) Failed to connect to 127.0.0.1 port 7890: Connection refused？
 
-*   **原因**：您的代理软件未启动，或者处于崩溃退出状态。代理软件实际占用的本地监听端口并非 7890（例如某些软件是 1087 或 6152）。
-*   **解决**：打开代理软件设置，核对本地 HTTP 监听端口并更新环境变量中的端口号。
+- **原因**：您的代理软件未启动，或者处于崩溃退出状态。代理软件实际占用的本地监听端口并非 7890（例如某些软件是 1087 或 6152）。
+- **解决**：打开代理软件设置，核对本地 HTTP 监听端口并更新环境变量中的端口号。
 
 ### Q3: Git 克隆时报错 fatal: unable to access '...': LibreSSL SSL_connect: SSL_ERROR_SYSCALL？
 
-*   **原因**：这是因为本地代理与 Git 的 SSL 校验发生了重试冲突，或者所连接的代理节点在握手期间异常断开。
-*   **解决**：检查代理客户端中是否选到了有效的绿色延迟节点。如果是因为公司网络或 MitM 证书解密引起的 SSL 拦截，可临时执行 `git config --global http.sslVerify false`（仅建议在受信任网络下使用）。
+- **原因**：这是因为本地代理与 Git 的 SSL 校验发生了重试冲突，或者所连接的代理节点在握手期间异常断开。
+- **解决**：检查代理客户端中是否选到了有效的绿色延迟节点。如果是因为公司网络或 MitM 证书解密引起的 SSL 拦截，可临时执行 `git config --global http.sslVerify false`（仅建议在受信任网络下使用）。
 
 ### Q4: 开启终端代理后，本地内网开发服务器（如 http://localhost:3000 或 192.168.x.x）访问失败？
-*   **原因**：本地回环流量被错误路由给了代理软件。
-*   **解决**：在终端中补充 `no_proxy` 环境变量以放行本地回环地址：
+- **原因**：本地回环流量被错误路由给了代理软件。
+- **解决**：在终端中补充 `no_proxy` 环境变量以放行本地回环地址：
    ```bash
    export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com,192.168.0.0/16,10.0.0.0/8"
    ```

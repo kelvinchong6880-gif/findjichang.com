@@ -2,6 +2,8 @@
 title: "OpenClash插件图文教程：八步实现全家设备无感科学上网"
 description: "2026最新软路由OpenClash保姆级教程。手把手教您通过八大步骤完成Meta内核安装、订阅导入、Fake-IP设置与防污染，实现无感翻墙。"
 createdAt: 2026-08-24T01:30:00
+draft: true
+status: drafting
 primaryIntent: "提供在 OpenWRT 软路由上安装和配置 OpenClash 插件的分步指南。"
 originalValue: "以八大核心步骤为主轴，清晰拆解 OpenClash 从环境检查、内核替换到 Fake-IP 与 DNS 防污染的复杂配置流程。"
 keywords:
@@ -24,11 +26,11 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: true
+  sourcesAttributed: false
   naturalLanguage: true
-  affiliateDisclosure: true
+  affiliateDisclosure: false
   headingStructure: true
-  imageAltText: true
+  imageAltText: false
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
@@ -37,10 +39,10 @@ bingChecklist:
 
 ## 一、 为什么选择 OpenClash 实现全屋无感翻墙？
 
-> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](/go/weifeng/?from=/guide/soft-router-openclash-tutorial/&placement=article-end)。
 
-*   **透明代理机制**：OpenClash 直接运行在路由器底层。配置成功后，家里的手机、电脑、Apple TV 无需安装任何 App，连上 Wi-Fi 即可自动分流出海。
-*   **多协议抗封锁**：基于强大的 Clash.Meta 内核，完美兼容 VLESS-Reality、Hysteria2 等最新机场协议，保障晚高峰极速体验与稳定性。
+- **透明代理机制**：OpenClash 直接运行在路由器底层。配置成功后，家里的手机、电脑、Apple TV 无需安装任何 App，连上 Wi-Fi 即可自动分流出海。
+- **多协议抗封锁**：基于强大的 Clash.Meta 内核，完美兼容 VLESS-Reality、Hysteria2 等最新机场协议，保障晚高峰极速体验与稳定性。
 
 ## 二、 步骤一：环境检查与底层依赖预装
 ### 1. 连通性自检在正式操作前，请确保您的 OpenWRT 软路由已经正常拨号，并能顺畅访问国内基础网络。

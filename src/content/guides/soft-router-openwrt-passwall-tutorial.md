@@ -2,6 +2,8 @@
 title: "软路由翻墙入门：2026 OpenWRT安装PassWall与节点配置指南"
 description: "2026最新 OpenWRT 软路由翻墙入门保姆级教程！详解 PassWall 依赖环境补全、ipk 安装包部署、机场节点订阅导入、DNS 防污染分流设置及断网排障 Q&A，手把手教您搭建全屋极速科学上网。"
 createdAt: 2026-08-24T01:00:00
+draft: true
+status: drafting
 primaryIntent: "提供针对 OpenWRT 软路由安装和配置 PassWall 翻墙插件的深度指南。"
 originalValue: "全面涵盖从 SSH 底层依赖环境补全、ipk 安装，到 DNS 防污染分流、全屋流媒体/游戏联机 NAT 优化的实操流程。"
 keywords:
@@ -29,11 +31,11 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: true
+  sourcesAttributed: false
   naturalLanguage: true
-  affiliateDisclosure: true
+  affiliateDisclosure: false
   headingStructure: true
-  imageAltText: true
+  imageAltText: false
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
@@ -48,15 +50,15 @@ PassWall 专为路由器低资源环境设计，直接调用底层 iptables / nf
 
 ## 一、 为什么选择 PassWall？核心架构与性能优势
 
-> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](/go/weifeng/?from=/guide/soft-router-openwrt-passwall-tutorial/&placement=article-end)。
 
 
 面对琳琅满目的软路由代理插件，PassWall 之所以深受网络发烧友推崇，主要得益于以下核心特性：
 
-*   **超高转发效率与极低系统资源占用**：PassWall 摒弃了复杂的上层控制台开销，直接在 Linux 内核层通过网络过滤器进行透明代理转发。即使在搭载 J4125、N100 或 ARM 架构 R5S/R6S 的入门级软路由上，也能在低 CPU 占用率下跑满千兆出海带宽。
-*   **全协议现代内核原生支持**：支持 Xray-core、Sing-box、V2ray-core 等多个底层核心切换。完美支持 VLESS-Reality、Hysteria2、TUIC v5、Trojan、Shadowsocks 2022 等前沿抗封锁协议。
-*   **多节点分流与负载均衡**：支持将 TCP 流量与 UDP 流量分配给不同的节点（例如 TCP 走香港观看网页，UDP 走日本打游戏）。支持按域名后缀、国家 IP、进程规则进行多出口分流与主备节点故障自动切换（Failover）。
-*   **纯粹的 DNS 分流引擎**：内建 ChinaDNS-NG / Dnsmasq 智能分流，彻底杜绝 DNS 污染，同时保证国内网站秒级直连解析。
+- **超高转发效率与极低系统资源占用**：PassWall 摒弃了复杂的上层控制台开销，直接在 Linux 内核层通过网络过滤器进行透明代理转发。即使在搭载 J4125、N100 或 ARM 架构 R5S/R6S 的入门级软路由上，也能在低 CPU 占用率下跑满千兆出海带宽。
+- **全协议现代内核原生支持**：支持 Xray-core、Sing-box、V2ray-core 等多个底层核心切换。完美支持 VLESS-Reality、Hysteria2、TUIC v5、Trojan、Shadowsocks 2022 等前沿抗封锁协议。
+- **多节点分流与负载均衡**：支持将 TCP 流量与 UDP 流量分配给不同的节点（例如 TCP 走香港观看网页，UDP 走日本打游戏）。支持按域名后缀、国家 IP、进程规则进行多出口分流与主备节点故障自动切换（Failover）。
+- **纯粹的 DNS 分流引擎**：内建 ChinaDNS-NG / Dnsmasq 智能分流，彻底杜绝 DNS 污染，同时保证国内网站秒级直连解析。
 
 ---
 
@@ -65,8 +67,8 @@ PassWall 专为路由器低资源环境设计，直接调用底层 iptables / nf
 在安装 PassWall 插件前，必须确认软路由的处理器架构，以便下载正确的安装包。
 
 ### 1. 登录 OpenWRT 的 SSH 终端后台
-*   **Windows 用户**：使用 PowerShell、PuTTY 或 CMD。
-*   **Mac 用户**：打开自带的“终端 (Terminal)”。
+- **Windows 用户**：使用 PowerShell、PuTTY 或 CMD。
+- **Mac 用户**：打开自带的“终端 (Terminal)”。
 
 输入连接命令（假设软路由后台 IP 为 `192.168.1.1`）：
 ```bash
@@ -121,9 +123,9 @@ opkg install kmod-nft-tproxy kmod-nft-nat nftables
 ### 1. 下载 PassWall 核心安装包
 
 从官方 GitHub Releases 仓库（如 `xiaorouji/openwrt-passwall`）下载以下两到三个 `.ipk` 文件：
-*   `luci-app-passwall_xxx_all.ipk`（Web 交互界面）
-*   `luci-i18n-passwall-zh-cn_xxx_all.ipk`（中文语言包）
-*   `xray-core_xxx_架构.ipk` 或 `sing-box_xxx_架构.ipk`（底层代理内核）
+- `luci-app-passwall_xxx_all.ipk`（Web 交互界面）
+- `luci-i18n-passwall-zh-cn_xxx_all.ipk`（中文语言包）
+- `xray-core_xxx_架构.ipk` 或 `sing-box_xxx_架构.ipk`（底层代理内核）
 
 ### 2. 上传并执行安装
 
@@ -169,18 +171,18 @@ opkg install *.ipk
 ### 1. 主运行模式设置（基本设置）
 
 进入 PassWall 的 **“基本设置”** 页面：
-*   **TCP 节点**：从下拉列表中，选择一个延迟低、稳定性高的主力专线节点（如“香港 01 专线”）。
-*   **UDP 节点**：选择“与 TCP 节点相同”（或单独指定一个支持 FullCone 的低延迟节点）。
-*   **运行模式**：选择 **“中国列表以外 (Bypass Mainland IP / GFWList)”**。这样设置后，所有访问国内百度、淘宝、微信的流量均走物理直连，访问境外网站才经过节点，省流且极速。
+- **TCP 节点**：从下拉列表中，选择一个延迟低、稳定性高的主力专线节点（如“香港 01 专线”）。
+- **UDP 节点**：选择“与 TCP 节点相同”（或单独指定一个支持 FullCone 的低延迟节点）。
+- **运行模式**：选择 **“中国列表以外 (Bypass Mainland IP / GFWList)”**。这样设置后，所有访问国内百度、淘宝、微信的流量均走物理直连，访问境外网站才经过节点，省流且极速。
 
 ### 2. DNS 防污染精细化配置
 
 点击进入 **“DNS”** 选项卡：
-*   **过滤模式**：推荐选择 **“ChinaDNS-NG”**（性能最好、分流最准）。
-*   **国内 DNS 服务器 (Direct DNS)**：填入 `223.5.5.5`（阿里公共 DNS）或 `119.29.29.29`（腾讯 DNS）。
-*   **远程 DNS 服务器 (Remote DNS)**：填入 `8.8.8.8` 或 `1.1.1.1`，或者勾选走 TCP 查询。
-*   **启用 DNS 缓存**：勾选开启，避免相同域名反复查询造成延迟。
-*   点击 **“保存并应用”**。
+- **过滤模式**：推荐选择 **“ChinaDNS-NG”**（性能最好、分流最准）。
+- **国内 DNS 服务器 (Direct DNS)**：填入 `223.5.5.5`（阿里公共 DNS）或 `119.29.29.29`（腾讯 DNS）。
+- **远程 DNS 服务器 (Remote DNS)**：填入 `8.8.8.8` 或 `1.1.1.1`，或者勾选走 TCP 查询。
+- **启用 DNS 缓存**：勾选开启，避免相同域名反复查询造成延迟。
+- 点击 **“保存并应用”**。
 
 ---
 
@@ -190,13 +192,13 @@ opkg install *.ipk
 
 ### 1. Apple TV 4K 流媒体防锁区设置
 
-*   在 PassWall 的 **“高级设置”** 中，开启 **“防止 DNS 泄漏”**。
-*   在**“规则管理”**中，确保 Netflix、Disney+ 等海外流媒体域名被严格匹配至解锁节点，避免因 CDN IP 漂移导致锁区。
+- 在 PassWall 的 **“高级设置”** 中，开启 **“防止 DNS 泄漏”**。
+- 在**“规则管理”**中，确保 Netflix、Disney+ 等海外流媒体域名被严格匹配至解锁节点，避免因 CDN IP 漂移导致锁区。
 
 ### 2. PS5 / Xbox / Switch 游戏联机 NAT 优化
-*   **开启 FullCone NAT**：前往 OpenWRT 的“网络 -> 防火墙”，确保勾选了“FullCone NAT”。
-*   在 PassWall 中，将 **“UDP 代理模式”** 设为 **“TProxy”**。
-*   这样能将游戏主机的联机网络质量提升为 NAT Type 2 (开放型)，彻底解决匹配不到玩家或游戏频繁断线的问题。
+- **开启 FullCone NAT**：前往 OpenWRT 的“网络 -> 防火墙”，确保勾选了“FullCone NAT”。
+- 在 PassWall 中，将 **“UDP 代理模式”** 设为 **“TProxy”**。
+- 这样能将游戏主机的联机网络质量提升为 NAT Type 2 (开放型)，彻底解决匹配不到玩家或游戏频繁断线的问题。
 
 ---
 
@@ -204,22 +206,22 @@ opkg install *.ipk
 
 ### Q1: 执行 opkg install 安装 PassWall 时提示 Unknown package / Cannot find dependency？
 
-*   **原因**：您的 OpenWRT 固件内置软件源缺少对应的依赖包。
-*   **解决**：检查软路由是否已经连通互联网，先执行 `opkg update`。如果官方源失效，可在 GitHub 下载对应的离线依赖包（如 `iptables-mod-tproxy` 的 ipk）一并上传安装。
+- **原因**：您的 OpenWRT 固件内置软件源缺少对应的依赖包。
+- **解决**：检查软路由是否已经连通互联网，先执行 `opkg update`。如果官方源失效，可在 GitHub 下载对应的离线依赖包（如 `iptables-mod-tproxy` 的 ipk）一并上传安装。
 
 ### Q2: 导入机场订阅并开启后，节点测速全显示 Timeout（超时），无法翻墙？
 
-*   **排查 1（系统时间误差）**：现代加密协议（VLESS-Reality 等）对时间戳校验极其严格。前往 OpenWRT “系统” -> “系统属性”，点击“同步浏览器时间”或配置正确的 NTP 服务器，确保误差小于 30 秒。
-*   **排查 2（核心 Core 未启动）**：检查 PassWall 状态栏中的“Xray 状态”是否显示为“运行中”。若未运行，说明上传的 Core 内核架构不匹配，需重新下载对应 CPU 架构的核心文件。
+- **排查 1（系统时间误差）**：现代加密协议（VLESS-Reality 等）对时间戳校验极其严格。前往 OpenWRT “系统” -> “系统属性”，点击“同步浏览器时间”或配置正确的 NTP 服务器，确保误差小于 30 秒。
+- **排查 2（核心 Core 未启动）**：检查 PassWall 状态栏中的“Xray 状态”是否显示为“运行中”。若未运行，说明上传的 Core 内核架构不匹配，需重新下载对应 CPU 架构的核心文件。
 
 ### Q3: 开启 PassWall 后，手机连接 Wi-Fi 访问国内 App（如微信、淘宝、抖音）特别卡？
 
-*   **原因**：DNS 分流配置错误，导致国内域名被送到了海外 DNS 解析，获取到了海外 CDN 节点。
-*   **解决**：检查 DNS 设置，确保国内 DNS 填入了 `223.5.5.5`，并且过滤模式选择了 ChinaDNS-NG。
+- **原因**：DNS 分流配置错误，导致国内域名被送到了海外 DNS 解析，获取到了海外 CDN 节点。
+- **解决**：检查 DNS 设置，确保国内 DNS 填入了 `223.5.5.5`，并且过滤模式选择了 ChinaDNS-NG。
 
 ### Q4: 软路由作为旁路由时，局域网设备无法上网？
-*   **原因**：防火墙转发规则缺失导致数据包被丢弃。
-*   **解决**：进入 OpenWRT “网络” -> “防火墙” -> “自定义规则”，在最下方添加以下指令并重启防火墙：
+- **原因**：防火墙转发规则缺失导致数据包被丢弃。
+- **解决**：进入 OpenWRT “网络” -> “防火墙” -> “自定义规则”，在最下方添加以下指令并重启防火墙：
    ```bash
    iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
    ```

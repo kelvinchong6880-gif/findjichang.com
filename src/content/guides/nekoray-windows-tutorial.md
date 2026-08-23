@@ -2,6 +2,8 @@
 title: "NekoRay Windows 版使用教程：支持 Xray/Sing-box 内核的轻量选择"
 description: "2026最新 NekoRay Windows 客户端使用教程，深入解析 Xray 与 Sing-box 双内核切换、订阅导入及 TUN 模式配置，打造极速、轻量的网络体验。"
 createdAt: 2026-08-23T05:00:00
+draft: true
+status: drafting
 primaryIntent: "提供详细的 NekoRay Windows 客户端下载、安装及双内核配置教程。"
 originalValue: "全面涵盖 Xray 与 Sing-box 核心切换、节点导入以及高级 Hysteria2 协议专属路由优化指南。"
 keywords:
@@ -26,11 +28,11 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: true
+  sourcesAttributed: false
   naturalLanguage: true
-  affiliateDisclosure: true
+  affiliateDisclosure: false
   headingStructure: true
-  imageAltText: true
+  imageAltText: false
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
@@ -41,32 +43,32 @@ bingChecklist:
 
 ## NekoRay 核心优势与双内核切换
 
-> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](/go/weifeng/?from=/guide/nekoray-windows-tutorial/&placement=article-end)。
 
 
 NekoRay 采用 Qt 框架开发，内存开销远低于市面上基于 Electron 框架的同类软件。其最大亮点在于可无缝切换底层内核，以适应不断演进的网络协议需求。
 
-*   **Xray 内核**：作为默认核心，对 VLESS-Reality 和 XTLS 协议支持极佳，具备极高的稳定性和出色的抗封锁能力，适合大流量与高并发传输。
-*   **Sing-box 内核**：新一代全能核心，原生提供对 Hysteria2 与 TUIC 协议的支持，在应对高延迟、高丢包的恶劣网络环境时提速效果显著。
-*   **切换方式**：进入软件顶部菜单的“首选项” > “基本设置” > “核心”选项卡，即可一键切换内核版本，重启软件后即刻生效。
+- **Xray 内核**：作为默认核心，对 VLESS-Reality 和 XTLS 协议支持极佳，具备极高的稳定性和出色的抗封锁能力，适合大流量与高并发传输。
+- **Sing-box 内核**：新一代全能核心，原生提供对 Hysteria2 与 TUIC 协议的支持，在应对高延迟、高丢包的恶劣网络环境时提速效果显著。
+- **切换方式**：进入软件顶部菜单的“首选项” > “基本设置” > “核心”选项卡，即可一键切换内核版本，重启软件后即刻生效。
 
 ### 节点订阅导入与 TUN 模式配置
 
 
 为确保快速建立连接，需按照标准流程配置机场订阅链接与系统的流量接管模式。
 
-*   **导入订阅**：点击菜单栏“首选项” > “分组”，新建一个分组，并在“URL”输入框内粘贴机场提供的通用订阅链接。
-*   **拉取节点**：回到主界面选中刚刚新建的分组，点击“更新订阅”，软件将自动解析配置文件并拉取服务器列表。
-*   **系统代理模式**：选中测速延迟最低的节点并回车激活，随后勾选主界面上方的“系统代理”，即可接管浏览器的基础网页浏览流量。
-*   **TUN 模式（进阶）**：右键以管理员身份运行 NekoRay，勾选“TUN 模式”可创建虚拟网卡，强制接管整台电脑所有软件（含外服网游、终端命令行）的网络请求。
+- **导入订阅**：点击菜单栏“首选项” > “分组”，新建一个分组，并在“URL”输入框内粘贴机场提供的通用订阅链接。
+- **拉取节点**：回到主界面选中刚刚新建的分组，点击“更新订阅”，软件将自动解析配置文件并拉取服务器列表。
+- **系统代理模式**：选中测速延迟最低的节点并回车激活，随后勾选主界面上方的“系统代理”，即可接管浏览器的基础网页浏览流量。
+- **TUN 模式（进阶）**：右键以管理员身份运行 NekoRay，勾选“TUN 模式”可创建虚拟网卡，强制接管整台电脑所有软件（含外服网游、终端命令行）的网络请求。
 
 #### 常见连接故障排查指南
 
 在日常使用中如遇网络波动或连接断开，请优先按照以下步骤进行自查：
 
-*   **系统时间校验**：高级防阻断协议强依赖时间戳。若节点大面积超时，需进入 Windows 设置，确保系统时间与网络标准时间误差小于 60 秒。
-*   **端口占用冲突**：若软件启动时直接报错，请进入“基本设置”，将本地监听端口（如默认的 2080）更改为其他冷门数字，并关闭后台其他代理工具。
-*   **路由分流重置**：若访问国内网站异常缓慢，请检查“路由”设置，确保正确勾选并应用了“绕过局域网与大陆 (Bypass LAN and Mainland)”规则。
+- **系统时间校验**：高级防阻断协议强依赖时间戳。若节点大面积超时，需进入 Windows 设置，确保系统时间与网络标准时间误差小于 60 秒。
+- **端口占用冲突**：若软件启动时直接报错，请进入“基本设置”，将本地监听端口（如默认的 2080）更改为其他冷门数字，并关闭后台其他代理工具。
+- **路由分流重置**：若访问国内网站异常缓慢，请检查“路由”设置，确保正确勾选并应用了“绕过局域网与大陆 (Bypass LAN and Mainland)”规则。
 
 ## NekoRay 针对特定协议（如 Hysteria2）的高级路由与优化配置
 

@@ -1,7 +1,9 @@
 ---
-title: "【2026最新】Clash Verge Rev Windows 版下载与配置保姆级教程 (替代已停更的 Clash for Windows)"
+title: "Clash Verge Rev Windows 版下载与配置保姆级教程 (替代已停更的 Clash for Window"
 description: "2026年最全面的 Clash Verge Rev Windows 电脑端使用教程。详细讲解如何从 GitHub 下载、安装汉化、一键导入机场订阅及开启 TUN 虚拟网卡模式。完美替代已停更的 Clash for Windows (CFW)，解决各类连不上网的疑难杂症，零基础新手也能轻松实现全网科学上网。"
 createdAt: 2026-08-23T02:00:00
+draft: true
+status: drafting
 primaryIntent: "提供最新的 Clash Verge Rev Windows 版下载与配置详细教程，帮助用户替代已停更的 CFW。"
 originalValue: "深度解析 Mihomo 内核优势，提供从零开始的保姆级配置图文解析与常见故障排除指南。"
 keywords:
@@ -23,11 +25,11 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: true
+  sourcesAttributed: false
   naturalLanguage: true
-  affiliateDisclosure: true
+  affiliateDisclosure: false
   headingStructure: true
-  imageAltText: true
+  imageAltText: false
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
@@ -51,7 +53,7 @@ author: 您的站点名称
 
 ## 一、 为什么 2026 年必须换用 Clash Verge Rev？
 
-> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](/go/weifeng/?from=/guide/clash-verge-rev-windows-tutorial-2026/&placement=article-end)。
 
 
 在开始实操之前，很多朋友会问：*“我的老版 Clash for Windows 还能勉强用，为什么要大费周章换新软件？”* 
@@ -84,9 +86,9 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 ### 2. Windows 版本应该选哪个？
 打开上述 Releases 页面后，你会看到众多安装包，Windows 用户请严格按照以下规则选择：
 
-*   **x64 系统（绝大多数现代电脑）**：下载 `Clash.Verge_x.x.x_x64-setup.exe`
-*   **ARM 架构系统（如部分 Surface 电脑）**：下载 `Clash.Verge_x.x.x_arm64-setup.exe`
-*   **便携版（放U盘里即插即用）**：下载 `Clash.Verge_x.x.x_x64_portable.zip`
+- **x64 系统（绝大多数现代电脑）**：下载 `Clash.Verge_x.x.x_x64-setup.exe`
+- **ARM 架构系统（如部分 Surface 电脑）**：下载 `Clash.Verge_x.x.x_arm64-setup.exe`
+- **便携版（放U盘里即插即用）**：下载 `Clash.Verge_x.x.x_x64_portable.zip`
 
 *(注：如果你不知道自己的系统架构，默认下载带 `x64-setup.exe` 后缀的文件绝对不会错。)*
 
@@ -158,13 +160,13 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 
 点击软件右上角的 **「代理模式」** 下拉菜单，你会看到三个选项，这是新手最容易踩坑的地方：
 
-*   **规则模式 (Rule) - ⭐ 强烈推荐日常使用**
+- **规则模式 (Rule) - ⭐ 强烈推荐日常使用**
     *   **原理**：软件内置了一套智能分流规则。当你在浏览器访问国内网站（如百度、淘宝）时，流量直连，不消耗机场流量；当你访问海外网站（如 Google、YouTube）时，自动走代理节点。
     *   **优点**：兼顾速度与流量，国内外互不影响，挂机首选。
-*   **全局模式 (Global) - 特殊场景使用**
+- **全局模式 (Global) - 特殊场景使用**
     *   **原理**：电脑所有的流量强制走代理节点。
     *   **缺点**：访问国内网站会非常慢，甚至打不开，且极大浪费你的机场流量。仅在测试节点或某些特定海外网站无法用规则模式打开时临时使用。
-*   **直连模式 (Direct) - 相当于关闭代理**
+- **直连模式 (Direct) - 相当于关闭代理**
     *   **原理**：全部流量均不经过代理，等同于没开软件。
 
 **👉 总结：请务必将代理模式保持在「规则 (Rule)」。**
@@ -183,9 +185,9 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 ### 什么是 TUN 模式？为什么你需要它？
 
 默认的“系统代理”模式只能接管浏览器的流量，但很多电脑软件是**不走系统代理**的！例如：
-*   **命令行工具**：CMD、PowerShell、Git 终端。
-*   **各类游戏**：Steam 外服游戏、Epic 平台。
-*   **特殊应用**：Telegram 桌面版（未设内建代理时）、部分 UWP 微软商店应用、Discord 语音。
+- **命令行工具**：CMD、PowerShell、Git 终端。
+- **各类游戏**：Steam 外服游戏、Epic 平台。
+- **特殊应用**：Telegram 桌面版（未设内建代理时）、部分 UWP 微软商店应用、Discord 语音。
 
 **TUN 模式** 会在你的 Windows 系统里虚拟出一张网卡，**强行接管电脑底层的所有网络流量**，实现真正的“真·全局路由分流”。
 
@@ -209,32 +211,32 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 
 ### Q1: 软件关闭后，电脑连不上网，显示“未连接到互联网”？
 
-*   **原因**：这是 Windows 系统的通病。非正常关闭 Clash（如直接结束进程或闪退）导致系统的代理开关没有自动复位。
-*   **解决方法**：
+- **原因**：这是 Windows 系统的通病。非正常关闭 Clash（如直接结束进程或闪退）导致系统的代理开关没有自动复位。
+- **解决方法**：
     1. 按键盘上的 `Win + i` 打开系统设置。
     2. 进入 **「网络和 Internet」** -> **「代理」**。
     3. 找到 **「使用代理服务器」**，将其手动关闭即可恢复正常上网。
 
 ### Q2: 导入订阅链接时报错“网络错误”或“Timeout”？
 
-*   **排查步骤**：
+- **排查步骤**：
     1. 检查订阅链接是否复制完整，前后不要有空格。
     2. 你的本地宽带可能屏蔽了机场的订阅域名。尝试在手机上使用流量开启热点，让电脑连上手机热点后再点击“更新订阅”。
     3. **检查电脑系统时间**：非常重要！如果你的 Windows 电脑时间与国际标准时间误差超过 2 分钟，SSL 证书握手就会失败，导致无法下载。请在系统设置中“同步时钟”。
 
 ### Q3: 为什么所有节点的延迟都显示 `Timeout` 或红色的 `-1`？
-*   **排查步骤**：
+- **排查步骤**：
     1. 首先确认你的机场套餐是否已经过期，或者本月流量是否已经耗尽（登录机场后台查看）。
     2. 尝试点击订阅卡片上的 **「更新」** 按钮，获取服务商最新的节点 IP（因为旧 IP 可能已被 GFW 封锁）。
     3. 如果是在公司局域网或校园网，可能是防火墙拦截了特定端口，建议开启 TUN 模式或联系机场客服寻求专线节点。
 
 ### Q4: 能够访问 Google，但无法观看 Netflix 或 ChatGPT 提示所在地区不可用？
-*   **原因**：这并非软件问题，而是你选择的节点 IP 被这些平台拉黑了。
-*   **解决方法**：回到 **「代理」** 界面，手动将节点切换到原生 IP 节点（通常机场会标注解锁流媒体/GPT，建议尝试新加坡或台湾节点），并在浏览器中使用隐身模式重新打开网页。
+- **原因**：这并非软件问题，而是你选择的节点 IP 被这些平台拉黑了。
+- **解决方法**：回到 **「代理」** 界面，手动将节点切换到原生 IP 节点（通常机场会标注解锁流媒体/GPT，建议尝试新加坡或台湾节点），并在浏览器中使用隐身模式重新打开网页。
 
 ### Q5: 提示“端口冲突 (Port in use)”？
-*   **原因**：你电脑上同时运行了其他代理软件（如 v2rayN、老版 CFW），占用了 7890 端口。
-*   **解决方法**：完全退出其他代理软件，或者在 Verge 的“设置”中，将“混合端口 (Mixed Port)”修改为 `7891` 或其他数字，然后重启应用。
+- **原因**：你电脑上同时运行了其他代理软件（如 v2rayN、老版 CFW），占用了 7890 端口。
+- **解决方法**：完全退出其他代理软件，或者在 Verge 的“设置”中，将“混合端口 (Mixed Port)”修改为 `7891` 或其他数字，然后重启应用。
 
 ---
 
