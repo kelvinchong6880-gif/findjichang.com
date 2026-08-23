@@ -41,8 +41,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 新一代翻墙神器：Sing-box Windows 客户端新手配置与节点导入指南（2026最新版）
-
 如果你一直在关注科学上网技术的演进，那你一定在各大技术论坛或机场群组里频繁听到一个名字——**Sing-box**。
 
 在 2026 年的今天，传统的 Clash 和 V2rayN 虽然依然有其受众，但面对日益复杂的网络封锁（GFW）和用户对极限速度的追求，我们需要一款更加现代、性能更极致的工具。被称为“代理界瑞士军刀”的 Sing-box 凭借其无可匹敌的全协议支持和极低的内存占用，迅速成为了极客与进阶玩家眼中的“新一代翻墙神器”。
@@ -68,15 +66,11 @@ bingChecklist:
     由于采用了高度优化的代码架构，Sing-box 在处理万兆级别并发流量时，CPU 和内存的占用率甚至不到传统代理软件的一半。对 Windows 笔记本用户极其友好，后台长期挂机几乎零功耗。
 ### 3. 强大的规则系统 (Rule-Set)
 
-<img src="/images/guides/placeholder.jpg" alt="强大的规则系统 (Rule-Set)截图" width="600" />
-
     它拥有比 Clash 更加灵活和模块化的路由分流系统，支持通过源 IP、目标域名、进程名称（Process Name）进行精准的流量管控。
 
 ---
 
 ## 二、 Windows 客户端选型避坑：GUI 到底选哪个？
-
-<img src="/images/guides/placeholder.jpg" alt="Windows 客户端选型避坑：GUI 到底选哪个？截图" width="600" />
 
 
 既然 Sing-box 是一个“没有界面的底层命令行核心”，那么 Windows 普通用户该怎么用呢？
@@ -97,14 +91,10 @@ bingChecklist:
 
 ## 三、 GUI.for.SingBox 下载与安装部署
 
-<img src="/images/guides/placeholder.jpg" alt="GUI.for.SingBox 下载与安装部署截图" width="600" />
-
 
 > ⚠️ **网络安全提示**：请务必只从开源平台 GitHub 下载客户端，不要轻信搜索引擎广告中所谓的“Sing-box 绿色汉化版”，以防电脑被植入木马。
 
 ### 步骤 1：获取官方安装包
-
-<img src="/images/guides/placeholder.jpg" alt="步骤 1：获取官方安装包截图" width="600" />
 
 1.  打开浏览器，访问项目官方发布页：`https://github.com/GUI-for-Cores/GUI.for.SingBox/releases`
 2.  在最新版本（Latest）下，找到适合 Windows 系统的压缩包。
@@ -117,8 +107,6 @@ bingChecklist:
 
 ### 步骤 3：下载 Sing-box 内核（核心步骤）
 
-<img src="/images/guides/placeholder.jpg" alt="步骤 3：下载 Sing-box 内核（核心步骤）截图" width="600" />
-
 GUI 只是一个外壳，第一次启动我们需要让它下载真正的“发动机”。
 1.  打开软件主界面，点击左侧导航栏最下方的 **「设置 (Settings)」**。
 2.  找到 **「内核 (Core)」** 选项卡。
@@ -129,22 +117,16 @@ GUI 只是一个外壳，第一次启动我们需要让它下载真正的“发�
 
 ## 四、 核心实操：导入机场订阅与节点连通
 
-<img src="/images/guides/placeholder.jpg" alt="核心实操：导入机场订阅与节点连通截图" width="600" />
-
 
 环境配置好后，我们需要将机场服务商提供的“节点订阅”导入到软件中。
 
 ### 1. 获取专属订阅链接
-
-<img src="/images/guides/placeholder.jpg" alt="获取专属订阅链接截图" width="600" />
 
 登录您所购买的机场服务官网，进入后台面板。由于 Sing-box 兼容性极强，您通常可以复制以下两种链接之一：
 *   **Sing-box 专用订阅链接**（如果有提供，最完美）。
 *   **Clash 订阅链接**（GUI.for.SingBox 内置了转换器，可完美解析 Clash 的 YAML 格式配置）。
 
 ### 2. 在软件中添加订阅
-
-<img src="/images/guides/placeholder.jpg" alt="在软件中添加订阅截图" width="600" />
 
 1.  回到 GUI.for.SingBox 界面，点击左侧菜单栏的 **「订阅 (Profiles / Subscriptions)」**。
 2.  点击顶部或右上角的 **「新建 (Add)」** 按钮。
@@ -156,43 +138,29 @@ GUI 只是一个外壳，第一次启动我们需要让它下载真正的“发�
 
 ### 3. 下载配置并激活
 
-<img src="/images/guides/placeholder.jpg" alt="下载配置并激活截图" width="600" />
-
 1.  在新建的订阅卡片上，点击 **「更新 (Update)」** 按钮。
 2.  稍微等待几秒，下方日志会提示获取成功。
 ### 3. 右键点击该订阅卡片，选择 **「启动 / 激活 (Start/Enable)」**。此时，该订阅即成为您当前的运行配置。
-
-<img src="/images/guides/placeholder.jpg" alt="右键点击该订阅卡片，选择 **「启动 / 激活 (Start/Enable)」**。此时，该订阅即成为您当前的运行配置。截图" width="600" />
 
 
 ---
 
 ## 五、 路由分流与 TUN 模式（虚拟网卡）详解
 
-<img src="/images/guides/placeholder.jpg" alt="路由分流与 TUN 模式（虚拟网卡）详解截图" width="600" />
-
 
 连接节点后，我们还差最后一步：让浏览器的流量乖乖走进 Sing-box 的代理通道。在 Sing-box 中，最高效的接管方式是直接开启 **TUN 模式**。
 
 ### 什么是 TUN 模式？
 
-<img src="/images/guides/placeholder.jpg" alt="什么是 TUN 模式？截图" width="600" />
-
 传统的系统代理（System Proxy）经常会被一些不听话的软件（如命令行 CMD、Steam 外服游戏、部分 UWP 应用）无视。而 TUN 模式会在系统底层创建一张**虚拟网卡**，强制接管电脑所有的网络请求。结合 Sing-box 强大的路由规则，可以完美实现“国内直连，国外代理”。（注：若您不喜欢折腾，也可以尝试 [Clash Verge Rev 教程](/guide/clash-verge-rev-windows-tutorial-2026) 里的傻瓜式开启方法）。
 
 ### 开启 TUN 模式的步骤：
 
-<img src="/images/guides/placeholder.jpg" alt="开启 TUN 模式的步骤：截图" width="600" />
-
 ### 1. 管理员权限运行TUN 模式需要更改系统网络设置。请彻底退出软件，右键点击 `GUI.for.SingBox.exe`，选择 **「以管理员身份运行」**。
-
-<img src="/images/guides/placeholder.jpg" alt="管理员权限运行TUN 模式需要更改系统网络设置。请彻底退出软件，右键点击 `GUI.for.SingBox.exe`，选择 **「以管理员身份运行」**。截图" width="600" />
 
 2.  在软件左侧菜单找到 **「设置 (Settings)」** -> **「网络 (Network/TUN)」**。
 3.  勾选/开启 **「启用 TUN (Enable TUN)」** 开关。
 ### 4. 路由配置 (Routing)确保您的路由规则（Rule-set）选择了类似 `绕过局域网和大陆 (Bypass LAN & Mainland China)`。这样访问国内的淘宝、抖音流量会直接从本地网卡出去，不消耗机场流量，也不影响国内网速。
-
-<img src="/images/guides/placeholder.jpg" alt="路由配置 (Routing)确保您的路由规则（Rule-set）选择了类似 `绕过局域网和大陆 (Bypass LAN & Mainland China)`。这样访问国内的淘宝、抖音流量会直接从本地网卡出去，不消耗机场流量，也不影响国内网速。截图" width="600" />
 
 5.  点击左侧导航的 **「主页 (Home)」**，点击巨大的 **「启动 (Start)」** 按钮！
 
@@ -206,12 +174,8 @@ Sing-box GUI 提供了非常直观的控制面板：
 
 ### 1. 节点测速点击左侧的 **「代理 (Proxies)」**，您可以看到所有导入的节点。点击面板上的 ⚡（闪电图标），软件会对所有节点进行真连接测试（基于 URL Test）。
 
-<img src="/images/guides/placeholder.jpg" alt="节点测速点击左侧的 **「代理 (Proxies)」**，您可以看到所有导入的节点。点击面板上的 ⚡（闪电图标），软件会对所有节点进行真连接测试（基于 URL Test）。截图" width="600" />
-
 ### 2. 手动切换节点在 `Proxy` 或 `Select` 分组中，您可以直观地看到每个节点的延迟。点击绿色低延迟的节点（如包含 Hysteria2、TUIC 或 VLESS-Reality 标识的节点），即可瞬间无缝切换。
 ### 3. 实时流量监控在 **「主页 (Home)」** 或 **「连接 (Connections)」** 页面，您可以实时看到当前电脑里有哪些软件（进程）正在访问哪些海外域名，极大方便了网络极客排查偷偷消耗流量的后台程序。
-
-<img src="/images/guides/placeholder.jpg" alt="实时流量监控在 **「主页 (Home)」** 或 **「连接 (Connections)」** 页面，您可以实时看到当前电脑里有哪些软件（进程）正在访问哪些海外域名，极大方便了网络极客排查偷偷消耗流量的后台程序。截图" width="600" />
 
 
 ---
@@ -222,8 +186,6 @@ Sing-box GUI 提供了非常直观的控制面板：
 
 ### Q1：点击更新订阅，提示 `Fetch error` 或 `Timeout`（超时）？
 
-<img src="/images/guides/placeholder.jpg" alt="Q1：点击更新订阅，提示 `Fetch error` 或 `Timeout`（超时）？截图" width="600" />
-
 *   **诊断**：本地网络（特别是移动宽带）阻断了机场的订阅域名，导致配置文件下载失败。
 *   **解决对策**：先用手机 4G/5G 网络开启热点，电脑连接热点后再点击“更新订阅”。配置文件拉取到本地后，再切回原本的宽带网络即可。
 
@@ -233,14 +195,10 @@ Sing-box GUI 提供了非常直观的控制面板：
 
 ### Q3：报错 `bind: An attempt was made to access a socket in a way forbidden by its access permissions`？
 
-<img src="/images/guides/placeholder.jpg" alt="Q3：报错 `bind: An attempt was made to access a socket in a way forbidden by its access permissions`？截图" width="600" />
-
 *   **诊断**：端口冲突。您电脑上可能同时开着 Clash、V2rayN 或其他占用默认代理端口（如 7890/1080）的软件。
 *   **解决对策**：彻底退出其他所有翻墙或加速器软件。或者在 Sing-box 的设置中，将入站（Inbound）的监听端口修改为 `7899` 等冷门端口。
 
 ### Q4：遇到不兼容的 JSON 配置文件怎么办？
-
-<img src="/images/guides/placeholder.jpg" alt="Q4：遇到不兼容的 JSON 配置文件怎么办？截图" width="600" />
 
 *   **诊断**：部分老旧机场提供的单纯是 V2ray 的 JSON，Sing-box 无法直接识别其底层格式。
 *   **解决对策**：请联系机场客服更新配置，或使用社区开源的 `Clash/V2ray to Sing-box` 在线订阅转换器，将您的链接转化为标准的 Sing-box Rule-set 格式再导入。

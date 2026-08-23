@@ -41,8 +41,6 @@ tags:
 author: 您的站点名称
 ---
 
-# 【2026最新】Clash Verge Rev Windows 版下载与配置保姆级教程 (完美替代 Clash for Windows)
-
 如果你是一位长期依赖 Windows 系统进行办公、开发或查阅海外资料的用户，那你一定对 **Clash for Windows (CFW)** 不陌生。然而，随着原作者删库停更，CFW 已逐渐无法适应 2026 年复杂多变的网络封锁环境，不仅存在安全隐患，更无法支持 Hysteria2、VLESS 等新一代抗封锁协议。
 
 在这个背景下，**Clash Verge Rev** 强势崛起，成为了目前 Windows 平台上最完美、最强大的代理客户端替代品。
@@ -75,14 +73,10 @@ author: 您的站点名称
 
 ## 二、 Clash Verge Rev 官方下载指北（防钓鱼）
 
-<img src="/images/guides/placeholder.jpg" alt="Clash Verge Rev 官方下载指北（防钓鱼）截图" width="600" />
-
 
 > ⚠️ **站长严正警告**：千万不要在搜索引擎上随意搜索“Clash Verge 下载”，网络上充斥着大量伪装成官方的钓鱼网站（通常带有木马或篡改了后门）。请务必通过下方的官方渠道或本站提供的安全链接进行下载。
 
 ### 1. 官方 GitHub 下载渠道
-
-<img src="/images/guides/placeholder.jpg" alt="官方 GitHub 下载渠道截图" width="600" />
 
 Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 GitHub。
 - **项目地址**：`https://github.com/clash-verge-rev/clash-verge-rev/releases`
@@ -100,12 +94,8 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 
 ## 三、 软件安装与基础初始化（界面汉化与内核设置）
 
-<img src="/images/guides/placeholder.jpg" alt="软件安装与基础初始化（界面汉化与内核设置）截图" width="600" />
-
 
 ### 第一步：安装软件
-
-<img src="/images/guides/placeholder.jpg" alt="第一步：安装软件截图" width="600" />
 
 1. 双击下载好的 `.exe` 安装包。
 2. 遇到 Windows Defender 拦截提示时，点击 **“更多信息”** -> **“仍要运行”**。
@@ -128,14 +118,10 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 
 ## 四、 核心操作：如何导入机场订阅链接？
 
-<img src="/images/guides/placeholder.jpg" alt="核心操作：如何导入机场订阅链接？截图" width="600" />
-
 
 客户端只是一个“空壳播放器”，要让它连上网络，你需要导入我们机场提供的“订阅链接（节点播单）”。
 
 ### 方式一：一键快速导入（最推荐，防出错）
-
-<img src="/images/guides/placeholder.jpg" alt="方式一：一键快速导入（最推荐，防出错）截图" width="600" />
 
 1. 登录本机场的网站后台，进入 **「用户中心」**。
 2. 找到 **「一键订阅」** 或 **「快速导入」** 区域。
@@ -145,8 +131,6 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 
 ### 方式二：手动复制订阅链接（备用方案）
 
-<img src="/images/guides/placeholder.jpg" alt="方式二：手动复制订阅链接（备用方案）截图" width="600" />
-
 如果一键导入没有反应，请使用手动导入方式：
 1. 在机场后台，点击 **「复制 Clash 订阅链接」**。
 2. 打开 Clash Verge Rev 软件，点击左侧菜单栏的 **「订阅 (Profiles)」**。
@@ -155,14 +139,10 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 5. 等待几秒钟，下方会出现一个带有节点数量和流量信息的长条形卡片。
 ### 6. 👉 注意：用鼠标左键点击一下这张卡片，让它的背景色变亮，出现一个 ✅ 的标志，代表该订阅已激活。
 
-<img src="/images/guides/placeholder.jpg" alt="👉 注意：用鼠标左键点击一下这张卡片，让它的背景色变亮，出现一个 ✅ 的标志，代表该订阅已激活。截图" width="600" />
-
 
 ---
 
 ## 五、 代理模式详解与节点选择
-
-<img src="/images/guides/placeholder.jpg" alt="代理模式详解与节点选择截图" width="600" />
 
 
 订阅导入成功后，我们还需要告诉软件“怎么用这些节点”。
@@ -175,8 +155,6 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 5. 选择一个带有绿色延迟数字的节点（推荐香港、日本、新加坡等亚洲节点，延迟低、速度快）。
 
 ### 2. 切换代理模式（非常关键）
-
-<img src="/images/guides/placeholder.jpg" alt="切换代理模式（非常关键）截图" width="600" />
 
 点击软件右上角的 **「代理模式」** 下拉菜单，你会看到三个选项，这是新手最容易踩坑的地方：
 
@@ -201,12 +179,8 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 
 ## 六、 高阶必修课：TUN 虚拟网卡模式怎么开？
 
-<img src="/images/guides/placeholder.jpg" alt="高阶必修课：TUN 虚拟网卡模式怎么开？截图" width="600" />
-
 
 ### 什么是 TUN 模式？为什么你需要它？
-
-<img src="/images/guides/placeholder.jpg" alt="什么是 TUN 模式？为什么你需要它？截图" width="600" />
 
 默认的“系统代理”模式只能接管浏览器的流量，但很多电脑软件是**不走系统代理**的！例如：
 *   **命令行工具**：CMD、PowerShell、Git 终端。
@@ -216,8 +190,6 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 **TUN 模式** 会在你的 Windows 系统里虚拟出一张网卡，**强行接管电脑底层的所有网络流量**，实现真正的“真·全局路由分流”。
 
 ### TUN 模式开启步骤：
-
-<img src="/images/guides/placeholder.jpg" alt="TUN 模式开启步骤：截图" width="600" />
 
 1. 关闭所有正在运行的代理软件和其他 VPN，以防冲突。
 2. 打开 Clash Verge Rev，进入 **「设置」**。
@@ -237,8 +209,6 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 
 ### Q1: 软件关闭后，电脑连不上网，显示“未连接到互联网”？
 
-<img src="/images/guides/placeholder.jpg" alt="Q1: 软件关闭后，电脑连不上网，显示“未连接到互联网”？截图" width="600" />
-
 *   **原因**：这是 Windows 系统的通病。非正常关闭 Clash（如直接结束进程或闪退）导致系统的代理开关没有自动复位。
 *   **解决方法**：
     1. 按键盘上的 `Win + i` 打开系统设置。
@@ -246,8 +216,6 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
     3. 找到 **「使用代理服务器」**，将其手动关闭即可恢复正常上网。
 
 ### Q2: 导入订阅链接时报错“网络错误”或“Timeout”？
-
-<img src="/images/guides/placeholder.jpg" alt="Q2: 导入订阅链接时报错“网络错误”或“Timeout”？截图" width="600" />
 
 *   **排查步骤**：
     1. 检查订阅链接是否复制完整，前后不要有空格。
@@ -271,8 +239,6 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 ---
 
 ## 八、 进阶技巧：利用 Merge 处理自定义规则
-
-<img src="/images/guides/placeholder.jpg" alt="进阶技巧：利用 Merge 处理自定义规则截图" width="600" />
 
 
 对于高阶用户，如果你想在机场订阅的基础上，强制某款国服游戏直连，或者强制某个小众海外网站走代理，可以通过 Clash Verge Rev 强大的 **Merge（合并配置）** 功能实现。

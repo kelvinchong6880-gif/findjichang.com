@@ -43,8 +43,6 @@ tags:
 author: 找机场
 ---
 
-# 【2026最新】V2rayN 客户端下载与节点订阅导入图文教程（完美支持 Vmess/VLESS/Trojan）
-
 在 Windows 电脑端的科学上网工具生态中，如果说 Clash 系列以其华丽的界面和规则生态闻名，那么 **V2rayN** 绝对是凭借其**极低的系统资源占用**、**对前沿底层协议的极速跟进**以及**强大的自定义能力**，稳坐代理客户端的“泰山北斗”之位。
 
 无论你是用来进行学术查阅、跨境电商运营，还是仅仅为了流畅观看 4K YouTube 视频，熟练掌握 V2rayN 的配置都是一项必备技能。进入 2026 年，随着防火墙（GFW）的不断升级，诸如 VLESS (Reality/XTLS) 和 Trojan 等新一代协议成为了主流。
@@ -64,14 +62,10 @@ author: 找机场
 ### 2. 轻量纯粹，极低内存占用采用 C# WPF 编写，相比基于 Electron/Tauri 框架开发的软件，V2rayN 即使在老旧的 Windows 7/10 电脑上长期后台挂机，也不会造成任何卡顿。
 ### 3. 极客级别的自定义空间允许用户深入修改底层 JSON 配置，自定义复杂的路由规则（Routing）和 DNS 劫持策略，满足高级网络工程师的需求。
 
-<img src="/images/guides/placeholder.jpg" alt="极客级别的自定义空间允许用户深入修改底层 JSON 配置，自定义复杂的路由规则（Routing）和 DNS 劫持策略，满足高级网络工程师的需求。截图" width="600" />
-
 
 ---
 
 ## 二、 V2rayN 官方安全下载与环境安装准备
-
-<img src="/images/guides/placeholder.jpg" alt="V2rayN 官方安全下载与环境安装准备截图" width="600" />
 
 
 > ⚠️ **安全警告**：请警惕搜索引擎中各类伪装成“V2rayN中文官网”的流氓下载站。此类站点提供的安装包大概率被植入了挖矿木马或恶意插件。请务必认准 GitHub 官方发布源。
@@ -82,16 +76,12 @@ V2rayN 是基于微软 .NET 框架开发的。如果您的电脑是较新的 Win
 
 ### 2. 官方 GitHub 下载流程
 
-<img src="/images/guides/placeholder.jpg" alt="官方 GitHub 下载流程截图" width="600" />
-
 1. 访问 V2rayN 官方开源仓库的 Releases 页面：`https://github.com/2dust/v2rayN/releases`
 2. 在最新版本（Latest）下方的 `Assets` 列表中，您会看到多个压缩包，请务必认准以下规则：
    *   **推荐下载**：`v2rayN-With-Core.zip`（包含软件主体 + 所有必须的底层核心如 Xray、v2fly 等，**新手必选**，解压即用）。
    *   不推荐：`v2rayN.zip`（仅含软件外壳，需要手动配置 Core 核心，操作繁琐）。
 
 ### 3. 解压与启动规则
-
-<img src="/images/guides/placeholder.jpg" alt="解压与启动规则截图" width="600" />
 
 1. 将下载的 `v2rayN-With-Core.zip` 压缩包解压到一个**没有中文、没有空格**的路径下（例如 `D:\Software\v2rayN\`）。
    * *错误示范*：`C:\Users\张三的电脑\新建文件夹\v2rayN`（中文路径会导致软件底层核心无法读取配置，直接罢工）。
@@ -102,20 +92,14 @@ V2rayN 是基于微软 .NET 框架开发的。如果您的电脑是较新的 Win
 
 ## 三、 核心实操：导入机场节点订阅（Vmess/VLESS/Trojan通用）
 
-<img src="/images/guides/placeholder.jpg" alt="核心实操：导入机场节点订阅（Vmess/VLESS/Trojan通用）截图" width="600" />
-
 
 绝大多数优质机场（包括本站推荐服务）都会提供一键订阅链接。通过订阅，你可以将几十上百个节点一次性同步到软件中。
 
 ### 步骤 1：获取订阅链接
 
-<img src="/images/guides/placeholder.jpg" alt="步骤 1：获取订阅链接截图" width="600" />
-
 登录您的机场网站后台，进入“用户中心”或“仪表盘”，找到 **“复制 V2ray 订阅链接”** 或 **“复制通用订阅”**。这通常是一串以 `http://` 或 `https://` 开头的长网址。
 
 ### 步骤 2：在 V2rayN 中添加订阅
-
-<img src="/images/guides/placeholder.jpg" alt="步骤 2：在 V2rayN 中添加订阅截图" width="600" />
 
 1. 打开 V2rayN 主界面。
 2. 点击顶部菜单栏的 **「订阅分组 (Subscription)」** -> 选择 **「订阅分组设置」**。
@@ -135,8 +119,6 @@ V2rayN 是基于微软 .NET 框架开发的。如果您的电脑是较新的 Win
 
 ## 四、 激活代理与路由规则设置（小白必看）
 
-<img src="/images/guides/placeholder.jpg" alt="激活代理与路由规则设置（小白必看）截图" width="600" />
-
 
 节点导入了，不代表你马上就能上 Google。我们还需要进行分流与系统代理的设置。
 
@@ -148,8 +130,6 @@ V2rayN 是基于微软 .NET 框架开发的。如果您的电脑是较新的 Win
    * *此时，该节点前方会出现一个蓝色的打勾 `√` 标志。*
 
 ### 2. 设置路由模式 (Routing)
-
-<img src="/images/guides/placeholder.jpg" alt="设置路由模式 (Routing)截图" width="600" />
 
 在主界面的最下方状态栏，找到 **「路由 (Routing)」** 下拉菜单，这里有三个核心选项，决定了你的流量如何分配：
 *   **绕过大陆 (Bypass CN) - ⭐ 强烈推荐**：智能分流。访问国内网站（淘宝、百度）走本地直连网络，访问海外被墙网站走代理节点。国内外互不干扰，速度最快，最省机场流量。
@@ -182,16 +162,12 @@ V2rayN 是基于微软 .NET 框架开发的。如果您的电脑是较新的 Win
 
 ## 六、 终极网游与全流量支持：开启 TUN 虚拟网卡模式
 
-<img src="/images/guides/placeholder.jpg" alt="终极网游与全流量支持：开启 TUN 虚拟网卡模式截图" width="600" />
-
 
 V2rayN 的“系统代理”模式（红色图标）主要针对浏览器生效。但如果您需要加速 Steam 游戏、使用命令提示符 (CMD)、Git 拉取代码，或者使用 Telegram 桌面端，这些应用通常不遵守系统代理。
 
 为了实现**电脑真·全局代理**，我们需要开启 **TUN 模式**。
 
 ### 部署 TUN 模式步骤：
-
-<img src="/images/guides/placeholder.jpg" alt="部署 TUN 模式步骤：截图" width="600" />
 
 ### 1. 以管理员身份运行软件关闭当前的 V2rayN，右键点击 `v2rayN.exe`，选择**“以管理员身份运行”**（这是创建虚拟网卡的必备权限）。
 2. 在主界面底部状态栏，找到 **「Tun 模式 (Tun Mode)」** 的开关图标（通常在路由规则旁边）。
@@ -209,16 +185,12 @@ V2rayN 的“系统代理”模式（红色图标）主要针对浏览器生效�
 
 ### 故障 1：点击更新订阅，日志提示“The operation has timed out”或“网络错误”
 
-<img src="/images/guides/placeholder.jpg" alt="故障 1：点击更新订阅，日志提示“The operation has timed out”或“网络错误”截图" width="600" />
-
 *   **诊断分析**：您的本地宽带（尤其是移动宽带或校园网）屏蔽了机场订阅链接的域名。
 *   **解决对策**：
     1. 最简单的办法：手机开启 4G/5G 热点，电脑连接手机热点后再点击“更新订阅”。更新成功后切回宽带即可。
     2. 终极办法：在机场后台寻找备用的订阅地址（通常服务商会提供多个备用域名）。
 
 ### 故障 2：所有节点测试延迟都是 `-1`，或者日志疯狂报错
-
-<img src="/images/guides/placeholder.jpg" alt="故障 2：所有节点测试延迟都是 `-1`，或者日志疯狂报错截图" width="600" />
 
 *   **诊断分析**：这通常与 Windows 系统时间校验机制有关。科学上网协议要求本地时间与服务器时间的误差不得超过 90 秒，否则会导致 SSL 证书握手失败，直接断开。
 *   **解决对策**：

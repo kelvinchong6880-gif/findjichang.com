@@ -40,8 +40,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 2026 Mac 开启翻墙代理后，终端 (Terminal) 无法连网的命令行代理设置方法
-
 **引言**：许多 Mac 用户在日常开发或极客探索中都会遇到一个极其困惑的现象：电脑明明已经开启了 Clash Verge、Surge、V2rayU 或其他代理软件，浏览器看 YouTube、访问 Google 和 ChatGPT 都丝滑流畅，但一打开 Mac 自带的“终端 (Terminal)”，运行 `git clone`、`brew install`、`curl` 或 `pip install` 时，却依然频频卡死、龟速甚至直接报 `Connection timed out` 错误！
 
 为什么会出现这种“浏览器通、命令行不通”的割裂情况？本文将为您深度解析 macOS 底层网络机制，并提供从一行代码临时加速、一键开关自动化脚本，到 Git / SSH / Homebrew 专项配置与 TUN 底层全局接管的完整解决方案。
@@ -67,8 +65,6 @@ bingChecklist:
 
 ## 二、 准备工作：确认您当前客户端的本地监听端口
 
-<img src="/images/guides/placeholder.jpg" alt="准备工作：确认您当前客户端的本地监听端口截图" width="600" />
-
 
 在为终端设置代理前，必须先获取您当前正在运行的代理软件在 Mac 本地开放的 HTTP / SOCKS5 监听端口。
 
@@ -91,8 +87,6 @@ bingChecklist:
 如果您只是临时需要拉取一个海外仓库或下载一个依赖包，无需修改任何配置文件，直接在当前终端窗口执行命令即可。
 
 ### 1. 设置临时代理命令
-
-<img src="/images/guides/placeholder.jpg" alt="设置临时代理命令截图" width="600" />
 
 打开 Mac 终端，直接复制并粘贴以下三行命令后回车：
 
@@ -123,8 +117,6 @@ curl -I https://www.google.com
 
 ## 四、 方法二：永久配置快捷别名函数（推荐！一键自由开关）
 
-<img src="/images/guides/placeholder.jpg" alt="方法二：永久配置快捷别名函数（推荐！一键自由开关）截图" width="600" />
-
 
 每次打开终端都要复制三行 export 过于繁琐，而直接把代理写死在配置文件里又可能导致内网办公或本地构建受阻。最优雅的极客方案是在 Shell 配置文件中定义 `setproxy` 和 `unsetproxy` 函数，实现随用随开、不用随关。
 
@@ -140,8 +132,6 @@ echo $SHELL
 
 ### 2. 编辑配置文件
 
-<img src="/images/guides/placeholder.jpg" alt="编辑配置文件截图" width="600" />
-
 使用内置的 Nano 编辑器打开 `~/.zshrc`：
 
 ```bash
@@ -151,15 +141,11 @@ nano ~/.zshrc
 滑动到文件最底部，粘贴以下标准化函数代码（注意：将其中的 `7890` 改为您自己客户端的实际端口）：
 
 ```bash
-# ==================== 命令行代理一键开关 ====================
 alias setproxy="export http_proxy=http://127.0.0.1:7890; export https_proxy=http://127.0.0.1:7890; export all_proxy=socks5://127.0.0.1:7890; echo '🚀 命令行代理已开启！当前出口 IP:'; curl -s https://ip.sb"
 alias unsetproxy="unset http_proxy; unset https_proxy; unset all_proxy; echo '🛑 命令行代理已关闭！当前出口 IP:'; curl -s https://ip.sb"
-# ==========================================================
 ```
 
 ### 3. 保存并重载配置
-
-<img src="/images/guides/placeholder.jpg" alt="保存并重载配置截图" width="600" />
 
 1. 按下快捷键 `Control + O` 保存文件，按下 **回车 (Enter)** 确认。
 2. 按下快捷键 `Control + X` 退出 Nano 编辑器。
@@ -177,14 +163,10 @@ source ~/.zshrc
 
 ## 五、 开发者专项深度适配：常见开发工具代理设置
 
-<img src="/images/guides/placeholder.jpg" alt="开发者专项深度适配：常见开发工具代理设置截图" width="600" />
-
 
 部分开发工具（如 Git SSH 协议、Homebrew、NPM、Pip）拥有独立的网络请求栈，单纯设置 export 可能无法完全覆盖。
 
 ### 1. Git 工具专属代理配置
-
-<img src="/images/guides/placeholder.jpg" alt="Git 工具专属代理配置截图" width="600" />
 
 Git 分为 HTTPS 协议（`https://github.com/...`）和 SSH 协议（`git@github.com:...`），配置方式截然不同：
 
@@ -192,11 +174,9 @@ Git 分为 HTTPS 协议（`https://github.com/...`）和 SSH 协议（`git@githu
 在终端中执行以下命令，将代理写入 Git 全局配置：
 
 ```bash
-# 为所有 git clone / push 配置 HTTP 代理
 git config --global http.proxy http://127.0.0.1:7890
 git config --global https.proxy http://127.0.0.1:7890
 
-# 仅为 github.com 单独配置代理（推荐，避免影响国内 Gitee/GitLab）
 git config --global http.https://github.com.proxy http://127.0.0.1:7890
 git config --global https.https://github.com.proxy http://127.0.0.1:7890
 ```
@@ -227,8 +207,6 @@ Host github.com
 
 ### 2. Homebrew 极速下载配置
 
-<img src="/images/guides/placeholder.jpg" alt="Homebrew 极速下载配置截图" width="600" />
-
 Mac 包管理器 Homebrew 在更新索引或下载 Bottles 预编译包时极易超时：
 
 ```bash
@@ -239,21 +217,15 @@ brew update
 
 ### 3. Node.js (NPM / Yarn / PNPM) 代理配置
 
-<img src="/images/guides/placeholder.jpg" alt="Node.js (NPM / Yarn / PNPM) 代理配置截图" width="600" />
-
 ```bash
-# NPM 配置
 npm config set proxy http://127.0.0.1:7890
 npm config set https-proxy http://127.0.0.1:7890
 
-# 还原配置
 npm config delete proxy
 npm config delete https-proxy
 ```
 
 ### 4. Python (PIP) 代理配置
-
-<img src="/images/guides/placeholder.jpg" alt="Python (PIP) 代理配置截图" width="600" />
 
 临时加速：
 ```bash
@@ -268,8 +240,6 @@ pip config set global.proxy http://127.0.0.1:7890
 ---
 
 ## 六、 终极免配置方案：开启 TUN / 增强模式 (Enhanced Mode)
-
-<img src="/images/guides/placeholder.jpg" alt="终极免配置方案：开启 TUN / 增强模式 (Enhanced Mode)截图" width="600" />
 
 
 如果您觉得为每个命令行工具分别配置环境变量过于繁琐，最一劳永逸的方案是利用客户端的 **TUN 增强模式**从操作系统底层实现 100% 接管。
@@ -290,14 +260,10 @@ pip config set global.proxy http://127.0.0.1:7890
 
 ### Q2: 运行 curl 时报错 curl: (7) Failed to connect to 127.0.0.1 port 7890: Connection refused？
 
-<img src="/images/guides/placeholder.jpg" alt="Q2: 运行 curl 时报错 curl: (7) Failed to connect to 0.0.1 port 7890: Connection refused？截图" width="600" />
-
 *   **原因**：您的代理软件未启动，或者处于崩溃退出状态。代理软件实际占用的本地监听端口并非 7890（例如某些软件是 1087 或 6152）。
 *   **解决**：打开代理软件设置，核对本地 HTTP 监听端口并更新环境变量中的端口号。
 
 ### Q3: Git 克隆时报错 fatal: unable to access '...': LibreSSL SSL_connect: SSL_ERROR_SYSCALL？
-
-<img src="/images/guides/placeholder.jpg" alt="Q3: Git 克隆时报错 fatal: unable to access '...': LibreSSL SSL_connect: SSL_ERROR_SYSCALL？截图" width="600" />
 
 *   **原因**：这是因为本地代理与 Git 的 SSL 校验发生了重试冲突，或者所连接的代理节点在握手期间异常断开。
 *   **解决**：检查代理客户端中是否选到了有效的绿色延迟节点。如果是因为公司网络或 MitM 证书解密引起的 SSL 拦截，可临时执行 `git config --global http.sslVerify false`（仅建议在受信任网络下使用）。

@@ -40,8 +40,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 【小白必看】如何免费注册美区 Apple ID？2026 年最新免信用卡图文教程
-
 对于每一位刚刚接触科学上网的苹果（iPhone / iPad）用户而言，遇到的第一道无法逾越的“高墙”，往往不是网络协议的配置，而是**国区 App Store 无法搜索并下载任何翻墙工具**。
 
 无论你想下载国民级代理神器 **Shadowrocket（小火箭）**、**Quantumult X（圈X）**，还是想体验原汁原味的 **ChatGPT**、**TikTok**、**YouTube** 或 **Netflix**，一个专属的**美国区（美区）Apple ID** 都是必不可少的钥匙。
@@ -187,8 +185,6 @@ bingChecklist:
 
 ## 四、进阶指南：如何使用支付宝购买礼品卡充值并下载小火箭？
 
-<img src="/images/guides/placeholder.jpg" alt="进阶指南：如何使用支付宝购买礼品卡充值并下载小火箭？截图" width="600" />
-
 
 注册成功后，你可以任意下载所有免费海外软件。但如果想下载科学上网的核心工具 **Shadowrocket (小火箭，售价 $2.99)**，由于我们在付款方式中选择了“无”，该如何安全付款呢？
 
@@ -215,8 +211,6 @@ bingChecklist:
 
 ## 五、高频注册失败与报错排查大全 (FAQ)
 
-<img src="/images/guides/placeholder.jpg" alt="高频注册失败与报错排查大全 (FAQ)截图" width="600" />
-
 
 在实际注册过程中，如果遇到突发报错，请对照以下方案进行排查：
 
@@ -234,8 +228,6 @@ bingChecklist:
     3. 检查出生日期是否设置得过小（务必大于 18 岁）。
 
 ### Q3：下载免费软件时依然提示“需要验证付款信息”？
-
-<img src="/images/guides/placeholder.jpg" alt="Q3：下载免费软件时依然提示“需要验证付款信息”？截图" width="600" />
 
 *   **原因分析**：账单地址中的邮编与城市不匹配。
 *   **解决方案**：重新核对本文第二部分提供的免税州表格，确保城市、州与 5 位 Zip Code 严格对应（例如 Portland 必须对应 OR 州与 97201 邮编）。

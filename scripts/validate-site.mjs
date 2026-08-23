@@ -43,7 +43,7 @@ const brandsSource = readFileSync(join(root, 'src/data/brands.ts'), 'utf8');
 const brandRows = [...brandsSource.matchAll(/^\s*\['([^']+)', '([^']+)', '([^']+)'\],?$/gm)].map((match) => ({ name: match[1], slug: match[2], url: match[3] }));
 if (brandRows.length !== 36) failures.push(`品牌资料为 ${brandRows.length}，应为 36`); else pass.push('36 个品牌资料');
 if (new Set(brandRows.map((item) => item.slug)).size !== 36) failures.push('品牌代号存在重复');
-if (brandRows[0]?.name !== '微风' || brandRows[1]?.name !== 'Sogo云' || brandRows[2]?.name !== '飞猫云') failures.push('前三品牌优先级错误');
+if (brandRows[0]?.name !== '微风' || brandRows[1]?.name !== 'SOGO云' || brandRows[2]?.name !== '飞猫云') failures.push('前三品牌优先级错误');
 for (const brand of brandRows) {
   if (!existsSync(join(dist, 'jichang', brand.slug, 'index.html')) || !existsSync(join(dist, 'speed-test', brand.slug, 'index.html'))) failures.push(`${brand.name}: 测评或测速路由缺失`);
 }

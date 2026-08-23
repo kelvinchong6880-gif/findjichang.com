@@ -39,8 +39,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 2026 Surge Mac 版进阶使用教程：从节点导入到接管系统网络的完整指南
-
 **引言**：在 macOS 的网络代理工具生态中，如果说其他客户端是满足日常出海冲浪的“代步车”，那么 Surge for Mac 毫无疑问就是殿堂级的“航空母舰”。它不仅是一款顶级的网络代理工具，更是专为开发者、网络工程师以及追求极致体验的极客量身打造的全功能网络调试与流量治理平台。然而，Surge 丰富的功能和专业的术语常常让许多进阶用户望而却步。本文将从托管配置导入、底层增强模式接管、网关旁路路由、模块化管理到深度排障，为您全景式拆解 Surge Mac 的进阶玩法。
 
 ---
@@ -61,22 +59,16 @@ Surge Mac 售价高昂，但其强大的底层能力在业内几乎无出其右�
 
 ## 二、 核心实操第一步：下载安装与机场托管配置导入
 
-<img src="/images/guides/placeholder.jpg" alt="核心实操第一步：下载安装与机场托管配置导入截图" width="600" />
-
 
 使用 Surge Mac 的最标准姿势是导入机场提供的“托管配置 (Managed Profile)”，这样可以自动化同步节点与策略组，无需手动编写。
 
 ### 1. 客户端下载与初始安装
-
-<img src="/images/guides/placeholder.jpg" alt="客户端下载与初始安装截图" width="600" />
 
 1. 请前往 Surge 官方网站 下载官方原版 DMG 安装包。
 2. 安装后将 Surge 拖入 Applications 文件夹。
 3. 首次打开时，Surge 会提示需要安装 Helper 辅助工具 并配置系统网络扩展，请根据提示输入 Mac 开机密码完成底层驱动授权。
 
 ### 2. 导入机场托管订阅配置
-
-<img src="/images/guides/placeholder.jpg" alt="导入机场托管订阅配置截图" width="600" />
 
 1. 登录您购买的翻墙机场官网后台，在“一键订阅 / 节点导出”区域，找到并点击 **“复制 Surge 托管配置链接”**（或 Surge 4/5 托管链接）。
 2. 点击 Mac 屏幕顶部状态栏的 Surge 图标。
@@ -88,8 +80,6 @@ Surge Mac 售价高昂，但其强大的底层能力在业内几乎无出其右�
 ---
 
 ## 三、 进阶核心：开启 Enhanced Mode（增强模式）实现无死角接管
-
-<img src="/images/guides/placeholder.jpg" alt="进阶核心：开启 Enhanced Mode（增强模式）实现无死角接管截图" width="600" />
 
 
 这是使用 Surge Mac 最关键的一步。如果不开启增强模式，Surge 仅仅相当于一个普通的 HTTP/SOCKS5 系统代理工具，终端命令行、Git 代码提交、Telegram 等依然可能出现断流或绕过。
@@ -108,8 +98,6 @@ Surge Mac 售价高昂，但其强大的底层能力在业内几乎无出其右�
 
 ## 四、 极客神器：Surge 局域网网关模式 (Router / Gateway Mode)
 
-<img src="/images/guides/placeholder.jpg" alt="极客神器：Surge 局域网网关模式 (Router / Gateway Mode)截图" width="600" />
-
 
 如果您家里有 Apple TV、PlayStation 5、Nintendo Switch 或其他智能设备，无需购买软路由，只需将这台常开的 Mac 电脑作为家庭旁路由网关。
 
@@ -118,8 +106,6 @@ Surge Mac 售价高昂，但其强大的底层能力在业内几乎无出其右�
 2. 开启 **“局域网网关 (DHCP Server / Gateway Mode)”** 功能。
 3. 获取这台 Mac 在局域网内的静态 IP（例如 `192.168.1.100`）。
 ### 4. 前往您的 Apple TV 或游戏主机网络设置中
-
-<img src="/images/guides/placeholder.jpg" alt="前往您的 Apple TV 或游戏主机网络设置中截图" width="600" />
 
    *   将 IP 获取方式改为“手动”。
    *   **路由器 / 网关 (Gateway)**：填入 Mac 的局域网 IP（如 `192.168.1.100`）。
@@ -130,14 +116,10 @@ Surge Mac 售价高昂，但其强大的底层能力在业内几乎无出其右�
 
 ## 五、 模块化扩展 (Modules) 与 MitM 证书配置
 
-<img src="/images/guides/placeholder.jpg" alt="模块化扩展 (Modules) 与 MitM 证书配置截图" width="600" />
-
 
 Surge 的模块化功能让各种去广告与功能解锁变得极其简单，但涉及 HTTPS 解密时必须正确配置 MitM。
 
 ### 1. 配置 MitM 本地根证书（保姆级）：
-
-<img src="/images/guides/placeholder.jpg" alt="配置 MitM 本地根证书（保姆级）：截图" width="600" />
 
 1. 在 Surge 控制面板中进入 **“MitM”** 设置项。
 2. 点击 **“生成新的 CA 证书 (Generate CA Certificate)”**。
@@ -149,8 +131,6 @@ Surge 的模块化功能让各种去广告与功能解锁变得极其简单，�
 5. 回到 Surge，开启 MitM 总开关。
 
 ### 2. 一键安装第三方模块 (Modules)：
-
-<img src="/images/guides/placeholder.jpg" alt="一键安装第三方模块 (Modules)：截图" width="600" />
 
 1. 在 Surge 主界面点击 **“模块 (Modules)”**。
 2. 点击右上角 **“安装新模块”**。
@@ -172,14 +152,10 @@ Surge 内置了顶级的网络诊断控制台，是分析网络问题、排查�
 
 ### Q1: 开启增强模式后，Mac 无法连接局域网内的 NAS、打印机或本地开发服务 (localhost)？
 
-<img src="/images/guides/placeholder.jpg" alt="Q1: 开启增强模式后，Mac 无法连接局域网内的 NAS、打印机或本地开发服务 (localhost)？截图" width="600" />
-
 *   **原因**：本地流量被错误路由进了虚拟网卡。
 *   **解决**：在 Surge 配置文件或高级设置的 `[General]` 段落中，检查 `skip-proxy` 列表，确保包含以下地址：`127.0.0.1, localhost, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12`。
 
 ### Q2: 导入托管配置后，所有节点测速均显示 Timeout（超时），完全断网？
-
-<img src="/images/guides/placeholder.jpg" alt="Q2: 导入托管配置后，所有节点测速均显示 Timeout（超时），完全断网？截图" width="600" />
 
 *   **排查 1（时间戳偏差）**：前往 Mac “系统设置 -> 通用 -> 日期与时间”，关闭再重新开启“自动设置时间”。新型加密协议对时间误差极度敏感。
 *   **排查 2（节点协议支持）**：部分老旧机场输出的托管配置格式可能存在语法缺失，确认机场是否原生支持 Surge 4/5 格式。
@@ -188,8 +164,6 @@ Surge 内置了顶级的网络诊断控制台，是分析网络问题、排查�
 *   **解决**：这是 macOS 深度休眠时网络扩展挂起引起的。在 Surge 菜单栏图标中，点击 **“重启所有引擎 (Restart All Engines)”** 即可瞬间修复。
 
 ### Q4: 开启 MitM 后，部分银行网站或苹果 iCloud 登录提示“网络连接不安全”？
-
-<img src="/images/guides/placeholder.jpg" alt="Q4: 开启 MitM 后，部分银行网站或苹果 iCloud 登录提示“网络连接不安全”？截图" width="600" />
 
 *   **原因**：高敏感金融类或苹果核心服务使用了 SSL Pinning（证书锁定）技术，拒绝中间人解密。
 *   **解决**：在 Surge 的 MitM 主机名列表中，将这些域名加入排除名单（或在规则中对这类域名配置为不走 MitM）。

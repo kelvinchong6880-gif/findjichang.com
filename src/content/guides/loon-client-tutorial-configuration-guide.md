@@ -41,8 +41,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 2026 Loon 客户端入门教程：苹果手机科学上网的另一个轻量化选择
-
 **引言**：提到 iOS 平台上的网络代理工具，很多人第一时间想到的是老牌的 Shadowrocket（小火箭）、高端昂贵的 Surge 或是极客范十足的 Quantumult X（圈X）。然而，近年来有一款名为 Loon 的工具异军突起，它不仅拥有媲美 Surge 的精美 UI 界面，还具备超越小火箭的强大规则与插件管理能力，同时价格亲民（买断制）。如果您觉得小火箭界面太陈旧，又觉得圈X和 Surge 配置太硬核，那么 Loon 绝对是您苹果手机上最完美的“轻量化科学上网选择”。本文将带您从零开始，玩转 Loon！
 
 ---
@@ -63,8 +61,6 @@ bingChecklist:
 
 ## 二、 准备工作：如何下载安装 Loon？
 
-<img src="/images/guides/placeholder.jpg" alt="准备工作：如何下载安装 Loon？截图" width="600" />
-
 
 众所周知，受限于政策，Loon 并没有在中国大陆区的 App Store 上架。要下载它，我们需要借助外区账号。
 
@@ -74,8 +70,6 @@ bingChecklist:
 > **⚠️ 安全警告**：如果您使用网上购买或别人分享的外区 Apple ID，请务必只在 **App Store** 登录，**绝对不要**在手机系统的“设置 -> Apple ID (iCloud)”中登录！ 否则有手机被锁死的风险。可以参考我们的 [免信用卡注册美区 Apple ID 教程](/guide/free-us-apple-id-register-complete-tutorial)。
 
 ### 2. 购买与下载
-
-<img src="/images/guides/placeholder.jpg" alt="购买与下载截图" width="600" />
 
 1. 打开 iPhone 上的 **App Store**。
 2. 点击右上角的个人头像，滑到最底部点击“**退出登录**”。
@@ -87,14 +81,10 @@ bingChecklist:
 
 ## 三、 核心配置第一步：导入机场节点订阅
 
-<img src="/images/guides/placeholder.jpg" alt="核心配置第一步：导入机场节点订阅截图" width="600" />
-
 
 有了工具，我们还需要“网络通道”，也就是您购买的机场服务。Loon 完美支持目前主流的 Shadowsocks, V2Ray (VMess/VLESS), Trojan 等协议。
 
 ### 1. 获取机场订阅链接
-
-<img src="/images/guides/placeholder.jpg" alt="获取机场订阅链接截图" width="600" />
 
 首先，登录您的机场官网控制台。
 寻找“一键订阅”、“节点导入”或“API 订阅”选项。
@@ -103,16 +93,10 @@ bingChecklist:
 
 ### 2. 在 Loon 中添加订阅
 
-<img src="/images/guides/placeholder.jpg" alt="在 Loon 中添加订阅截图" width="600" />
-
 打开刚刚下载好的 Loon App，跟着以下步骤操作：
 ### 1. 进入配置页面点击 Loon 主界面底部的 “配置” 菜单栏。
 
-<img src="/images/guides/placeholder.jpg" alt="进入配置页面点击 Loon 主界面底部的 “配置” 菜单栏。截图" width="600" />
-
 ### 2. 找到节点订阅在“节点”板块下，点击 “节点订阅”。
-
-<img src="/images/guides/placeholder.jpg" alt="找到节点订阅在“节点”板块下，点击 “节点订阅”。截图" width="600" />
 
 ### 3. 添加链接
    * 点击右上角的 “+” 号。
@@ -121,8 +105,6 @@ bingChecklist:
    * **自动更新**：建议打开，并将更新间隔设置为 24 小时，这样机场节点有变动时会自动同步。
    * 点击右上角的 “保存”。
 ### 4. 获取节点保存后，Loon 会自动向服务器拉取节点。回到 Loon 的首页，您会看到一条曲线图，并且在“策略组”里出现了多个国家的节点选项，这意味着节点导入成功！
-
-<img src="/images/guides/placeholder.jpg" alt="获取节点保存后，Loon 会自动向服务器拉取节点。回到 Loon 的首页，您会看到一条曲线图，并且在“策略组”里出现了多个国家的节点选项，这意味着节点导入成功！截图" width="600" />
 
 
 ### 3. 首次开启 VPN 授权
@@ -135,8 +117,6 @@ bingChecklist:
 
 ## 四、 智能网络的大脑：理解并设置分流规则与策略组
 
-<img src="/images/guides/placeholder.jpg" alt="智能网络的大脑：理解并设置分流规则与策略组截图" width="600" />
-
 
 如果只是全局代理，那您访问国内网站会非常慢。我们需要让 Loon 变聪明：国内直连，国外走节点，广告直接拦截。
 
@@ -146,8 +126,6 @@ bingChecklist:
 *   **AUTO (自动/延迟测试)**：Loon 会自动测试这个组里所有节点的延迟，并自动把流量切换到最快的那条线路上。这是强烈推荐新手使用的模式。
 
 ### 2. 导入第三方“懒人分流规则”
-
-<img src="/images/guides/placeholder.jpg" alt="导入第三方“懒人分流规则”截图" width="600" />
 
 自己手写规则太痛苦了，我们直接站在巨人的肩膀上，使用开源社区维护好的规则库。
 
@@ -178,22 +156,16 @@ bingChecklist:
 
 ## 六、 进阶必修：配置 MitM (中间人) 证书
 
-<img src="/images/guides/placeholder.jpg" alt="进阶必修：配置 MitM (中间人) 证书截图" width="600" />
-
 
 如果您想要上面提到的“插件”真正发挥作用（特别是涉及去广告和修改 App 数据的插件），您就必须配置 MitM 证书。因为现在所有的 App 都是 HTTPS 加密传输，Loon 需要一张证书才能“看懂”并修改这些流量。
 
 ### 保姆级 MitM 配置步骤：
-
-<img src="/images/guides/placeholder.jpg" alt="保姆级 MitM 配置步骤：截图" width="600" />
 
 
 ### 1. 生成证书
    * 点击 Loon 底部 “配置” -> 找到 “MITM” 卡片点击进入。
    * 点击 “生成证书”。
 ### 2. 下载与安装证书
-
-<img src="/images/guides/placeholder.jpg" alt="下载与安装证书截图" width="600" />
 
    * 点击 “安装证书”，系统会跳转到 Safari 浏览器并下载一个配置描述文件。
    * 回到 iPhone 系统的自带 “设置” App，点击最上方的“已下载描述文件”，一路点击“安装”并输入手机密码。

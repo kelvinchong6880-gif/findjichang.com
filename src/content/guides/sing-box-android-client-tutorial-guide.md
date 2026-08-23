@@ -40,8 +40,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 2026 Sing-box 安卓客户端使用教程：低耗电、高性能科学上网新选择
-
 **引言**：在 Android 平台众多的网络代理客户端中，Clash for Android 功能全面但部分分支停止维护，V2rayNG 界面传统且分流规则不够灵活。由开源团队 Nekoray / SagerNet 核心作者打造的 **Sing-box**（安卓端通常称为 **SFA - Sing-box For Android**）横空出世，被誉为新一代的“通用代理平台 (Universal proxy platform)”。它不仅拥有极低的系统内存占用与耗电量，更在第一时间原生支持如 VLESS-Reality、Hysteria2、TUIC、Trojan 等前沿抗封锁协议。本文将带您从零开始，深度掌握这款低耗电、高性能的安卓科学上网利器。
 
 ---
@@ -62,14 +60,10 @@ bingChecklist:
 
 ## 二、 准备工作：安全下载与 APK 架构选择
 
-<img src="/images/guides/placeholder.jpg" alt="准备工作：安全下载与 APK 架构选择截图" width="600" />
-
 
 为确保手机系统安全与软件纯净度，请务必从官方开源渠道获取安装包。
 
 ### 1. 官方推荐下载渠道
-
-<img src="/images/guides/placeholder.jpg" alt="官方推荐下载渠道截图" width="600" />
 
 *   **GitHub Releases（推荐首选）**：访问 Sing-box 官方开源仓库的 Releases 页面，直接下载最新稳定版本的 `.apk` 文件。
 *   **Google Play 商店**：非中国大陆区的 Google Play 商店可直接搜索 `sing-box` 下载，支持官方静默自动更新。
@@ -86,30 +80,22 @@ bingChecklist:
 
 ### 3. 安装步骤
 
-<img src="/images/guides/placeholder.jpg" alt="安装步骤截图" width="600" />
-
 下载对应的 `arm64-v8a.apk` 安装包。点击安装，若系统提示“禁止安装来自未知来源的应用”，点击“设置”，将当前浏览器或文件管理器的 **“允许来自此来源的应用”** 开关开启，返回继续完成安装即可。
 
 ---
 
 ## 三、 核心操作：Sing-box 添加节点与机场订阅导入
 
-<img src="/images/guides/placeholder.jpg" alt="核心操作：Sing-box 添加节点与机场订阅导入截图" width="600" />
-
 
 安装完成后，打开 Sing-box 客户端，我们需要将机场提供的订阅配置导入其中。
 
 ### 方式一：导入机场 Sing-box 专属订阅链接（推荐）
-
-<img src="/images/guides/placeholder.jpg" alt="方式一：导入机场 Sing-box 专属订阅链接（推荐）截图" width="600" />
 
 1. 登录您的翻墙机场后台，找到“一键订阅”或“便捷导入”区域。
 2. 点击 **“复制 Sing-box 订阅链接”**（通常为 JSON 格式配置）。
 3. 打开 Sing-box 客户端，点击底部菜单栏的 **“Profiles (配置)”**。
 4. 点击右上角的 **“New Profile”** 或 **“+ (添加)”** 图标。
 ### 5. 填写配置参数
-
-<img src="/images/guides/placeholder.jpg" alt="填写配置参数截图" width="600" />
 
    *   **Name (名称)**：填写便于识别的备注，例如“主力高速专线”。
    *   **Type (类型)**：选择 **“Remote (远程)”**。
@@ -120,17 +106,11 @@ bingChecklist:
 
 ### 方式二：从剪贴板或文件导入单节点 / 自定义 JSON
 
-<img src="/images/guides/placeholder.jpg" alt="方式二：从剪贴板或文件导入单节点 / 自定义 JSON截图" width="600" />
-
 如果您有单独的节点链接（如 `vless://`、`hysteria2://`）或自建服务器生成的 `config.json`：
 1. 点击“Profiles” -> “New Profile”。
 ### 2. 导入文件类型选择 “Local (本地)”，点击 “Import File” 选取手机存储中的 JSON 配置文件。
 
-<img src="/images/guides/placeholder.jpg" alt="导入文件类型选择 “Local (本地)”，点击 “Import File” 选取手机存储中的 JSON 配置文件。截图" width="600" />
-
 ### 3. 剪贴板导入类型选择 “Clipboard”，软件会自动解析剪贴板内的节点数据并生成配置。
-
-<img src="/images/guides/placeholder.jpg" alt="剪贴板导入类型选择 “Clipboard”，软件会自动解析剪贴板内的节点数据并生成配置。截图" width="600" />
 
 
 ---
@@ -156,14 +136,10 @@ bingChecklist:
 
 ## 五、 智能流量调度：分流规则与模式设置
 
-<img src="/images/guides/placeholder.jpg" alt="智能流量调度：分流规则与模式设置截图" width="600" />
-
 
 为了避免国内应用（微信、淘宝、抖音、B站等）绕道国外消耗套餐流量并导致严重卡顿，必须确保分流规则正常生效。
 
 ### 1. 核心运行模式
-
-<img src="/images/guides/placeholder.jpg" alt="核心运行模式截图" width="600" />
 
 *   **Rule (规则分流 - 推荐默认使用)**：严格依照配置文件中的规则库运作。访问国内网站走本地直连，海外网站走代理节点，广告域名直接拦截。
 *   **Global (全局代理)**：强制手机的所有流量无论目的地一律走选中的国外节点，仅在特殊未适配网站下临时使用。
@@ -175,8 +151,6 @@ bingChecklist:
 ---
 
 ## 六、 进阶特权功能：配置分应用代理 (Per-App Proxy)
-
-<img src="/images/guides/placeholder.jpg" alt="进阶特权功能：配置分应用代理 (Per-App Proxy)截图" width="600" />
 
 
 在开启翻墙时，部分国内银行、政务类 App 可能会因为检测到虚拟网卡而弹出安全预警。使用分应用代理可以彻底解决这一痛点。
@@ -196,11 +170,7 @@ bingChecklist:
 
 ### 1. 多任务界面锁定呼出多任务卡片管理后台，长按或下拉 Sing-box 卡片，点击“加锁”图标。
 
-<img src="/images/guides/placeholder.jpg" alt="多任务界面锁定呼出多任务卡片管理后台，长按或下拉 Sing-box 卡片，点击“加锁”图标。截图" width="600" />
-
 ### 2. 关闭电池优化进入系统“设置 -> 应用管理 -> Sing-box -> 电池/耗电管理”，将策略改为 **“无限制 / 允许后台高耗电运行”**。
-
-<img src="/images/guides/placeholder.jpg" alt="关闭电池优化进入系统“设置 -> 应用管理 -> Sing-box -> 电池/耗电管理”，将策略改为 **“无限制 / 允许后台高耗电运行”**。截图" width="600" />
 
 ### 3. 自启动与关联启动在应用权限管理中，为 Sing-box 开启 **“允许自启动”** 权限。
 
@@ -209,8 +179,6 @@ bingChecklist:
 ## 八、 常见问题排障指南 (FAQ)
 
 ### Q1: 导入订阅时提示 “Parse config failed” 或 JSON 语法报错？
-
-<img src="/images/guides/placeholder.jpg" alt="Q1: 导入订阅时提示 “Parse config failed” 或 JSON 语法报错？截图" width="600" />
 
 *   **原因**：复制的链接并非标准的 Sing-box 格式，或者机场订阅后端模板存在语法缺失。
 *   **解决**：登录机场官网确认是否选择了“Sing-box 订阅”；若机场未提供原生链接，可通过第三方开源订阅转换工具（如 Subconverter），将通用链接转换为 Sing-box 格式后重新导入。
@@ -225,8 +193,6 @@ bingChecklist:
 *   **解决**：前往“Groups (策略组)”面板，手动展开 Proxy 组，点选一个测速延迟显示为绿色数字（如 `100ms`）的有效可用节点。
 
 ### Q4: 如何在 Sing-box 中配置 DoH/DoT 加密 DNS？
-
-<img src="/images/guides/placeholder.jpg" alt="Q4: 如何在 Sing-box 中配置 DoH/DoT 加密 DNS？截图" width="600" />
 
 *   **说明**：标准机场订阅通常已内置了优质的 DNS 配置。如需自定义，可在配置文件的 `dns.servers` 字段中添加如阿里公共 DoH (`https://dns.alidns.com/dns-query`) 或 Cloudflare DNS，从源头杜绝 DNS 劫持。
 

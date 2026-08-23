@@ -37,8 +37,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 翻墙后打不开ChatGPT？解决Access Denied与1020报错
-
 ## 一、 为什么挂了代理依然打不开 ChatGPT？
 
 > 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
@@ -47,8 +45,6 @@ bingChecklist:
 *   **机房 IP 的天生劣势**：传统的翻墙机场大多使用 IDC（数据中心）广播 IP。这类 IP 极其容易被 OpenAI 的风控系统精准识别并实施批量拦截。
 
 ## 二、 深度解析：Access Denied 与 1020 报错含义
-
-<img src="/images/guides/placeholder.jpg" alt="深度解析：Access Denied 与 1020 报错含义截图" width="600" />
 
 *   **Error 1020 / Access Denied**：这是最典型的 Cloudflare 拦截代码。意味着您当前的节点 IP 已经被 OpenAI 官方的防火墙安全规则明确拉黑，您的访问请求在抵达 OpenAI 服务器前就被直接阻断了。
 *   **Oops! / Something went wrong**：通常发生在登录跳转环节或提问时，说明虽然 IP 未被彻底阻断，但网络传输通道极其不稳定，或浏览器缓存环境发生了冲突。
@@ -67,8 +63,6 @@ bingChecklist:
 *   **警惕本地 DNS 泄露**：确保您的代理软件开启了“防 DNS 泄漏”或 Fake-IP 模式，防止在建立连接时向国内运营商暴露您的真实物理位置。
 
 ## 六、 移动端专属：ChatGPT iOS/Android App 报错终极解法
-
-<img src="/images/guides/placeholder.jpg" alt="移动端专属：ChatGPT iOS/Android App 报错终极解法截图" width="600" />
 
 *   **比网页端更严苛的风控**：ChatGPT 官方手机端 App 的风控级别远高于网页版。它不仅会检测 IP，还会校验设备的系统语言、时区，甚至是 GPS 定位权限。
 

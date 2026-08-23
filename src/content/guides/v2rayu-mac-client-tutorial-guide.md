@@ -40,8 +40,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 2026 V2rayU Mac 客户端下载与配置教程（完美兼容 Apple Silicon M 芯片）
-
 **引言**：在 macOS 桌面端，有些用户喜欢功能繁复、图表华丽的重型客户端，而另一些用户则追求 **“极简、轻量、常驻状态栏、开机即用且零干扰”** 的纯粹体验。如果您使用的是苹果 Mac 电脑（无论是最新的 Apple Silicon M 系列芯片还是 Intel 处理器），并且希望找一款不占内存、操作直观的 V2Ray/Xray 客户端，那么 **V2rayU** 绝对是历经时间检验的经典之作。本文将为您带来 2026 年最新版 V2rayU 的安全下载、Gatekeeper 报错修复、节点订阅导入、PAC 智能路由及深度排障保姆级教程。
 
 ---
@@ -62,8 +60,6 @@ bingChecklist:
 
 ## 二、 准备工作：安全下载与架构版本选择
 
-<img src="/images/guides/placeholder.jpg" alt="准备工作：安全下载与架构版本选择截图" width="600" />
-
 
 为了防止下载到被恶意注入代码或捆绑推广的第三方修改版，必须通过官方开源仓库下载。
 
@@ -74,8 +70,6 @@ bingChecklist:
 
 ### 2. 官方下载对照表
 
-<img src="/images/guides/placeholder.jpg" alt="官方下载对照表截图" width="600" />
-
 前往 V2rayU 官方开源代码托管平台（GitHub Releases）下载最新的 `.dmg` 安装包：
 
 | 适用芯片平台 | 推荐下载安装包命名 | 特性说明 |
@@ -85,15 +79,11 @@ bingChecklist:
 
 ### 3. 安装软件
 
-<img src="/images/guides/placeholder.jpg" alt="安装软件截图" width="600" />
-
 双击打开下载好的 `.dmg` 镜像文件，将 V2rayU 图标拖拽到系统的 Applications (应用程序) 文件夹中。
 
 ---
 
 ## 三、 必做必看：解决 macOS 提示“已损坏 / 无法验证开发者”报错
-
-<img src="/images/guides/placeholder.jpg" alt="必做必看：解决 macOS 提示“已损坏 / 无法验证开发者”报错截图" width="600" />
 
 
 由于 macOS 越来越严格的 Gatekeeper（门禁）安全审查机制，许多开源未签名的代理软件首次打开时会弹出以下两种拦截提示：
@@ -115,38 +105,24 @@ bingChecklist:
 
 ## 四、 核心配置第一步：获取并导入机场节点订阅
 
-<img src="/images/guides/placeholder.jpg" alt="核心配置第一步：获取并导入机场节点订阅截图" width="600" />
-
 
 启动 V2rayU 后，我们需要将翻墙机场提供的节点信息同步到客户端中。
 
 ### 方式一：导入机场订阅链接（最推荐、批量同步）
 
-<img src="/images/guides/placeholder.jpg" alt="方式一：导入机场订阅链接（最推荐、批量同步）截图" width="600" />
-
 ### 1. 复制订阅登录您的翻墙机场后台控制台，在“一键订阅”区域，点击 **“复制 V2Ray 订阅链接”** 或 **“复制通用聚合订阅”**。
-
-<img src="/images/guides/placeholder.jpg" alt="复制订阅登录您的翻墙机场后台控制台，在“一键订阅”区域，点击 **“复制 V2Ray 订阅链接”** 或 **“复制通用聚合订阅”**。截图" width="600" />
 
 ### 2. 打开订阅设置点击 Mac 顶部菜单栏的 V2rayU 图标。在下拉菜单中选择 **“订阅设置 (Subscribe Setting)”**。
 
-<img src="/images/guides/placeholder.jpg" alt="打开订阅设置点击 Mac 顶部菜单栏的 V2rayU 图标。在下拉菜单中选择 **“订阅设置 (Subscribe Setting)”**。截图" width="600" />
-
 ### 3. 添加订阅源在弹出的窗口中，点击左下角的 **“+ (添加)”** 号。
-
-<img src="/images/guides/placeholder.jpg" alt="添加订阅源在弹出的窗口中，点击左下角的 **“+ (添加)”** 号。截图" width="600" />
 
    *   **备注 (Remark)**：填写机场名称（例如“主力专线”）。
    *   **地址 (Address / URL)**：长按并 **粘贴** 刚刚复制的机场订阅链接。
    *   点击右下角的 **“保存 (Save)”**。
 ### 4. 更新拉取节点回到顶部菜单栏，再次点击 V2rayU 图标。点击 **“更新订阅 (Update Subscribe)”**。稍等片刻，点击**“服务器列表 (Servers)”**，即可看到已成功导入的全球高速节点列表。
 
-<img src="/images/guides/placeholder.jpg" alt="更新拉取节点回到顶部菜单栏，再次点击 V2rayU 图标。点击 **“更新订阅 (Update Subscribe)”**。稍等片刻，点击**“服务器列表 (Servers)”**，即可看到已成功导入的全球高速节点列表。截图" width="600" />
-
 
 ### 方式二：从剪贴板直接导入单节点
-
-<img src="/images/guides/placeholder.jpg" alt="方式二：从剪贴板直接导入单节点截图" width="600" />
 
 如果您在社交软件或网页中复制了一条以 `vmess://`、`vless://`、`ss://` 或 `trojan://` 开头的单节点链接：
 1. 复制整段链接。
@@ -162,14 +138,10 @@ bingChecklist:
 
 ## 五、 路由模式解析：PAC 模式 vs 全局模式
 
-<img src="/images/guides/placeholder.jpg" alt="路由模式解析：PAC 模式 vs 全局模式截图" width="600" />
-
 
 导入节点后，合理选择运行模式至关重要。点击顶部状态栏的 V2rayU 图标，在菜单中选择 **“模式 (Mode)”**：
 
 ### 1. PAC 模式 (PAC Mode - 强烈推荐日常使用)
-
-<img src="/images/guides/placeholder.jpg" alt="PAC 模式 (PAC Mode - 强烈推荐日常使用)截图" width="600" />
 
 *   **工作原理**：客户端会根据一份被阻断网站名单（GFWList）自动分流。
 *   **体验**：当您访问 Google、YouTube、Twitter、ChatGPT 时，自动走代理节点；当您访问百度、淘宝、Bilibili 或国内企业内网时，自动走本地宽带直连。
@@ -177,14 +149,10 @@ bingChecklist:
 
 ### 2. 全局模式 (Global Mode)
 
-<img src="/images/guides/placeholder.jpg" alt="全局模式 (Global Mode)截图" width="600" />
-
 *   **工作原理**：Mac 上产生的所有网络请求，无论目标是国内还是国外，一律强制经过代理节点转发。
 *   **适用场景**：仅用于访问某些未被 PAC 列表收录的冷门海外小众网站，日常不建议开启。
 
 ### 3. 手动模式 (Manual Mode)
-
-<img src="/images/guides/placeholder.jpg" alt="手动模式 (Manual Mode)截图" width="600" />
 
 *   关闭系统代理接管，仅在本地开放监听端口（HTTP `1087` / SOCKS `1080`），适合需要在特定浏览器（如 SwitchyOmega 插件）或特定软件中手动指定代理的用户。
 
@@ -199,8 +167,6 @@ bingChecklist:
 ---
 
 ## 七、 开发者专属技巧：Mac 终端 (Terminal) 命令行代理设置
-
-<img src="/images/guides/placeholder.jpg" alt="开发者专属技巧：Mac 终端 (Terminal) 命令行代理设置截图" width="600" />
 
 
 默认情况下，Mac 终端运行 `git clone` 或 `brew` 命令不走系统代理。V2rayU 默认本地 HTTP 代理端口为 `1087`，SOCKS5 端口为 `1080`。
@@ -225,14 +191,10 @@ curl -i https://ip.sb
 
 ### Q1: 节点测速或连接时全部显示无法连通，但手机端正常？
 
-<img src="/images/guides/placeholder.jpg" alt="Q1: 节点测速或连接时全部显示无法连通，但手机端正常？截图" width="600" />
-
 *   **排查 1 (最核心：时间同步偏差)**：V2Ray/VMess/VLESS 协议对系统时间校验极度严苛，Mac 时间误差超 30 秒将直接拒绝握手。前往 Mac “系统设置 -> 通用 -> 日期与时间”，关闭后重新开启“自动设置时间”。
 *   **排查 2 (订阅域名阻断)**：部分机场订阅服务器在未翻墙时无法直接拉取，可以尝试连接手机热点后再点击更新订阅。
 
 ### Q2: 开启 PAC 模式后，访问部分海外新网站打不开？
-
-<img src="/images/guides/placeholder.jpg" alt="Q2: 开启 PAC 模式后，访问部分海外新网站打不开？截图" width="600" />
 
 *   **解决**：这是因为本地 PAC 规则库较旧。点击 V2rayU 菜单 -> 选择 **“PAC 设置 (PAC Setting)”** -> **“更新 PAC (Update PAC)”**，拉取最新的分流列表；或者临时将模式切换为“全局模式”。
 
@@ -241,8 +203,6 @@ curl -i https://ip.sb
 *   **解决**：打开 Mac 自带的“活动监视器”，搜索并强制退出 `v2ray-core` 或 `clash` 残留进程。或者在 V2rayU 的“首选项 (Preferences)”中，将本地 HTTP 端口修改为 `10809`，SOCKS 端口修改为 `10808`。
 
 ### Q4: 电脑睡眠唤醒后，突然断网或浏览器提示“代理服务器拒绝连接”？
-
-<img src="/images/guides/placeholder.jpg" alt="Q4: 电脑睡眠唤醒后，突然断网或浏览器提示“代理服务器拒绝连接”？截图" width="600" />
 
 *   **原因**：Mac 深度休眠后系统代理扩展偶发挂起。
 *   **解决**：点击顶部 V2rayU 图标，选择 **“Restart v2ray-core (重启内核)”**，即可瞬间恢复。

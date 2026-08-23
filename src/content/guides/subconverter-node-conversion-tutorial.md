@@ -35,11 +35,7 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 机场订阅格式不支持？2026 Subconverter节点转换保姆级教程
-
 ## 一、 订阅格式不兼容的核心痛点解析
-
-<img src="/images/guides/placeholder.jpg" alt="订阅格式不兼容的核心痛点解析截图" width="600" />
 
 
 > 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
@@ -53,19 +49,11 @@ bingChecklist:
 
 ## 三、 网页前端 (Sub-Web) 基础转换实操
 
-<img src="/images/guides/placeholder.jpg" alt="网页前端 (Sub-Web) 基础转换实操截图" width="600" />
-
 ### 1. 原链接填入打开任意可靠的公益 Sub-Web 前端网站，在“订阅链接”框内直接粘贴您从机场后台复制的原始报错链接。
-
-<img src="/images/guides/placeholder.jpg" alt="原链接填入打开任意可靠的公益 Sub-Web 前端网站，在“订阅链接”框内直接粘贴您从机场后台复制的原始报错链接。截图" width="600" />
 
 ### 2. 客户端匹配在“客户端”下拉菜单中，精准选择您当前正在使用的代理软件（如 Clash Verge Rev）。
 
-<img src="/images/guides/placeholder.jpg" alt="客户端匹配在“客户端”下拉菜单中，精准选择您当前正在使用的代理软件（如 Clash Verge Rev）。截图" width="600" />
-
 ### 3. 一键生成点击“生成订阅链接”并复制该长链接，随后将其粘贴至您的代理软件中重新拉取，即可完美识别并连通所有节点。
-
-<img src="/images/guides/placeholder.jpg" alt="一键生成点击“生成订阅链接”并复制该长链接，随后将其粘贴至您的代理软件中重新拉取，即可完美识别并连通所有节点。截图" width="600" />
 
 
 ## 四、 极客进阶：多机场合并与正则过滤
@@ -78,38 +66,26 @@ bingChecklist:
 
 ## 六、 安全至上：本地部署与自建转换服务
 
-<img src="/images/guides/placeholder.jpg" alt="安全至上：本地部署与自建转换服务截图" width="600" />
-
 *   **Docker 一键私有化**：对于拥有 VPS 服务器或群晖 NAS 的高阶玩家，强烈建议使用 Docker 一键部署个人专属的 Subconverter 后端，从物理层面彻底掐断节点泄露的风险。
 *   **现代客户端本地化转换**：如果您不想折腾服务器，目前如 Clash Verge Rev 等主流客户端已内置了强大的 Meta 核心解析引擎与本地脚本功能，您可以直接在软件内部进行格式覆写，完全无需依赖外部网站。
 
 ## 七、 高阶玩法：注入自定义分流规则库
-
-<img src="/images/guides/placeholder.jpg" alt="高阶玩法：注入自定义分流规则库截图" width="600" />
 
 *   **摆脱简陋默认规则**：很多平价机场提供的默认配置文件极其简陋，甚至只有“全局代理”或“全局直连”。通过转换工具，您可以强制注入业界顶级的 ACL4SSR 等开源规则集。
 *   **精细化路由接管**：注入高级规则后，您将获得极其细腻的策略组分流（如 Apple 微软服务直连走国内、Telegram 走专用加密通道、Netflix 强制走原生 IP 节点），全方位提升上网体验。
 
 ## 八、 常见转换报错与深度排障 (FAQ)
 
-<img src="/images/guides/placeholder.jpg" alt="常见转换报错与深度排障 (FAQ)截图" width="600" />
-
 
 ### Q: 点击生成后，客户端拉取提示“No nodes found (找不到节点)”？
-
-<img src="/images/guides/placeholder.jpg" alt="Q: 点击生成后，客户端拉取提示“No nodes found (找不到节点)”？截图" width="600" />
 
 **A**: 90% 的情况是因为您输入的原始订阅链接已过期，或者该机场启用了防滥用机制，封锁了该第三方转换服务器的 IP。请尝试更换其他 Sub-Web 前端地址。
 
 ### Q: 转换成功拉取了，但节点测速全部显示 Timeout？
 
-<img src="/images/guides/placeholder.jpg" alt="Q: 转换成功拉取了，但节点测速全部显示 Timeout？截图" width="600" />
-
 **A**: 转换器可能误将新型协议（如 VLESS-Reality）转给了不支持该协议的老旧客户端。请在转换界面的高级选项中，仔细核对并勾选您真实支持的底层协议。
 
 ### Q: 为什么转换后的配置，经常无法下载更新最新的规则？
-
-<img src="/images/guides/placeholder.jpg" alt="Q: 为什么转换后的配置，经常无法下载更新最新的规则？截图" width="600" />
 
 **A**: 转换配置引用的第三方规则通常存放在 GitHub 上。如果您当前的节点连通性较差导致无法访问 GitHub，规则更新就会报错。请先使用全局模式连接外网，再手动点击更新。
 

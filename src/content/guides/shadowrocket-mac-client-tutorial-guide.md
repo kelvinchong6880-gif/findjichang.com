@@ -39,8 +39,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 2026 Shadowrocket (小火箭) Mac 版下载与使用教程：M 系列芯片专属科学上网指南
-
 **引言**：提到 iOS 端的科学上网神器，几乎所有老玩家都会脱口而出：Shadowrocket（俗称“小火箭”）。它以极低的售价、全协议的支持和极其稳定的性能，稳居 iPhone 翻墙客户端的霸主地位。
 
 但您知道吗？自从苹果为 Mac 电脑换上了自家研发的 **Apple Silicon (M1/M2/M3/M4) 架构芯片**后，Mac 已经可以原生地运行绝大多数 iOS 软件了！这意味着，如果您已经在 iPhone 上购买过小火箭，现在可以直接在 Mac 电脑上免费下载使用，不仅拥有完全一致的 UI 和操作习惯，还能通过 iCloud 同步您的所有节点与规则！本文将手把手教您如何在 Mac 上完美运行小火箭。
@@ -64,8 +62,6 @@ bingChecklist:
 
 ## 二、 准备工作：外区 Apple ID 与下载避坑指南
 
-<img src="/images/guides/placeholder.jpg" alt="准备工作：外区 Apple ID 与下载避坑指南截图" width="600" />
-
 
 这是绝大多数新手最容易踩坑的环节。中国大陆区的 App Store 是无法搜到 Shadowrocket 的，您必须拥有一个非中国大陆地区（如美区、港区、日区）的 Apple ID。
 
@@ -82,8 +78,6 @@ bingChecklist:
 
 ## 三、 正式下载：如何找到隐藏的“小火箭”？
 
-<img src="/images/guides/placeholder.jpg" alt="正式下载：如何找到隐藏的“小火箭”？截图" width="600" />
-
 
 由于小火箭并非专为 Mac 优化，苹果商店默认会将其隐藏，您需要使用一个小技巧才能找到它。
 
@@ -97,8 +91,6 @@ bingChecklist:
 ---
 
 ## 四、 核心实操：导入机场节点订阅配置
-
-<img src="/images/guides/placeholder.jpg" alt="核心实操：导入机场节点订阅配置截图" width="600" />
 
 
 安装完成后，打开 Shadowrocket，您会发现它的界面与 iPhone 上一模一样。唯一的区别是您现在需要用鼠标来点击操作。
@@ -116,14 +108,10 @@ bingChecklist:
 
 ## 五、 连接与路由策略设置 (全局 vs 配置)
 
-<img src="/images/guides/placeholder.jpg" alt="连接与路由策略设置 (全局 vs 配置)截图" width="600" />
-
 
 节点拉取成功后，我们需要进行合理的路由分流设置，以确保国内网站不绕道海外。
 
 ### 1. 选择全局路由模式 (Global Routing)
-
-<img src="/images/guides/placeholder.jpg" alt="选择全局路由模式 (Global Routing)截图" width="600" />
 
 在主界面的下半部分，找到“全局路由”选项，请务必将其设置为 **“配置 (Config)”**！
 *   **配置 (Config)**：智能分流模式。依靠小火箭内置的规则集，国内百度、淘宝直连，海外 Google、YouTube 走代理。（日常强烈推荐）
@@ -134,8 +122,6 @@ bingChecklist:
 1. 在节点列表中，点击一个延迟较低的节点（点击后左侧会出现一个橘色的圆点，代表已选中）。
 2. 点击页面最上方 **“未连接 (Not Connected)”** 右侧的开关。
 ### 3. 首次启动授权由于是首次在 Mac 上开启 VPN，系统会弹窗提示“Shadowrocket 想要添加 VPN 配置”。请点击 **“允许 (Allow)”**，并输入您的 Mac 电脑开机密码或使用 Touch ID 指纹确认。
-
-<img src="/images/guides/placeholder.jpg" alt="首次启动授权由于是首次在 Mac 上开启 VPN，系统会弹窗提示“Shadowrocket 想要添加 VPN 配置”。请点击 **“允许 (Allow)”**，并输入您的 Mac 电脑开机密码或使用 Touch ID 指纹确认。截图" width="600" />
 
 4. 授权成功后，状态栏顶部会出现 VPN 图标。打开浏览器测试 YouTube，即可起飞！
 
@@ -168,13 +154,9 @@ bingChecklist:
 
 ### Q3: 每次打开电脑都要手动启动小火箭，能设置开机自启吗？
 
-<img src="/images/guides/placeholder.jpg" alt="Q3: 每次打开电脑都要手动启动小火箭，能设置开机自启吗？截图" width="600" />
-
 *   **解决**：可以。打开 Mac 的“系统设置 -> 通用 -> 登录项”，点击“+”号，在“应用程序”文件夹中找到 Shadowrocket 并添加。这样每次开机小火箭都会静默启动。
 
 ### Q4: 节点全部显示超时 (Timeout)，无法连接？
-
-<img src="/images/guides/placeholder.jpg" alt="Q4: 节点全部显示超时 (Timeout)，无法连接？截图" width="600" />
 
 *   **排查 1**：新型 VLESS/Trojan 协议对时间戳极其敏感。前往 Mac 系统设置开启“自动设置日期与时间”，确保无误差。
 *   **排查 2**：机场订阅可能已失效。在小火箭中向右拖拽订阅卡片，点击“更新”重新拉取最新的节点 IP。

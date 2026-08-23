@@ -37,8 +37,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# NekoRay Windows 版使用教程：支持 Xray/Sing-box 内核的轻量选择
-
 在众多 Windows 代理工具中，NekoRay 凭借极低的资源占用和强大的双内核支持，成为了追求极致性能用户的首选。本文将为您详细梳理 NekoRay 的核心配置技巧，提供一份符合规范且易于上手的实操指南。
 
 ## NekoRay 核心优势与双内核切换
@@ -53,8 +51,6 @@ NekoRay 采用 Qt 框架开发，内存开销远低于市面上基于 Electron �
 *   **切换方式**：进入软件顶部菜单的“首选项” > “基本设置” > “核心”选项卡，即可一键切换内核版本，重启软件后即刻生效。
 
 ### 节点订阅导入与 TUN 模式配置
-
-<img src="/images/guides/placeholder.jpg" alt="节点订阅导入与 TUN 模式配置截图" width="600" />
 
 
 为确保快速建立连接，需按照标准流程配置机场订阅链接与系统的流量接管模式。
@@ -74,8 +70,6 @@ NekoRay 采用 Qt 框架开发，内存开销远低于市面上基于 Electron �
 
 ## NekoRay 针对特定协议（如 Hysteria2）的高级路由与优化配置
 
-<img src="/images/guides/placeholder.jpg" alt="NekoRay 针对特定协议（如 Hysteria2）的高级路由与优化配置截图" width="600" />
-
 
 Hysteria2 协议基于自定义 UDP（QUIC）开发，专为恶劣、高丢包的网络环境设计，能够以“暴力”的方式抢占带宽，从而大幅提升跨国链路的传输速度。然而，想要在 NekoRay 中完美发挥 Hysteria2 的极限实力，需要进行特定的内核与路由调整。
 
@@ -87,8 +81,6 @@ Xray 内核原生并不支持 Hysteria2 协议。如果您导入的订阅中包�
 
 ### 2. 放行 UDP 转发与 TUN 模式优化
 
-<img src="/images/guides/placeholder.jpg" alt="放行 UDP 转发与 TUN 模式优化截图" width="600" />
-
 由于 Hysteria2 完全依赖 UDP 协议进行数据传输，如果 Windows 本地网络未正确放行 UDP，节点将直接显示 Timeout（超时）且无法连通。
 * **首选方案：开启 TUN 模式**
   以 **管理员身份** 运行 NekoRay，在主界面顶部勾选 **「TUN」**。TUN 虚拟网卡在底层原生接管所有 TCP/UDP 流量，这是兼容 Hysteria2 最稳定、最推荐的做法。
@@ -97,16 +89,10 @@ Xray 内核原生并不支持 Hysteria2 协议。如果您导入的订阅中包�
 
 ### 3. Hysteria2 专属路由与防 QoS 分流规则
 
-<img src="/images/guides/placeholder.jpg" alt="Hysteria2 专属路由与防 QoS 分流规则截图" width="600" />
-
 国内宽带运营商（如移动、长城宽带）通常对大流量的跨国 UDP 连接极为敏感，极易触发 QoS（服务质量）限速甚至阻断。合理的路由分流不仅能提升速度，还能保护节点存活率：
 ### 1. 严格国内外分流进入 **「首选项」** -> **「路由设置」**，务必勾选 **「绕过局域网与大陆」**。这能确保国内的 UDP 流量（如微信语音、国内网游、BT/迅雷下载）走本地直连，避免被强行代理，从而防止机场节点因检测到 P2P 下载而被封禁。
 
-<img src="/images/guides/placeholder.jpg" alt="严格国内外分流进入 **「首选项」** -> **「路由设置」**，务必勾选 **「绕过局域网与大陆」**。这能确保国内的 UDP 流量（如微信语音、国内网游、BT/迅雷下载）走本地直连，避免被强行代理，从而防止机场节点因检测到 P2P 下载而被封禁。截图" width="600" />
-
 ### 2. 端口与 SNI 伪装检查若节点仍不稳定，双击 Hysteria2 节点进入编辑界面，检查 **SNI（服务器名称指示）** 字段是否正确填写了服务商提供的伪装域名（例如 `bing.com` 或 `yahoo.com`），这有助于欺骗防火墙，将其伪装成正常的网页请求。
-
-<img src="/images/guides/placeholder.jpg" alt="端口与 SNI 伪装检查若节点仍不稳定，双击 Hysteria2 节点进入编辑界面，检查 **SNI（服务器名称指示）** 字段是否正确填写了服务商提供的伪装域名（例如 `bing.com` 或 `yahoo.com`），这有助于欺骗防火墙，将其伪装成正常的网页请求。截图" width="600" />
 
 
 

@@ -40,8 +40,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 电脑翻墙后微软应用商店 (UWP应用) 连不上网的完美解决办法
-
 很多刚刚配置好电脑翻墙客户端的朋友，往往会遭遇一个极其崩溃的场景：刚买完优质的机场节点，打开浏览器能秒开 YouTube，但在任务栏点击 **微软应用商店 (Microsoft Store)**、Xbox 甚至自带的邮件应用时，却遇到界面疯狂转圈，最后无情地弹出 `0x80072F8F` 或 `0x80131500` 等网络错误代码。
 
 为什么浏览器能科学上网，系统自带应用却像断了网一样？这背后的罪魁祸首，其实是 Windows 系统底层的安全机制。本文将为您深度剖析原因，并提供最完美的解决方案。
@@ -69,14 +67,10 @@ bingChecklist:
 
 ## 二、 方案拆解：主流客户端的完美解决途径
 
-<img src="/images/guides/placeholder.jpg" alt="方案拆解：主流客户端的完美解决途径截图" width="600" />
-
 
 既然知道了微软应用商店断网的罪魁祸首是“回环地址阻断”，我们只需“对症下药”，针对特定应用解除沙盒的本地网络限制即可。
 
 ### 1. v2rayN / NekoRay 等现代客户端内置方案
-
-<img src="/images/guides/placeholder.jpg" alt="v2rayN / NekoRay 等现代客户端内置方案截图" width="600" />
 
 如果您使用的是 v2rayN、NekoRay 等主流更新活跃的 Windows 代理客户端，开发者早已为您预留了“后悔药”，操作极其简便：
 *   **查找隐藏菜单**：打开 v2rayN 主界面，点击顶部菜单栏的“设置”或“首选项”，在下拉菜单中找到 **“解除 UWP 回环限制 (Exempt UWP Loopback)”**。
@@ -84,8 +78,6 @@ bingChecklist:
 *   **保存生效**：点击底部的“保存更改”。无需重启电脑，再次打开应用商店，页面即可瞬间加载完成。
 
 ### 2. 独立工具方案 (适用于老旧客户端)
-
-<img src="/images/guides/placeholder.jpg" alt="独立工具方案 (适用于老旧客户端)截图" width="600" />
 
 如果您使用的是较老的客户端，软件内没有内置解除功能，微软官方开源的独立工具是最佳选择：
 *   **获取专用工具**：在可靠渠道或 GitHub 下载 `EnableLoopback Utility` 压缩包。
@@ -102,22 +94,16 @@ bingChecklist:
 
 ## 三、 终极杀招：TUN 虚拟网卡模式全景指南
 
-<img src="/images/guides/placeholder.jpg" alt="终极杀招：TUN 虚拟网卡模式全景指南截图" width="600" />
-
 
 如果您觉得通过工具逐一勾选 UWP 应用过于繁琐，或者您同时还是外服网游玩家、重度命令行（CMD/Git）使用者，那么开启代理客户端的 **TUN（虚拟网卡）模式** 是一劳永逸的终极方案。
 
 ### 1. 降维打击：TUN 模式为何能无视 UWP 沙盒？
-
-<img src="/images/guides/placeholder.jpg" alt="降维打击：TUN 模式为何能无视 UWP 沙盒？截图" width="600" />
 
 *   **创建虚拟网卡**：开启 TUN 后，代理软件会在您的电脑中直接虚拟出一张专属的底层网卡。
 *   **流量全局劫持**：所有发出电脑的网络请求（无论是浏览器、Steam 游戏，还是被关在沙盒里的 UWP 应用），都会被系统强制导入这张虚拟网卡。
 *   **完美绕过限制**：因为流量不再发往本地的回环端口，而是直接走虚拟网卡物理级通道，Windows 的网络隔离机制被彻底绕过。
 
 ### 2. 实战配置要点（以 Clash Verge Rev / Sing-box 为例）
-
-<img src="/images/guides/placeholder.jpg" alt="实战配置要点（以 Clash Verge Rev / Sing-box 为例）截图" width="600" />
 
 *   **Clash Verge Rev 开启方法**：点击左侧 **「设置」** -> 找到 **「服务模式」** 点击安装并授权 -> 在下方打开 **「TUN 模式」** 开关。
 *   **Sing-box / Hiddify 开启方法**：务必首先右键“以管理员身份运行”软件，进入网络设置面板，直接开启 **「启用 TUN」** 开关。

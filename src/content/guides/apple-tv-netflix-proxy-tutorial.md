@@ -36,8 +36,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# Apple TV怎么看Netflix？2026翻墙路由器与客户端配置教程
-
 ## 第一章：Apple TV 观看 Netflix 的核心网络痛点
 
 > 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
@@ -46,8 +44,6 @@ bingChecklist:
 *   **DNS 泄漏与锁区**：即便节点连通，若 Apple TV 默认的 DNS 解析发生物理位置漂移，依然会导致海报加载失败或缺少对应地区的字幕。
 
 ## 第二章：tvOS 原生翻墙客户端实操
-
-<img src="/images/guides/placeholder.jpg" alt="第二章：tvOS 原生翻墙客户端实操截图" width="600" />
 
 *   **外区下载准备**：请准备美区或港区 Apple ID，在 App Store 获取 Stash、Loon 或免费开源的 Sing-box。
 *   **一键订阅导入**：通过客户端提供的局域网 Web 面板或手机扫码功能，将机场订阅链接快速下发至电视端。
@@ -75,8 +71,6 @@ bingChecklist:
 *   **Fake-IP 模式优化**：启用 Fake-IP (TUN 模式) 配合 NameServer 分流策略，可大幅降低海报墙加载的 DNS 握手延迟，实现影片封面毫秒级的“秒开”体验。
 
 ## 第八章：常见播放报错深度排障 (Q&A)
-
-<img src="/images/guides/placeholder.jpg" alt="第八章：常见播放报错深度排障 (Q&A)截图" width="600" />
 
 
 ### Q: 播放时提示“您似乎使用了代理或解锁件”？

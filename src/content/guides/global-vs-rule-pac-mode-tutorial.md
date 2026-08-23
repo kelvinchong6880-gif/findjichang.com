@@ -36,11 +36,7 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 全局模式与规则模式PAC有什么区别？2026翻墙新手科普
-
 ## 一、 为什么路由分流是科学上网的第一课？
-
-<img src="/images/guides/placeholder.jpg" alt="为什么路由分流是科学上网的第一课？截图" width="600" />
 
 
 > 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
@@ -50,15 +46,11 @@ bingChecklist:
 
 ## 二、 规则模式 (Rule / 智能分流) 深度拆解
 
-<img src="/images/guides/placeholder.jpg" alt="规则模式 (Rule / 智能分流) 深度拆解截图" width="600" />
-
 *   **工作机制**：客户端内置了一套庞大的规则分流数据库（如 GeoIP、域名列表与 CIDR IP 段），当您发起网络请求时，内核会自动将其与规则库进行毫秒级匹配。
 *   **智能分配**：命中境外规则（如 Google、YouTube）的流量自动走海外节点加速；命中大陆规则（如百度、B站）的流量则走本地宽带直连，兼顾速度与隐私。
 *   **日常推荐**：这是最适合绝大多数用户 **99%** 日常场景的“黄金模式”，真正实现海内外网络无感切换。
 
 ## 三、 全局模式 (Global / 代理模式) 的利与弊
-
-<img src="/images/guides/placeholder.jpg" alt="全局模式 (Global / 代理模式) 的利与弊截图" width="600" />
 
 *   **工作机制**：不经过任何域名或 IP 规则过滤，强制将您设备上的全部出海与本地网络请求，100% 经由所选的海外节点中转代理。
 *   **核心应用场景**：当您访问某些小众冷门海外网站（未收录在规则库内），或需要强行改变当前设备在所有网络平台的物理定位时使用。
@@ -66,15 +58,11 @@ bingChecklist:
 
 ## 四、 直连模式 (Direct) 与传统 PAC 脚本溯源
 
-<img src="/images/guides/placeholder.jpg" alt="直连模式 (Direct) 与传统 PAC 脚本溯源截图" width="600" />
-
 *   **直连模式定义**：相当于完全“断开”代理转发通道，所有流量均使用您本地的物理宽带或 5G 蜂窝网络直接发出，节点处于待命状态。
 *   **PAC 脚本的历史地位**：PAC (Proxy Auto-Config) 是早期 Shadowsocks 时代的经典规则方案，通过一段 JavaScript 代码来匹配 GFWList 网址名单。
 *   **现代演进**：如今现代客户端（如 Clash Verge、Sing-box）早已将 PAC 升级为更强大的规则集（Rule Provider），分流更加精准且占用更低。
 
 ## 五、 三大模式场景化选型与横向对照
-
-<img src="/images/guides/placeholder.jpg" alt="三大模式场景化选型与横向对照截图" width="600" />
 
 模式对比核心维度：
 *   **规则模式 (Rule)**：速度快、省流量、国内服务不降速，适合全天候开启。
@@ -90,8 +78,6 @@ bingChecklist:
 
 ## 七、 进阶技巧：自定义分流规则与策略组
 
-<img src="/images/guides/placeholder.jpg" alt="进阶技巧：自定义分流规则与策略组截图" width="600" />
-
 *   **解决冷门网站走直连**：若发现某个海外网站在规则模式下打不开，可在客户端（如 Clash Verge）添加自定义规则：`DOMAIN-SUFFIX,example.com,PROXY`。
 *   **独立应用分流**：利用高阶策略组，将 ChatGPT 绑定至美国原生节点，Netflix 绑定至新加坡节点，其余外网流量自动负载均衡，实现精细化调度。
 
@@ -99,13 +85,9 @@ bingChecklist:
 
 ### Q: 为什么选了规则模式，有些没被墙的外国网站（如 GitHub）依然打不开？
 
-<img src="/images/guides/placeholder.jpg" alt="Q: 为什么选了规则模式，有些没被墙的外国网站（如 GitHub）依然打不开？截图" width="600" />
-
 **A**: 部分轻度被干扰的网站在默认规则集中被归类为 DIRECT（直连）。可在客户端规则中将其手动调整为走代理，或临时切换为全局模式访问。
 
 ### Q: 规则模式下，机场后台显示的已用流量比我实际看外网的多？
-
-<img src="/images/guides/placeholder.jpg" alt="Q: 规则模式下，机场后台显示的已用流量比我实际看外网的多？截图" width="600" />
 
 **A**: 某些后台驻留软件（如 OneDrive、Steam 客户端）在规则模式下会被判定为出海流量并自动走代理同步，从而在后台产生流量消耗。
 

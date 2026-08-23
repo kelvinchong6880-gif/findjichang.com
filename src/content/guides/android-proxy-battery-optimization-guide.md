@@ -38,8 +38,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 2026 安卓手机翻墙后耗电快怎么办？各大代理软件省电优化设置指南
-
 **引言**：许多安卓手机用户在开启科学上网工具后，常常会遇到一个令人头疼的问题——手机掉电速度明显加快、机身发热，甚至在锁屏待机状态下一夜掉电 15% 到 20%。很多人误以为是手机电池老化或代理软件本身有 Bug，但实际上，这往往是因为代理客户端的后台测速机制、虚拟网卡唤醒机制以及分流规则配置不当所导致的。本文将深入剖析安卓翻墙耗电的底层机理，并手把手教您在主流客户端（Clash、v2rayNG、Sing-box、Surfboard）及系统层面上进行深度省电优化！
 
 ---
@@ -69,8 +67,6 @@ bingChecklist:
 
 ### 4. 激进的 DNS 防污染查询与长连接重试
 
-<img src="/images/guides/placeholder.jpg" alt="激进的 DNS 防污染查询与长连接重试截图" width="600" />
-
 部分客户端开启了复杂的外部 DoH / DoT 解析或者持续重试失败连接，当处于移动网络信号较差的环境时，射频芯片会加大发射功率频繁重试，进一步加剧耗电。
 
 ---
@@ -80,8 +76,6 @@ bingChecklist:
 不同客户端的架构不同，省电设置的侧重点也有所区别。请找到您正在使用的工具进行针对性调整：
 
 ### 1. Clash for Android (CFA / Clash Meta) 省电设置
-
-<img src="/images/guides/placeholder.jpg" alt="Clash for Android (CFA / Clash Meta) 省电设置截图" width="600" />
 
 Clash 功能强大，但如果放任默认设置，耗电量往往偏高。
 
@@ -97,8 +91,6 @@ Clash 功能强大，但如果放任默认设置，耗电量往往偏高。
 
 ### 2. v2rayNG 省电设置
 
-<img src="/images/guides/placeholder.jpg" alt="v2rayNG 省电设置截图" width="600" />
-
 v2rayNG 架构相对轻量，但以下细节能让其功耗再降一个档次：
 
 *   **优化一：关闭后台自动测速**
@@ -110,8 +102,6 @@ v2rayNG 架构相对轻量，但以下细节能让其功耗再降一个档次：
 
 ### 3. Sing-box (SFA) 省电设置
 
-<img src="/images/guides/placeholder.jpg" alt="Sing-box (SFA) 省电设置截图" width="600" />
-
 Sing-box 本身就是以“低内存、低功耗”闻名的新一代平台，但依然可以通过合理设置达到极致省电：
 
 *   **优化一：使用独立编译的规则集 (Rule-set)**
@@ -122,8 +112,6 @@ Sing-box 本身就是以“低内存、低功耗”闻名的新一代平台，�
     *   如果机场提供支持，优先选择 VLESS-Reality 或 Shadowsocks 2022 节点，这两种协议相较于传统的复杂双重加密握手更为精简，加解密能耗更低。
 
 ### 4. Surfboard (冲浪板) 省电设置
-
-<img src="/images/guides/placeholder.jpg" alt="Surfboard (冲浪板) 省电设置截图" width="600" />
 
 Surfboard 的 UI 与后台调度非常现代，优化重点在于规则与视图：
 

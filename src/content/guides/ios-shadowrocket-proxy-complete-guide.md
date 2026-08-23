@@ -41,8 +41,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 【2026最新】苹果 iOS (iPhone/iPad) 科学上网与小火箭配置完全指南
-
 很多刚从安卓阵营转到苹果，或者刚刚拿到最新款 iPhone / iPad 的新手，在准备配置网络环境时，都会经历一个极其崩溃的“鬼打墙”时刻：明明已经购买了优质的机场节点，打开苹果自带的 **App Store (应用商店)**，满怀期待地搜索“VPN”、“Clash”、“Shadowrocket”或者“小火箭”时，搜出来的却全是一堆莫名其妙的手机壁纸软件、网络测速工具，甚至是一些带有欺诈性质的假冒劣质 App。
 
 为什么安卓手机随便在网上下载一个 `.apk` 安装包就能用的翻墙工具，在几千块钱的苹果手机上却难如登天？本文将为您彻底揭开 iOS 生态的底层逻辑，并手把手带您完成从外区账号获取到小火箭节点配置的全流程。
@@ -66,15 +64,9 @@ bingChecklist:
 
 ### 1. 一把“海外钥匙”—— 外区 Apple ID必须拥有一个美国区（美区）或香港区（港区）的 Apple ID，才能进入外区商店下载软件。
 
-<img src="/images/guides/placeholder.jpg" alt="一把“海外钥匙”—— 外区 Apple ID必须拥有一个美国区（美区）或香港区（港区）的 Apple ID，才能进入外区商店下载软件。截图" width="600" />
-
 ### 2. 一个“强力引擎”—— 优秀的代理客户端有了外区账号，就可以下载到诸如 Shadowrocket（小火箭）、Quantumult X（圈X）等顶级网络工具。
 
-<img src="/images/guides/placeholder.jpg" alt="一个“强力引擎”—— 优秀的代理客户端有了外区账号，就可以下载到诸如 Shadowrocket（小火箭）、Quantumult X（圈X）等顶级网络工具。截图" width="600" />
-
 ### 3. 优质的“网络弹药”—— 机场订阅节点软件本身只是一个没有灵魂的空壳（播放器），需要导入机场服务商提供的“订阅链接（节点源）”，才能真正连接国际互联网。
-
-<img src="/images/guides/placeholder.jpg" alt="优质的“网络弹药”—— 机场订阅节点软件本身只是一个没有灵魂的空壳（播放器），需要导入机场服务商提供的“订阅链接（节点源）”，才能真正连接国际互联网。截图" width="600" />
 
 
 ---
@@ -97,8 +89,6 @@ bingChecklist:
 ### 3. 正确且绝对安全的登录全流程图解
 ### 1. 打开应用商店打开系统自带蓝色的 **「App Store」** 软件（千万别进灰色齿轮的“设置”）。
 
-<img src="/images/guides/placeholder.jpg" alt="打开应用商店打开系统自带蓝色的 **「App Store」** 软件（千万别进灰色齿轮的“设置”）。截图" width="600" />
-
 ### 2. 滑到底部退出原账号点击右上角您的**「个人头像」**，进入账户页面，一直向下滑动到最底端，点击 **「退出登录 (Sign Out)」**。
 ### 3. 安全登入外区号页面自动刷新后滑动回最上方，输入**外区 Apple ID 和密码**，点击登录。
 ### 4. 跳过双重认证如果弹出“Apple ID 安全”的双重认证绑定提示，**千万不要点击继续**，务必选择下方的 **「其他选项」** -> **「不升级」**。
@@ -108,8 +98,6 @@ bingChecklist:
 ---
 
 ## 三、 主流 iOS 代理客户端横向评测与选型
-
-<img src="/images/guides/placeholder.jpg" alt="主流 iOS 代理客户端横向评测与选型截图" width="600" />
 
 
 进入外区 App Store 后，您会看到众多网络代理工具。以下是 2026 年主流 iOS 客户端的核心横向评测：
@@ -135,14 +123,10 @@ bingChecklist:
 
 ## 四、 核心实操：Shadowrocket (小火箭) 节点导入与分流配置
 
-<img src="/images/guides/placeholder.jpg" alt="核心实操：Shadowrocket (小火箭) 节点导入与分流配置截图" width="600" />
-
 
 下载好 Shadowrocket 后，软件目前只是一个“空壳”。接下来我们需要将机场提供的订阅链接导入并配置智能分流。
 
 ### 1. 方式一：一键极速导入（最推荐）
-
-<img src="/images/guides/placeholder.jpg" alt="方式一：一键极速导入（最推荐）截图" width="600" />
 
 1. 使用 iPhone 自带的 **Safari 浏览器** 登录您的机场后台用户中心。
 2. 找到 **「一键订阅」** 或 **「快速导入」** 区域。
@@ -151,8 +135,6 @@ bingChecklist:
 5. 小火箭软件会自动启动并拉取数据，所有服务器节点将整齐排列在主界面上。
 
 ### 2. 方式二：手动添加订阅链接（备用方案）
-
-<img src="/images/guides/placeholder.jpg" alt="方式二：手动添加订阅链接（备用方案）截图" width="600" />
 
 1. 在机场后台点击 **「复制 Shadowrocket 订阅链接」**（或通用订阅）。
 2. 打开 Shadowrocket，点击主界面右上角的 **「+」号**。
@@ -171,8 +153,6 @@ bingChecklist:
 
 ### 4. 全局路由分流 (Global Routing) 设置详解
 
-<img src="/images/guides/placeholder.jpg" alt="全局路由分流 (Global Routing) 设置详解截图" width="600" />
-
 在主界面节点上方找到 **「全局路由 (Global Routing)」**，点击进入选择分流模式：
 
 *   **配置 (Config) - ⭐ 强烈推荐日常使用**：智能分流。访问微信、淘宝、抖音等国内应用走本地直连，不消耗机场流量且网速飞快；访问 YouTube、Google、ChatGPT 时自动走代理节点。省电、省流量，全天挂机无需切换。
@@ -180,8 +160,6 @@ bingChecklist:
 *   **直连 (Direct)**：所有流量不走代理，等同于关闭软件。
 
 ### 5. 首次连接与 VPN 系统授权
-
-<img src="/images/guides/placeholder.jpg" alt="首次连接与 VPN 系统授权截图" width="600" />
 
 1. 回到主界面最上方，找到 **「未连接」** 右侧的总开关，点击开启。
 2. 首次使用 iPhone 会弹窗提示 *“‘Shadowrocket’想添加 VPN 配置”*，点击 **「允许 (Allow)」**。

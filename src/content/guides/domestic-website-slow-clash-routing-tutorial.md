@@ -37,8 +37,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 开启翻墙后国内网站打不开或速度慢？Clash智能分流教程
-
 ## 一、 现象揭秘：为何开启代理后国内网站变卡？
 
 > 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
@@ -47,8 +45,6 @@ bingChecklist:
 *   **DNS 解析绕路与劫持**：如果您的代理客户端未做好国内外 DNS 隔离，国内网站的域名会被送到海外 DNS 服务器去解析，导致国内 CDN 无法为您就近分配服务器，网速自然大打折扣。
 
 ## 二、 基础排查：确保运行在“规则模式 (Rule)”
-
-<img src="/images/guides/placeholder.jpg" alt="基础排查：确保运行在“规则模式 (Rule)”截图" width="600" />
 
 *   **模式一键校验**：打开您的代理软件（如 Clash Verge Rev 或 v2rayN），检查代理模式是否被误设为“Global (全局)”。请务必将其永久固定在“Rule (规则分流)”模式。
 *   **直连策略连通性测试**：在规则模式下，您的国内流量会被归类到 DIRECT（直连）策略中。请尝试断开 Wi-Fi 切换到 5G 数据网络，排除是否是您本地物理宽带自身出现了断网故障。
@@ -59,14 +55,10 @@ bingChecklist:
 
 ## 四、 终极武器：升级 ACL4SSR 等智能分流规则集
 
-<img src="/images/guides/placeholder.jpg" alt="终极武器：升级 ACL4SSR 等智能分流规则集截图" width="600" />
-
 *   **自带规则的局限性**：多数机场下发的默认配置文件中，国内域名列表（GEOIP, CN）往往不够全面，导致许多国内新兴 App 的流量依然被错误地塞进了海外代理通道。
 *   **注入第三方增强规则**：强烈建议使用 Subconverter 订阅转换工具，为您的配置强制注入业界知名的 ACL4SSR 纯净版规则集。它包含了数十万条精准调优的国内直连与去广告规则，能让国内网速瞬间满血复活。
 
 ## 五、 DNS 物理隔离：NameServer 与 Fallback 设置
-
-<img src="/images/guides/placeholder.jpg" alt="DNS 物理隔离：NameServer 与 Fallback 设置截图" width="600" />
 
 *   **国内 DNS 强制绑定**：在 Clash 的 DNS 配置中，必须将 `nameserver` 明确指定为国内顶级的公共 DNS 服务器（如阿里云 `223.5.5.5` 或腾讯 DNSPod `119.29.29.29`），确保国内网站能够获得最近的 CDN 节点加速。
 *   **海外 DNS 加密防污染**：将海外解析的 `fallback` 组指向纯净的加密 DNS（如 Cloudflare `1.1.1.1` 或 Google `8.8.8.8` 的 DoH/DoT 协议），彻底实现“国内直连秒开、海外纯净防封”的双轨分流。
@@ -77,31 +69,21 @@ bingChecklist:
 
 ## 七、 TUN 模式与系统代理中的 Bypass 绕过配置
 
-<img src="/images/guides/placeholder.jpg" alt="TUN 模式与系统代理中的 Bypass 绕过配置截图" width="600" />
-
 *   **Bypass 大陆 IP 列表**：在开启 TUN 虚拟网卡模式时，必须在客户端勾选“绕过大陆 IP（Bypass Mainland IP / China IPs）”与“绕过局域网（Bypass LAN）”。
 *   **防止内网穿透失效**：若未开启局域网绕过，您访问家中的 NAS、本地共享打印机或局域网设备时，流量也会被送入虚拟网卡，导致内网设备完全失联。
 
 ## 八、 常见国内分流异常与深度排障 (FAQ / Q&A)
 
-<img src="/images/guides/placeholder.jpg" alt="常见国内分流异常与深度排障 (FAQ / Q&A)截图" width="600" />
-
 
 ### Q: 为什么开了规则模式，部分国内银行或政务 App 依然提示异地登录/无法打开？
-
-<img src="/images/guides/placeholder.jpg" alt="Q: 为什么开了规则模式，部分国内银行或政务 App 依然提示异地登录/无法打开？截图" width="600" />
 
 **A**: 部分政务和银行网站对反爬和 IP 代理极度敏感，且使用的冷门域名未被开源规则库收录。请在客户端手动添加自定义规则 `DOMAIN-SUFFIX,bank-domain.com,DIRECT`，强制其走本地网络。
 
 ### Q: 切换规则后，微信发图片依然一直转圈卡顿？
 
-<img src="/images/guides/placeholder.jpg" alt="Q: 切换规则后，微信发图片依然一直转圈卡顿？截图" width="600" />
-
 **A**: 这通常是 Fake-IP 缓存错乱或本地 DNS 劫持冲突导致的。请在客户端内点击“Flush DNS（清理 DNS 缓存）”，并在设置中将微信的进程（如 WeChat.exe）单独加入进程直连白名单。
 
 ### Q: 规则模式下，国内测速软件（如 Speedtest）为什么测出来的是海外节点的网速？
-
-<img src="/images/guides/placeholder.jpg" alt="Q: 规则模式下，国内测速软件（如 Speedtest）为什么测出来的是海外节点的网速？截图" width="600" />
 
 **A**: 因为 Speedtest 会自动寻找距离当前识别 IP 最近的测速点。如果测速网站的域名走了代理，它就会匹配海外测速服务器。测试国内物理宽带时，请临时将客户端切换为“直连模式 (Direct)”。
 

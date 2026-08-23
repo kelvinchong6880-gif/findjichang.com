@@ -41,8 +41,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 2026 终极极客神器 Surge 5 基础配置与机场节点导入保姆级教程
-
 **引言**：在 iOS 和 macOS 平台的网络代理工具生态中，如果说 Shadowrocket（小火箭）是平民超跑，Quantumult X (圈X) 是性能小钢炮，那么 Surge 5 就是毋庸置疑的“航空母舰”。作为一款售价高昂、定位“极客”的网络调试与接管工具，Surge 5 的功能早已超越了单纯的“翻墙”，它是您掌控设备全部网络请求的终极武器。本文将用最通俗易懂的语言，带您从零开始完成 Surge 5 的基础配置与机场节点导入，彻底驯服这头性能猛兽。
 
 ---
@@ -71,18 +69,12 @@ bingChecklist:
 
 ### 1. 账号与下载
 
-<img src="/images/guides/placeholder.jpg" alt="账号与下载截图" width="600" />
-
 1. 您需要一个非中国大陆区（如美区 US、港区 HK）的 Apple ID。
 2. 在 App Store 登录该外区账号后，搜索 **Surge 5** 下载。
 ### 3. 注意Surge iOS 版采用免费下载 + 应用内购买（订阅/买断解锁功能）的模式。请确保您的外区账号有足够的余额或绑定了有效的支付方式。
 
-<img src="/images/guides/placeholder.jpg" alt="注意Surge iOS 版采用免费下载 + 应用内购买（订阅/买断解锁功能）的模式。请确保您的外区账号有足够的余额或绑定了有效的支付方式。截图" width="600" />
-
 
 ### 2. 授权模式解析
-
-<img src="/images/guides/placeholder.jpg" alt="授权模式解析截图" width="600" />
 
 Surge 5 iOS 版目前提供了灵活的授权方式：
 *   **功能订阅制**：您可以按月/年订阅 Surge，享受所有最新功能。
@@ -94,14 +86,10 @@ Surge 5 iOS 版目前提供了灵活的授权方式：
 
 ## 三、 新手核心步骤：如何导入机场节点订阅？
 
-<img src="/images/guides/placeholder.jpg" alt="新手核心步骤：如何导入机场节点订阅？截图" width="600" />
-
 
 Surge 支持强大的“托管配置 (Managed Profile)”，这意味着您不需要一条条手动添加节点，而是直接同步机场服务器提供的配置文件。
 
 ### 1. 获取专属订阅链接
-
-<img src="/images/guides/placeholder.jpg" alt="获取专属订阅链接截图" width="600" />
 
 1. 登录您购买的优质机场官网后台（建议选择支持 SSR/V2Ray/Trojan 甚至原生支持 Surge 格式的机场）。
 2. 在用户中心找到“一键订阅”或“节点导入”。
@@ -109,28 +97,16 @@ Surge 支持强大的“托管配置 (Managed Profile)”，这意味着您不�
 
 ### 2. 在 Surge 5 中进行导入配置
 
-<img src="/images/guides/placeholder.jpg" alt="在 Surge 5 中进行导入配置截图" width="600" />
-
 打开 Surge 5 App，按照以下步骤操作：
 ### 1. 进入配置列表点击首页左上角的配置名称（默认通常是 `Default`）。
 
-<img src="/images/guides/placeholder.jpg" alt="进入配置列表点击首页左上角的配置名称（默认通常是 `Default`）。截图" width="600" />
-
 ### 2. 添加新配置点击弹出的菜单中的 **“从 URL 下载 (Download Profile from URL)”**。
-
-<img src="/images/guides/placeholder.jpg" alt="添加新配置点击弹出的菜单中的 **“从 URL 下载 (Download Profile from URL)”**。截图" width="600" />
 
 ### 3. 粘贴链接将您刚才在机场后台复制的链接粘贴到输入框中，点击“好的/下载”。
 
-<img src="/images/guides/placeholder.jpg" alt="粘贴链接将您刚才在机场后台复制的链接粘贴到输入框中，点击“好的/下载”。截图" width="600" />
-
 ### 4. 保存与命名Surge 会自动拉取机场的规则和节点信息。拉取成功后，您可以为这个配置命名，例如 `My_Airport_2026`。
 
-<img src="/images/guides/placeholder.jpg" alt="保存与命名Surge 会自动拉取机场的规则和节点信息。拉取成功后，您可以为这个配置命名，例如 `My_Airport_2026`。截图" width="600" />
-
 ### 5. 启用配置在配置列表中，点击您刚刚命名的 `My_Airport_2026`，使其前面出现一个勾选标记（✓）。
-
-<img src="/images/guides/placeholder.jpg" alt="启用配置在配置列表中，点击您刚刚命名的 `My_Airport_2026`，使其前面出现一个勾选标记（✓）。截图" width="600" />
 
 
 ### 3. 首次启动与 VPN 权限授权
@@ -160,16 +136,12 @@ Surge 支持强大的“托管配置 (Managed Profile)”，这意味着您不�
 
 ## 五、 流量守门员：分流规则 (Rule System) 设置
 
-<img src="/images/guides/placeholder.jpg" alt="流量守门员：分流规则 (Rule System) 设置截图" width="600" />
-
 
 Surge 的分流系统极其强大且语义清晰。分流规则的作用是：告诉 Surge，当用户访问 A 网站时走直连，访问 B 网站时走代理，访问 C 网站时直接拦截。
 
 点击底部导航栏的 **“规则 (Rules)”**，您能看到一份详尽的规则列表。
 
 ### 常用的 Surge 规则类型解析：
-
-<img src="/images/guides/placeholder.jpg" alt="常用的 Surge 规则类型解析：截图" width="600" />
 
 *   **DOMAIN (精确域名匹配)**：
     *   **规则示例**：`DOMAIN, www.google.com, Proxy`
@@ -200,8 +172,6 @@ Surge 的分流系统极其强大且语义清晰。分流规则的作用是：�
 
 ### 如何安装模块？
 
-<img src="/images/guides/placeholder.jpg" alt="如何安装模块？截图" width="600" />
-
 1. 在 Surge 首页，滑动到最下方，点击 **“模块 (Modules)”**。
 2. 点击右上角的 **“添加”** -> **“安装新模块”**。
 3. 粘贴大佬开源的模块链接即可。
@@ -221,16 +191,10 @@ Surge 的分流系统极其强大且语义清晰。分流规则的作用是：�
 
 ### MitM 证书配置三步曲（保姆级）：
 
-<img src="/images/guides/placeholder.jpg" alt="MitM 证书配置三步曲（保姆级）：截图" width="600" />
-
 ### 1. 生成证书在 Surge 首页找到 MitM 卡片（通常在较下方），点击进入。点击 **“生成新的 CA 证书 (Generate a new CA)”**。
 ### 2. 安装到系统点击 **“安装证书 (Install Certificate)”**，Surge 会跳转到 Safari，允许下载配置文件。随后前往 iPhone 的“设置 -> 顶部已下载的描述文件”，点击安装并输入密码。
 
-<img src="/images/guides/placeholder.jpg" alt="安装到系统点击 **“安装证书 (Install Certificate)”**，Surge 会跳转到 Safari，允许下载配置文件。随后前往 iPhone 的“设置 -> 顶部已下载的描述文件”，点击安装并输入密码。截图" width="600" />
-
 ### 3. 信任证书（千万别漏掉）在 iPhone 中进入 **设置 -> 通用 -> 关于本机 -> 证书信任设置 (最底部)**。找到 Surge 生成的证书，将开关打开变绿。
-
-<img src="/images/guides/placeholder.jpg" alt="信任证书（千万别漏掉）在 iPhone 中进入 **设置 -> 通用 -> 关于本机 -> 证书信任设置 (最底部)**。找到 Surge 生成的证书，将开关打开变绿。截图" width="600" />
 
 ### 4. 开启 MitM回到 Surge 首页，将 MitM 卡片的总开关打开。大功告成！现在，Surge 已经彻底接管并能解析指定的 HTTPS 流量了。
 
@@ -239,8 +203,6 @@ Surge 的分流系统极其强大且语义清晰。分流规则的作用是：�
 ## 八、 常见问题排障指南 (FAQ)
 
 ### Q1: 导入机场配置后，无法启动 Surge，提示“配置文件错误”？
-
-<img src="/images/guides/placeholder.jpg" alt="Q1: 导入机场配置后，无法启动 Surge，提示“配置文件错误”？截图" width="600" />
 
 *   **答**：极少数情况下，机场提供的 Surge 托管配置年代久远，包含了 Surge 5 已经废弃的旧语法。解决办法：联系您的机场客服，要求他们更新订阅后端的 Surge 模板；或者使用第三方订阅转换网站，将通用订阅链接转换为标准的 Surge 5 格式。
 

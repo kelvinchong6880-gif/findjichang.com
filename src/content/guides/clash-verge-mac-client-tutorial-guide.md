@@ -40,8 +40,6 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# 2026 Mac 苹果电脑翻墙怎么选？Clash Verge Mac 版下载与使用教程
-
 **引言**：在 macOS 优美且高效的桌面生态中，无论是程序员进行代码构建、拉取 GitHub 仓库，还是跨国商务处理海外邮件、设计工作者使用 Midjourney 与 ChatGPT，亦或是高清流媒体追剧，一款稳定、高速且无感的代理软件都是生产力的核心基石。然而，随着老牌工具 ClashX 和 ClashX Pro 相继停止维护，许多 Mac 用户在选型时陷入了迷茫。
 
 Clash Verge Rev 作为新一代全能接班人，凭借强大的 Clash.Meta (Mihomo) 内核、极致的资源控制和现代化的全中文界面，成为了当前 Mac 平台的首选。本文将为您带来最详尽的保姆级下载、配置、TUN 模式与排障全攻略。
@@ -64,8 +62,6 @@ Clash Verge Rev 作为新一代全能接班人，凭借强大的 Clash.Meta (Mih
 
 ## 二、 准备工作：安全下载与芯片架构选型 (M系列 vs Intel)
 
-<img src="/images/guides/placeholder.jpg" alt="准备工作：安全下载与芯片架构选型 (M系列 vs Intel)截图" width="600" />
-
 
 为了避免下载到被恶意注入脚本或植入后门的第三方打包版本，请务必认准官方开源渠道。同时，macOS 对芯片架构有严格划分，选错安装包会导致软件无法运行或 Rosetta 转译性能损耗。
 
@@ -76,8 +72,6 @@ Clash Verge Rev 作为新一代全能接班人，凭借强大的 Clash.Meta (Mih
 
 ### 2. 官方下载渠道与架构选型表
 
-<img src="/images/guides/placeholder.jpg" alt="官方下载渠道与架构选型表截图" width="600" />
-
 请访问 Clash Verge Rev 官方开源仓库的 GitHub Releases 页面，在 Assets 列表中下载对应的 `.dmg` 镜像安装包：
 
 | 芯片架构类型 | 对应安装包命名规范 | 适用机型举例 | 推荐指数 |
@@ -86,8 +80,6 @@ Clash Verge Rev 作为新一代全能接班人，凭借强大的 Clash.Meta (Mih
 | **Intel 处理器** | `Clash.Verge_x.x.x_x64.dmg` | 2020 年及以前发布的旧款 Intel 架构 Mac 机型 | ⭐⭐⭐⭐⭐（Intel机型必选） |
 
 ### 3. 安装与绕过 macOS “未受信任的开发者” 拦截
-
-<img src="/images/guides/placeholder.jpg" alt="安装与绕过 macOS “未受信任的开发者” 拦截截图" width="600" />
 
 1. 双击打开下载的 `.dmg` 文件，将 Clash Verge 图标拖拽到 Applications (应用程序) 文件夹中。
 2. 首次启动时，macOS 安全机制可能会弹出警告：“无法打开 Clash Verge，因为 Apple 无法检查其是否包含恶意软件”或“来自未受信任的开发者”。
@@ -100,14 +92,10 @@ Clash Verge Rev 作为新一代全能接班人，凭借强大的 Clash.Meta (Mih
 
 ## 三、 核心配置第一步：获取并导入机场订阅
 
-<img src="/images/guides/placeholder.jpg" alt="核心配置第一步：获取并导入机场订阅截图" width="600" />
-
 
 安装完成后打开软件，初始状态下没有任何网络节点，我们需要导入翻墙机场提供的托管订阅配置。
 
 ### 1. 获取机场订阅链接
-
-<img src="/images/guides/placeholder.jpg" alt="获取机场订阅链接截图" width="600" />
 
 1. 登录您所使用的翻墙机场官网后台，进入用户中心/仪表盘。
 2. 找到 “一键订阅 / 便捷导入” 区域。
@@ -115,23 +103,17 @@ Clash Verge Rev 作为新一代全能接班人，凭借强大的 Clash.Meta (Mih
 
 ### 2. 导入订阅配置文件 (Profiles)
 
-<img src="/images/guides/placeholder.jpg" alt="导入订阅配置文件 (Profiles)截图" width="600" />
-
 1. 打开 Clash Verge 客户端，点击左侧导航栏的 **“订阅 (Profiles)”**。
 2. 在顶部的 URL 文本输入框中，长按并 **粘贴** 刚刚复制的机场订阅链接。
 3. 点击右侧的 **“保存 / 导入 (Save / Import)”** 按钮。客户端会自动连接远程服务器拉取节点与规则。
 4. 下载成功后，界面会出现一张包含您机场名称的配置卡片。
 ### 5. 设置每日自动更新（重要）右键点击该配置卡片，选择 **“编辑信息 (Edit)”**。将“更新周期 / 间隔”修改为 1440 分钟（即 24 小时）。保存设置。这样机场更换被封锁的节点 IP 时，Mac 端会自动同步更新。
 
-<img src="/images/guides/placeholder.jpg" alt="设置每日自动更新（重要）右键点击该配置卡片，选择 **“编辑信息 (Edit)”**。将“更新周期 / 间隔”修改为 1440 分钟（即 24 小时）。保存设置。这样机场更换被封锁的节点 IP 时，Mac 端会自动同步更新。截图" width="600" />
-
 6. 左键单击选中该配置卡片，使其边框高亮并出现激活对勾。
 
 ---
 
 ## 四、 节点选择、智能分流与启动代理
-
-<img src="/images/guides/placeholder.jpg" alt="节点选择、智能分流与启动代理截图" width="600" />
 
 
 配置激活后，我们需要选择出口线路并开启系统代理服务。
@@ -152,8 +134,6 @@ Clash Verge Rev 作为新一代全能接班人，凭借强大的 Clash.Meta (Mih
 
 ## 五、 极客进阶配置：开启 TUN 增强模式接管全局流量
 
-<img src="/images/guides/placeholder.jpg" alt="极客进阶配置：开启 TUN 增强模式接管全局流量截图" width="600" />
-
 
 普通的“系统代理”模式只能接管遵循 macOS 系统代理协议的常规浏览器应用。对于 Mac 终端命令行 (Terminal)、Git 代码拉取 (`git clone`)、Telegram 客户端、Docker 容器构建、Spotify 以及外服联机游戏，它们默认会绕开系统代理，导致直接断网。开启 TUN 增强模式能够从 macOS 底层创建一张虚拟网卡，强制接管所有出海数据包。
 
@@ -170,14 +150,10 @@ Clash Verge Rev 作为新一代全能接班人，凭借强大的 Clash.Meta (Mih
 
 ## 六、 开发者专属技巧：Mac 终端 (Terminal) 代理环境配置
 
-<img src="/images/guides/placeholder.jpg" alt="开发者专属技巧：Mac 终端 (Terminal) 代理环境配置截图" width="600" />
-
 
 如果您不想开启全局 TUN 模式，但仍需要在终端中临时为 curl、brew 或 git 加速，可以使用命令行为终端注入临时代理。
 
 ### 1. 临时设置代理（关闭终端窗口后自动失效）
-
-<img src="/images/guides/placeholder.jpg" alt="临时设置代理（关闭终端窗口后自动失效）截图" width="600" />
 
 在 Mac 终端中粘贴并执行以下命令（默认本地端口为 `7890`）：
 
@@ -201,8 +177,6 @@ curl -i https://ip.sb
 ## 七、 常见问题与深度排障指南 (Q&A)
 
 ### Q1: 刚刚导入订阅并开启代理，为什么节点测速全部显示 Timeout（超时），打不开任何网页？
-
-<img src="/images/guides/placeholder.jpg" alt="Q1: 刚刚导入订阅并开启代理，为什么节点测速全部显示 Timeout（超时），打不开任何网页？截图" width="600" />
 
 *   **排查 1 (最常见核心原因：系统时间误差)**：VLESS-Reality、Trojan 等现代加密协议对时间戳极其敏感。如果 Mac 系统时间与标准网络时间误差超过 30 秒，服务器将直接拒绝握手。**解决**：前往 Mac “系统设置” -> “通用” -> “日期与时间”，关闭“自动设置时间”后再重新打开，强制同步标准时间。
 *   **排查 2 (套餐状态)**：登录机场后台，确认账户套餐是否已过期，或当月高速流量是否已经耗尽。

@@ -37,11 +37,7 @@ bingChecklist:
   datesAccurate: true
 ---
 
-# Netflix提示使用代理怎么破？流媒体原生IP解锁原理与检测教程
-
 ## 一、 致命报错：Netflix“您似乎使用了代理或解锁件”
-
-<img src="/images/guides/placeholder.jpg" alt="致命报错：Netflix“您似乎使用了代理或解锁件”截图" width="600" />
 
 
 > 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
@@ -63,8 +59,6 @@ bingChecklist:
 
 ## 五、 DNS 防泄漏与底层流量净化设置
 
-<img src="/images/guides/placeholder.jpg" alt="DNS 防泄漏与底层流量净化设置截图" width="600" />
-
 *   **强制本地 DNS 劫持**：在 Clash 或 Sing-box 客户端中，务必开启“防 DNS 泄漏（Prevent DNS Leaks）”功能。这能强制拦截设备发出的 DNS 请求，统一交由代理服务器远端解析，防止 Netflix 嗅探到您的真实物理定位。
 *   **IPv6 泄漏隐患**：许多用户的本地宽带默认开启了 IPv6，这极易绕过代理规则直接暴露给流媒体平台。请在软路由防火墙或电脑网络适配器中，彻底关闭 IPv6 协议栈，只保留 IPv4。
 
@@ -82,8 +76,6 @@ bingChecklist:
 **A**: Netflix 官方会定期发起“清洗行动”，批量封杀高并发流量的节点 IP。优质机场会动态更换后端 IP。请在客户端内手动点击“更新订阅”，拉取最新的解锁节点即可恢复。
 
 ### Q: 虽然没报错，但为什么我找不到中文字幕了？
-
-<img src="/images/guides/placeholder.jpg" alt="Q: 虽然没报错，但为什么我找不到中文字幕了？截图" width="600" />
 
 **A**: Netflix 会严格根据您当前连接的节点 IP 地区下发字幕库。若想看全量中文字幕，请务必在策略组中手动指定连接新加坡、台湾或香港节点。
 
