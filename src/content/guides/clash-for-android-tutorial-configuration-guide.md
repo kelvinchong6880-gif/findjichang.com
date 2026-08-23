@@ -1,6 +1,6 @@
 ---
-title: "安卓手机翻墙首选：Clash for Android 下载与订阅配置保姆级教程 (2026最新)"
-description: "2026最新安卓翻墙新手指南！详细讲解 Clash for Android (CFA) 安全APK下载安装、机场节点订阅导入、分流模式选择（规则/全局/直连）及应用绕过设置，保姆级教程手把手带您玩转安卓端科学上网。"
+title: "Clash for Android 已停更：旧版配置与安全迁移教程"
+description: "Clash for Android 原项目已经停更。本文说明旧版配置、安装包风险、订阅迁移和退出前的网络恢复方法，不再推荐新用户安装。"
 createdAt: 2026-08-23T13:00:00
 draft: true
 status: drafting
@@ -41,16 +41,16 @@ bingChecklist:
   notThinContent: true
   datesAccurate: true
 ---
-**引言**：在 Android 开放生态下，科学上网工具有很多选择（如 v2rayNG、SagerNet、NekoBox 等），但如果要选出一款在规则分流、界面直观度、生态兼容性与后台稳定性上达到极致平衡的客户端，Clash for Android（简称 CFA） 依然是绝大多数用户的首选。无论您是跨国贸易从业者、海外学术研究人员，还是高清流媒体爱好者，掌握 Clash for Android 的配置方法都是畅游全球网络的必修课。本文将为您带来详尽的保姆级安装与订阅配置指南。
+**引言**：在 Android 生态中有多种代理客户端可选。Clash for Android（简称 CFA）曾拥有较多用户，但原项目已停止正常维护；本文保留给仍在使用旧版的读者，并把迁移与安装包安全放在首位。无论您是跨国贸易从业者、海外学术研究人员，还是高清流媒体爱好者，掌握 Clash for Android 的配置方法都是畅游全球网络的必修课。本文将为您带来详尽的保姆级安装与订阅配置指南。
 
 ---
 
-## 一、 为什么 Clash for Android 是安卓手机的翻墙首选？
+## 一、为什么本文不再把 Clash for Android 作为首选？
 
 > 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](/go/weifeng/?from=/guide/clash-for-android-tutorial-configuration-guide/&placement=article-end)。
 
 
-相比于其他轻量或单一协议的客户端，Clash 框架在安卓端具备以下不可替代的核心优势：
+旧版 CFA 曾提供以下常用功能，但这些功能不代表停更软件仍适合新安装：
 
 - **精准的规则智能分流 (Rule-based Routing)**：自动识别国内外流量，访问国内网站（如微信、淘宝、Bilibili）走直连省流量，访问海外网站（Google、YouTube、ChatGPT）自动走代理，实现真正的无感浏览。
 - **多协议原生支持**：全面兼容 Shadowsocks (SS)、VMess、VLESS、Trojan、Socks5、Snell 等多种底层传输协议。
@@ -66,7 +66,7 @@ bingChecklist:
 
 ### 1. 安全下载途径
 
-- **GitHub 开源发布页 (首选)**：前往 Clash for Android 的开源托管页面或可信镜像站下载最新的 `.apk` 安装包。
+- **原项目状态**：原始发布渠道已经停止正常更新。不要把同名下载站、备份仓库或第三方重新打包 APK 当作官方最新版；新用户应选择仍维护且来源可核验的客户端。
 - **架构选择说明**：
     *   `arm64-v8a.apk`：适用于目前 99% 的主流现代安卓手机（高通骁龙、天玑等处理器），**推荐下载此版本**。
     *   `armeabi-v7a.apk`：适用于极老旧的 32 位安卓机型。
