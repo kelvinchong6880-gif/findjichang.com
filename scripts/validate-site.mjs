@@ -69,6 +69,15 @@ if (recommendationGoLinks.length < 2 || recommendationGoLinks.some((href) => !hr
 const recommendHtml = readFileSync(join(dist, 'recommend/index.html'), 'utf8');
 if (!recommendHtml.includes('name="keywords"') || !recommendHtml.includes('微风机场值得买吗') || !recommendHtml.includes('"@type":"Article"')) failures.push('微风推荐页关键词或 Article 结构化数据缺失'); else pass.push('微风推荐页关键词与 Article 结构化数据已生成');
 if (!recommendHtml.includes('name="description" content="微风机场怎么样、是否值得买？')) failures.push('微风推荐页 SEO 摘要错误'); else pass.push('微风推荐页 SEO 摘要正确');
+
+const feimaoRecommendationSource = readFileSync(join(root, 'src/pages/recommend/feimao-yun/_article.md'), 'utf8');
+const feimaoRecommendationHtml = readFileSync(join(dist, 'recommend/feimao-yun/index.html'), 'utf8');
+const feimaoGoLinks = [...feimaoRecommendationSource.matchAll(/\]\((\/go\/[^)]+)\)/g)].map((match) => match[1]);
+if (feimaoRecommendationSource.length < 5000) failures.push('飞猫云推荐文章内容长度不足'); else pass.push('飞猫云推荐文章达到深度内容长度');
+if (feimaoGoLinks.length < 2 || feimaoGoLinks.some((href) => !href.startsWith('/go/feimao-yun/'))) failures.push('飞猫云推荐文章注册入口不完整或混入其他品牌'); else pass.push('飞猫云推荐文章仅使用飞猫云 /go/ 注册入口');
+if (!feimaoRecommendationHtml.includes('name="keywords"') || !feimaoRecommendationHtml.includes('飞猫云值得买吗') || !feimaoRecommendationHtml.includes('"@type":"Article"')) failures.push('飞猫云推荐页关键词或 Article 结构化数据缺失'); else pass.push('飞猫云推荐页关键词与 Article 结构化数据已生成');
+const homeHtml = readFileSync(join(dist, 'index.html'), 'utf8');
+if (!homeHtml.includes('href="/recommend/feimao-yun/"') || !homeHtml.includes('预算优先')) failures.push('首页预算优先入口未连接飞猫云推荐页'); else pass.push('首页预算优先入口已连接飞猫云推荐页');
 if (!existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-tutorial/index.html')) || !existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-guide/index.html'))) failures.push('Shadowrocket 两篇教程未同时生成'); else pass.push('Shadowrocket 两篇教程独立生成');
 
 const compareIndex = readFileSync(join(dist, 'compare/index.html'), 'utf8');

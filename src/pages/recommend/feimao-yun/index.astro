@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SectionPage from '../../../components/SectionPage.astro';
+import JsonLd from '../../../components/JsonLd.astro';
+import { articleSchema } from '../../../lib/structured-data';
+import { Content as FeimaoContent } from './_article.md';
+
+const keywords = ['飞猫云', '飞猫云机场', '飞猫云推荐', '飞猫云怎么样', '飞猫云值得买吗', '飞猫云套餐价格', '飞猫云注册链接', '飞猫云学生套餐', '低价机场推荐', '预算机场推荐', '2026 机场推荐'];
+const schema = articleSchema({ title: '飞猫云机场推荐：预算用户套餐选择与购买指南（2026）', description: '飞猫云怎么样、是否值得买？从预算、套餐、流量、倍率、设备和短期测试角度分析飞猫云机场。', path: '/recommend/feimao-yun/', publishedAt: new Date('2026-08-23T00:00:00+08:00'), updatedAt: new Date('2026-08-23T00:00:00+08:00'), image: '/images/brands/feimao-yun.png' });
+---
+<BaseLayout title="飞猫云机场推荐：预算用户套餐选择与购买指南（2026）｜找机场" description="飞猫云怎么样、是否值得买？从预算、套餐、流量、倍率、设备和短期测试角度分析飞猫云机场，并提供注册前检查清单。" socialImage="/images/brands/feimao-yun.png" ogType="article" keywords={keywords}>
+  <JsonLd data={schema} />
+  <SectionPage title="飞猫云机场推荐与预算购买指南" description="适合从价格开始筛选，但不只看低价：先算清套餐、流量和风险，再决定是否短期测试飞猫云。">
+    <div class="content-layout recommend-article"><article class="article-content mt-8"><FeimaoContent /></article></div>
+  </SectionPage>
+</BaseLayout>
