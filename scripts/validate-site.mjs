@@ -43,6 +43,23 @@ speedDirs === 36 ? pass.push('36 个测速资料路由') : failures.push(`测速
 knowledgeDirs === 30 ? pass.push('30 个机场知识路由') : failures.push(`机场知识路由为 ${knowledgeDirs}，应为 30`);
 comparisonDirs === 2 ? pass.push('2 个机场对比路由') : failures.push(`机场对比路由为 ${comparisonDirs}，应为 2`);
 
+const knowledgeSourceDir = join(root, 'src/content/knowledge');
+const knowledgeSources = readdirSync(knowledgeSourceDir).filter((name) => name.endsWith('.md'));
+const descriptions = new Set();
+for (const name of knowledgeSources) {
+  const markdown = readFileSync(join(knowledgeSourceDir, name), 'utf8');
+  const body = markdown.replace(/^---[\s\S]*?---/, '');
+  const description = markdown.match(/^description:\s*"([^"]+)"/m)?.[1];
+  if (body.length < 2800) failures.push(`${name}: 正文不足 2800 字符`);
+  if ((body.match(/^## /gm) ?? []).length < 8) failures.push(`${name}: 二级标题不足 8 个`);
+  if (!body.includes('| 观察项目 |') || !body.includes('| 字段 | 示例写法 |')) failures.push(`${name}: 缺少判断表或记录表`);
+  if (!body.includes('## 常见问题') || !body.includes('## 资料来源、更新与披露')) failures.push(`${name}: 缺少 FAQ 或来源披露`);
+  if (!body.includes('/methodology/') || !body.includes('/affiliate-disclosure/')) failures.push(`${name}: 缺少方法或推广披露内链`);
+  if (description && descriptions.has(description)) failures.push(`${name}: meta description 重复`);
+  if (description) descriptions.add(description);
+}
+if (!failures.some((item) => item.includes('.md:'))) pass.push('30 篇知识文章通过长度、结构、来源、披露与描述唯一性检查');
+
 const recommendationSource = readFileSync(join(root, 'src/pages/recommend/_recommend-article.md'), 'utf8');
 if (/https?:\/\/[^\s)]*(?:code=|register)/.test(recommendationSource)) failures.push('推荐页仍包含直接推广链接'); else pass.push('推荐页推广入口统一使用 /go/');
 if (/独立测速团队|自费购买了|上百次|700Mbps|0\.00%/.test(recommendationSource)) failures.push('推荐页仍包含旧虚构实测文案'); else pass.push('推荐页已移除旧虚构实测文案');

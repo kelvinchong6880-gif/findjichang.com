@@ -2,8 +2,24 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import JsonLd from '../../components/JsonLd.astro';
 import { isPublishable } from '../../lib/seo';
+import { articleSchema } from '../../lib/structured-data';
 export async function getStaticPaths(){return (await getCollection('knowledge')).map(entry=>({params:{slug:entry.id},props:{entry}}));}
 const { entry } = Astro.props; const { Content } = await render(entry);
+const allKnowledge = await getCollection('knowledge');
+const related = allKnowledge.filter((item) => item.id !== entry.id).slice(0, 3);
+const path = `/knowledge/${entry.id}/`;
+const createdText = entry.data.createdAt.toLocaleDateString('zh-CN', { timeZone: 'Asia/Shanghai' });
+const updatedText = (entry.data.updatedAt ?? entry.data.createdAt).toLocaleDateString('zh-CN', { timeZone: 'Asia/Shanghai' });
+const schema = articleSchema({ title: entry.data.title, description: entry.data.description, path, publishedAt: entry.data.publishedAt ?? entry.data.createdAt, updatedAt: entry.data.updatedAt });
 ---
-<BaseLayout title={`${entry.data.title}｜找机场`} description={entry.data.description} indexable={isPublishable(entry)}><main class="page-shell detail-page"><Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场知识',href:'/knowledge/'},{label:entry.data.title}]}/><section class="review-hero" style="grid-template-columns:1fr"><div><span class="badge">机场知识</span><h1>{entry.data.title}</h1><p>{entry.data.description}</p></div></section><section class="content-layout" style="grid-template-columns:1fr"><article class="article-content"><Content/></article></section></main></BaseLayout>
+<BaseLayout title={`${entry.data.title}｜找机场`} description={entry.data.description} indexable={isPublishable(entry)} ogType="article">
+  <JsonLd data={schema} />
+  <main class="page-shell detail-page">
+    <Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场知识',href:'/knowledge/'},{label:entry.data.title}]}/>
+    <section class="review-hero" style="grid-template-columns:1fr"><div><span class="badge">机场知识</span><h1>{entry.data.title}</h1><p>{entry.data.description}</p><p class="article-meta">首次整理：{createdText} · 最近更新：{updatedText} · 当前状态：编辑中</p></div></section>
+    <section class="content-layout" style="grid-template-columns:1fr"><article class="article-content"><Content/></article></section>
+    <aside class="related-reading" aria-labelledby="related-heading"><h2 id="related-heading">继续阅读机场知识</h2><ul>{related.map((item) => <li><a href={`/knowledge/${item.id}/`}>{item.data.title}</a></li>)}</ul></aside>
+  </main>
+</BaseLayout>
