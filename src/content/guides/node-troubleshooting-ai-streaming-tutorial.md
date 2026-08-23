@@ -40,10 +40,16 @@ bingChecklist:
 # 2026节点排障与流媒体/AI解锁教程：搞定ChatGPT与Netflix报错
 
 ## 一、 AI 时代的铁壁：ChatGPT / Claude 封控原理
+
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+
 *   **高风险 IP 连坐机制**：OpenAI 与 Anthropic 部署了极度严苛的风控系统。当大量免费白嫖用户或低质机场滥用同一个数据中心 IP 时，该 IP 段会被直接拉黑，导致您遭遇“Access Denied”或无限验证码循环。
 *   **无头浏览器指纹识别**：除了检测 IP，AI 平台还会扫描您的浏览器指纹。如果频繁切换不同国家的节点，账号会因“地理位置异常跃迁”而触发高危风控，导致封号。
 
 ## 二、 破局 AI 封锁：高阶代理分流与落地策略
+
+<img src="/images/guides/placeholder.jpg" alt="破局 AI 封锁：高阶代理分流与落地策略截图" width="600" />
+
 *   **强制固定原生节点**：在 Clash 或 Sing-box 的策略组中，务必为 `openai.com` 和 `anthropic.com` 创建独立的路由规则，并将其强制绑定到一条稳定的冷门原生 IP 节点上，切忌使用“自动负载均衡”。
 *   **双层代理（链式转发）**：对于极客用户，可在客户端底层配置代理链 (Proxy Chain)，利用普通专线作为前置保障速度，末端落地接驳 Cloudflare WARP 住宅 IP，实现完美的真人身份伪装。
 
@@ -70,6 +76,9 @@ bingChecklist:
 ## 八、 移动端 AI 封控与晚高峰疑难杂症 (Q&A)
 
 ### Q: 网页端 ChatGPT 正常，但 iOS 官方 App 疯狂报错登不上？
+
+<img src="/images/guides/placeholder.jpg" alt="Q: 网页端 ChatGPT 正常，但 iOS 官方 App 疯狂报错登不上？截图" width="600" />
+
 **A**: 移动端 App 风控极严，会同时校验 IP 纯净度与设备环境。请务必在 iPhone 设置中关闭该 App 的“精准定位”，卸载并清理缓存，随后在全局模式下使用原生节点重新登录。
 
 ### Q: 为什么每天一到晚上 8 点，普通节点就频繁断线卡顿？
@@ -78,3 +87,8 @@ bingChecklist:
 ---
 
 **站长建议**：工欲善其事，必先利其器！在当前严苛的流媒体与 AI 封锁环境下，频繁断网和封号不仅影响心情，更严重阻碍工作效率。解决这一切最彻底的方法，就是从源头更换一家提供原生解锁与 IPLC 专线的高质量机场。请立刻访问我们的 **[高质量极速专线节点推荐](/recommend)**，让您的网络体验焕然一新！
+
+
+---
+
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。

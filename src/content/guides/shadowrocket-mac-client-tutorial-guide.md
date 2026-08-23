@@ -49,6 +49,9 @@ bingChecklist:
 
 ## 一、 核心前提：您的 Mac 电脑能运行小火箭吗？
 
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+
+
 由于 Shadowrocket 本质上是一款为 iOS (ARM 架构) 开发的 App，目前并没有单独开发 macOS 桌面版（x86 架构）。因此，并非所有 Mac 都能安装。
 
 ### 1. 确认您的 Mac 处理器芯片类型
@@ -60,6 +63,9 @@ bingChecklist:
 ---
 
 ## 二、 准备工作：外区 Apple ID 与下载避坑指南
+
+<img src="/images/guides/placeholder.jpg" alt="准备工作：外区 Apple ID 与下载避坑指南截图" width="600" />
+
 
 这是绝大多数新手最容易踩坑的环节。中国大陆区的 App Store 是无法搜到 Shadowrocket 的，您必须拥有一个非中国大陆地区（如美区、港区、日区）的 Apple ID。
 
@@ -76,18 +82,24 @@ bingChecklist:
 
 ## 三、 正式下载：如何找到隐藏的“小火箭”？
 
+<img src="/images/guides/placeholder.jpg" alt="正式下载：如何找到隐藏的“小火箭”？截图" width="600" />
+
+
 由于小火箭并非专为 Mac 优化，苹果商店默认会将其隐藏，您需要使用一个小技巧才能找到它。
 
 **核心下载步骤**：
 1. 登录外区 ID 后，在 Mac App Store 左上角的搜索框中输入：`Shadowrocket` 并回车。
 2. 此时，默认的搜索结果往往是一些毫不相干的擦边软件，千万不要乱下载！
-3. **重点来了**：注意看页面顶部，默认选中了“Mac App”。请用鼠标点击切换到旁边的 **“iPhone 与 iPad App (iPhone & iPad Apps)”** 标签页！
+### 3. 重点来了注意看页面顶部，默认选中了“Mac App”。请用鼠标点击切换到旁边的 **“iPhone 与 iPad App (iPhone & iPad Apps)”** 标签页！
 4. 切换后，那个熟悉的、带着蓝色背景的小火箭图标就会立刻出现！
 5. 点击 **“获取 (Get)”** 或 **“云端下载图标”** 即可免费安装至您的 Mac 应用程序库中。
 
 ---
 
 ## 四、 核心实操：导入机场节点订阅配置
+
+<img src="/images/guides/placeholder.jpg" alt="核心实操：导入机场节点订阅配置截图" width="600" />
+
 
 安装完成后，打开 Shadowrocket，您会发现它的界面与 iPhone 上一模一样。唯一的区别是您现在需要用鼠标来点击操作。
 
@@ -104,9 +116,15 @@ bingChecklist:
 
 ## 五、 连接与路由策略设置 (全局 vs 配置)
 
+<img src="/images/guides/placeholder.jpg" alt="连接与路由策略设置 (全局 vs 配置)截图" width="600" />
+
+
 节点拉取成功后，我们需要进行合理的路由分流设置，以确保国内网站不绕道海外。
 
 ### 1. 选择全局路由模式 (Global Routing)
+
+<img src="/images/guides/placeholder.jpg" alt="选择全局路由模式 (Global Routing)截图" width="600" />
+
 在主界面的下半部分，找到“全局路由”选项，请务必将其设置为 **“配置 (Config)”**！
 *   **配置 (Config)**：智能分流模式。依靠小火箭内置的规则集，国内百度、淘宝直连，海外 Google、YouTube 走代理。（日常强烈推荐）
 *   **代理 (Proxy)**：即全局模式。所有流量一律走海外节点，仅在某些冷门海外网站打不开时临时切换。
@@ -115,7 +133,10 @@ bingChecklist:
 ### 2. 选择节点并启动
 1. 在节点列表中，点击一个延迟较低的节点（点击后左侧会出现一个橘色的圆点，代表已选中）。
 2. 点击页面最上方 **“未连接 (Not Connected)”** 右侧的开关。
-3. **首次启动授权**：由于是首次在 Mac 上开启 VPN，系统会弹窗提示“Shadowrocket 想要添加 VPN 配置”。请点击 **“允许 (Allow)”**，并输入您的 Mac 电脑开机密码或使用 Touch ID 指纹确认。
+### 3. 首次启动授权由于是首次在 Mac 上开启 VPN，系统会弹窗提示“Shadowrocket 想要添加 VPN 配置”。请点击 **“允许 (Allow)”**，并输入您的 Mac 电脑开机密码或使用 Touch ID 指纹确认。
+
+<img src="/images/guides/placeholder.jpg" alt="首次启动授权由于是首次在 Mac 上开启 VPN，系统会弹窗提示“Shadowrocket 想要添加 VPN 配置”。请点击 **“允许 (Allow)”**，并输入您的 Mac 电脑开机密码或使用 Touch ID 指纹确认。截图" width="600" />
+
 4. 授权成功后，状态栏顶部会出现 VPN 图标。打开浏览器测试 YouTube，即可起飞！
 
 ---
@@ -146,9 +167,15 @@ bingChecklist:
 *   **解决**：将全局路由修改为 **“配置 (Config)”**；或者在小火箭设置中，将 UDP 转发功能开启。
 
 ### Q3: 每次打开电脑都要手动启动小火箭，能设置开机自启吗？
+
+<img src="/images/guides/placeholder.jpg" alt="Q3: 每次打开电脑都要手动启动小火箭，能设置开机自启吗？截图" width="600" />
+
 *   **解决**：可以。打开 Mac 的“系统设置 -> 通用 -> 登录项”，点击“+”号，在“应用程序”文件夹中找到 Shadowrocket 并添加。这样每次开机小火箭都会静默启动。
 
 ### Q4: 节点全部显示超时 (Timeout)，无法连接？
+
+<img src="/images/guides/placeholder.jpg" alt="Q4: 节点全部显示超时 (Timeout)，无法连接？截图" width="600" />
+
 *   **排查 1**：新型 VLESS/Trojan 协议对时间戳极其敏感。前往 Mac 系统设置开启“自动设置日期与时间”，确保无误差。
 *   **排查 2**：机场订阅可能已失效。在小火箭中向右拖拽订阅卡片，点击“更新”重新拉取最新的节点 IP。
 
@@ -159,5 +186,10 @@ bingChecklist:
 对于手持 M1/M2/M3/M4 芯片 Mac 电脑的用户来说，利用 macOS 的兼容机制运行 Shadowrocket，无疑是最具性价比、最省心的科学上网方案。一次配置，三端同步，极大地降低了学习成本。
 
 **站长建议**：小火箭拥有极其出色的网络吞吐能力，但好马必须配好鞍！想要在 Mac 上实现 4K 视频随意拖拽、大文件毫秒级下载，强烈建议您搭配采用 BGP/IPLC 企业级专线中转的高端机场服务，彻底释放 M 系列芯片的强悍性能！请访问本站 **[顶级专线机场推荐](/recommend)** 进行了解和选购。
+
+
+---
+
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注苹果全生态设备科学上网指南与优质机场测速，未经授权禁止转载。**

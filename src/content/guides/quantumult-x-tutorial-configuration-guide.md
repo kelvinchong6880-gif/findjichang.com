@@ -47,6 +47,9 @@ bingChecklist:
 
 ## 一、 认识 Quantumult X：为什么它是 iOS 代理工具的“天花板”？
 
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+
+
 在 iOS 平台的网络代理工具生态中，我们常说的“三大金刚”分别是 Shadowrocket（小火箭）、Surge 以及今天的主角 Quantumult X（由于其图标为彩色且以 X 结尾，国内玩家亲切地称其为“圈X”）。
 
 对于刚接触国际网络环境的新手小白来说，往往会问：“我已经有了其他工具，还有必要用圈X吗？” 答案是肯定的。Quantumult X 之所以能在众多高阶玩家中拥有极高的口碑，主要得益于以下几个核心优势：
@@ -62,6 +65,9 @@ bingChecklist:
 
 ## 二、 准备工作：下载与安装 Quantumult X
 
+<img src="/images/guides/placeholder.jpg" alt="准备工作：下载与安装 Quantumult X截图" width="600" />
+
+
 由于众所周知的原因，Quantumult X 并未在中国大陆区的 App Store 上架。因此，在配置之前，我们需要完成软件的获取。
 
 ### 1. 准备非大陆区 Apple ID
@@ -72,6 +78,9 @@ bingChecklist:
 > **⚠️ 注意事项**：登录外区账号时，请只在 App Store 登录，**千万不要在手机的“设置 -> iCloud”中登录**！
 
 ### 2. 购买并下载 App
+
+<img src="/images/guides/placeholder.jpg" alt="购买并下载 App截图" width="600" />
+
 1. 打开 iPhone 上的 **App Store**。
 2. 点击右上角的头像，滑到最底部点击“**退出登录**”。
 3. 输入您的美区/港区 Apple ID 并登录。
@@ -83,9 +92,15 @@ bingChecklist:
 
 ## 三、 新手入门第一阶段：基础配置与导入机场订阅节点
 
+<img src="/images/guides/placeholder.jpg" alt="新手入门第一阶段：基础配置与导入机场订阅节点截图" width="600" />
+
+
 对于 90% 的用户来说，使用圈X的最初目的就是为了连接网络。这里需要用到您购买的机场服务。以下是具体操作：
 
 ### 1. 获取机场订阅链接
+
+<img src="/images/guides/placeholder.jpg" alt="获取机场订阅链接截图" width="600" />
+
 首先，登录您的机场官网后台。找到类似“一键订阅”、“节点配置”的选项。大部分优质机场都会提供专用的 Quantumult X 订阅链接。
 
 点击 **“复制 Quantumult X 订阅”**。
@@ -93,19 +108,34 @@ bingChecklist:
 > 如果您的机场没有专门的圈X订阅，复制通用的 SSR/V2Ray/Trojan 订阅链接（URI格式）也是可以的，圈X 具备良好的向下兼容性。
 
 ### 2. 在圈X中导入节点订阅
+
+<img src="/images/guides/placeholder.jpg" alt="在圈X中导入节点订阅截图" width="600" />
+
 现在，我们打开刚才下载好的 Quantumult X App。
 
-1. **进入设置**：点击 App 主界面右下角的 “大风车” 图标，进入详细设置页面。
-2. **找到节点模块**：在“节点”这一栏下，点击 “引用 (URI)”。
-3. **添加订阅**：
+### 1. 进入设置点击 App 主界面右下角的 “大风车” 图标，进入详细设置页面。
+
+<img src="/images/guides/placeholder.jpg" alt="进入设置点击 App 主界面右下角的 “大风车” 图标，进入详细设置页面。截图" width="600" />
+
+### 2. 找到节点模块在“节点”这一栏下，点击 “引用 (URI)”。
+### 3. 添加订阅
+
+<img src="/images/guides/placeholder.jpg" alt="添加订阅截图" width="600" />
+
    * 点击右上角的 “+” 号。
    * **标签 (Tag)**：随便填，比如填入您机场的名字。
    * **资源路径 (URL)**：将您刚刚在机场后台复制的订阅链接粘贴在这里。
    * **勾选配置**：建议开启“自动更新”(Auto Update)，并将更新时间设置为 24 小时。
    * 点击右上角的 “保存”。
-4. **获取节点**：保存后，圈X会自动从服务器下载节点信息。如果顺利，您会在主界面的节点列表里看到一长串来自世界各地的服务器（如香港、日本、美国等）。
+### 4. 获取节点保存后，圈X会自动从服务器下载节点信息。如果顺利，您会在主界面的节点列表里看到一长串来自世界各地的服务器（如香港、日本、美国等）。
+
+<img src="/images/guides/placeholder.jpg" alt="获取节点保存后，圈X会自动从服务器下载节点信息。如果顺利，您会在主界面的节点列表里看到一长串来自世界各地的服务器（如香港、日本、美国等）。截图" width="600" />
+
 
 ### 3. 测试与开启
+
+<img src="/images/guides/placeholder.jpg" alt="测试与开启截图" width="600" />
+
 1. 返回圈X主界面，点击右上角的 **“开关” 按钮**。
 2. 第一次开启时，系统会弹出提示：“Quantumult X Would Like to Add VPN Configurations”。
 3. 点击 **“Allow (允许)”**，并输入您的手机锁屏密码或使用 Face ID 进行授权。
@@ -115,15 +145,24 @@ bingChecklist:
 
 ## 四、 进阶核心：Quantumult X 策略组与分流规则解析
 
+<img src="/images/guides/placeholder.jpg" alt="进阶核心：Quantumult X 策略组与分流规则解析截图" width="600" />
+
+
 如果仅仅是全局开启代理，那么您访问国内网站（如淘宝、微信）也会绕道国外，这不仅浪费机场流量，还会导致国内网络奇卡无比。这就引出了 Quantumult X 最强大的功能：**分流规则 (Routing Rules)**。
 
 ### 1. 什么是分流规则？
+
+<img src="/images/guides/placeholder.jpg" alt="什么是分流规则？截图" width="600" />
+
 分流规则就像是网络世界的“交通警察”。它通过读取您想要访问的网址（域名或 IP），并根据预设的规则表，指挥流量走不同的通道：
 *   **Direct (直连)**：访问百度、B站等国内网站时，不经过节点，直接连接。
 *   **Proxy (代理)**：访问 Google、Twitter 时，走您刚才添加的机场节点。
 *   **Reject (拒绝)**：访问各类广告联盟的网址时，直接拦截，实现去广告的效果。
 
 ### 2. 添加强大的“懒人规则集合” (Rule Set)
+
+<img src="/images/guides/placeholder.jpg" alt="添加强大的“懒人规则集合” (Rule Set)截图" width="600" />
+
 自己一条条写规则是不现实的。好在互联网上有众多开源的大神维护着极其完善的规则库（例如知名的 DivineEngine 神机规则、blackmatrix7 规则等）。新手只需引用这些规则集即可。
 
 **操作步骤**：
@@ -154,15 +193,24 @@ bingChecklist:
 
 ## 五、 高阶终极玩法：重写 (Rewrite) 与 MITM (中间人攻击) 配置详解
 
+<img src="/images/guides/placeholder.jpg" alt="高阶终极玩法：重写 (Rewrite) 与 MITM (中间人攻击) 配置详解截图" width="600" />
+
+
 如果说分流规则是交通警察，那么 Rewrite 和 MITM 就是“网络魔术师”。它们不仅能阻挡请求，还能修改请求的内容。最典型的应用场景就是解锁某些 App 的会员界面、彻底屏蔽 YouTube 的片头广告、或者去除国内毒瘤 App 的开屏广告。
 
 > *(注：此处主要讲解技术原理和配置步骤，具体去广告脚本需使用者根据开源社区指引获取)*
 
 ### 1. 什么是 MITM？为什么要安装证书？
+
+<img src="/images/guides/placeholder.jpg" alt="什么是 MITM？为什么要安装证书？截图" width="600" />
+
 绝大多数现代网站和 App 都使用了 HTTPS 加密传输。如果在没有授权的情况下，圈X无法看到加密流量里的具体内容，自然也就无法进行修改或去广告。
 **MITM (Man-in-the-Middle，中间人)** 技术就是让圈X生成一个安全的本地证书。当您信任这个证书后，圈X就能解密您指定的网络请求，执行脚本修改后再重新加密发给服务器。这是实现高级去广告的关键。
 
 ### 2. MITM 证书安装教程（必做步骤）
+
+<img src="/images/guides/placeholder.jpg" alt="MITM 证书安装教程（必做步骤）截图" width="600" />
+
 这是新手最容易卡住的地方，请严格按以下步骤操作：
 
 **步骤一：生成证书**
@@ -195,6 +243,9 @@ bingChecklist:
 ---
 
 ## 六、 终极捷径：如何一键导入“懒人配置文件”？
+
+<img src="/images/guides/placeholder.jpg" alt="终极捷径：如何一键导入“懒人配置文件”？截图" width="600" />
+
 
 如果您觉得上述分别添加节点、分流规则、重写脚本的过程太过繁琐，圈X 提供了一个终极的解决方案——**覆盖全局配置文件**。
 
@@ -238,3 +289,8 @@ Quantumult X 是一款“上限极高”的神器。通过这篇深度解析教�
 掌握了这款工具，搭配上高质量的机场网络，无论是为了学术研究、跨国电商运营，还是流畅观看 Netflix 4K 视频，您都能获得丝滑无比的网络体验。
 
 最后的小建议：工具虽好，但核心体验依然取决于您的网络节点质量。建议选择线路稳定、支持专线中转的服务商，这样才能最大化发挥 Quantumult X 的强大性能！如果您还没有满意的节点，欢迎点击前往 **[找机场年度专线推荐](/recommend)** 挑选！
+
+
+---
+
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。

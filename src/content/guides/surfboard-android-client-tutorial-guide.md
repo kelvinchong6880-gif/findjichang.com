@@ -49,6 +49,9 @@ bingChecklist:
 
 ## 一、 深入认识 Surfboard：为什么它是安卓端的“Surge 替代者”？
 
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+
+
 很多初入科学上网圈子的新手常常会在 Clash for Android、V2rayNG 与 Surfboard 之间纠结。为了让大家清晰了解它的独特价值，我们先来看 Surfboard 的几大核心亮点：
 
 *   **原生 Surge 配置文件兼容性**：这是 Surfboard 最大的杀手锏。它能够直接读取并解析 Surge 格式的托管配置（`.conf`）。如果您同时拥有 iPhone/Mac 和安卓手机，无需为安卓端单独寻找或转换复杂的规则，直接使用同一份 Surge 订阅即可实现两端体验完全统一。
@@ -60,9 +63,15 @@ bingChecklist:
 
 ## 二、 准备工作：安全下载与 APK 安装包选型
 
+<img src="/images/guides/placeholder.jpg" alt="准备工作：安全下载与 APK 安装包选型截图" width="600" />
+
+
 为了保障个人隐私与网络安全，切勿从来源不明的第三方应用商店或破解论坛下载被二次打包的客户端。
 
 ### 1. 官方推荐下载渠道
+
+<img src="/images/guides/placeholder.jpg" alt="官方推荐下载渠道截图" width="600" />
+
 *   **GitHub Releases（首选推荐）**：访问 Surfboard 官方开源仓库的 Releases 页面，直接下载最新稳定版的 `.apk` 安装包。
 *   **Google Play 商店**：如果您的设备支持外区 Google 账号，可直接在 Google Play 搜索 Surfboard 进行官方安装并享受自动静默更新。
 
@@ -75,25 +84,40 @@ bingChecklist:
 | `Surfboard-xxx-universal.apk` | 包含所有架构支持的通用包，体积稍大，若不确定芯片选它最稳妥。 | ⭐⭐⭐⭐ |
 
 ### 3. 安装权限配置
+
+<img src="/images/guides/placeholder.jpg" alt="安装权限配置截图" width="600" />
+
 下载完毕后打开安装包，若系统提示“禁止安装来自未知来源的应用”，点击“设置”，将当前浏览器或文件管理器的 **“允许来自此来源的应用”** 开关开启，随后返回继续完成安装。
 
 ---
 
 ## 三、 核心操作：获取并导入机场 Surge 订阅
 
+<img src="/images/guides/placeholder.jpg" alt="核心操作：获取并导入机场 Surge 订阅截图" width="600" />
+
+
 安装完成后，Surfboard 默认是一个未加载任何网络配置的空容器，我们需要将翻墙机场提供的托管订阅配置文件导入其中。
 
 ### 1. 获取专属 Surge 托管订阅
+
+<img src="/images/guides/placeholder.jpg" alt="获取专属 Surge 托管订阅截图" width="600" />
+
 1. 登录您购买的优质机场后台（控制台）。
 2. 在“一键订阅”或“导入配置”区域，优先寻找并点击 **“复制 Surge 托管配置链接”**（部分机场标注为 Surge 3/4 订阅）。
 
 > **注**：若您的机场未显式提供 Surge 格式，复制通用的 Clash/V2Ray 订阅链接，通常可借助靠谱的在线“订阅转换平台”一键转为 Surge 格式。
 
 ### 2. 在 Surfboard 中添加配置 (Profiles)
+
+<img src="/images/guides/placeholder.jpg" alt="在 Surfboard 中添加配置 (Profiles)截图" width="600" />
+
 1. 打开 Surfboard 客户端，点击底部导航栏中的 **“配置 (Profiles)”** 选项卡。
 2. 点击右下角悬浮的 **“+ (添加)”** 按钮。
 3. 在弹出的菜单中选择 **“从 URL 导入 (Download from URL)”**。
-4. **填写配置项**：
+### 4. 填写配置项
+
+<img src="/images/guides/placeholder.jpg" alt="填写配置项截图" width="600" />
+
    *   **名称 (Title)**：输入便于记忆的备注，如“主力高速机场”。
    *   **URL 地址**：长按输入框，粘贴刚刚从机场后台复制的托管订阅链接。
    *   **自动更新 (Auto Update)**：建议开启，并设置更新间隔为 24 小时，以便客户端每日自动同步节点 IP 变更与规则更新。
@@ -122,14 +146,23 @@ bingChecklist:
 
 ## 五、 流量调度守门员：Surfboard 规则与分流模式解析
 
+<img src="/images/guides/placeholder.jpg" alt="流量调度守门员：Surfboard 规则与分流模式解析截图" width="600" />
+
+
 Surfboard 的核心魅力在于其精准的分流系统，避免了传统全局代理导致的“访问国内 App 极其缓慢且浪费机场流量”的问题。
 
 ### 1. 三大运行模式对照
+
+<img src="/images/guides/placeholder.jpg" alt="三大运行模式对照截图" width="600" />
+
 *   **规则分流 (Rule-based)**：**（日常主力推荐）** 严格依照配置文件中定义的数万条域名与 IP 规则库运作。访问微信、淘宝、网易云等走本地直连；访问 Google、YouTube、Twitter 走指定节点；广告联盟请求直接拦截。
 *   **全局代理 (Global)**：强制手机产生的所有网络数据包无论目标地址在哪里，一律转发给当前选中的代理节点。仅在遇到特殊未被规则覆盖的冷门外网时临时开启。
 *   **全局直连 (Direct)**：所有流量均不经过代理节点。通常用于排查本地物理网络是否通畅。
 
 ### 2. 核心规则语法速览（了解极客规则原理）
+
+<img src="/images/guides/placeholder.jpg" alt="核心规则语法速览（了解极客规则原理）截图" width="600" />
+
 Surfboard 完整支持 Surge 的规则语法结构：
 *   `DOMAIN-SUFFIX,google.com,PROXY`：所有以 `google.com` 结尾的域名走 `PROXY` 策略组。
 *   `DOMAIN-KEYWORD,netflix,Netflix组`：只要网址中包含 `netflix` 关键字即分配给专门看奈飞的节点组。
@@ -156,19 +189,28 @@ Surfboard 完整支持 Surge 的规则语法结构：
 
 部分国产深度定制安卓系统（如小米 HyperOS/MIUI、华为鸿蒙 HarmonyOS、vivo OriginOS、OPPO ColorOS 等）拥有极其激进的后台清理机制。若遇到手机熄屏数分钟后代理自动断开，请按以下步骤优化：
 
-1.  **多任务卡片锁定**：呼出多任务管理后台，长按或下拉 Surfboard 任务卡片，点击“加锁”图标。
-2.  **电池策略调整**：进入系统“设置 -> 应用管理 -> Surfboard -> 电池/耗电管理”，将默认的“智能省电”改为 **“无限制 / 允许后台高耗电运行”**。
-3.  **授予自启动权限**：在应用权限列表中，确保开启 **“允许应用自启动”** 与 **“允许关联启动”**。
+### 1. 多任务卡片锁定呼出多任务管理后台，长按或下拉 Surfboard 任务卡片，点击“加锁”图标。
+### 2. 电池策略调整进入系统“设置 -> 应用管理 -> Surfboard -> 电池/耗电管理”，将默认的“智能省电”改为 **“无限制 / 允许后台高耗电运行”**。
+
+<img src="/images/guides/placeholder.jpg" alt="电池策略调整进入系统“设置 -> 应用管理 -> Surfboard -> 电池/耗电管理”，将默认的“智能省电”改为 **“无限制 / 允许后台高耗电运行”**。截图" width="600" />
+
+### 3. 授予自启动权限在应用权限列表中，确保开启 **“允许应用自启动”** 与 **“允许关联启动”**。
 
 ---
 
 ## 八、 常见问题与排障指南 (FAQ)
 
 ### Q1: 导入托管订阅时提示 “Parse config file failed / 配置文件语法错误”？
+
+<img src="/images/guides/placeholder.jpg" alt="Q1: 导入托管订阅时提示 “Parse config file failed / 配置文件语法错误”？截图" width="600" />
+
 *   **原因**：复制的链接并非标准的 Surge 托管格式（例如误复制了普通单节点链接或 v2ray 原生链接），Surfboard 无法识别其结构。
 *   **解决**：登录机场官网重新寻找“Surge 订阅”，或通过正规订阅转换工具（Subconverter）将订阅源转换为 Surge 3/4 格式后再行导入。
 
 ### Q2: 节点全部测试显示 Timeout 超时，但手机正常有网？
+
+<img src="/images/guides/placeholder.jpg" alt="Q2: 节点全部测试显示 Timeout 超时，但手机正常有网？截图" width="600" />
+
 *   **排查 1（时间偏差）**：加密协议对系统时间校验极度敏感。前往手机系统设置，关闭再重新打开“自动同步网络时间”，确保设备时间误差在 30 秒以内。
 *   **排查 2（套餐状态）**：登录机场后台，确认账户套餐是否已过期，或当月高速流量是否已经耗尽。
 *   **排查 3（网络阻断）**：尝试在手机 WiFi 与 5G 移动数据之间切换，排查是否是当前局域网路由器开启了防火墙拦截。
@@ -187,5 +229,10 @@ Surfboard 完整支持 Surge 的规则语法结构：
 Surfboard（冲浪板）将 iOS 平台顶级的 Surge 规则生态与 Android 系统的开放自由完美融合在一起。凭借其精致的 Material Design 外观、强大的策略分流控制和优雅的资源利用率，绝对是追求极致稳定与高效出海用户的首选客户端之一。
 
 **站长建议**：工欲善其事，必先利其器。优秀的客户端需要高速、稳定的网络节点作为坚实后盾。搭配使用具备 BGP/IPLC 专线中转的高质量机场订阅，才能最大化释放 Surfboard 的全速出海性能！如果您还没有找到合适的极速节点，强烈推荐前往 **[专属高速专线机场推荐](/recommend)** 挑选！
+
+
+---
+
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注全球网络代理工具解析与优质机场测速教程，未经授权禁止转载。**

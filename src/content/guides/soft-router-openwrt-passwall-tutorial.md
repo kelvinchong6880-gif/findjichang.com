@@ -50,6 +50,9 @@ PassWall 专为路由器低资源环境设计，直接调用底层 iptables / nf
 
 ## 一、 为什么选择 PassWall？核心架构与性能优势
 
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+
+
 面对琳琅满目的软路由代理插件，PassWall 之所以深受网络发烧友推崇，主要得益于以下核心特性：
 
 *   **超高转发效率与极低系统资源占用**：PassWall 摒弃了复杂的上层控制台开销，直接在 Linux 内核层通过网络过滤器进行透明代理转发。即使在搭载 J4125、N100 或 ARM 架构 R5S/R6S 的入门级软路由上，也能在低 CPU 占用率下跑满千兆出海带宽。
@@ -100,6 +103,9 @@ opkg update
 *(如果提示 Signature check failed 或下载超时，请先检查软路由的 WAN 口是否已正常联网)*
 
 ### 2. 批量安装核心依赖组件
+
+<img src="/images/guides/placeholder.jpg" alt="批量安装核心依赖组件截图" width="600" />
+
 在终端中复制并执行以下命令，一次性补全 PassWall 所需的 iptables、TProxy、加解密与解压工具：
 ```bash
 opkg install curl wget unzip ca-certificates iptables-mod-tproxy iptables-mod-extra ipset kmod-ipt-nat
@@ -113,15 +119,24 @@ opkg install kmod-nft-tproxy kmod-nft-nat nftables
 
 ## 四、 PassWall 插件与核心组件 (Core) 的安装实操
 
+<img src="/images/guides/placeholder.jpg" alt="PassWall 插件与核心组件 (Core) 的安装实操截图" width="600" />
+
+
 准备好依赖后，即可下载并安装 PassWall 插件本体及 Xray 核心。
 
 ### 1. 下载 PassWall 核心安装包
+
+<img src="/images/guides/placeholder.jpg" alt="下载 PassWall 核心安装包截图" width="600" />
+
 从官方 GitHub Releases 仓库（如 `xiaorouji/openwrt-passwall`）下载以下两到三个 `.ipk` 文件：
 *   `luci-app-passwall_xxx_all.ipk`（Web 交互界面）
 *   `luci-i18n-passwall-zh-cn_xxx_all.ipk`（中文语言包）
 *   `xray-core_xxx_架构.ipk` 或 `sing-box_xxx_架构.ipk`（底层代理内核）
 
 ### 2. 上传并执行安装
+
+<img src="/images/guides/placeholder.jpg" alt="上传并执行安装截图" width="600" />
+
 使用 WinSCP 或 SCP 命令将下载的文件上传至软路由的 `/tmp` 目录中。
 在 SSH 终端中执行安装：
 ```bash
@@ -134,13 +149,22 @@ opkg install *.ipk
 
 ## 五、 节点订阅配置与机场批量拉取
 
+<img src="/images/guides/placeholder.jpg" alt="节点订阅配置与机场批量拉取截图" width="600" />
+
+
 安装完成后，我们需要将翻墙机场提供的订阅链接导入 PassWall 中。
 
 ### 1. 获取机场订阅链接
+
+<img src="/images/guides/placeholder.jpg" alt="获取机场订阅链接截图" width="600" />
+
 1. 登录您的翻墙机场官网控制台。
 2. 找到“一键订阅 / 节点导出”区域，点击 **“复制 V2Ray 订阅链接”** 或 **“通用聚合订阅链接”**。
 
 ### 2. 添加订阅源
+
+<img src="/images/guides/placeholder.jpg" alt="添加订阅源截图" width="600" />
+
 1. 进入 OpenWRT 后台 -> 点击 **“服务”** -> **“PassWall”**。
 2. 点击上方的 **“节点订阅”** 选项卡。
 3. 点击 **“添加”** 按钮：
@@ -155,15 +179,24 @@ opkg install *.ipk
 
 ## 六、 智能分流与 DNS 防污染防泄漏设置
 
+<img src="/images/guides/placeholder.jpg" alt="智能分流与 DNS 防污染防泄漏设置截图" width="600" />
+
+
 这是保障家庭网络“国内秒开、国外顺畅、永不串流”的最核心步骤。
 
 ### 1. 主运行模式设置（基本设置）
+
+<img src="/images/guides/placeholder.jpg" alt="主运行模式设置（基本设置）截图" width="600" />
+
 进入 PassWall 的 **“基本设置”** 页面：
 *   **TCP 节点**：从下拉列表中，选择一个延迟低、稳定性高的主力专线节点（如“香港 01 专线”）。
 *   **UDP 节点**：选择“与 TCP 节点相同”（或单独指定一个支持 FullCone 的低延迟节点）。
 *   **运行模式**：选择 **“中国列表以外 (Bypass Mainland IP / GFWList)”**。这样设置后，所有访问国内百度、淘宝、微信的流量均走物理直连，访问境外网站才经过节点，省流且极速。
 
 ### 2. DNS 防污染精细化配置
+
+<img src="/images/guides/placeholder.jpg" alt="DNS 防污染精细化配置截图" width="600" />
+
 点击进入 **“DNS”** 选项卡：
 *   **过滤模式**：推荐选择 **“ChinaDNS-NG”**（性能最好、分流最准）。
 *   **国内 DNS 服务器 (Direct DNS)**：填入 `223.5.5.5`（阿里公共 DNS）或 `119.29.29.29`（腾讯 DNS）。
@@ -178,6 +211,9 @@ opkg install *.ipk
 为了让全屋的娱乐终端（Apple TV、PS5、Switch 等）获得极致体验，请开启以下优化项目：
 
 ### 1. Apple TV 4K 流媒体防锁区设置
+
+<img src="/images/guides/placeholder.jpg" alt="Apple TV 4K 流媒体防锁区设置截图" width="600" />
+
 *   在 PassWall 的 **“高级设置”** 中，开启 **“防止 DNS 泄漏”**。
 *   在**“规则管理”**中，确保 Netflix、Disney+ 等海外流媒体域名被严格匹配至解锁节点，避免因 CDN IP 漂移导致锁区。
 
@@ -191,14 +227,23 @@ opkg install *.ipk
 ## 八、 常见问题与深度排障指南 (FAQ / Q&A)
 
 ### Q1: 执行 opkg install 安装 PassWall 时提示 Unknown package / Cannot find dependency？
+
+<img src="/images/guides/placeholder.jpg" alt="Q1: 执行 opkg install 安装 PassWall 时提示 Unknown package / Cannot find dependency？截图" width="600" />
+
 *   **原因**：您的 OpenWRT 固件内置软件源缺少对应的依赖包。
 *   **解决**：检查软路由是否已经连通互联网，先执行 `opkg update`。如果官方源失效，可在 GitHub 下载对应的离线依赖包（如 `iptables-mod-tproxy` 的 ipk）一并上传安装。
 
 ### Q2: 导入机场订阅并开启后，节点测速全显示 Timeout（超时），无法翻墙？
+
+<img src="/images/guides/placeholder.jpg" alt="Q2: 导入机场订阅并开启后，节点测速全显示 Timeout（超时），无法翻墙？截图" width="600" />
+
 *   **排查 1（系统时间误差）**：现代加密协议（VLESS-Reality 等）对时间戳校验极其严格。前往 OpenWRT “系统” -> “系统属性”，点击“同步浏览器时间”或配置正确的 NTP 服务器，确保误差小于 30 秒。
 *   **排查 2（核心 Core 未启动）**：检查 PassWall 状态栏中的“Xray 状态”是否显示为“运行中”。若未运行，说明上传的 Core 内核架构不匹配，需重新下载对应 CPU 架构的核心文件。
 
 ### Q3: 开启 PassWall 后，手机连接 Wi-Fi 访问国内 App（如微信、淘宝、抖音）特别卡？
+
+<img src="/images/guides/placeholder.jpg" alt="Q3: 开启 PassWall 后，手机连接 Wi-Fi 访问国内 App（如微信、淘宝、抖音）特别卡？截图" width="600" />
+
 *   **原因**：DNS 分流配置错误，导致国内域名被送到了海外 DNS 解析，获取到了海外 CDN 节点。
 *   **解决**：检查 DNS 设置，确保国内 DNS 填入了 `223.5.5.5`，并且过滤模式选择了 ChinaDNS-NG。
 
@@ -217,5 +262,10 @@ opkg install *.ipk
 PassWall 作为 OpenWRT 平台上经久不衰的软路由翻墙神器，以其极高的硬件转发效率、深度的内核级分流机制以及对全协议的卓越支持，成为了构建家庭无感科学上网网络的中流砥柱。通过本文的“架构匹配 -> 依赖补全 -> 插件部署 -> 订阅拉取 -> DNS 分流调优”八步法，您就能轻松打造一个全天候稳定、极速且全家共享的全球网络环境。
 
 **站长建议**：软路由充当了全屋流量的“总闸门”，承载着多设备并发与高清大带宽的重任。再强悍的软路由硬件，也需要顶级的高质量机场线路作为后盾。为了保证晚高峰全家 4K 流媒体秒开、游戏低延迟不丢包，强烈建议您为软路由搭配拥有 BGP/IPLC 企业级专线中转的高端机场服务！请前往 **[顶级专线机场推荐](/recommend)** 进行了解和选购。
+
+
+---
+
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注 OpenWRT 软路由技术解析与高端网络架构教程，未经授权禁止转载。**

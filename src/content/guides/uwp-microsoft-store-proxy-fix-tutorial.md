@@ -50,6 +50,9 @@ bingChecklist:
 
 ## 一、 痛点引入与 Windows UWP 底层网络原理解析
 
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+
+
 ### 1. UWP 沙盒机制揭秘 (Network Isolation)
 为了防止恶意软件随意窃取用户隐私或破坏系统网络，微软从 Windows 8 开始引入了 UWP (通用 Windows 平台) 架构。
 *   **AppContainer 隔离**：所有的 UWP 应用都被强制运行在一个被称为 AppContainer 的独立虚拟沙盒中。
@@ -66,15 +69,24 @@ bingChecklist:
 
 ## 二、 方案拆解：主流客户端的完美解决途径
 
+<img src="/images/guides/placeholder.jpg" alt="方案拆解：主流客户端的完美解决途径截图" width="600" />
+
+
 既然知道了微软应用商店断网的罪魁祸首是“回环地址阻断”，我们只需“对症下药”，针对特定应用解除沙盒的本地网络限制即可。
 
 ### 1. v2rayN / NekoRay 等现代客户端内置方案
+
+<img src="/images/guides/placeholder.jpg" alt="v2rayN / NekoRay 等现代客户端内置方案截图" width="600" />
+
 如果您使用的是 v2rayN、NekoRay 等主流更新活跃的 Windows 代理客户端，开发者早已为您预留了“后悔药”，操作极其简便：
 *   **查找隐藏菜单**：打开 v2rayN 主界面，点击顶部菜单栏的“设置”或“首选项”，在下拉菜单中找到 **“解除 UWP 回环限制 (Exempt UWP Loopback)”**。
 *   **批量勾选放行**：点击后，系统会弹出一个包含所有已安装 UWP 应用的列表。在列表中仔细查找并勾选 `Microsoft Store`（应用商店）以及 `Xbox` 相关组件。
 *   **保存生效**：点击底部的“保存更改”。无需重启电脑，再次打开应用商店，页面即可瞬间加载完成。
 
 ### 2. 独立工具方案 (适用于老旧客户端)
+
+<img src="/images/guides/placeholder.jpg" alt="独立工具方案 (适用于老旧客户端)截图" width="600" />
+
 如果您使用的是较老的客户端，软件内没有内置解除功能，微软官方开源的独立工具是最佳选择：
 *   **获取专用工具**：在可靠渠道或 GitHub 下载 `EnableLoopback Utility` 压缩包。
 *   **权限授予**：解压文件后，找到执行程序，务必右键点击并选择 **“以管理员身份运行”**，否则无法写入底层注册表权限。
@@ -90,14 +102,23 @@ bingChecklist:
 
 ## 三、 终极杀招：TUN 虚拟网卡模式全景指南
 
+<img src="/images/guides/placeholder.jpg" alt="终极杀招：TUN 虚拟网卡模式全景指南截图" width="600" />
+
+
 如果您觉得通过工具逐一勾选 UWP 应用过于繁琐，或者您同时还是外服网游玩家、重度命令行（CMD/Git）使用者，那么开启代理客户端的 **TUN（虚拟网卡）模式** 是一劳永逸的终极方案。
 
 ### 1. 降维打击：TUN 模式为何能无视 UWP 沙盒？
+
+<img src="/images/guides/placeholder.jpg" alt="降维打击：TUN 模式为何能无视 UWP 沙盒？截图" width="600" />
+
 *   **创建虚拟网卡**：开启 TUN 后，代理软件会在您的电脑中直接虚拟出一张专属的底层网卡。
 *   **流量全局劫持**：所有发出电脑的网络请求（无论是浏览器、Steam 游戏，还是被关在沙盒里的 UWP 应用），都会被系统强制导入这张虚拟网卡。
 *   **完美绕过限制**：因为流量不再发往本地的回环端口，而是直接走虚拟网卡物理级通道，Windows 的网络隔离机制被彻底绕过。
 
 ### 2. 实战配置要点（以 Clash Verge Rev / Sing-box 为例）
+
+<img src="/images/guides/placeholder.jpg" alt="实战配置要点（以 Clash Verge Rev / Sing-box 为例）截图" width="600" />
+
 *   **Clash Verge Rev 开启方法**：点击左侧 **「设置」** -> 找到 **「服务模式」** 点击安装并授权 -> 在下方打开 **「TUN 模式」** 开关。
 *   **Sing-box / Hiddify 开启方法**：务必首先右键“以管理员身份运行”软件，进入网络设置面板，直接开启 **「启用 TUN」** 开关。
 
@@ -127,3 +148,8 @@ bingChecklist:
 排除了系统的网络故障，真正决定您科学上网体验上限的，依然是**节点服务器的质量**。想要在微软应用商店中畅享秒速下载，在国际互联网里看 4K 视频不卡顿，您需要一条真正稳定的企业级专线。
 
 欢迎点击访问 **[我们的高速专线机场推荐](/recommend)**，全链路 BGP 隧道中转，晚高峰依然坚挺，搭配本文修复后的纯净网络环境，助您在数字世界畅行无阻！
+
+
+---
+
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。

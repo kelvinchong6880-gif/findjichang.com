@@ -49,6 +49,9 @@ tags:
 
 ## 目录（快速导航）
 
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+
+
 - [一、核心概念科普：搞懂订阅与客户端](#一核心概念科普搞懂订阅与客户端)
 - [二、Windows 主流客户端横向对比与选型建议](#二windows-主流客户端横向对比与选型建议)
 - [三、方案一：Clash Verge Rev 极速配置指南（最推荐）](#三方案一clash-verge-rev-极速配置指南最推荐)
@@ -70,11 +73,20 @@ tags:
 
 ## 一、核心概念科普：搞懂订阅与客户端
 
+<img src="/images/guides/placeholder.jpg" alt="核心概念科普：搞懂订阅与客户端截图" width="600" />
+
+
 很多刚接触网络加速的新手经常混淆“机场服务”与“代理软件”的关系。我们可以将其拆解为以下核心模块：
 
-1. **节点服务器（Server）**：部署在香港、日本、新加坡、美国等地区的云服务器，负责中转网络流量。
-2. **订阅链接（Subscription URL）**：机场服务商提供的一串加密网址（或 API 接口），其中打包了数十至数百个节点服务器的连接参数（协议、端口、密钥、加密算法等）。
-3. **代理客户端（Client GUI）**：运行在 Windows 系统本地的图形化工具（如 Clash Verge Rev、v2rayN），负责解析订阅链接中的节点，并控制电脑流量分流。
+### 1. 节点服务器（Server）部署在香港、日本、新加坡、美国等地区的云服务器，负责中转网络流量。
+### 2. 订阅链接（Subscription URL）机场服务商提供的一串加密网址（或 API 接口），其中打包了数十至数百个节点服务器的连接参数（协议、端口、密钥、加密算法等）。
+
+<img src="/images/guides/placeholder.jpg" alt="订阅链接（Subscription URL）机场服务商提供的一串加密网址（或 API 接口），其中打包了数十至数百个节点服务器的连接参数（协议、端口、密钥、加密算法等）。截图" width="600" />
+
+### 3. 代理客户端（Client GUI）运行在 Windows 系统本地的图形化工具（如 Clash Verge Rev、v2rayN），负责解析订阅链接中的节点，并控制电脑流量分流。
+
+<img src="/images/guides/placeholder.jpg" alt="代理客户端（Client GUI）运行在 Windows 系统本地的图形化工具（如 Clash Verge Rev、v2rayN），负责解析订阅链接中的节点，并控制电脑流量分流。截图" width="600" />
+
 
 > **形象比喻**：
 > 客户端好比一台**播放器**，订阅链接好比**视频播单**。光有播放器看不了视频，光有播单没有播放器也无法解码。两者结合，才能畅快观影。
@@ -82,6 +94,9 @@ tags:
 ---
 
 ## 二、Windows 主流客户端横向对比与选型建议
+
+<img src="/images/guides/placeholder.jpg" alt="Windows 主流客户端横向对比与选型建议截图" width="600" />
+
 
 不同用户对界面美观度、协议支持度以及功能扩展性有不同需求。以下是目前主流 Windows 客户端的核心特性对比：
 
@@ -96,11 +111,17 @@ tags:
 
 ## 三、方案一：Clash Verge Rev 极速配置指南（最推荐）
 
+<img src="/images/guides/placeholder.jpg" alt="方案一：Clash Verge Rev 极速配置指南（最推荐）截图" width="600" />
+
+
 **Clash Verge Rev** 是目前在 Windows 平台最受欢迎的开源客户端，UI 美观优雅，功能模块清晰，且深度整合了 Clash Meta（Mihomo）内核。
 
 ---
 
 ### 1. 软件下载与安装
+
+<img src="/images/guides/placeholder.jpg" alt="软件下载与安装截图" width="600" />
+
 
 1. 前往官方 GitHub Releases 仓库或从本站提供的客户端下载中心获取最新安装包。
 2. Windows 64位系统用户请选择形如 `Clash.Verge_x.x.x_x64_zh-CN.msi` 或 `x64-setup.exe` 的安装程序。
@@ -109,6 +130,9 @@ tags:
 ---
 
 ### 2. 界面汉化与基础设置
+
+<img src="/images/guides/placeholder.jpg" alt="界面汉化与基础设置截图" width="600" />
+
 
 打开软件后，Clash Verge Rev 默认即为简体中文界面。若显示英文，可进行如下调整：
 
@@ -119,6 +143,9 @@ tags:
 ---
 
 ### 3. 一键导入机场订阅
+
+<img src="/images/guides/placeholder.jpg" alt="一键导入机场订阅截图" width="600" />
+
 
 导入节点订阅通常有两种方式：
 
@@ -147,21 +174,39 @@ tags:
 
 ### 5. 进阶玩法：开启 TUN 模式（全流量与游戏代理）
 
+<img src="/images/guides/placeholder.jpg" alt="进阶玩法：开启 TUN 模式（全流量与游戏代理）截图" width="600" />
+
+
 常规的“系统代理”仅接管遵循系统代理规范的浏览器及部分应用软件流量。如果你需要为**CMD命令行、Git终端、Discord桌面版、Steam外服游戏、Epic客户端**等不走系统代理的应用提供全流量中转，需开启 **TUN 模式**。
 
-1. **安装服务模式**：进入「设置」页面，找到「服务模式 (Service Mode)」，点击右侧「安装 (Install)」，安装完成后图标将变为绿色激活状态。
-2. **开启 TUN 模式**：在「设置」中找到 **「Tun 模式 (Tun Mode)」**，将开关切换为开启。
-3. **效果**：Windows 系统网络连接中会自动生成一个虚拟网卡，强制接管整机所有 TCP/UDP 流量。
+### 1. 安装服务模式进入「设置」页面，找到「服务模式 (Service Mode)」，点击右侧「安装 (Install)」，安装完成后图标将变为绿色激活状态。
+
+<img src="/images/guides/placeholder.jpg" alt="安装服务模式进入「设置」页面，找到「服务模式 (Service Mode)」，点击右侧「安装 (Install)」，安装完成后图标将变为绿色激活状态。截图" width="600" />
+
+### 2. 开启 TUN 模式在「设置」中找到 **「Tun 模式 (Tun Mode)」**，将开关切换为开启。
+
+<img src="/images/guides/placeholder.jpg" alt="开启 TUN 模式在「设置」中找到 **「Tun 模式 (Tun Mode)」**，将开关切换为开启。截图" width="600" />
+
+### 3. 效果Windows 系统网络连接中会自动生成一个虚拟网卡，强制接管整机所有 TCP/UDP 流量。
+
+<img src="/images/guides/placeholder.jpg" alt="效果Windows 系统网络连接中会自动生成一个虚拟网卡，强制接管整机所有 TCP/UDP 流量。截图" width="600" />
+
 
 ---
 
 ## 四、方案二：v2rayN 经典客户端配置指南（轻量与多协议）
+
+<img src="/images/guides/placeholder.jpg" alt="方案二：v2rayN 经典客户端配置指南（轻量与多协议）截图" width="600" />
+
 
 对于追求极低内存占用、喜欢原生快捷键托盘操作的用户，**v2rayN** 是历经多年检验的经典工具。
 
 ---
 
 ### 1. 核心与客户端下载
+
+<img src="/images/guides/placeholder.jpg" alt="核心与客户端下载截图" width="600" />
+
 
 1. 下载 v2rayN 完整包（建议选择包含 Core 核心的 `v2rayN-with-Core.zip` 压缩包）。
 2. 解压到无中文字符、无空格的本地磁盘路径（例如 `D:\Software\v2rayN\`）。
@@ -170,6 +215,9 @@ tags:
 ---
 
 ### 2. 订阅分组添加与更新
+
+<img src="/images/guides/placeholder.jpg" alt="订阅分组添加与更新截图" width="600" />
+
 
 1. 复制机场后台提供的 **「v2ray 订阅」** 或 **「通用订阅」** 链接。
 2. 打开 v2rayN 主界面，点击顶部菜单栏 **「订阅分组 (Subscription)」** -> **「订阅分组设置」**。
@@ -183,6 +231,9 @@ tags:
 
 ### 3. 路由规则与系统代理切换
 
+<img src="/images/guides/placeholder.jpg" alt="路由规则与系统代理切换截图" width="600" />
+
+
 1. 在底部控制面板中，将 **「路由 (Routing)」** 设置为 `绕过大陆 (bypass cn)` 或 `黑名单 (Blacklist)`，确保国内网站直连不消耗节点流量。
 2. 在节点列表中选中想要使用的节点，按键盘 `Enter` 键或右键选择 **「设为活动服务器」**。
 3. 鼠标右键点击 Windows 任务栏右下角托盘区的 v2rayN 小图标：
@@ -193,16 +244,31 @@ tags:
 
 ## 五、方案三：Sing-box / Hiddify 现代客户端简介
 
+<img src="/images/guides/placeholder.jpg" alt="方案三：Sing-box / Hiddify 现代客户端简介截图" width="600" />
+
+
 随着 **VLESS-Reality**、**Hysteria2** 和 **TUIC** 等新一代抗封锁、低延迟协议的普及，基于 Sing-box 内核开发的应用也日趋成熟。
 
 ### Hiddify Next 快速使用三步走：
-1. **下载安装**：前往 Hiddify 官方发布页面下载 Windows `.exe` 安装包。
-2. **导入配置**：启动软件后，直接点击 **「+ 添加配置」**，粘贴订阅链接，软件会自动识别并更新节点集群。
-3. **一键连接**：在主界面点击中心的大型圆形 **「Connect / 连接」** 按钮，客户端会自动接管系统流量分流。
+### 1. 下载安装前往 Hiddify 官方发布页面下载 Windows `.exe` 安装包。
+
+<img src="/images/guides/placeholder.jpg" alt="下载安装前往 Hiddify 官方发布页面下载 Windows `.exe` 安装包。截图" width="600" />
+
+### 2. 导入配置启动软件后，直接点击 **「+ 添加配置」**，粘贴订阅链接，软件会自动识别并更新节点集群。
+
+<img src="/images/guides/placeholder.jpg" alt="导入配置启动软件后，直接点击 **「+ 添加配置」**，粘贴订阅链接，软件会自动识别并更新节点集群。截图" width="600" />
+
+### 3. 一键连接在主界面点击中心的大型圆形 **「Connect / 连接」** 按钮，客户端会自动接管系统流量分流。
+
+<img src="/images/guides/placeholder.jpg" alt="一键连接在主界面点击中心的大型圆形 **「Connect / 连接」** 按钮，客户端会自动接管系统流量分流。截图" width="600" />
+
 
 ---
 
 ## 六、分流模式详解：规则、全局与直连的区别
+
+<img src="/images/guides/placeholder.jpg" alt="分流模式详解：规则、全局与直连的区别截图" width="600" />
+
 
 在使用 Windows 代理客户端时，我们通常会在界面上看到三种分流模式：
 
@@ -213,16 +279,25 @@ tags:
 └─────── 访问 海外网站 (如Google/GitHub) ──> [代理Proxy] ──> 节点服务器中转
 
 
-1. **规则模式（Rule / PAC / 绕过大陆）- 【强烈推荐】**
+### 1. 规则模式（Rule / PAC / 绕过大陆）- 【强烈推荐】
+
+<img src="/images/guides/placeholder.jpg" alt="规则模式（Rule / PAC / 绕过大陆）- 【强烈推荐】截图" width="600" />
+
    - **机制**：客户端内置域名与 IP 规则库。访问国内服务（如百度、网易云音乐、微信、Bilibili）走本地直连，不消耗代理流量；访问被墙服务（如 Google、YouTube、Twitter、ChatGPT）走代理。
    - **适用场景**：日常长期挂机，完全无需手动切换。
 
-2. **全局模式（Global）**
+### 2. 全局模式（Global）
+
+<img src="/images/guides/placeholder.jpg" alt="全局模式（Global）截图" width="600" />
+
    - **机制**：电脑的所有网络请求一律通过节点服务器发出。
    - **适用场景**：调试海外特定网页、查询本地节点出口真实 IP、部分规则库未覆盖的冷门海外站点。
    - **注意**：访问国内软件速度可能变慢，且会浪费机场流量。
 
-3. **直连模式（Direct）**
+### 3. 直连模式（Direct）
+
+<img src="/images/guides/placeholder.jpg" alt="直连模式（Direct）截图" width="600" />
+
    - **机制**：跳过所有代理通道，等同于未开启代理软件。
    - **适用场景**：需要彻底排查网络环境或进行大文件国内下载时使用。
 
@@ -247,6 +322,9 @@ tags:
 
 ### 问题 2：导入订阅提示“网络错误”、“500”或“下载配置文件失败”
 
+<img src="/images/guides/placeholder.jpg" alt="问题 2：导入订阅提示“网络错误”、“500”或“下载配置文件失败”截图" width="600" />
+
+
 * **排查步骤**：
   1. 检查复制的订阅链接是否完整，有无多余的前后空格。
   2. 尝试不挂代理在浏览器直接访问该订阅 URL，看是否能正常下载配置文件文本。
@@ -266,6 +344,9 @@ tags:
 
 ### 问题 4：开启代理后，ChatGPT / Netflix 提示“Access Denied”或“代理检测报错”
 
+<img src="/images/guides/placeholder.jpg" alt="问题 4：开启代理后，ChatGPT / Netflix 提示“Access Denied”或“代理检测报错”截图" width="600" />
+
+
 * **排查步骤**：
   1. 切换不同区域的节点（推荐选择新加坡、日本、美国原生住宅/原生 IP 节点）。
   2. 开启浏览器的无痕窗口（隐身模式）重试，清理本地 Cookie 缓存。
@@ -278,9 +359,15 @@ tags:
 配置 Windows 电脑端代理并不复杂，关键在于**选择维护活跃的现代化客户端**（如 Clash Verge Rev），并熟练掌握**分流模式**与**系统代理开关**。
 
 ### 安全使用温馨提示：
-1. **警惕第三方修改版客户端**：务必从 GitHub 官方 Release 页面下载客户端，切勿从不明网盘或第三方论坛下载被注入后门的破解版。
-2. **定期更新订阅配置**：节点 IP 和路由规则库会动态更新，建议每周至少在客户端中手动点击一次「更新订阅」。
-3. **合规使用网络**：请遵守当地法律法规，科学上网仅限用于海外学术查阅、开源技术学习及外贸跨境业务用途。
+### 1. 警惕第三方修改版客户端务必从 GitHub 官方 Release 页面下载客户端，切勿从不明网盘或第三方论坛下载被注入后门的破解版。
+
+<img src="/images/guides/placeholder.jpg" alt="警惕第三方修改版客户端务必从 GitHub 官方 Release 页面下载客户端，切勿从不明网盘或第三方论坛下载被注入后门的破解版。截图" width="600" />
+
+### 2. 定期更新订阅配置节点 IP 和路由规则库会动态更新，建议每周至少在客户端中手动点击一次「更新订阅」。
+
+<img src="/images/guides/placeholder.jpg" alt="定期更新订阅配置节点 IP 和路由规则库会动态更新，建议每周至少在客户端中手动点击一次「更新订阅」。截图" width="600" />
+
+### 3. 合规使用网络请遵守当地法律法规，科学上网仅限用于海外学术查阅、开源技术学习及外贸跨境业务用途。
 
 ---
 
@@ -288,3 +375,8 @@ tags:
 > - [Mac 苹果电脑端 Clash Verge 配置教程](/guide/mac-pc-proxy-client-tutorial)
 > - [Android 安卓手机端 Clash Meta 使用指南](/guide/android-proxy-client-tutorial)
 > - [iOS 苹果手机端 Shadowrocket (小火箭) 节点导入教程](/guide/ios-proxy-client-tutorial)
+
+
+---
+
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。

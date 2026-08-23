@@ -54,6 +54,9 @@ bingChecklist:
 
 ## 目录（快速导航）
 
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+
+
 - [一、 核心准备：为什么你在国区搜不到翻墙软件？](#一-核心准备为什么你在国区搜不到翻墙软件)
 - [二、 破除壁垒：2026 年最新美区 Apple ID 免信用卡注册指南](#二-破除壁垒2026-年最新美区-apple-id-免信用卡注册指南)
 - [三、 核心利器：Shadowrocket (小火箭) 正版下载与支付宝充值](#三-核心利器shadowrocket-小火箭-正版下载与支付宝充值)
@@ -101,6 +104,9 @@ bingChecklist:
 
 ## 三、 核心利器：Shadowrocket (小火箭) 正版下载与支付宝充值
 
+<img src="/images/guides/placeholder.jpg" alt="核心利器：Shadowrocket (小火箭) 正版下载与支付宝充值截图" width="600" />
+
+
 成功登录美区 App Store 后，我们就可以下载真正的主角——**Shadowrocket（俗称小火箭）**。
 
 ### 1. 认准正版，谨防假冒
@@ -121,29 +127,50 @@ bingChecklist:
 
 ## 四、 实战配置：机场节点一键订阅与全局路由智能分流
 
+<img src="/images/guides/placeholder.jpg" alt="实战配置：机场节点一键订阅与全局路由智能分流截图" width="600" />
+
+
 下载好 Shadowrocket 后，软件本身只是一个“空壳播放器”，需要导入机场服务商提供的“订阅链接（节点源）”才能真正联网。
 
 ### 1. 极速导入节点订阅
+
+<img src="/images/guides/placeholder.jpg" alt="极速导入节点订阅截图" width="600" />
+
 *   **一键导入（最省心）**：使用 Safari 浏览器登录您的机场后台，找到“一键订阅”区域，点击 **「导入到 Shadowrocket」**。系统弹窗提示“在 Shadowrocket 中打开？”时点击允许，小火箭将自动唤醒并导入所有节点。
 *   **手动配置（备用方案）**：在机场后台复制订阅链接。打开小火箭，点击右上角 **「+」**，类型选择 **「Subscribe (订阅)」**，在 URL 栏粘贴链接，填好备注后点击完成。回到主界面，**按住屏幕向下滑动**即可刷新出节点列表。
 
 ### 2. 全局路由 (Global Routing) 设置解析
+
+<img src="/images/guides/placeholder.jpg" alt="全局路由 (Global Routing) 设置解析截图" width="600" />
+
 在主界面的节点列表上方，找到 **「全局路由」** 选项。这是决定你科学上网体验好坏的关键：
 *   **配置 (Config) - ⭐ 强烈推荐日常使用**：智能分流模式。访问微信、淘宝等国内 App 走本地直连网络，不耗费机场流量且网速飞快；访问 YouTube、X (Twitter)、ChatGPT 时自动走代理节点。省电省心，全天挂机首选。
 *   **代理 (Proxy) - 全局模式**：强制手机所有网络请求一律走代理。仅在某些海外小众网站无法打开，或排查网络故障时临时开启。
 *   **直连 (Direct)**：彻底关闭代理，所有流量均走国内网络。
 
 ### 3. 后台保活与自动更新订阅
+
+<img src="/images/guides/placeholder.jpg" alt="后台保活与自动更新订阅截图" width="600" />
+
 为了防止机场节点 IP 变更导致无法联网，请点击小火箭底部的 **「设置 (Settings)」** -> **「订阅 (Subscribe)」**，将 **「打开时更新」** 和 **「自动后台更新」** 开关全部开启。
 
 ---
 
 ## 五、 连通性测试与高频疑难杂症排查 (FAQ)
 
+<img src="/images/guides/placeholder.jpg" alt="连通性测试与高频疑难杂症排查 (FAQ)截图" width="600" />
+
+
 ### 1. 首次连接与系统底层 VPN 授权
+
+<img src="/images/guides/placeholder.jpg" alt="首次连接与系统底层 VPN 授权截图" width="600" />
+
 1. 在主界面选择一个国家节点（点击使其左侧出现小黄点）。
 2. 点击最上方 **「未连接」** 右侧的总开关。
-3. **首次开启时，iPhone 会弹窗提示“Shadowrocket 想添加 VPN 配置”**，请务必点击 **「允许 (Allow)」**。
+### 3. 首次开启时，iPhone 会弹窗提示“Shadowrocket 想添加 VPN 配置”，请务必点击 **「允许 (Allow)」**。
+
+<img src="/images/guides/placeholder.jpg" alt="首次开启时，iPhone 会弹窗提示“Shadowrocket 想添加 VPN 配置”，请务必点击 **「允许 (Allow)」**。截图" width="600" />
+
 4. 随后系统会要求验证您的 iPhone 锁屏密码或 Face ID。验证通过后，屏幕右上角（或灵动岛）会出现 **[VPN]** 标识，代表翻墙成功。
 
 ### 2. 节点测速策略
@@ -173,3 +200,8 @@ bingChecklist:
 ---
 
 > **版权声明**：本文由本站技术团队原创首发。如需转载，请务必保留出处并附带原文链接，共同维护良好的网络技术分享生态。
+
+
+---
+
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。

@@ -39,10 +39,16 @@ bingChecklist:
 # Apple TV怎么看Netflix？2026翻墙路由器与客户端配置教程
 
 ## 第一章：Apple TV 观看 Netflix 的核心网络痛点
+
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+
 *   **IP 严格封锁**：Netflix 拥有业界最严苛的机房 IP 封锁机制。若节点未经解锁优化，极易触发“您似乎使用了代理或解锁件”的致命报错。
 *   **DNS 泄漏与锁区**：即便节点连通，若 Apple TV 默认的 DNS 解析发生物理位置漂移，依然会导致海报加载失败或缺少对应地区的字幕。
 
 ## 第二章：tvOS 原生翻墙客户端实操
+
+<img src="/images/guides/placeholder.jpg" alt="第二章：tvOS 原生翻墙客户端实操截图" width="600" />
+
 *   **外区下载准备**：请准备美区或港区 Apple ID，在 App Store 获取 Stash、Loon 或免费开源的 Sing-box。
 *   **一键订阅导入**：通过客户端提供的局域网 Web 面板或手机扫码功能，将机场订阅链接快速下发至电视端。
 *   **启动规则分流**：开启“规则分流 (Rule)”模式，确保流媒体流量精准分配给机场的解锁专线，避免全局代理影响本地体验。
@@ -70,6 +76,9 @@ bingChecklist:
 
 ## 第八章：常见播放报错深度排障 (Q&A)
 
+<img src="/images/guides/placeholder.jpg" alt="第八章：常见播放报错深度排障 (Q&A)截图" width="600" />
+
+
 ### Q: 播放时提示“您似乎使用了代理或解锁件”？
 **A**: 这意味着当前节点的 IP 已被 Netflix 官方精准识别并拉黑。请进入客户端策略组，立即切换至其他备用的流媒体解锁专线。
 
@@ -82,3 +91,8 @@ bingChecklist:
 ---
 
 **站长建议**：Apple TV 的绝佳视听体验，离不开网络的高速稳定。如果您经常在 Apple TV 上观看 Netflix、Disney+ 4K 影视，强烈推荐您搭配具有原生 IP 与高速率专线的优质机场。前往我们的 **[流媒体解锁优质机场推荐](/recommend)**，获取最适合您的网络加速方案。
+
+
+---
+
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。

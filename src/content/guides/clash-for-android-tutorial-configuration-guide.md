@@ -48,6 +48,9 @@ bingChecklist:
 
 ## 一、 为什么 Clash for Android 是安卓手机的翻墙首选？
 
+> 💡 **站长提示**：开始前，请确保你拥有一个稳定解锁流媒体和 ChatGPT 的机场订阅，如果没有，推荐使用 [找机场推荐专线](https://edp01.breezenetaff.com/#/?code=hM8APccJ)。
+
+
 相比于其他轻量或单一协议的客户端，Clash 框架在安卓端具备以下不可替代的核心优势：
 
 *   **精准的规则智能分流 (Rule-based Routing)**：自动识别国内外流量，访问国内网站（如微信、淘宝、Bilibili）走直连省流量，访问海外网站（Google、YouTube、ChatGPT）自动走代理，实现真正的无感浏览。
@@ -59,9 +62,15 @@ bingChecklist:
 
 ## 二、 准备工作：安全下载与安装 Clash for Android
 
+<img src="/images/guides/placeholder.jpg" alt="准备工作：安全下载与安装 Clash for Android截图" width="600" />
+
+
 由于国内应用商店无法上架代理类工具，获取正版、未被篡改的安装包 (APK) 是确保账号与网络安全的第一步。
 
 ### 1. 安全下载途径
+
+<img src="/images/guides/placeholder.jpg" alt="安全下载途径截图" width="600" />
+
 *   **GitHub 开源发布页 (首选)**：前往 Clash for Android 的开源托管页面或可信镜像站下载最新的 `.apk` 安装包。
 *   **架构选择说明**：
     *   `arm64-v8a.apk`：适用于目前 99% 的主流现代安卓手机（高通骁龙、天玑等处理器），**推荐下载此版本**。
@@ -69,6 +78,9 @@ bingChecklist:
     *   `universal.apk`：通用版本，包含所有架构库，体积略大。
 
 ### 2. 安装权限授权
+
+<img src="/images/guides/placeholder.jpg" alt="安装权限授权截图" width="600" />
+
 1. 下载完成后点击安装。如果系统弹出“为了您的安全，手机禁止安装未知来源应用”的提示：
 2. 点击“设置”，找到当前浏览器或文件管理器，开启 **“允许来自此来源的应用”** 开关。
 3. 返回安装界面，继续点击“安装”完成部署。
@@ -77,14 +89,23 @@ bingChecklist:
 
 ## 三、 核心配置第一步：获取并导入机场订阅
 
+<img src="/images/guides/placeholder.jpg" alt="核心配置第一步：获取并导入机场订阅截图" width="600" />
+
+
 安装完成后，软件只是一个空壳引擎，我们需要为其注入“动力”——也就是您购买的机场节点订阅。
 
 ### 1. 获取机场订阅链接
+
+<img src="/images/guides/placeholder.jpg" alt="获取机场订阅链接截图" width="600" />
+
 1. 登录您所使用的机场服务后台用户中心。
 2. 找到 “便捷导入” 或 “一键订阅” 区域。
 3. 点击 **“复制 Clash 订阅链接”**（或者选择“一键导入 Clash”，部分手机支持直接唤起 App）。
 
 ### 2. 在 CFA 中手动导入订阅文件 (Profiles)
+
+<img src="/images/guides/placeholder.jpg" alt="在 CFA 中手动导入订阅文件 (Profiles)截图" width="600" />
+
 如果您通过复制链接的方式导入，请按以下步骤操作：
 1. 打开 Clash for Android 客户端。
 2. 在主界面点击 **“配置 (Profiles)”**。
@@ -112,9 +133,15 @@ bingChecklist:
 
 ## 五、 深度解析：模式选择与策略组节点切换
 
+<img src="/images/guides/placeholder.jpg" alt="深度解析：模式选择与策略组节点切换截图" width="600" />
+
+
 启动代理后，点击主界面的 **“代理 (Proxy)”** 选项卡，这里是整个软件的核心控制台。
 
 ### 1. 三大核心路由模式解析
+
+<img src="/images/guides/placeholder.jpg" alt="三大核心路由模式解析截图" width="600" />
+
 在“代理”页面的最上方，通常有三种模式供选择：
 *   **规则 (Rule)**：根据配置文件中的规则列表分流：国内直连，国外走节点，广告拒绝。**日常推荐默认使用**，兼顾速度与流量节省。
 *   **全局 (Global)**：手机内产生的所有网络流量全部强制走选中的国外节点。极少部分特殊外网网页无法正常分流时临时使用。
@@ -129,6 +156,9 @@ bingChecklist:
 ---
 
 ## 六、 安卓特权功能：配置“分应用代理”
+
+<img src="/images/guides/placeholder.jpg" alt="安卓特权功能：配置“分应用代理”截图" width="600" />
+
 
 很多用户在开着代理时，使用国内 App（如微信、微信支付、各类手机银行）会遇到验证码频繁、定位偏差或收消息延迟的问题。利用 CFA 的分应用代理可以彻底解决这一痛点。
 
@@ -147,19 +177,31 @@ bingChecklist:
 
 部分国产安卓系统（如小米 HyperOS/MIUI、华为 HarmonyOS、vivo OriginOS、OPPO ColorOS 等）拥有极其严格的后台杀进程机制。如果发现 CFA 锁屏后频繁断网，请进行以下保活设置：
 
-1.  **锁定后台任务卡片**：打开多任务切换界面，长按 Clash for Android 卡片，点击“加锁”图标。
-2.  **电池无限制运行**：前往系统“设置 -> 应用管理 -> Clash for Android -> 电池管理 / 耗电保护”，将策略从“智能限制”改为 **“无限制 / 允许后台高耗电运行”**。
-3.  **自启动权限**：在权限管理中，为 CFA 开启 **“允许自启动”** 与 **“允许关联启动”**。
+### 1. 锁定后台任务卡片打开多任务切换界面，长按 Clash for Android 卡片，点击“加锁”图标。
+
+<img src="/images/guides/placeholder.jpg" alt="锁定后台任务卡片打开多任务切换界面，长按 Clash for Android 卡片，点击“加锁”图标。截图" width="600" />
+
+### 2. 电池无限制运行前往系统“设置 -> 应用管理 -> Clash for Android -> 电池管理 / 耗电保护”，将策略从“智能限制”改为 **“无限制 / 允许后台高耗电运行”**。
+
+<img src="/images/guides/placeholder.jpg" alt="电池无限制运行前往系统“设置 -> 应用管理 -> Clash for Android -> 电池管理 / 耗电保护”，将策略从“智能限制”改为 **“无限制 / 允许后台高耗电运行”**。截图" width="600" />
+
+### 3. 自启动权限在权限管理中，为 CFA 开启 **“允许自启动”** 与 **“允许关联启动”**。
 
 ---
 
 ## 八、 常见问题排障指南 (FAQ)
 
 ### Q1: 启动时报错提示 “An active Clash process already exists”？
+
+<img src="/images/guides/placeholder.jpg" alt="Q1: 启动时报错提示 “An active Clash process already exists”？截图" width="600" />
+
 *   **原因**：上一次关闭时内核进程未正常退出，或存在其他代理工具冲突。
 *   **解决**：前往手机“设置 -> 应用管理”，找到 Clash for Android 点击“强行停止”，然后重新打开软件启动即可。
 
 ### Q2: 导入订阅链接时报错 “Download profile failed” 或超时？
+
+<img src="/images/guides/placeholder.jpg" alt="Q2: 导入订阅链接时报错 “Download profile failed” 或超时？截图" width="600" />
+
 *   **排查 1**：检查复制的链接是否完整，确保没有多余的前后空格。
 *   **排查 2**：确认当前手机所处的直连网络是否能正常访问订阅服务器；如果不行，尝试切换为手机热点或开启数据流量重试。
 *   **排查 3**：登录机场官网，确认账户套餐是否已过期或流量已耗尽。
@@ -175,5 +217,10 @@ bingChecklist:
 Clash for Android 凭借其工业级的稳定内核与灵活强大的分流控制，无愧为安卓端科学上网的“瑞士军刀”。只要按照本文的指南完成基础配置、订阅拉取与分应用优化，您便能获得兼具速度、隐私与稳定性的极致网络体验。
 
 **温馨提示**：客户端是承载体验的载体，而核心的网络速度与稳定性取决于您选择的机场线路质量。建议搭配拥有 BGP/IPLC 专线中转的高速订阅源，才能充分释放 CFA 的全速性能！如果您需要优质节点，请访问我们的 **[机场推荐页面](/recommend)** 挑选合适的套餐。
+
+
+---
+
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注网络代理工具指南与机场测速评测，未经授权禁止转载。**
