@@ -129,17 +129,17 @@ bingChecklist:
 ## 结语：好马配好鞍，好工具更需专线节点
 
 掌握了如何修复 Windows 本地网络问题，下一步就是确保您的代理工具发挥出 100% 的性能。如果您还在使用老旧的工具，强烈建议您阅读我们站内的核心进阶教程：
-- 👉 **[【2026最新】Clash Verge Rev 电脑端保姆级配置教程](/guide/clash-verge-rev-windows-tutorial-2026)**
-- 👉 **[如何选择最适合你的分流路由规则？(小白必看)](/guide/windows-pc-proxy-client-tutorial)**
+- 👉 **[【2026最新】Clash Verge Rev 电脑端保姆级配置教程](/guide/clash-verge-rev-windows-tutorial-2026/)**
+- 👉 **[如何选择最适合你的分流路由规则？(小白必看)](/guide/windows-pc-proxy-client-tutorial/)**
 
 排除了系统的网络故障，真正决定您科学上网体验上限的，依然是**节点服务器的质量**。想要在微软应用商店中畅享秒速下载，在国际互联网里看 4K 视频不卡顿，您需要一条真正稳定的企业级专线。
 
-欢迎点击访问 **[我们的高速专线机场推荐](/recommend)**，全链路 BGP 隧道中转，晚高峰依然坚挺，搭配本文修复后的纯净网络环境，助您在数字世界畅行无阻！
+欢迎点击访问 **[我们的高速专线机场推荐](/recommend/)**，全链路 BGP 隧道中转，晚高峰依然坚挺，搭配本文修复后的纯净网络环境，助您在数字世界畅行无阻！
 
 
 ---
 
-**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial/)》。
 
 ## 官方资料、配图与推广说明
 

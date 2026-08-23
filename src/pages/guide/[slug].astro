@@ -2,7 +2,9 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 import { isPublishable } from '../../lib/seo';
+import { relatedContent, toCandidate } from '../../lib/related-content';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
@@ -14,6 +16,10 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const guideCandidates = (await getCollection('guides')).map((item) => toCandidate(item, 'guide'));
+const knowledgeCandidates = (await getCollection('knowledge')).map((item) => toCandidate(item, 'knowledge'));
+const current = toCandidate(entry, 'guide');
+const related = relatedContent(current, [...guideCandidates, ...knowledgeCandidates], 5);
 ---
 <BaseLayout title={`${entry.data.title}｜找机场`} description={entry.data.description} indexable={isPublishable(entry)}>
   <main class="page-shell detail-page">
@@ -33,6 +39,7 @@ const { Content } = await render(entry);
     <section class="content-layout" style="grid-template-columns: 1fr;">
       <article class="article-content">
         <Content />
+        <RelatedLinks links={related} title="相关教程与知识" />
       </article>
     </section>
   </main>

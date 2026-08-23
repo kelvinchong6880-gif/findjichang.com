@@ -192,9 +192,9 @@ bingChecklist:
 ## 六、 站内 SEO 延伸阅读推荐 (内链构建)
 
 掌握了 iOS 设备的配置，如果您还有其他设备需要接入网络，欢迎查阅站内相关干货教程：
-- 👉 **[【2026最新】Windows 电脑端 Clash Verge Rev 保姆级配置教程](/guide/clash-verge-rev-windows-tutorial-2026)**
-- 👉 **[电脑科学上网与分流设置指南](/guide/windows-pc-proxy-client-tutorial)**
-- 👉 **[电脑翻墙后微软应用商店 (UWP应用) 连不上网的完美解决办法](/guide/uwp-microsoft-store-proxy-fix-tutorial)**
+- 👉 **[【2026最新】Windows 电脑端 Clash Verge Rev 保姆级配置教程](/guide/clash-verge-rev-windows-tutorial-2026/)**
+- 👉 **[电脑科学上网与分流设置指南](/guide/windows-pc-proxy-client-tutorial/)**
+- 👉 **[电脑翻墙后微软应用商店 (UWP应用) 连不上网的完美解决办法](/guide/uwp-microsoft-store-proxy-fix-tutorial/)**
 
 ---
 
@@ -205,7 +205,7 @@ bingChecklist:
 然而，**再顶级的播放器，也需要高质量的“片源”来支撑**。免费节点或劣质机场不仅延迟高、经常断流，更存在严重的隐私泄露与数据窃取风险。
 
 想要在 iPhone 上丝滑流畅地刷 4K YouTube、秒开 ChatGPT、解锁各类海外流媒体，您需要一条稳定抗封锁的企业级专线护航。
-欢迎点击访问 **[我们的高速专线机场推荐](/recommend)**，全链路 BGP 隧道中转，晚高峰秒开 4K，配合本文的小火箭配置，助你在苹果设备上畅行无阻！
+欢迎点击访问 **[我们的高速专线机场推荐](/recommend/)**，全链路 BGP 隧道中转，晚高峰秒开 4K，配合本文的小火箭配置，助你在苹果设备上畅行无阻！
 
 ---
 
@@ -214,7 +214,7 @@ bingChecklist:
 
 ---
 
-**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial/)》。
 
 ## 官方资料、配图与推广说明
 

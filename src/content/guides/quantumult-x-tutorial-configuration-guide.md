@@ -68,7 +68,7 @@ bingChecklist:
 由于众所周知的原因，Quantumult X 并未在中国大陆区的 App Store 上架。因此，在配置之前，我们需要完成软件的获取。
 
 ### 1. 准备非大陆区 Apple ID
-您需要一个美区 (US)、港区 (HK) 或台区 (TW) 的 Apple ID。如果您还没有，可以参考我们的教程 [免费注册美区 Apple ID](/guide/free-us-apple-id-register-complete-tutorial)。
+您需要一个美区 (US)、港区 (HK) 或台区 (TW) 的 Apple ID。如果您还没有，可以参考我们的教程 [免费注册美区 Apple ID](/guide/free-us-apple-id-register-complete-tutorial/)。
 
 > **注册建议**：强烈建议不要在网上随便使用他人分享的免费 Apple ID，以免由于 iCloud 同步机制导致您的 iPhone 被锁（变砖）。您可以自己通过 Apple 官网注册一个美区账号，或者在可靠的渠道购买一个独享账号。
 >
@@ -255,12 +255,12 @@ Quantumult X 是一款“上限极高”的神器。通过这篇深度解析教�
 
 掌握了这款工具，搭配上高质量的机场网络，无论是为了学术研究、跨国电商运营，还是流畅观看 Netflix 4K 视频，您都能获得丝滑无比的网络体验。
 
-最后的小建议：工具虽好，但核心体验依然取决于您的网络节点质量。建议选择线路稳定、支持专线中转的服务商，这样才能最大化发挥 Quantumult X 的强大性能！如果您还没有满意的节点，欢迎点击前往 **[找机场年度专线推荐](/recommend)** 挑选！
+最后的小建议：工具虽好，但核心体验依然取决于您的网络节点质量。建议选择线路稳定、支持专线中转的服务商，这样才能最大化发挥 Quantumult X 的强大性能！如果您还没有满意的节点，欢迎点击前往 **[找机场年度专线推荐](/recommend/)** 挑选！
 
 
 ---
 
-**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial/)》。
 
 ## 官方资料、配图与推广说明
 

@@ -85,12 +85,12 @@ bingChecklist:
 
 ---
 
-**站长建议**：Apple TV 的绝佳视听体验，离不开网络的高速稳定。如果您经常在 Apple TV 上观看 Netflix、Disney+ 4K 影视，强烈推荐您搭配具有原生 IP 与高速率专线的优质机场。前往我们的 **[流媒体解锁优质机场推荐](/recommend)**，获取最适合您的网络加速方案。
+**站长建议**：Apple TV 的绝佳视听体验，离不开网络的高速稳定。如果您经常在 Apple TV 上观看 Netflix、Disney+ 4K 影视，强烈推荐您搭配具有原生 IP 与高速率专线的优质机场。前往我们的 **[流媒体解锁优质机场推荐](/recommend/)**，获取最适合您的网络加速方案。
 
 
 ---
 
-**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial/)》。
 
 ## 第九章：上线前检查与安全回滚
 

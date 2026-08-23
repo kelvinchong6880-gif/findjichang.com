@@ -1,0 +1,14 @@
+---
+export interface RelatedLink { href: string; title: string; description?: string }
+interface Props { links: RelatedLink[]; title?: string }
+const { links, title = '相关阅读' } = Astro.props;
+---
+{links.length > 0 && (
+  <section class="article-related" aria-label={title}>
+    <h2>{title}</h2>
+    <p>根据本文主题继续阅读，补充配置、测试方法与风险判断。</p>
+    <ul>
+      {links.map((link) => <li><a href={link.href}><strong>{link.title}</strong>{link.description && <span>{link.description}</span>}</a></li>)}
+    </ul>
+  </section>
+)}

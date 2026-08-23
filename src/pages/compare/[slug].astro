@@ -2,8 +2,15 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 import { isPublishable } from '../../lib/seo';
 export async function getStaticPaths(){return (await getCollection('comparisons')).map(entry=>({params:{slug:entry.id},props:{entry}}));}
 const { entry } = Astro.props; const { Content } = await render(entry);
+const comparisonLinks = [
+  ...entry.data.brandSlugs.map((slug) => ({ href: `/jichang/${slug}/`, title: `${slug === 'weifeng' ? '微风' : slug === 'sogo-yun' ? 'SOGO云' : slug === 'feimao-yun' ? '飞猫云' : slug}机场品牌资料` })),
+  { href: '/compare/', title: '返回 36 家机场对比表' },
+  { href: '/methodology/', title: '本站评测与证据方法' },
+  { href: '/knowledge/how-to-read-speed-test/', title: '怎样看懂机场测速结果' },
+];
 ---
-<BaseLayout title={`${entry.data.title}｜找机场`} description={entry.data.description} indexable={isPublishable(entry)}><main class="page-shell detail-page"><Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场对比',href:'/compare/'},{label:entry.data.title}]}/><section class="review-hero" style="grid-template-columns:1fr"><div><span class="badge">资料对比</span><h1>{entry.data.title}</h1><p>{entry.data.description}</p></div></section><section class="content-layout" style="grid-template-columns:1fr"><article class="article-content"><Content/></article></section></main></BaseLayout>
+<BaseLayout title={`${entry.data.title}｜找机场`} description={entry.data.description} indexable={isPublishable(entry)}><main class="page-shell detail-page"><Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场对比',href:'/compare/'},{label:entry.data.title}]}/><section class="review-hero" style="grid-template-columns:1fr"><div><span class="badge">资料对比</span><h1>{entry.data.title}</h1><p>{entry.data.description}</p></div></section><section class="content-layout" style="grid-template-columns:1fr"><article class="article-content"><Content/><RelatedLinks links={comparisonLinks} title="继续比较与核验" /></article></section></main></BaseLayout>

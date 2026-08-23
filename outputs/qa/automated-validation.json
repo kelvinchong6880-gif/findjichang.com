@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T11:17:34.084Z",
+  "generatedAt": "2026-08-23T11:26:35.595Z",
   "htmlPages": 158,
   "reviewRoutes": 36,
   "speedRoutes": 36,
@@ -9,6 +9,7 @@
   "failures": [],
   "warnings": [],
   "pass": [
+    "145 篇正文通过相关内链、URL 规范与孤立页检查",
     "36 个品牌测评路由",
     "36 个测速资料路由",
     "30 个机场知识路由",

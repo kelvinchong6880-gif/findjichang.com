@@ -10,12 +10,27 @@ walk(dist);
 const failures = [];
 const warnings = [];
 const pass = [];
+const articleRoutes = new Set();
+const inboundRoutes = new Map();
 const routeFor = (file) => file.endsWith(`${sep}404.html`) ? '/404.html' : `/${relative(dist, file).split(sep).join('/').replace(/index\.html$/, '')}`;
 const routeToFile = (href) => href === '/' ? join(dist, 'index.html') : href.endsWith('/') ? join(dist, href, 'index.html') : join(dist, href);
 
 for (const file of htmlFiles) {
   const html = readFileSync(file, 'utf8');
   const route = routeFor(file);
+  const articleMatch = html.match(/<article[^>]*class="[^"]*article-content[^"]*"[^>]*>([\s\S]*?)<\/article>/);
+  if (articleMatch) {
+    articleRoutes.add(route);
+    const articleLinks = [...articleMatch[1].matchAll(/href="(\/[^"]+)"/g)]
+      .map((match) => match[1].replace(/&amp;/g, '&'))
+      .filter((href) => !href.startsWith('//') && !href.startsWith('/go/'));
+    const uniqueTargets = new Set(articleLinks.map((href) => href.split(/[?#]/)[0]).filter(Boolean));
+    if (uniqueTargets.size < 3) failures.push(`${route}: 正文相关内链不足 3 个，当前为 ${uniqueTargets.size} 个`);
+    for (const href of articleLinks) {
+      const clean = href.split(/[?#]/)[0];
+      if (!clean.endsWith('/') && existsSync(join(dist, clean))) failures.push(`${route}: 正文内链缺少尾部斜杠 ${clean}`);
+    }
+  }
   const count = (pattern) => (html.match(pattern) ?? []).length;
   if (count(/<title>/g) !== 1) failures.push(`${route}: title 数量不是 1`);
   if (count(/<meta name="description"/g) !== 1) failures.push(`${route}: description 数量不是 1`);
@@ -31,7 +46,19 @@ for (const file of htmlFiles) {
     if (!href.startsWith('/') || href.startsWith('//') || href.startsWith('/go/') || href === '#') continue;
     const clean = href.split(/[?#]/)[0];
     if (!existsSync(routeToFile(clean))) failures.push(`${route}: 内链目标不存在 ${clean}`);
+    const normalized = !clean.endsWith('/') && existsSync(join(dist, clean, 'index.html')) ? `${clean}/` : clean;
+    if (normalized !== route) {
+      if (!inboundRoutes.has(normalized)) inboundRoutes.set(normalized, new Set());
+      inboundRoutes.get(normalized).add(route);
+    }
   }
+}
+
+for (const route of articleRoutes) {
+  if (!inboundRoutes.has(route)) failures.push(`${route}: 文章没有任何站内入口`);
+}
+if (!failures.some((item) => item.includes('正文相关内链') || item.includes('正文内链缺少尾部斜杠') || item.includes('文章没有任何站内入口'))) {
+  pass.push(`${articleRoutes.size} 篇正文通过相关内链、URL 规范与孤立页检查`);
 }
 
 const reviewDirs = readdirSync(join(dist, 'jichang'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;

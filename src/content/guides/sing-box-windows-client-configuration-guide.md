@@ -62,7 +62,7 @@ bingChecklist:
 它之所以能在短时间内爆红并封神，主要得益于以下三大断层式的优势：
 
 ### 1. 真正的“全协议”大一统
-    以前，为了用 VLESS 协议你得开 [V2rayN](/guide/v2rayn-windows-client-tutorial-vmess-vless-trojan)，为了用 Hysteria2 你得专门下载相应的客户端。而 Sing-box **原生内置**了 ShadowSocks、VMess、VLESS、Trojan、WireGuard、Hysteria1/2、TUIC、Reality 等几乎所有你听过的协议。一个核心，万物互联。
+    以前，为了用 VLESS 协议你得开 [V2rayN](/guide/v2rayn-windows-client-tutorial-vmess-vless-trojan/)，为了用 Hysteria2 你得专门下载相应的客户端。而 Sing-box **原生内置**了 ShadowSocks、VMess、VLESS、Trojan、WireGuard、Hysteria1/2、TUIC、Reality 等几乎所有你听过的协议。一个核心，万物互联。
 ### 2. 极致的性能与极低的资源消耗
     由于采用了高度优化的代码架构，Sing-box 在处理万兆级别并发流量时，CPU 和内存的占用率甚至不到传统代理软件的一半。对 Windows 笔记本用户极其友好，后台长期挂机几乎零功耗。
 ### 3. 强大的规则系统 (Rule-Set)
@@ -153,7 +153,7 @@ GUI 只是一个外壳，第一次启动我们需要让它下载真正的“发�
 
 ### 什么是 TUN 模式？
 
-传统的系统代理（System Proxy）经常会被一些不听话的软件（如命令行 CMD、Steam 外服游戏、部分 UWP 应用）无视。而 TUN 模式会在系统底层创建一张**虚拟网卡**，强制接管电脑所有的网络请求。结合 Sing-box 强大的路由规则，可以完美实现“国内直连，国外代理”。（注：若您不喜欢折腾，也可以尝试 [Clash Verge Rev 教程](/guide/clash-verge-rev-windows-tutorial-2026) 里的傻瓜式开启方法）。
+传统的系统代理（System Proxy）经常会被一些不听话的软件（如命令行 CMD、Steam 外服游戏、部分 UWP 应用）无视。而 TUN 模式会在系统底层创建一张**虚拟网卡**，强制接管电脑所有的网络请求。结合 Sing-box 强大的路由规则，可以完美实现“国内直连，国外代理”。（注：若您不喜欢折腾，也可以尝试 [Clash Verge Rev 教程](/guide/clash-verge-rev-windows-tutorial-2026/) 里的傻瓜式开启方法）。
 
 ### 开启 TUN 模式的步骤：
 
@@ -213,14 +213,14 @@ Sing-box GUI 提供了非常直观的控制面板：
 **站长温馨提示**：
 有了顶级的“播放器（客户端）”，您还需要匹配优质的“片源（节点网络）”。免费节点往往伴随着极其严重的数据窃取风险及极差的稳定性。
 
-如果您正在寻找能够跑满宽带、支持最新 **Hysteria2** 和 **VLESS-Reality** 协议的顶级节点，欢迎体验 **[本站重点测评的机场服务推荐](/recommend)**。我们推荐的机场后端均针对 Sing-box 核心进行了深度优化，BGP 隧道专线直达，助您在数字世界畅行无阻！
+如果您正在寻找能够跑满宽带、支持最新 **Hysteria2** 和 **VLESS-Reality** 协议的顶级节点，欢迎体验 **[本站重点测评的机场服务推荐](/recommend/)**。我们推荐的机场后端均针对 Sing-box 核心进行了深度优化，BGP 隧道专线直达，助您在数字世界畅行无阻！
 
 > **版权声明**：本文为找机场原创内容。如需转载，请务必注明出处并保留原文链接。让我们共同维护良好的中文技术生态。
 
 
 ---
 
-**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial/)》。
 
 ## 官方资料、配图与推广说明
 

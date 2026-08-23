@@ -240,16 +240,16 @@ bingChecklist:
 恭喜你！拥有了美区 Apple ID 并成功安装 Shadowrocket 后，你的苹果设备已经做好了接入全球互联网的一切软硬件准备。
 
 ### 接下来你还需要：
-- 👉 **[【2026最新】苹果 iOS 小火箭 (Shadowrocket) 节点导入与分流配置完全指南](/guide/ios-shadowrocket-proxy-complete-guide)**
-- 👉 **[Windows 电脑端 Clash Verge Rev 保姆级配置教程](/guide/clash-verge-rev-windows-tutorial-2026)**
-- 👉 **[如何辨别并选择真正稳定、抗封锁的高速专线机场？](/recommend)**
+- 👉 **[【2026最新】苹果 iOS 小火箭 (Shadowrocket) 节点导入与分流配置完全指南](/guide/ios-shadowrocket-proxy-complete-guide/)**
+- 👉 **[Windows 电脑端 Clash Verge Rev 保姆级配置教程](/guide/clash-verge-rev-windows-tutorial-2026/)**
+- 👉 **[如何辨别并选择真正稳定、抗封锁的高速专线机场？](/recommend/)**
 
 ---
 
 ### 💡 终极一键起飞方案：
 如果您觉得准备免税州地址、注册邮箱并跨国购买礼品卡的流程过于繁琐，我们为您准备了最省心的一站式解决方案：
 
-👉 **现在购买我们的 [年度尊享专线机场套餐](/recommend)**，联系在线客服即可**免费获取已购买好 Shadowrocket 的独享美区 Apple ID 使用权限**！全链路 BGP 隧道高速专线，晚高峰 4K 视频秒开，助您零门槛畅游无界网络！
+👉 **现在购买我们的 [年度尊享专线机场套餐](/recommend/)**，联系在线客服即可**免费获取已购买好 Shadowrocket 的独享美区 Apple ID 使用权限**！全链路 BGP 隧道高速专线，晚高峰 4K 视频秒开，助您零门槛畅游无界网络！
 
 ---
 
@@ -258,7 +258,7 @@ bingChecklist:
 
 ---
 
-**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial/)》。
 
 ## 官方资料、配图与推广说明
 

@@ -68,7 +68,7 @@ bingChecklist:
 ### 1. 准备非大陆区 Apple ID
 您需要准备一个美区 (US)、港区 (HK) 或台区 (TW) 的 Apple ID。
 
-> **⚠️ 安全警告**：如果您使用网上购买或别人分享的外区 Apple ID，请务必只在 **App Store** 登录，**绝对不要**在手机系统的“设置 -> Apple ID (iCloud)”中登录！ 否则有手机被锁死的风险。可以参考我们的 [免信用卡注册美区 Apple ID 教程](/guide/free-us-apple-id-register-complete-tutorial)。
+> **⚠️ 安全警告**：如果您使用网上购买或别人分享的外区 Apple ID，请务必只在 **App Store** 登录，**绝对不要**在手机系统的“设置 -> Apple ID (iCloud)”中登录！ 否则有手机被锁死的风险。可以参考我们的 [免信用卡注册美区 Apple ID 教程](/guide/free-us-apple-id-register-complete-tutorial/)。
 
 ### 2. 购买与下载
 
@@ -201,14 +201,14 @@ bingChecklist:
 
 对于希望摆脱繁琐代码配置，又渴望享受高级网络接管体验的苹果用户来说，Loon 无疑是当前最值得入手的轻量化科学上网客户端。
 
-**温馨提示**：Loon 的强大必须依托于稳定、快速的网络通道。如果您还没有找到合适的节点，欢迎点击前往我们的 **[高速专线机场推荐](/recommend)**，搭配 Loon 使用，体验极致的科学上网之旅！
+**温馨提示**：Loon 的强大必须依托于稳定、快速的网络通道。如果您还没有找到合适的节点，欢迎点击前往我们的 **[高速专线机场推荐](/recommend/)**，搭配 Loon 使用，体验极致的科学上网之旅！
 
 > **版权声明**：本文由本站技术团队原创首发。如需转载，请务必保留出处并附带原文链接。
 
 
 ---
 
-**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial/)》。
 
 ## 官方资料、配图与推广说明
 

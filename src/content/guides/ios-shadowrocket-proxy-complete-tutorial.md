@@ -179,7 +179,7 @@ bingChecklist:
 
 想要在 iPhone 上丝滑刷 4K YouTube 视频、低延迟玩海外游戏、稳定使用 ChatGPT，您需要一条真正的企业级高速专线。
 
-👉 **欢迎体验我们的 [年度尊享高速机场套餐](/recommend)**！
+👉 **欢迎体验我们的 [年度尊享高速机场套餐](/recommend/)**！
 - 全链路 BGP 隧道中转，无视晚高峰拥堵。
 - 完美解锁 Netflix、Disney+、TikTok 等流媒体。
 - **现在购买，联系客服即可免费获赠已下好小火箭的尊享美区 Apple ID 使用权！** 助您三分钟零门槛极速起飞！
@@ -191,7 +191,7 @@ bingChecklist:
 
 ---
 
-**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+**🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial/)》。
 
 ## 官方资料、配图与推广说明
 
