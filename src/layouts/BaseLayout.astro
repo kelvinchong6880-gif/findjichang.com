@@ -12,10 +12,11 @@ interface Props {
   socialImage?: string | null;
   indexable?: boolean;
   ogType?: 'website' | 'article';
+  keywords?: string[];
 }
 
 const isDetailPage = /^\/(jichang|speed-test)\/[^/]+\/$/.test(Astro.url.pathname);
-const { title, description, socialImage, indexable = !isDetailPage, ogType = 'website' } = Astro.props;
+const { title, description, socialImage, indexable = !isDetailPage, ogType = 'website', keywords = [] } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, site.url);
 const resolvedSocialImage = socialImage === undefined ? (isDetailPage ? null : '/og.png') : socialImage;
 const socialImageUrl = resolvedSocialImage ? new URL(resolvedSocialImage, site.url) : null;
@@ -31,6 +32,7 @@ const bingSiteAuth = import.meta.env.PUBLIC_BING_SITE_AUTH;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
     <meta name="robots" content={robots} />
     <meta name="bingbot" content={robots} />
     {bingSiteAuth && <meta name="msvalidate.01" content={bingSiteAuth} />}

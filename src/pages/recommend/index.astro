@@ -1,11 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionPage from '../../components/SectionPage.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { articleSchema } from '../../lib/structured-data';
 import { Content as RecommendContent } from './_recommend-article.md';
+const keywords = ['微风机场', '微风机场推荐', '微风机场怎么样', '微风机场值得买吗', '微风机场套餐价格', '微风机场注册链接', '微风机场 IPLC', '微风机场多设备', '2026 机场推荐', '机场购买指南'];
+const schema = articleSchema({ title: '微风机场推荐：套餐、适合人群与购买前检查（2026）', description: '从套餐结构、使用场景、设备需求和购买风险分析微风机场是否适合你，并提供注册前核对清单。', path: '/recommend/', publishedAt: new Date('2026-08-23T00:00:00+08:00'), updatedAt: new Date('2026-08-23T00:00:00+08:00'), image: '/images/brands/weifeng.png' });
 ---
-<BaseLayout title="机场候选与购买前检查｜找机场" description="整理微风、SOGO云与飞猫云的公开资料和购买前核对项目，不把未经验证的信息写成本站实测。">
-  <SectionPage title="机场候选与购买前检查" description="按预算、设备、流量规则与短期测试方法比较候选服务；当前不提供未经验证的速度排名。">
-    <div class="content-layout">
+<BaseLayout title="微风机场推荐：套餐、适合人群与购买前检查（2026）｜找机场" description="微风机场怎么样、是否值得买？从套餐结构、使用场景、设备需求和购买风险分析微风机场，并提供注册前核对清单。" socialImage="/images/brands/weifeng.png" ogType="article" keywords={keywords}>
+  <JsonLd data={schema} />
+  <SectionPage title="微风机场推荐与购买指南" description="不靠夸张测速给结论：先看微风机场适合谁、哪些信息仍需核对，再决定是否用短周期套餐测试。">
+    <div class="content-layout recommend-article">
       <article class="article-content mt-8">
         <RecommendContent />
       </article>

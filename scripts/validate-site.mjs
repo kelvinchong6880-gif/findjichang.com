@@ -63,6 +63,12 @@ if (!failures.some((item) => item.includes('.md:'))) pass.push('30 篇知识文�
 const recommendationSource = readFileSync(join(root, 'src/pages/recommend/_recommend-article.md'), 'utf8');
 if (/https?:\/\/[^\s)]*(?:code=|register)/.test(recommendationSource)) failures.push('推荐页仍包含直接推广链接'); else pass.push('推荐页推广入口统一使用 /go/');
 if (/独立测速团队|自费购买了|上百次|700Mbps|0\.00%/.test(recommendationSource)) failures.push('推荐页仍包含旧虚构实测文案'); else pass.push('推荐页已移除旧虚构实测文案');
+if (recommendationSource.length < 5000) failures.push('微风推荐文章内容长度不足'); else pass.push('微风推荐文章达到深度内容长度');
+const recommendationGoLinks = [...recommendationSource.matchAll(/\]\((\/go\/[^)]+)\)/g)].map((match) => match[1]);
+if (recommendationGoLinks.length < 2 || recommendationGoLinks.some((href) => !href.startsWith('/go/weifeng/'))) failures.push('微风推荐文章注册入口不完整或混入其他品牌'); else pass.push('微风推荐文章仅使用微风 /go/ 注册入口');
+const recommendHtml = readFileSync(join(dist, 'recommend/index.html'), 'utf8');
+if (!recommendHtml.includes('name="keywords"') || !recommendHtml.includes('微风机场值得买吗') || !recommendHtml.includes('"@type":"Article"')) failures.push('微风推荐页关键词或 Article 结构化数据缺失'); else pass.push('微风推荐页关键词与 Article 结构化数据已生成');
+if (!recommendHtml.includes('name="description" content="微风机场怎么样、是否值得买？')) failures.push('微风推荐页 SEO 摘要错误'); else pass.push('微风推荐页 SEO 摘要正确');
 if (!existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-tutorial/index.html')) || !existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-guide/index.html'))) failures.push('Shadowrocket 两篇教程未同时生成'); else pass.push('Shadowrocket 两篇教程独立生成');
 
 const compareIndex = readFileSync(join(dist, 'compare/index.html'), 'utf8');
