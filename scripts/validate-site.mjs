@@ -78,6 +78,14 @@ if (feimaoGoLinks.length < 2 || feimaoGoLinks.some((href) => !href.startsWith('/
 if (!feimaoRecommendationHtml.includes('name="keywords"') || !feimaoRecommendationHtml.includes('飞猫云值得买吗') || !feimaoRecommendationHtml.includes('"@type":"Article"')) failures.push('飞猫云推荐页关键词或 Article 结构化数据缺失'); else pass.push('飞猫云推荐页关键词与 Article 结构化数据已生成');
 const homeHtml = readFileSync(join(dist, 'index.html'), 'utf8');
 if (!homeHtml.includes('href="/recommend/feimao-yun/"') || !homeHtml.includes('预算优先')) failures.push('首页预算优先入口未连接飞猫云推荐页'); else pass.push('首页预算优先入口已连接飞猫云推荐页');
+
+const stabilitySource = readFileSync(join(root, 'src/pages/recommend/weifeng-stability/_article.md'), 'utf8');
+const stabilityHtml = readFileSync(join(dist, 'recommend/weifeng-stability/index.html'), 'utf8');
+const stabilityGoLinks = [...stabilitySource.matchAll(/\]\((\/go\/[^)]+)\)/g)].map((match) => match[1]);
+if (stabilitySource.length < 5000) failures.push('微风稳定性推荐文章内容长度不足'); else pass.push('微风稳定性推荐文章达到深度内容长度');
+if (stabilityGoLinks.length < 2 || stabilityGoLinks.some((href) => !href.startsWith('/go/weifeng/'))) failures.push('微风稳定性推荐文章注册入口不完整或混入其他品牌'); else pass.push('微风稳定性推荐文章仅使用微风 /go/ 注册入口');
+if (!stabilityHtml.includes('name="keywords"') || !stabilityHtml.includes('微风机场晚高峰') || !stabilityHtml.includes('"@type":"Article"')) failures.push('微风稳定性推荐页关键词或 Article 结构化数据缺失'); else pass.push('微风稳定性推荐页关键词与 Article 结构化数据已生成');
+if (!homeHtml.includes('href="/recommend/weifeng-stability/"') || !homeHtml.includes('稳定优先')) failures.push('首页稳定优先入口未连接微风稳定性推荐页'); else pass.push('首页稳定优先入口已连接微风稳定性推荐页');
 if (!existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-tutorial/index.html')) || !existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-guide/index.html'))) failures.push('Shadowrocket 两篇教程未同时生成'); else pass.push('Shadowrocket 两篇教程独立生成');
 
 const compareIndex = readFileSync(join(dist, 'compare/index.html'), 'utf8');

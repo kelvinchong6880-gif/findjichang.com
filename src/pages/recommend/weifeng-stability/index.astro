@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SectionPage from '../../../components/SectionPage.astro';
+import JsonLd from '../../../components/JsonLd.astro';
+import { articleSchema } from '../../../lib/structured-data';
+import { Content as StabilityContent } from './_article.md';
+
+const keywords = ['微风机场', '微风机场稳定吗', '微风机场稳定性', '稳定机场推荐', '微风机场推荐', '微风机场晚高峰', '微风机场 IPLC', '微风机场丢包', '微风机场测速', '2026 稳定机场推荐', '机场稳定性测试'];
+const schema = articleSchema({ title: '微风机场稳定性推荐：晚高峰、线路与测试指南（2026）', description: '微风机场稳定吗？从晚高峰、延迟、抖动、丢包、线路和故障恢复角度分析，并提供可复现的稳定性测试方法。', path: '/recommend/weifeng-stability/', publishedAt: new Date('2026-08-23T00:00:00+08:00'), updatedAt: new Date('2026-08-23T00:00:00+08:00'), image: '/images/brands/weifeng.png' });
+---
+<BaseLayout title="微风机场稳定性推荐：晚高峰、线路与测试指南（2026）｜找机场" description="微风机场稳定吗？从晚高峰、延迟、抖动、丢包、线路和故障恢复角度分析微风机场，并提供可复现的稳定性测试方法。" socialImage="/images/brands/weifeng.png" ogType="article" keywords={keywords}>
+  <JsonLd data={schema} />
+  <SectionPage title="微风机场稳定性推荐与测试指南" description="把“稳定”拆成晚高峰、抖动、丢包与恢复能力，再决定微风机场是否适合作为你的主力候选。">
+    <div class="content-layout recommend-article"><article class="article-content mt-8"><StabilityContent /></article></div>
+  </SectionPage>
+</BaseLayout>
