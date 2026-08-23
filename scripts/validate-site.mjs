@@ -146,16 +146,17 @@ if (!existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-tutorial/index
 
 const compareIndex = readFileSync(join(dist, 'compare/index.html'), 'utf8');
 const compareGoLinks = [...compareIndex.matchAll(/href="\/go\/([^/?]+)\/\?from=\/compare\/&amp;placement=table"/g)].map((match) => match[1]);
-const expectedCompareTop = ['weifeng', 'feimao-yun', 'sogo-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao'];
+const expectedCompareTop = ['weifeng', 'feimao-yun', 'firefly', 'wuyou', 'kuajie-yun', 'lingmao', 'shanyue'];
 if (compareGoLinks.length !== 36 || new Set(compareGoLinks).size !== 36) failures.push(`机场总对比注册链接为 ${compareGoLinks.length} 个且唯一值为 ${new Set(compareGoLinks).size} 个，应均为 36`); else pass.push('机场总对比包含 36 个唯一 /go/ 注册入口');
-if (expectedCompareTop.some((slug, index) => compareGoLinks[index] !== slug)) failures.push('机场总对比前 9 家顺序错误'); else pass.push('机场总对比前 9 家顺序正确');
+if (expectedCompareTop.some((slug, index) => compareGoLinks[index] !== slug)) failures.push('机场总对比前 7 家顺序错误'); else pass.push('机场总对比前 7 家顺序正确');
 if (!compareIndex.includes('怎样使用这张 36 家机场对比表') || !compareIndex.includes('为什么这张表不填写“绝对速度排名”')) failures.push('机场总对比下方指南文章缺失'); else pass.push('机场总对比下方指南文章已生成');
 
 const brandsSource = readFileSync(join(root, 'src/data/brands.ts'), 'utf8');
 const brandRows = [...brandsSource.matchAll(/^\s*\['([^']+)', '([^']+)', '([^']+)'\],?$/gm)].map((match) => ({ name: match[1], slug: match[2], url: match[3] }));
 if (brandRows.length !== 36) failures.push(`品牌资料为 ${brandRows.length}，应为 36`); else pass.push('36 个品牌资料');
 if (new Set(brandRows.map((item) => item.slug)).size !== 36) failures.push('品牌代号存在重复');
-if (brandRows[0]?.name !== '微风' || brandRows[1]?.name !== 'SOGO云' || brandRows[2]?.name !== '飞猫云') failures.push('前三品牌优先级错误');
+const expectedBrandPriority = ['微风', '飞猫云', 'Firefly', '无忧', '跨界云', '灵猫', '闪跃'];
+if (expectedBrandPriority.some((name, index) => brandRows[index]?.name !== name)) failures.push('前七品牌优先级错误');
 for (const brand of brandRows) {
   if (!existsSync(join(dist, 'jichang', brand.slug, 'index.html')) || !existsSync(join(dist, 'speed-test', brand.slug, 'index.html'))) failures.push(`${brand.name}: 测评或测速路由缺失`);
 }

@@ -7,7 +7,7 @@ import { articleSchema, itemListSchema } from '../../lib/structured-data';
 import { getCollection } from 'astro:content';
 import RelatedLinks from '../../components/RelatedLinks.astro';
 
-const preferred = ['weifeng', 'feimao-yun', 'sogo-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao'];
+const preferred = ['weifeng', 'feimao-yun', 'firefly', 'wuyou', 'kuajie-yun', 'lingmao', 'shanyue'];
 const orderedBrands = [...preferred.map((slug) => brands.find((brand) => brand.slug === slug)), ...brands.filter((brand) => !preferred.includes(brand.slug))].filter((brand): brand is (typeof brands)[number] => Boolean(brand));
 const schema = itemListSchema('36 家机场资料对比表', orderedBrands.map((brand) => ({ name: brand.name, path: `/jichang/${brand.slug}/` })));
 const article = articleSchema({ title: '36 家机场对比表：价格、资料、测速与注册链接', description: '整理 36 家机场的起步价、品牌资料、测速页面与站内注册链接；购买前请复核动态价格和条款。', path: '/compare/', publishedAt: new Date('2026-08-23T00:00:00+08:00') });
@@ -21,7 +21,7 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
     <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '机场对比' }]} />
     <header class="compare-heading">
       <p class="eyebrow">36 家资料总览</p><h1>机场对比表</h1>
-      <p class="section-lead">把 36 家机场的公开入口放在同一张表里，方便先看资料、再看测速，最后决定是否前往注册。前 9 家按本站当前展示优先级排列，其余按资料库顺序展示。</p>
+      <p class="section-lead">把 36 家机场的公开入口放在同一张表里，方便先看资料、再看测速，最后决定是否前往注册。前 7 家按本站当前展示优先级排列，其余采用固定的随机展示顺序。</p>
       <div class="compare-notice"><strong>请先看说明：</strong>展示顺序不是速度、稳定性或安全性排名。起步价来自本站当前资料记录，套餐可能调整；注册或付款前请在服务商页面重新核对价格、流量、倍率、退款和并发限制。</div>
     </header>
 
@@ -32,8 +32,8 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
         <caption>36 家机场的展示顺序、起步价与资料入口</caption>
         <thead><tr><th scope="col">顺序</th><th scope="col">机场</th><th scope="col">当前记录起步价</th><th scope="col">资料状态</th><th scope="col">站内资料</th><th scope="col">注册链接</th></tr></thead>
         <tbody>{orderedBrands.map((brand, index) => <tr>
-          <td><span class:list={['rank-number', { featured: index < 9 }]}>{index + 1}</span></td>
-          <th scope="row"><span class="brand-cell">{brand.avatar && <img src={brand.avatar} width="34" height="34" alt={`${brand.name}品牌标识`} loading="lazy" />}<span><strong>{brand.name}</strong>{index < 9 && <small>优先展示</small>}</span></span></th>
+          <td><span class:list={['rank-number', { featured: index < 7 }]}>{index + 1}</span></td>
+          <th scope="row"><span class="brand-cell">{brand.avatar && <img src={brand.avatar} width="34" height="34" alt={`${brand.name}品牌标识`} loading="lazy" />}<span><strong>{brand.name}</strong>{index < 7 && <small>优先展示</small>}</span></span></th>
           <td>{brand.minPrice ?? '待核验'}</td><td><span class="status-note">价格需复核</span></td>
           <td><span class="table-links"><a href={`/jichang/${brand.slug}/`}>品牌资料</a><a href={`/speed-test/${brand.slug}/`}>测速资料</a></span></td>
           <td><a class="register-link" href={`/go/${brand.slug}/?from=/compare/&placement=table`}>前往注册 <span aria-hidden="true">↗</span></a></td>
@@ -71,7 +71,7 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
       <p>同理，所谓“稳定率 99.9%”“永久解锁”或“零丢包”都需要长期原始数据支持。本站目前没有足够证据时不会填写这些数字。你可以参考<a href="/knowledge/how-to-read-speed-test/">测速结果阅读指南</a>，自己建立一份包含白天、晚高峰和周末的记录。</p>
 
       <h2>常见问题</h2>
-      <h3>表格前 9 名就是推荐排名吗？</h3><p>不是。它们是你指定的优先展示顺序，方便读者先查看这些品牌，不代表前面的服务在所有地区、时段和用途上优于后面的服务。</p>
+      <h3>表格前 7 名就是性能排名吗？</h3><p>不是。它们是你指定的优先展示顺序，方便读者先查看这些品牌，不代表前面的服务在所有地区、时段和用途上优于后面的服务。</p>
       <h3>为什么点击注册会先经过 /go/？</h3><p>站内跳转用于统一披露推广关系并记录不包含个人身份的汇总点击信息。跳转后的注册、付款、隐私和退款由第三方服务商处理，具体说明见<a href="/affiliate-disclosure/">推广披露</a>与<a href="/privacy/">隐私政策</a>。</p>
       <h3>起步价可以直接作为购买价格吗？</h3><p>不可以。价格是容易变化的信息，且最低价套餐可能附带周期或规格条件。表格用于初筛，最终应以你进入服务商结算页时看到的套餐和条款为准。</p>
 
