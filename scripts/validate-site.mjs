@@ -40,7 +40,7 @@ const knowledgeDirs = readdirSync(join(dist, 'knowledge'), { withFileTypes: true
 const comparisonDirs = readdirSync(join(dist, 'compare'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;
 reviewDirs === 36 ? pass.push('36 个品牌测评路由') : failures.push(`品牌测评路由为 ${reviewDirs}，应为 36`);
 speedDirs === 36 ? pass.push('36 个测速资料路由') : failures.push(`测速资料路由为 ${speedDirs}，应为 36`);
-knowledgeDirs === 3 ? pass.push('3 个机场知识路由') : failures.push(`机场知识路由为 ${knowledgeDirs}，应为 3`);
+knowledgeDirs === 30 ? pass.push('30 个机场知识路由') : failures.push(`机场知识路由为 ${knowledgeDirs}，应为 30`);
 comparisonDirs === 2 ? pass.push('2 个机场对比路由') : failures.push(`机场对比路由为 ${comparisonDirs}，应为 2`);
 
 const recommendationSource = readFileSync(join(root, 'src/pages/recommend/_recommend-article.md'), 'utf8');

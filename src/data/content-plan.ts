@@ -18,7 +18,14 @@ const guideSlugs = [
   'tun-mode-clash-sing-box-tutorial','uwp-microsoft-store-proxy-fix-tutorial','v2rayn-windows-client-tutorial-vmess-vless-trojan',
   'v2rayng-android-client-tutorial-guide','v2rayu-mac-client-tutorial-guide','windows-pc-proxy-client-tutorial',
 ] as const;
-const knowledgeSlugs = ['how-to-read-speed-test','line-types-explained','traffic-multiplier-and-renewal'] as const;
+const knowledgeSlugs = [
+  'line-types-explained','bgp-transit-explained','dedicated-line-stability','ip-types-explained','entry-exit-node-explained',
+  'how-to-read-speed-test','fast-test-slow-browsing','peak-hour-testing','latency-reference-ranges','speed-test-tools-compared',
+  'traffic-multiplier-and-renewal','monthly-data-estimator','monthly-vs-annual-plan','unlimited-devices-explained','speed-connection-thread-limits',
+  'subscription-link-security','nodes-subscriptions-rules','proxy-protocols-compared','hysteria2-tuic-reality','client-speed-differences',
+  'netflix-unlock-meaning','google-works-ai-fails','chatgpt-error-codes','tiktok-region-errors','ai-streaming-line-claims',
+  'proxy-privacy-https','free-node-risks','shutdown-risk-checklist','subscription-leak-response','legal-account-payment-risks',
+] as const;
 const comparisonItems = [
   ['weifeng-vs-sogo-yun',['weifeng','sogo-yun']],
   ['sogo-yun-vs-feimao-yun',['sogo-yun','feimao-yun']],

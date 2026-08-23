@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-23T09:59:00.175Z",
-  "htmlPages": 128,
+  "generatedAt": "2026-08-23T10:09:54.241Z",
+  "htmlPages": 155,
   "reviewRoutes": 36,
   "speedRoutes": 36,
-  "knowledgeRoutes": 3,
+  "knowledgeRoutes": 30,
   "comparisonRoutes": 2,
   "brands": 36,
   "failures": [],
@@ -11,7 +11,7 @@
   "pass": [
     "36 个品牌测评路由",
     "36 个测速资料路由",
-    "3 个机场知识路由",
+    "30 个机场知识路由",
     "2 个机场对比路由",
     "推荐页推广入口统一使用 /go/",
     "推荐页已移除旧虚构实测文案",
