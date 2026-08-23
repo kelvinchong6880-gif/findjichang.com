@@ -29,7 +29,7 @@ brandSlug: "quanqiu-cloud"
 reviewSlug: "quanqiu-cloud"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://sswdh.gcvipaff.com/#/?code=SHjBKSgm"
+    url: "https://findjichang.com/go/quanqiu-cloud/?from=/speed-test/quanqiu-cloud/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

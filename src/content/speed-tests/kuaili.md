@@ -29,7 +29,7 @@ brandSlug: "kuaili"
 reviewSlug: "kuaili"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://work.kuailicloud.cc/#/?code=azB6yNBW"
+    url: "https://findjichang.com/go/kuaili/?from=/speed-test/kuaili/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

@@ -29,7 +29,7 @@ brandSlug: "wuyou"
 reviewSlug: "wuyou"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://wep01.worryfreeaff.com/#/?code=s1kH64A8"
+    url: "https://findjichang.com/go/wuyou/?from=/speed-test/wuyou/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

@@ -29,7 +29,7 @@ brandSlug: "lingmao"
 reviewSlug: "lingmao"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://edp01.civetaff.com/#/?code=CYg7QSJo"
+    url: "https://findjichang.com/go/lingmao/?from=/speed-test/lingmao/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

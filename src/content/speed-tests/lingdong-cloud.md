@@ -29,7 +29,7 @@ brandSlug: "lingdong-cloud"
 reviewSlug: "lingdong-cloud"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://varnexa.lingdongaff.com/#/?code=HDiWuF7L"
+    url: "https://findjichang.com/go/lingdong-cloud/?from=/speed-test/lingdong-cloud/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

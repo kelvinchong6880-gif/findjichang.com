@@ -29,7 +29,7 @@ brandSlug: "tizi-cloud"
 reviewSlug: "tizi-cloud"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://varnexa.ladderaff.com/#/?code=zUCoDtv6"
+    url: "https://findjichang.com/go/tizi-cloud/?from=/speed-test/tizi-cloud/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

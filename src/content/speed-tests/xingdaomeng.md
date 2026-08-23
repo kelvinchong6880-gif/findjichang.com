@@ -29,7 +29,7 @@ brandSlug: "xingdaomeng"
 reviewSlug: "xingdaomeng"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://kfccbb.xingdaomeng.com/#/?code=0YcwWgSw"
+    url: "https://findjichang.com/go/xingdaomeng/?from=/speed-test/xingdaomeng/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

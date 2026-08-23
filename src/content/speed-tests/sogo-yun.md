@@ -29,7 +29,7 @@ brandSlug: "sogo-yun"
 reviewSlug: "sogo-yun"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://wzjc.sogoyunaff.cc/#/?code=BC2BL855"
+    url: "https://findjichang.com/go/sogo-yun/?from=/speed-test/sogo-yun/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

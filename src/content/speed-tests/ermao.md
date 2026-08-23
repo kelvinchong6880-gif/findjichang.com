@@ -29,7 +29,7 @@ brandSlug: "ermao"
 reviewSlug: "ermao"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://wzjc.2maoyunaff.cc/#/?code=bvsFDmSt"
+    url: "https://findjichang.com/go/ermao/?from=/speed-test/ermao/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

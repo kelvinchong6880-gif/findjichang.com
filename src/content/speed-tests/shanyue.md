@@ -29,7 +29,7 @@ brandSlug: "shanyue"
 reviewSlug: "shanyue"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://wep01.flashleapaff.com/#/?code=cs0ekCMG"
+    url: "https://findjichang.com/go/shanyue/?from=/speed-test/shanyue/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

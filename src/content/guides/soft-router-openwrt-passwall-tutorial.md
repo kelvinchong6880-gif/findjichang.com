@@ -121,7 +121,7 @@ opkg install kmod-nft-tproxy kmod-nft-nat nftables
 
 ### 1. 下载 PassWall 核心安装包
 
-从官方 GitHub Releases 仓库（如 `xiaorouji/openwrt-passwall`）下载以下两到三个 `.ipk` 文件：
+从官方 GitHub Releases 仓库（`Openwrt-Passwall/openwrt-passwall`）下载以下两到三个 `.ipk` 文件：
 - `luci-app-passwall_xxx_all.ipk`（Web 交互界面）
 - `luci-i18n-passwall-zh-cn_xxx_all.ipk`（中文语言包）
 - `xray-core_xxx_架构.ipk` 或 `sing-box_xxx_架构.ipk`（底层代理内核）
@@ -247,7 +247,7 @@ PassWall 作为 OpenWRT 平台上经久不衰的软路由翻墙神器，以其�
 
 > 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
 
-- [PassWall 官方项目](https://github.com/xiaorouji/openwrt-passwall)
+- [PassWall 官方项目](https://github.com/Openwrt-Passwall/openwrt-passwall)
 - [OpenWrt 官方用户指南](https://openwrt.org/docs/guide-user/start)
 
 **推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

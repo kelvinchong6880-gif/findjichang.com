@@ -29,7 +29,7 @@ brandSlug: "laomao-cloud"
 reviewSlug: "laomao-cloud"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://222.22laomao.com/#/register?code=jcPU1grl"
+    url: "https://findjichang.com/go/laomao-cloud/?from=/speed-test/laomao-cloud/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

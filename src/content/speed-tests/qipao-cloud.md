@@ -29,7 +29,7 @@ brandSlug: "qipao-cloud"
 reviewSlug: "qipao-cloud"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://x1.qipaoyun.xyz/#/register?code=UtKCpyVa"
+    url: "https://findjichang.com/go/qipao-cloud/?from=/speed-test/qipao-cloud/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

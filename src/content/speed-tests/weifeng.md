@@ -29,7 +29,7 @@ brandSlug: "weifeng"
 reviewSlug: "weifeng"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://edp01.breezenetaff.com/#/?code=hM8APccJ"
+    url: "https://findjichang.com/go/weifeng/?from=/speed-test/weifeng/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

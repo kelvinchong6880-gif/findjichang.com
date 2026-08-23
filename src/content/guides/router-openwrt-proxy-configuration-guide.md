@@ -179,6 +179,6 @@ bingChecklist:
 
 - [OpenWrt 官方用户指南](https://openwrt.org/docs/guide-user/start)
 - [OpenClash 官方项目](https://github.com/vernesong/OpenClash)
-- [PassWall 官方项目](https://github.com/xiaorouji/openwrt-passwall)
+- [PassWall 官方项目](https://github.com/Openwrt-Passwall/openwrt-passwall)
 
 **推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

@@ -29,7 +29,7 @@ brandSlug: "dageyun"
 reviewSlug: "dageyun"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://a03.dgy02.com/#/register?code=wojBN2a4"
+    url: "https://findjichang.com/go/dageyun/?from=/speed-test/dageyun/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

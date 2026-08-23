@@ -27,7 +27,7 @@ bingChecklist: { intentSatisfied: true, originalValue: true, factsVerified: true
 
 先购买最短可用周期，导入自己的主力客户端；在白天和晚高峰分别测试常用场景；检查流量扣除是否符合倍率；确认不用代理时能完整恢复网络。测试结果只适用于你的网络条件。
 
-查看[SOGO云资料](/jichang/sogo-yun/)或[飞猫云资料](/jichang/feimao-yun/)。第三方入口：[SOGO云](/go/sogo-yun/?from=/compare/sogo-yun-vs-feimao-yun/&placement=article)、[飞猫云](/go/feimao-yun/?from=/compare/sogo-yun-vs-feimao-yun/&placement=article)。
+查看[SOGO云资料](/jichang/sogo-yun/)或[飞猫云资料](/jichang/feimao-yun/)。第三方入口：[SOGO云](/go/sogo-yun/?from=/compare/sogo-yun-vs-feimao-yun/&placement=article-end)、[飞猫云](/go/feimao-yun/?from=/compare/sogo-yun-vs-feimao-yun/&placement=article-end)。
 
 **推广披露：** 页面包含推广链接。请把官方结算页和自己的短期测试作为购买依据。
 

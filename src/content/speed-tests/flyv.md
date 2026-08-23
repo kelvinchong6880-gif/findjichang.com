@@ -29,7 +29,7 @@ brandSlug: "flyv"
 reviewSlug: "flyv"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://varnexa.flyvaff.com/#/?code=XsiIuDgj"
+    url: "https://findjichang.com/go/flyv/?from=/speed-test/flyv/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

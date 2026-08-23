@@ -29,7 +29,7 @@ brandSlug: "yifan"
 reviewSlug: "yifan"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://wzjc.1flyunaff.cc/#/?code=0tH3Mmch"
+    url: "https://findjichang.com/go/yifan/?from=/speed-test/yifan/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

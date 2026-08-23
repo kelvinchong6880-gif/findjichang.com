@@ -29,7 +29,7 @@ brandSlug: "weitu-cloud"
 reviewSlug: "weitu-cloud"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://fast.v2yunvipaff.com/#/?code=nbBJVFQP"
+    url: "https://findjichang.com/go/weitu-cloud/?from=/speed-test/weitu-cloud/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

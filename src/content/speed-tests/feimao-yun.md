@@ -29,7 +29,7 @@ brandSlug: "feimao-yun"
 reviewSlug: "feimao-yun"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://flycat1.flycatvipaff.cc/#/?code=w5lO9fqB"
+    url: "https://findjichang.com/go/feimao-yun/?from=/speed-test/feimao-yun/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

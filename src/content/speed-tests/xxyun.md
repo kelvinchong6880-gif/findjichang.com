@@ -29,7 +29,7 @@ brandSlug: "xxyun"
 reviewSlug: "xxyun"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://www.xx-yun.com/?code=pi9fB906"
+    url: "https://findjichang.com/go/xxyun/?from=/speed-test/xxyun/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

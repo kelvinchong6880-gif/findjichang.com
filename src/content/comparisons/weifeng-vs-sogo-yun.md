@@ -27,7 +27,7 @@ bingChecklist: { intentSatisfied: true, originalValue: true, factsVerified: true
 
 分别选择可承受损失的短周期套餐，在同一设备、同一宽带和相近时段测试。记录导入是否顺利、常用地区是否可用、断线恢复和客服响应；不要依据本站旧文章中的精确速度数字购买。
 
-查看[微风资料](/jichang/weifeng/)或[SOGO云资料](/jichang/sogo-yun/)。前往第三方页面：[微风](/go/weifeng/?from=/compare/weifeng-vs-sogo-yun/&placement=article)、[SOGO云](/go/sogo-yun/?from=/compare/weifeng-vs-sogo-yun/&placement=article)。
+查看[微风资料](/jichang/weifeng/)或[SOGO云资料](/jichang/sogo-yun/)。前往第三方页面：[微风](/go/weifeng/?from=/compare/weifeng-vs-sogo-yun/&placement=article-end)、[SOGO云](/go/sogo-yun/?from=/compare/weifeng-vs-sogo-yun/&placement=article-end)。
 
 **推广披露：** 两个服务商入口均可能为本站带来佣金，佣金不构成性能证据。
 

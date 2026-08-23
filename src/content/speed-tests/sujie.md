@@ -29,7 +29,7 @@ brandSlug: "sujie"
 reviewSlug: "sujie"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://work.speedworldaff.cc/#/?code=wZYGdnTC"
+    url: "https://findjichang.com/go/sujie/?from=/speed-test/sujie/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

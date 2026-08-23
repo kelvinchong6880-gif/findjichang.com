@@ -22,5 +22,11 @@ export async function onRequestGet(context: Context): Promise<Response> {
     doubles: [1],
   });
 
-  return new Response(null, { status: 302, headers: { Location: brand.affiliateUrl, 'Cache-Control': 'no-store, private', 'Referrer-Policy': 'no-referrer' } });
+  return new Response(null, { status: 302, headers: {
+    Location: brand.affiliateUrl,
+    'Cache-Control': 'no-store, private',
+    'Referrer-Policy': 'no-referrer',
+    'X-Robots-Tag': 'noindex, nofollow',
+    'X-Content-Type-Options': 'nosniff',
+  } });
 }

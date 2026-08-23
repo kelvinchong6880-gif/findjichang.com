@@ -29,7 +29,7 @@ brandSlug: "langwang-cloud"
 reviewSlug: "langwang-cloud"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://varnexa.wavenetaff.com/#/?code=9U2hOtDu"
+    url: "https://findjichang.com/go/langwang-cloud/?from=/speed-test/langwang-cloud/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

@@ -29,7 +29,7 @@ brandSlug: "invisible-man"
 reviewSlug: "invisible-man"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://varnexa.invisibleaff.com/#/?code=BtPRayAl"
+    url: "https://findjichang.com/go/invisible-man/?from=/speed-test/invisible-man/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

@@ -29,7 +29,7 @@ brandSlug: "kuajie-yun"
 reviewSlug: "kuajie-yun"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://vip02.kuajieaff.com/#/?code=hh3QezsW"
+    url: "https://findjichang.com/go/kuajie-yun/?from=/speed-test/kuajie-yun/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

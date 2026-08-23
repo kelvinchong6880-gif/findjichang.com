@@ -29,7 +29,7 @@ brandSlug: "firefly"
 reviewSlug: "firefly"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://vip02.fireflyaff.com/#/?code=8nDg6OEY"
+    url: "https://findjichang.com/go/firefly/?from=/speed-test/firefly/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

@@ -12,6 +12,8 @@ const warnings = [];
 const pass = [];
 const articleRoutes = new Set();
 const inboundRoutes = new Map();
+const affiliateLinks = [];
+const externalLinks = [];
 const routeFor = (file) => file.endsWith(`${sep}404.html`) ? '/404.html' : `/${relative(dist, file).split(sep).join('/').replace(/index\.html$/, '')}`;
 const routeToFile = (href) => href === '/' ? join(dist, 'index.html') : href.endsWith('/') ? join(dist, href, 'index.html') : join(dist, href);
 
@@ -56,6 +58,12 @@ for (const file of htmlFiles) {
       if (!inboundRoutes.has(normalized)) inboundRoutes.set(normalized, new Set());
       inboundRoutes.get(normalized).add(route);
     }
+  }
+  for (const match of html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)) {
+    const tag = match[0];
+    const href = match[1].replace(/&(?:amp|#x26);/g, '&');
+    if (href.startsWith('/go/')) affiliateLinks.push({ route, href, tag });
+    if (/^https?:\/\//i.test(href) && !href.startsWith('https://findjichang.com/')) externalLinks.push({ route, href, tag });
   }
 }
 
@@ -145,7 +153,7 @@ if (!homeHtml.includes('href="/recommend/firefly-streaming-ai/"') || !homeHtml.i
 if (!existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-tutorial/index.html')) || !existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-guide/index.html'))) failures.push('Shadowrocket 两篇教程未同时生成'); else pass.push('Shadowrocket 两篇教程独立生成');
 
 const compareIndex = readFileSync(join(dist, 'compare/index.html'), 'utf8');
-const compareGoLinks = [...compareIndex.matchAll(/href="\/go\/([^/?]+)\/\?from=\/compare\/&amp;placement=table"/g)].map((match) => match[1]);
+const compareGoLinks = [...compareIndex.matchAll(/href="\/go\/([^/?]+)\/\?from=%2Fcompare%2F&amp;placement=comparison-table"/g)].map((match) => match[1]);
 const expectedCompareTop = ['weifeng', 'feimao-yun', 'firefly', 'wuyou', 'kuajie-yun', 'lingmao', 'shanyue'];
 if (compareGoLinks.length !== 36 || new Set(compareGoLinks).size !== 36) failures.push(`机场总对比注册链接为 ${compareGoLinks.length} 个且唯一值为 ${new Set(compareGoLinks).size} 个，应均为 36`); else pass.push('机场总对比包含 36 个唯一 /go/ 注册入口');
 if (expectedCompareTop.some((slug, index) => compareGoLinks[index] !== slug)) failures.push('机场总对比前 7 家顺序错误'); else pass.push('机场总对比前 7 家顺序正确');
@@ -157,6 +165,25 @@ if (brandRows.length !== 36) failures.push(`品牌资料为 ${brandRows.length}�
 if (new Set(brandRows.map((item) => item.slug)).size !== 36) failures.push('品牌代号存在重复');
 const expectedBrandPriority = ['微风', '飞猫云', 'Firefly', '无忧', '跨界云', '灵猫', '闪跃'];
 if (expectedBrandPriority.some((name, index) => brandRows[index]?.name !== name)) failures.push('前七品牌优先级错误');
+const brandSlugs = new Set(brandRows.map((brand) => brand.slug));
+const allowedPlacements = new Set(['hero', 'summary', 'pricing', 'sidebar', 'article-end', 'recommend-card', 'comparison-table', 'mobile-bottom']);
+for (const { route, href, tag } of affiliateLinks) {
+  const parsed = new URL(href, 'https://findjichang.com');
+  const slug = parsed.pathname.split('/')[2];
+  if (!brandSlugs.has(slug)) failures.push(`${route}: 推广链接品牌不存在 ${slug}`);
+  if (!parsed.searchParams.get('from')?.startsWith('/')) failures.push(`${route}: 推广链接缺少合法 from 参数 ${href}`);
+  if (!allowedPlacements.has(parsed.searchParams.get('placement'))) failures.push(`${route}: 推广链接 placement 无效 ${href}`);
+  if (!/target="_blank"/.test(tag) || !/rel="[^"]*sponsored[^"]*"/.test(tag) || !/rel="[^"]*nofollow[^"]*"/.test(tag) || !/rel="[^"]*noopener[^"]*"/.test(tag)) failures.push(`${route}: 推广链接缺少安全或披露属性 ${href}`);
+}
+for (const { route, href, tag } of externalLinks) {
+  if (!/target="_blank"/.test(tag) || !/rel="[^"]*noopener[^"]*"/.test(tag) || !/rel="[^"]*noreferrer[^"]*"/.test(tag)) failures.push(`${route}: 外链缺少新窗口安全属性 ${href}`);
+}
+const affiliateTargets = new Set(brandRows.map((brand) => brand.url));
+for (const file of markdownFiles) {
+  const source = readFileSync(file, 'utf8');
+  for (const target of affiliateTargets) if (source.includes(target)) failures.push(`${relative(root, file)}: 正文或元数据仍含直接推广链接`);
+}
+if (!failures.some((item) => item.includes('推广链接') || item.includes('外链缺少'))) pass.push(`${affiliateLinks.length} 个推广链接及 ${externalLinks.length} 个外链通过统一属性检查`);
 for (const brand of brandRows) {
   if (!existsSync(join(dist, 'jichang', brand.slug, 'index.html')) || !existsSync(join(dist, 'speed-test', brand.slug, 'index.html'))) failures.push(`${brand.name}: 测评或测速路由缺失`);
 }

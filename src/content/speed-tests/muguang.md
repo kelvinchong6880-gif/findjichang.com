@@ -29,7 +29,7 @@ brandSlug: "muguang"
 reviewSlug: "muguang"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://varnexa.twilightaff.com/#/?code=2ILQOoYB"
+    url: "https://findjichang.com/go/muguang/?from=/speed-test/muguang/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

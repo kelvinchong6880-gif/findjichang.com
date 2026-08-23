@@ -29,7 +29,7 @@ brandSlug: "xsus"
 reviewSlug: "xsus"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://xsus.cloud/register?code=QQh1M1i9"
+    url: "https://findjichang.com/go/xsus/?from=/speed-test/xsus/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

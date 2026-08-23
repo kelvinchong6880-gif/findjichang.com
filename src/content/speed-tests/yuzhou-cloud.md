@@ -29,7 +29,7 @@ brandSlug: "yuzhou-cloud"
 reviewSlug: "yuzhou-cloud"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://wzjc.yuzoucloud.cc/#/?code=IWowgER5"
+    url: "https://findjichang.com/go/yuzhou-cloud/?from=/speed-test/yuzhou-cloud/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

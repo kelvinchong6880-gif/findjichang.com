@@ -29,7 +29,7 @@ brandSlug: "flashget-cloud"
 reviewSlug: "flashget-cloud"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://NGYHGO.快车.com"
+    url: "https://findjichang.com/go/flashget-cloud/?from=/speed-test/flashget-cloud/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22
@@ -191,4 +191,4 @@ A：因为网际快车铺设的是货真价实的 **IPLC 纯血国际私有专�
 
 如果你已经厌倦了那些一到晚上就疯狂丢包断流的廉价机场，想要找一个**“不管外网封锁多严，它都能像高铁一样稳定、像闪电一样较快”的质量较高避风港**，那么网际快车绝对值得你立刻投入一杯咖啡的钱去体验一番，它所带来的极限物理网速绝对会让你大呼过瘾。
 
-[👉 （请认准官方安全防迷路链接）点击此处，立即前往网际快车官网，体验突破物理边界的 IPLC 较快专线](https://NGYHGO.快车.com)
+[👉 完成核对后前往网际快车注册页面](/go/flashget-cloud/?from=/speed-test/flashget-cloud/&placement=article-end)

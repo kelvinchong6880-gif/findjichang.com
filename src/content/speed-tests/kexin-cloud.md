@@ -29,7 +29,7 @@ brandSlug: "kexin-cloud"
 reviewSlug: "kexin-cloud"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://work.kosingaff.com/#/?code=k7T1sOyG"
+    url: "https://findjichang.com/go/kexin-cloud/?from=/speed-test/kexin-cloud/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

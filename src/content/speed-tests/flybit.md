@@ -29,7 +29,7 @@ brandSlug: "flybit"
 reviewSlug: "flybit"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://1.flybit.network/#/register?code=Aga7bd1s"
+    url: "https://findjichang.com/go/flybit/?from=/speed-test/flybit/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

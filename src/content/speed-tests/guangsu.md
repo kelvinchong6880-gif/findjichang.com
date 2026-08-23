@@ -29,7 +29,7 @@ brandSlug: "guangsu"
 reviewSlug: "guangsu"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://mdlky.gsyaff.com/#/?code=5PLKd4WN"
+    url: "https://findjichang.com/go/guangsu/?from=/speed-test/guangsu/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

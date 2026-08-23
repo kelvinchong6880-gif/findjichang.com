@@ -29,7 +29,7 @@ brandSlug: "jilian-cloud"
 reviewSlug: "jilian-cloud"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://kdjhao.jlyvipaff.com/#/?code=3d87WSjS"
+    url: "https://findjichang.com/go/jilian-cloud/?from=/speed-test/jilian-cloud/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

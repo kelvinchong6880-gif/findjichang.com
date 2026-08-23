@@ -29,7 +29,7 @@ brandSlug: "guangnian"
 reviewSlug: "guangnian"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://ggmq.gntaff.com/#/?code=hTN6UF4T"
+    url: "https://findjichang.com/go/guangnian/?from=/speed-test/guangnian/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22

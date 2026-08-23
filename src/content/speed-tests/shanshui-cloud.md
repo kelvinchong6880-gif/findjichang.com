@@ -29,7 +29,7 @@ brandSlug: "shanshui-cloud"
 reviewSlug: "shanshui-cloud"
 sources:
   - label: "2026晚高峰独立测速数据"
-    url: "https://ss2.byvvcsx.com/#/register?code=Rh44jFWe"
+    url: "https://findjichang.com/go/shanshui-cloud/?from=/speed-test/shanshui-cloud/&placement=article-end"
     publisher: "SpeedTest Reborn"
     sourceType: "third-party-test"
     collectedAt: 2026-08-22
