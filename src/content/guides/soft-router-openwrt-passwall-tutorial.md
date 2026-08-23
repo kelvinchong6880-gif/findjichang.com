@@ -31,17 +31,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：在软路由全屋科学上网的生态中，如果说 OpenClash 是“功能丰富、界面华丽”的代表，那么 PassWall（Lienol / xiaorouji 开源分支） 毫无疑问就是**“极致性能与极致稳定”的代名词**。
 
 PassWall 专为路由器低资源环境设计，直接调用底层 iptables / nftables 防火墙与 TProxy 模块进行数据包转发，转发开销极小、延迟极低，是跑满千兆甚至 2.5G 宽带的绝佳利器。本文将为您带来 2026 年最详尽的 OpenWRT 从零编译/安装 PassWall、依赖补全、订阅拉取、DNS 防污染分流及排障保姆级教程。
@@ -241,3 +240,14 @@ PassWall 作为 OpenWRT 平台上经久不衰的软路由翻墙神器，以其�
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注 OpenWRT 软路由技术解析与高端网络架构教程，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/passwall.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [PassWall 官方项目](https://github.com/xiaorouji/openwrt-passwall)
+- [OpenWrt 官方用户指南](https://openwrt.org/docs/guide-user/start)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

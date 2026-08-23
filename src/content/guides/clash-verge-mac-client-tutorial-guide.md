@@ -31,17 +31,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：在 macOS 优美且高效的桌面生态中，无论是程序员进行代码构建、拉取 GitHub 仓库，还是跨国商务处理海外邮件、设计工作者使用 Midjourney 与 ChatGPT，亦或是高清流媒体追剧，一款稳定、高速且无感的代理软件都是生产力的核心基石。然而，随着老牌工具 ClashX 和 ClashX Pro 相继停止维护，许多 Mac 用户在选型时陷入了迷茫。
 
 Clash Verge Rev 作为新一代全能接班人，凭借强大的 Clash.Meta (Mihomo) 内核、极致的资源控制和现代化的全中文界面，成为了当前 Mac 平台的首选。本文将为您带来最详尽的保姆级下载、配置、TUN 模式与排障全攻略。
@@ -210,3 +209,14 @@ curl -i https://ip.sb
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注 macOS 生产力工具与网络代理技术解析，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/clash-verge.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Clash Verge Rev 官方项目](https://github.com/clash-verge-rev/clash-verge-rev)
+- [Mihomo 官方文档](https://wiki.metacubex.one/)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

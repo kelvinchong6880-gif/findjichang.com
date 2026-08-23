@@ -32,17 +32,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：在 iOS 和 macOS 平台的网络代理工具生态中，如果说 Shadowrocket（小火箭）是平民超跑，Quantumult X (圈X) 是性能小钢炮，那么 Surge 5 就是毋庸置疑的“航空母舰”。作为一款售价高昂、定位“极客”的网络调试与接管工具，Surge 5 的功能早已超越了单纯的“翻墙”，它是您掌控设备全部网络请求的终极武器。本文将用最通俗易懂的语言，带您从零开始完成 Surge 5 的基础配置与机场节点导入，彻底驯服这头性能猛兽。
 
 ---
@@ -228,3 +227,14 @@ Surge 5 绝不仅仅是一个简单的翻墙开关，它是通向自由、高效
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注高效网络工具与极客探索，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/surge.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Surge 官方手册](https://manual.nssurge.com/)
+- [Apple Account 官方支持](https://support.apple.com/apple-account)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

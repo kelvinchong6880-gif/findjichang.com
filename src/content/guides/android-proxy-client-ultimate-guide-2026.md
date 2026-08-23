@@ -31,17 +31,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：在全球化的今天，无论您是从事跨境电商运营、查阅海外学术文献，还是在 Netflix 和 YouTube 上追剧，Android 安卓手机凭借其极其开放的系统生态，成为了最自由、最高效的出海冲浪终端。然而，面对市面上琳琅满目的安卓翻墙客户端（如 Clash、v2rayNG、Sing-box、Surfboard），很多新手小白往往一头雾水：到底该选哪一款？怎么导入机场节点？怎么设置才不耗电、不断流？
 
 本文将作为您安卓设备出海的“终极基石教程”，为您全景拆解安卓科学上网的核心逻辑与实操步骤，带您从零开始，打造最完美的网络体验。
@@ -172,3 +171,15 @@ bingChecklist:
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注全球网络代理工具解析与优质机场测速教程，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/android-vpn.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Android VpnService 官方文档](https://developer.android.com/reference/android/net/VpnService)
+- [v2rayNG 官方项目](https://github.com/2dust/v2rayNG)
+- [Surfboard 官方网站](https://getsurfboard.com/)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

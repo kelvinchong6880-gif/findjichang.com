@@ -30,17 +30,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 寻找最全的 Quantumult X (圈X) 教程？本文为您提供 2026 年最新、最详细的圈X新手小白配置指南。从美区 Apple ID 下载、机场节点订阅导入、到高级分流规则添加、Rewrite 重写及 MITM 证书配置。无论您是初学者还是进阶玩家，只需跟着这篇保姆级教程，即可轻松实现高效网络代理与广告拦截。
 
 ---
@@ -262,3 +261,14 @@ Quantumult X 是一款“上限极高”的神器。通过这篇深度解析教�
 ---
 
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/quantumult-x.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Quantumult X 官方示例仓库](https://github.com/crossutility/Quantumult-X)
+- [Apple Account 官方支持](https://support.apple.com/apple-account)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

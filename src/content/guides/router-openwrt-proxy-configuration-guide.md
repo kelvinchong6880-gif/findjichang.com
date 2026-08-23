@@ -32,17 +32,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：当您手头的设备不再仅限于手机和电脑，而是加入了 Apple TV、PlayStation 5、Nintendo Switch、甚至海外版智能音箱与智能家居时，传统的“在每台设备上安装翻墙客户端”的模式将彻底失效。
 
 此时，您需要的是一套**“无感化、全覆盖”的透明代理（Transparent Proxy）方案**——即在路由器层面打通国际网络。连上家里的 Wi-Fi，国内应用直连秒开，海外流量自动走专线出海，所有设备即刻拥有访问全球互联网的能力。本文将为您深度拆解 2026 年最硬核的路由器科学上网方案。
@@ -171,3 +170,15 @@ bingChecklist:
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注极客网络架构、软路由技术解析与高端机场测评，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/openwrt.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [OpenWrt 官方用户指南](https://openwrt.org/docs/guide-user/start)
+- [OpenClash 官方项目](https://github.com/vernesong/OpenClash)
+- [PassWall 官方项目](https://github.com/xiaorouji/openwrt-passwall)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

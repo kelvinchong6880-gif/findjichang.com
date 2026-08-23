@@ -28,17 +28,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 在众多 Windows 代理工具中，NekoRay 凭借极低的资源占用和强大的双内核支持，成为了追求极致性能用户的首选。本文将为您详细梳理 NekoRay 的核心配置技巧，提供一份符合规范且易于上手的实操指南。
 
 ## NekoRay 核心优势与双内核切换
@@ -101,3 +100,14 @@ Xray 内核原生并不支持 Hysteria2 协议。如果您导入的订阅中包�
 ---
 
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/nekoray.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [NekoRay 官方项目归档](https://github.com/MatsuriDayo/nekoray)
+- [sing-box 官方文档](https://sing-box.sagernet.org/)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

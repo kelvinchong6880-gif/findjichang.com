@@ -30,17 +30,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：提到 iOS 端的科学上网神器，几乎所有老玩家都会脱口而出：Shadowrocket（俗称“小火箭”）。它以极低的售价、全协议的支持和极其稳定的性能，稳居 iPhone 翻墙客户端的霸主地位。
 
 但您知道吗？自从苹果为 Mac 电脑换上了自家研发的 **Apple Silicon (M1/M2/M3/M4) 架构芯片**后，Mac 已经可以原生地运行绝大多数 iOS 软件了！这意味着，如果您已经在 iPhone 上购买过小火箭，现在可以直接在 Mac 电脑上免费下载使用，不仅拥有完全一致的 UI 和操作习惯，还能通过 iCloud 同步您的所有节点与规则！本文将手把手教您如何在 Mac 上完美运行小火箭。
@@ -177,3 +176,14 @@ bingChecklist:
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注苹果全生态设备科学上网指南与优质机场测速，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/shadowrocket.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Shadowrocket App Store 页面](https://apps.apple.com/us/app/shadowrocket/id932747118)
+- [Apple Account 官方支持](https://support.apple.com/apple-account)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

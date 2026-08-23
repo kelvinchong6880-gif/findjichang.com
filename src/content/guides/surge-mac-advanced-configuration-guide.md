@@ -30,17 +30,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：在 macOS 的网络代理工具生态中，如果说其他客户端是满足日常出海冲浪的“代步车”，那么 Surge for Mac 毫无疑问就是殿堂级的“航空母舰”。它不仅是一款顶级的网络代理工具，更是专为开发者、网络工程师以及追求极致体验的极客量身打造的全功能网络调试与流量治理平台。然而，Surge 丰富的功能和专业的术语常常让许多进阶用户望而却步。本文将从托管配置导入、底层增强模式接管、网关旁路路由、模块化管理到深度排障，为您全景式拆解 Surge Mac 的进阶玩法。
 
 ---
@@ -184,3 +183,14 @@ Surge for Mac 无疑是网络代理领域的工业级艺术品。通过本文的
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注 macOS 极客工具与网络代理技术深度解析，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/surge.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Surge 官方手册](https://manual.nssurge.com/)
+- [Apple Account 官方支持](https://support.apple.com/apple-account)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

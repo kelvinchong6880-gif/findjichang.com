@@ -32,17 +32,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 很多刚从安卓阵营转到苹果，或者刚刚拿到最新款 iPhone / iPad 的新手，在准备配置网络环境时，都会经历一个极其崩溃的“鬼打墙”时刻：明明已经购买了优质的机场节点，打开苹果自带的 **App Store (应用商店)**，满怀期待地搜索“VPN”、“Clash”、“Shadowrocket”或者“小火箭”时，搜出来的却全是一堆莫名其妙的手机壁纸软件、网络测速工具，甚至是一些带有欺诈性质的假冒劣质 App。
 
 为什么安卓手机随便在网上下载一个 `.apk` 安装包就能用的翻墙工具，在几千块钱的苹果手机上却难如登天？本文将为您彻底揭开 iOS 生态的底层逻辑，并手把手带您完成从外区账号获取到小火箭节点配置的全流程。
@@ -210,3 +209,14 @@ bingChecklist:
 ---
 
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/shadowrocket.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Shadowrocket App Store 页面](https://apps.apple.com/us/app/shadowrocket/id932747118)
+- [Apple Account 官方支持](https://support.apple.com/apple-account)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

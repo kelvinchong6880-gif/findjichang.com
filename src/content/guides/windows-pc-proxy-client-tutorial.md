@@ -23,11 +23,11 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
@@ -40,7 +40,6 @@ tags:
   - 客户端配置
   - 新手入门
 ---
-
 在数字化办公、学术科研（如检索 Google Scholar、GitHub 代码同步）以及海外媒体浏览过程中，稳定、快速的网络连接至关重要。对于 Windows 操作系统用户而言，选择一款合适的开源代理客户端并正确配置订阅节点，是实现顺畅访问的第一步。
 
 本教程面向广大 Windows 10/11 用户，从**基础原理解析**、**客户端选型对比**、**核心软件详细配置步骤**到**高频疑难问题排查**展开全景式讲解，即使是零基础新手也能在 5 分钟内快速上手。
@@ -324,3 +323,14 @@ tags:
 ---
 
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/v2rayn.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [v2rayN 官方项目](https://github.com/2dust/v2rayN)
+- [Microsoft Windows 网络命令文档](https://learn.microsoft.com/windows-server/networking/technologies/netsh/netsh)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

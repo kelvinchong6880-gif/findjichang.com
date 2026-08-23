@@ -29,17 +29,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：许多安卓手机用户在开启科学上网工具后，常常会遇到一个令人头疼的问题——手机掉电速度明显加快、机身发热，甚至在锁屏待机状态下一夜掉电 15% 到 20%。很多人误以为是手机电池老化或代理软件本身有 Bug，但实际上，这往往是因为代理客户端的后台测速机制、虚拟网卡唤醒机制以及分流规则配置不当所导致的。本文将深入剖析安卓翻墙耗电的底层机理，并手把手教您在主流客户端（Clash、v2rayNG、Sing-box、Surfboard）及系统层面上进行深度省电优化！
 
 ---
@@ -173,3 +172,15 @@ Surfboard 的 UI 与后台调度非常现代，优化重点在于规则与视图
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注安卓科学上网优化技巧与高质量翻墙指南，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/android-vpn.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Android VpnService 官方文档](https://developer.android.com/reference/android/net/VpnService)
+- [v2rayNG 官方项目](https://github.com/2dust/v2rayNG)
+- [Surfboard 官方网站](https://getsurfboard.com/)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

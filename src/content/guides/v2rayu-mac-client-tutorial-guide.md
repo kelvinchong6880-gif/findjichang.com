@@ -31,17 +31,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：在 macOS 桌面端，有些用户喜欢功能繁复、图表华丽的重型客户端，而另一些用户则追求 **“极简、轻量、常驻状态栏、开机即用且零干扰”** 的纯粹体验。如果您使用的是苹果 Mac 电脑（无论是最新的 Apple Silicon M 系列芯片还是 Intel 处理器），并且希望找一款不占内存、操作直观的 V2Ray/Xray 客户端，那么 **V2rayU** 绝对是历经时间检验的经典之作。本文将为您带来 2026 年最新版 V2rayU 的安全下载、Gatekeeper 报错修复、节点订阅导入、PAC 智能路由及深度排障保姆级教程。
 
 ---
@@ -223,3 +222,14 @@ V2rayU 凭借其出色的原生状态栏设计、极低资源占用以及对 App
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注 macOS 极简网络代理工具与高阶出海教程，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/v2rayu.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [V2rayU 官方项目](https://github.com/yanue/V2rayU)
+- [Apple Account 官方支持](https://support.apple.com/apple-account)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

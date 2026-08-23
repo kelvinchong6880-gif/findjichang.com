@@ -25,11 +25,11 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
@@ -42,7 +42,6 @@ tags:
   - 科学上网
 author: 您的站点名称
 ---
-
 如果你是一位长期依赖 Windows 系统进行办公、开发或查阅海外资料的用户，那你一定对 **Clash for Windows (CFW)** 不陌生。然而，随着原作者删库停更，CFW 已逐渐无法适应 2026 年复杂多变的网络封锁环境，不仅存在安全隐患，更无法支持 Hysteria2、VLESS 等新一代抗封锁协议。
 
 在这个背景下，**Clash Verge Rev** 强势崛起，成为了目前 Windows 平台上最完美、最强大的代理客户端替代品。
@@ -264,3 +263,14 @@ Clash Verge Rev 是完全免费开源的项目，其唯一官方发布页在 Git
 ---
 
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/clash-verge.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Clash Verge Rev 官方项目](https://github.com/clash-verge-rev/clash-verge-rev)
+- [Mihomo 官方文档](https://wiki.metacubex.one/)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

@@ -31,17 +31,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：在 Android 开放生态下，科学上网工具有很多选择（如 v2rayNG、SagerNet、NekoBox 等），但如果要选出一款在规则分流、界面直观度、生态兼容性与后台稳定性上达到极致平衡的客户端，Clash for Android（简称 CFA） 依然是绝大多数用户的首选。无论您是跨国贸易从业者、海外学术研究人员，还是高清流媒体爱好者，掌握 Clash for Android 的配置方法都是畅游全球网络的必修课。本文将为您带来详尽的保姆级安装与订阅配置指南。
 
 ---
@@ -198,3 +197,15 @@ Clash for Android 凭借其工业级的稳定内核与灵活强大的分流控�
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注网络代理工具指南与机场测速评测，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/android-vpn.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Android VpnService 官方文档](https://developer.android.com/reference/android/net/VpnService)
+- [v2rayNG 官方项目](https://github.com/2dust/v2rayNG)
+- [Surfboard 官方网站](https://getsurfboard.com/)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

@@ -31,17 +31,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 对于每一位刚刚接触科学上网的苹果（iPhone / iPad）用户而言，遇到的第一道无法逾越的“高墙”，往往不是网络协议的配置，而是**国区 App Store 无法搜索并下载任何翻墙工具**。
 
 无论你想下载国民级代理神器 **Shadowrocket（小火箭）**、**Quantumult X（圈X）**，还是想体验原汁原味的 **ChatGPT**、**TikTok**、**YouTube** 或 **Netflix**，一个专属的**美国区（美区）Apple ID** 都是必不可少的钥匙。
@@ -260,3 +259,14 @@ bingChecklist:
 ---
 
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/shadowrocket.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Shadowrocket App Store 页面](https://apps.apple.com/us/app/shadowrocket/id932747118)
+- [Apple Account 官方支持](https://support.apple.com/apple-account)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

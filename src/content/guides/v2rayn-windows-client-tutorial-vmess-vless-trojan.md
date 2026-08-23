@@ -25,11 +25,11 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
@@ -44,7 +44,6 @@ tags:
   - 科学上网
 author: 找机场
 ---
-
 在 Windows 电脑端的科学上网工具生态中，如果说 Clash 系列以其华丽的界面和规则生态闻名，那么 **V2rayN** 绝对是凭借其**极低的系统资源占用**、**对前沿底层协议的极速跟进**以及**强大的自定义能力**，稳坐代理客户端的“泰山北斗”之位。
 
 无论你是用来进行学术查阅、跨境电商运营，还是仅仅为了流畅观看 4K YouTube 视频，熟练掌握 V2rayN 的配置都是一项必备技能。进入 2026 年，随着防火墙（GFW）的不断升级，诸如 VLESS (Reality/XTLS) 和 Trojan 等新一代协议成为了主流。
@@ -228,3 +227,14 @@ V2rayN 凭借其硬核的底层架构，是 Windows 用户深度配置网络的�
 ---
 
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/v2rayn.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [v2rayN 官方项目](https://github.com/2dust/v2rayN)
+- [Microsoft Windows 网络命令文档](https://learn.microsoft.com/windows-server/networking/technologies/netsh/netsh)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

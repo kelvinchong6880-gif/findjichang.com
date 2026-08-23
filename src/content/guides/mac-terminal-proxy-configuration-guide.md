@@ -31,17 +31,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：许多 Mac 用户在日常开发或极客探索中都会遇到一个极其困惑的现象：电脑明明已经开启了 Clash Verge、Surge、V2rayU 或其他代理软件，浏览器看 YouTube、访问 Google 和 ChatGPT 都丝滑流畅，但一打开 Mac 自带的“终端 (Terminal)”，运行 `git clone`、`brew install`、`curl` 或 `pip install` 时，却依然频频卡死、龟速甚至直接报 `Connection timed out` 错误！
 
 为什么会出现这种“浏览器通、命令行不通”的割裂情况？本文将为您深度解析 macOS 底层网络机制，并提供从一行代码临时加速、一键开关自动化脚本，到 Git / SSH / Homebrew 专项配置与 TUN 底层全局接管的完整解决方案。
@@ -291,3 +290,14 @@ Mac 终端命令行是每位极客与开发者的生产力中枢。掌握了“�
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注 macOS 极客开发环境优化与网络代理深度解析，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/clash-verge.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Clash Verge Rev 官方项目](https://github.com/clash-verge-rev/clash-verge-rev)
+- [Mihomo 官方文档](https://wiki.metacubex.one/)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

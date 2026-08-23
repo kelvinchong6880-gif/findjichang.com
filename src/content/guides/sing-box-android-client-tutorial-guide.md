@@ -31,17 +31,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：在 Android 平台众多的网络代理客户端中，Clash for Android 功能全面但部分分支停止维护，V2rayNG 界面传统且分流规则不够灵活。由开源团队 Nekoray / SagerNet 核心作者打造的 **Sing-box**（安卓端通常称为 **SFA - Sing-box For Android**）横空出世，被誉为新一代的“通用代理平台 (Universal proxy platform)”。它不仅拥有极低的系统内存占用与耗电量，更在第一时间原生支持如 VLESS-Reality、Hysteria2、TUIC、Trojan 等前沿抗封锁协议。本文将带您从零开始，深度掌握这款低耗电、高性能的安卓科学上网利器。
 
 ---
@@ -212,3 +211,14 @@ Sing-box 凭借其现代化的架构设计、对前沿抗封锁协议的原生�
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注全球网络代理工具解析与优质机场测速教程，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/sing-box.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [sing-box 官方文档](https://sing-box.sagernet.org/)
+- [Android VpnService 官方文档](https://developer.android.com/reference/android/net/VpnService)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

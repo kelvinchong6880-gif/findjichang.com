@@ -31,17 +31,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 很多刚刚配置好电脑翻墙客户端的朋友，往往会遭遇一个极其崩溃的场景：刚买完优质的机场节点，打开浏览器能秒开 YouTube，但在任务栏点击 **微软应用商店 (Microsoft Store)**、Xbox 甚至自带的邮件应用时，却遇到界面疯狂转圈，最后无情地弹出 `0x80072F8F` 或 `0x80131500` 等网络错误代码。
 
 为什么浏览器能科学上网，系统自带应用却像断了网一样？这背后的罪魁祸首，其实是 Windows 系统底层的安全机制。本文将为您深度剖析原因，并提供最完美的解决方案。
@@ -141,3 +140,13 @@ bingChecklist:
 ---
 
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/microsoft-network.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Microsoft Windows 网络命令文档](https://learn.microsoft.com/windows-server/networking/technologies/netsh/netsh)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

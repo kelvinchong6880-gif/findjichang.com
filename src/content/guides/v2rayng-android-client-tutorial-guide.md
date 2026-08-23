@@ -31,17 +31,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：在安卓操作系统中，如果您正在寻找一款完全开源、轻量小巧、更新频繁且对新兴混淆协议（如 VLESS-Reality、VMess、Trojan）支持最快的代理客户端，那么 V2rayNG 绝对是无可替代的标杆工具。无论是搭配机场订阅日常刷视频、查阅海外学术文献，还是跨国出海办公，V2rayNG 都能提供坚如磐石的连接体验。本文将从 APK 安全下载、节点订阅导入、智能路由分流到高级分应用设置，为您带来全方位的保姆级图文指南。
 
 ---
@@ -208,3 +207,14 @@ V2rayNG 凭借卓越的开源内核性能、全协议兼容性以及轻盈纯净
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注全球网络代理工具解析与优质机场测速教程，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/v2rayng.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [v2rayNG 官方项目](https://github.com/2dust/v2rayNG)
+- [Android VpnService 官方文档](https://developer.android.com/reference/android/net/VpnService)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。

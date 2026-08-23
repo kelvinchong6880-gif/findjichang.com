@@ -32,17 +32,16 @@ bingChecklist:
   intentSatisfied: true
   originalValue: true
   factsVerified: true
-  sourcesAttributed: false
+  sourcesAttributed: true
   naturalLanguage: true
-  affiliateDisclosure: false
+  affiliateDisclosure: true
   headingStructure: true
-  imageAltText: false
+  imageAltText: true
   internalLinksChecked: true
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
 ---
-
 **引言**：在 iOS 平台上，Surge 凭借其无与伦比的规则分流、模块扩展和极简 UI 稳坐“极客神器”的王座；而在开源开放的 Android 生态中，有没有一款工具能够完美复刻甚至无缝继承 Surge 的所有生态与配置文件？答案就是 **Surfboard**（中文俗称“冲浪板”）。Surfboard 原生支持 Surge 3/4 配置文件语法，拥有极具现代美感的 Material Design 界面与极低的系统功耗，是进阶安卓用户出海冲浪的绝佳利器。本文将为您带来全网最详尽的 Surfboard 基础配置、订阅导入与进阶实操全攻略。
 
 ---
@@ -210,3 +209,15 @@ Surfboard（冲浪板）将 iOS 平台顶级的 Surge 规则生态与 Android �
 **🔗 延伸阅读**：如果您在配置完成后遇到节点连不上的问题，请参考这篇《[翻墙后无法上网？节点全部红色与超时排查指南](/guide/node-timeout-red-troubleshooting-tutorial)》。
 
 > **版权所有 © 2026 找机场 | 专注全球网络代理工具解析与优质机场测速教程，未经授权禁止转载。**
+
+## 官方资料、配图与推广说明
+
+![官方项目或文档页面截图](/images/guides/official/android-vpn.png)
+
+> 配图来自对应官方项目或官方文档页面，用于核对软件与资料入口，不代表本站完成了该步骤的设备实测；界面可能随版本更新。
+
+- [Android VpnService 官方文档](https://developer.android.com/reference/android/net/VpnService)
+- [v2rayNG 官方项目](https://github.com/2dust/v2rayNG)
+- [Surfboard 官方网站](https://getsurfboard.com/)
+
+**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。
