@@ -86,6 +86,14 @@ if (stabilitySource.length < 5000) failures.push('微风稳定性推荐文章内
 if (stabilityGoLinks.length < 2 || stabilityGoLinks.some((href) => !href.startsWith('/go/weifeng/'))) failures.push('微风稳定性推荐文章注册入口不完整或混入其他品牌'); else pass.push('微风稳定性推荐文章仅使用微风 /go/ 注册入口');
 if (!stabilityHtml.includes('name="keywords"') || !stabilityHtml.includes('微风机场晚高峰') || !stabilityHtml.includes('"@type":"Article"')) failures.push('微风稳定性推荐页关键词或 Article 结构化数据缺失'); else pass.push('微风稳定性推荐页关键词与 Article 结构化数据已生成');
 if (!homeHtml.includes('href="/recommend/weifeng-stability/"') || !homeHtml.includes('稳定优先')) failures.push('首页稳定优先入口未连接微风稳定性推荐页'); else pass.push('首页稳定优先入口已连接微风稳定性推荐页');
+
+const fireflySource = readFileSync(join(root, 'src/pages/recommend/firefly-streaming-ai/_article.md'), 'utf8');
+const fireflyHtml = readFileSync(join(dist, 'recommend/firefly-streaming-ai/index.html'), 'utf8');
+const fireflyGoLinks = [...fireflySource.matchAll(/\]\((\/go\/[^)]+)\)/g)].map((match) => match[1]);
+if (fireflySource.length < 6000) failures.push('Firefly 流媒体与 AI 推荐文章内容长度不足'); else pass.push('Firefly 流媒体与 AI 推荐文章达到深度内容长度');
+if (fireflyGoLinks.length < 2 || fireflyGoLinks.some((href) => !href.startsWith('/go/firefly/'))) failures.push('Firefly 推荐文章注册入口不完整或混入其他品牌'); else pass.push('Firefly 推荐文章仅使用 Firefly /go/ 注册入口');
+if (!fireflyHtml.includes('name="keywords"') || !fireflyHtml.includes('Firefly支持Netflix吗') || !fireflyHtml.includes('"@type":"Article"')) failures.push('Firefly 推荐页关键词或 Article 结构化数据缺失'); else pass.push('Firefly 推荐页关键词与 Article 结构化数据已生成');
+if (!homeHtml.includes('href="/recommend/firefly-streaming-ai/"') || !homeHtml.includes('流媒体与 AI')) failures.push('首页流媒体与 AI 入口未连接 Firefly 推荐页'); else pass.push('首页流媒体与 AI 入口已连接 Firefly 推荐页');
 if (!existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-tutorial/index.html')) || !existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-guide/index.html'))) failures.push('Shadowrocket 两篇教程未同时生成'); else pass.push('Shadowrocket 两篇教程独立生成');
 
 const compareIndex = readFileSync(join(dist, 'compare/index.html'), 'utf8');
