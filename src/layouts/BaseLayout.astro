@@ -57,5 +57,75 @@ const bingSiteAuth = import.meta.env.PUBLIC_BING_SITE_AUTH;
       <slot />
       <SiteFooter />
     </div>
+    <script is:inline>
+      (() => {
+        const makeId = (text, index, used) => {
+          const base = text.trim().toLowerCase()
+            .replace(/[^\p{Letter}\p{Number}]+/gu, '-')
+            .replace(/^-|-$/g, '') || `section-${index + 1}`;
+          let id = base;
+          let suffix = 2;
+          while (used.has(id) || document.getElementById(id)) id = `${base}-${suffix++}`;
+          used.add(id);
+          return id;
+        };
+
+        document.querySelectorAll('.article-content').forEach((article) => {
+          const headings = [...article.querySelectorAll('h2, h3')];
+          if (!headings.length) return;
+
+          let layout = article.parentElement;
+          if (!layout?.classList.contains('content-layout')) {
+            layout = document.createElement('section');
+            layout.className = 'content-layout generated-content-layout';
+            article.before(layout);
+            layout.append(article);
+          }
+          layout.classList.add('has-article-toc');
+
+          let toc = layout.querySelector(':scope > .toc-card');
+          if (!toc) {
+            toc = document.createElement('aside');
+            toc.className = 'toc-card article-toc';
+            layout.append(toc);
+          } else {
+            toc.classList.add('article-toc');
+            toc.replaceChildren();
+          }
+          toc.setAttribute('aria-label', '文章目录');
+
+          const title = document.createElement('b');
+          title.textContent = '文章目录';
+          toc.append(title);
+          const nav = document.createElement('nav');
+          nav.setAttribute('aria-label', '本页章节');
+          toc.append(nav);
+
+          const used = new Set();
+          const links = headings.map((heading, index) => {
+            if (!heading.id) heading.id = makeId(heading.textContent || '', index, used);
+            const link = document.createElement('a');
+            link.href = `#${heading.id}`;
+            link.textContent = heading.textContent || `第 ${index + 1} 节`;
+            if (heading.tagName === 'H3') link.className = 'toc-subitem';
+            nav.append(link);
+            return link;
+          });
+
+          let ticking = false;
+          const updateActive = () => {
+            const current = [...headings].reverse().find((heading) => heading.getBoundingClientRect().top <= 120) || headings[0];
+            links.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === `#${current.id}`));
+            ticking = false;
+          };
+          window.addEventListener('scroll', () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(updateActive);
+          }, { passive: true });
+          updateActive();
+        });
+      })();
+    </script>
   </body>
 </html>
