@@ -1,10 +1,10 @@
 ---
-title: "2026 Mac苹果电脑翻墙终极指南：Clash Verge Rev与Surge配置教程"
+title: "2026 Mac苹果电脑翻墙完整指南：Clash Verge Rev与Surge配置教程"
 description: "2026最新 Mac 苹果电脑科学上网保姆级教程！深度横测 Clash Verge Rev、Surge Mac、Sing-box，详解机场订阅导入、TUN 增强模式接管、终端代理与断网排障 Q&A，带您轻松搞定 macOS 科学上网。"
 createdAt: 2026-08-23T19:00:00
 draft: true
 status: drafting
-primaryIntent: "提供针对 Mac macOS 系统的翻墙终极指南，详解 Clash Verge Rev 和 Surge 的配置、TUN 模式及终端代理设置。"
+primaryIntent: "提供针对 Mac macOS 系统的翻墙完整指南，详解 Clash Verge Rev 和 Surge 的配置、TUN 模式及终端代理设置。"
 originalValue: "全面剖析 macOS 端代理客户端选型，提供详细的 Apple Silicon / Intel 架构安装建议及终端命令行代理技巧。"
 keywords:
   - Mac翻墙教程
@@ -27,7 +27,7 @@ author: 找机场
 editorialReview:
   checked: true
   checkedAt: 2026-08-23
-  notes: "已核验 Mac 科学上网终极指南教程内容与格式"
+  notes: "已核验 Mac 科学上网完整指南教程内容与格式"
 bingChecklist:
   intentSatisfied: true
   originalValue: true
@@ -56,7 +56,7 @@ bingChecklist:
 
 ### 1. Clash Verge Rev —— 绝大多数用户的“首选接班人”
 - **定位**：开源、免费、全能。
-- **核心特性**：基于 Tauri 框架打造，内存占用极低；内置强大的 Clash.Meta (Mihomo) 现代内核，完美支持 VLESS-Reality、Hysteria2、Trojan 等新一代协议；界面现代化且全中文支持，并拥有完善的 TUN 增强模式与脚本扩展能力。
+- **核心特性**：基于 Tauri 框架打造，内存占用极低；内置强大的 Clash.Meta (Mihomo) 现代内核，支持 VLESS-Reality、Hysteria2、Trojan 等新一代协议；界面现代化且全中文支持，并拥有完善的 TUN 增强模式与脚本扩展能力。
 - **推荐指数**：⭐⭐⭐⭐⭐（适合 95% 的 Mac 用户）
 
 ### 2. Surge for Mac —— 商业级“网络调试与接管天花板”
@@ -137,7 +137,7 @@ Clash Verge Rev 是目前 Mac 端普及度最高的工具，下面以此为例�
 ## 四、 Mac 深度进阶：开启 TUN 增强模式接管全局流量
 
 
-普通的“系统代理”模式只能接管遵循 macOS 系统代理协议的浏览器软件。对于终端命令行 (Terminal)、Git 提交、Telegram、Spotify、以及部分不走系统代理的开发工具或海外网游，流量会直接走本地网络而导致断网。开启 TUN 增强模式能够从底层虚拟一张物理网卡，完美解决上述痛点。
+普通的“系统代理”模式只能接管遵循 macOS 系统代理协议的浏览器软件。对于终端命令行 (Terminal)、Git 提交、Telegram、Spotify、以及部分不走系统代理的开发工具或海外网游，流量会直接走本地网络而导致断网。开启 TUN 增强模式能够从底层虚拟一张物理网卡，用于解决上述痛点。
 
 **开启步骤**：
 1. 打开 Clash Verge Rev 的 **“设置 (Settings)”**。
@@ -193,7 +193,7 @@ curl -i https://ip.sb
 
 ### Q4: Mac 开启代理后，访问国内网站（如百度、淘宝、B站）非常卡顿？
 - **原因**：模式误选为了 “全局 (Global)”，导致国内流量全部绕行海外服务器。
-- **解决**：在客户端的代理面板中，将运行模式切换回 **“规则 (Rule)”**，国内流量即可秒开直连。
+- **解决**：在客户端的代理面板中，将运行模式切换回 **“规则 (Rule)”**，国内流量即可减少加载等待直连。
 
 ---
 

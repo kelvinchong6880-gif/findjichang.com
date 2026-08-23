@@ -3,12 +3,20 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
+import JsonLd from '../../components/JsonLd.astro';
 import { brands, type Brand } from '../../data/brands';
+import { articleSchema } from '../../lib/structured-data';
+import { keywordSet } from '../../lib/seo-keywords';
 export function getStaticPaths() { return brands.map((brand) => ({ params: { slug: brand.slug }, props: { brand } })); }
 const { brand } = Astro.props as { brand: Brand };
 const entry = (await getCollection('speedTests')).find((item) => item.id === brand.slug);
 const rendered = entry ? await render(entry) : null;
 const Content = rendered?.Content;
+const pageTitle = entry?.data.title ?? `${brand.name}机场测速资料汇总`;
+const description = entry?.data.description ?? `${brand.name}机场测速资料、测试条件与来源汇总。`;
+const path = `/speed-test/${brand.slug}/`;
+const keywords = keywordSet({ title: pageTitle, supplied: entry?.data.keywords, brand: brand.name, type: 'speed-test' });
+const schema = articleSchema({ title: pageTitle, description, path, publishedAt: entry?.data.publishedAt ?? entry?.data.createdAt ?? new Date('2026-08-23T00:00:00+08:00'), updatedAt: entry?.data.updatedAt, image: brand.avatar });
 const speedLinks = [
   { href: `/jichang/${brand.slug}/`, title: `${brand.name}机场完整测评`, description: '返回品牌资料、套餐与风险说明。' },
   { href: '/knowledge/how-to-read-speed-test/', title: '怎样看懂机场测速结果' },
@@ -17,4 +25,13 @@ const speedLinks = [
   { href: '/knowledge/latency-reference-ranges/', title: '延迟参考范围与误区' },
 ];
 ---
-<BaseLayout title={entry?.data.title ?? `${brand.name}机场测速资料汇总｜找机场`} description={entry?.data.description ?? `${brand.name}机场测速资料、测试条件与来源汇总。`} indexable={false}><main class="page-shell detail-page"><Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场测速',href:'/speed-test/'},{label:`${brand.name}机场测速资料汇总`}]} /><section class="speed-hero"><p class="eyebrow">找机场测速资料汇总</p><h1>{entry?.data.title ?? `${brand.name}机场测速资料汇总`}</h1><p>{entry?.data.description ?? '只汇总注明来源、测试条件和采集日期的资料，不会把第三方结果表述为找机场自行实测。'}</p><a class="text-link" href={`/jichang/${brand.slug}/`}>返回 {brand.name}机场测评 <span>→</span></a></section><section class="metric-grid">{[['延迟', entry?.data.summary?.ping ?? '待核验', 'ms'],['下载速度', entry?.data.summary?.download ?? '待核验', 'Mbps'],['上传速度', entry?.data.summary?.upload ?? '待核验', 'Mbps'],['丢包率', entry?.data.summary?.packetLoss ?? '待核验', '%']].map(([label,value,unit]) => <div><span>{label}</span><strong>{value}</strong><small>{unit}</small></div>)}</section>{Content ? <article class="article-content speed-article"><Content /><RelatedLinks links={speedLinks} title={`${brand.name}测速延伸阅读`} /></article> : <section class="source-panel"><div><span class="badge">资料要求</span><h2>数据来源与测试条件</h2><p>正式发布时，每组数据必须记录设备、网络、客户端、时段、原始截图和来源网址。</p></div></section>}</main></BaseLayout>
+<BaseLayout title={`${pageTitle}｜找机场`} description={description} indexable={false} ogType="article" keywords={keywords} socialImage={brand.avatar}>
+  <JsonLd data={schema} />
+  <main class="page-shell detail-page">
+    <Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场测速',href:'/speed-test/'},{label:`${brand.name}机场测速资料汇总`}]} />
+    <section class="speed-hero"><p class="eyebrow">找机场测速资料汇总</p><h1>{pageTitle}</h1><p>{description}</p><a class="text-link" href={`/jichang/${brand.slug}/`}>返回 {brand.name}机场测评 <span>→</span></a></section>
+    <p class="speed-sample-notice"><strong>样本提示：</strong>以下数字来自模拟或历史资料，仅用于展示记录格式，不代表本站实测，也不能作为购买依据。</p>
+    <section class="metric-grid">{[['延迟', entry?.data.summary?.ping ?? '待核验', 'ms（示例）'],['下载速度', entry?.data.summary?.download ?? '待核验', 'Mbps（示例）'],['上传速度', entry?.data.summary?.upload ?? '待核验', 'Mbps（示例）'],['丢包率', entry?.data.summary?.packetLoss ?? '待核验', '%（示例）']].map(([label,value,unit]) => <div><span>{label}</span><strong>{value}</strong><small>{unit}</small></div>)}</section>
+    {Content ? <article class="article-content speed-article">{brand.avatar && <img class="article-brand-image" src={brand.avatar} width="150" height="150" alt={`${brand.name}机场品牌标识`} loading="eager" />}<blockquote><strong>证据状态：</strong>本文展示的是模拟博客中的历史或示例测速资料。缺少原始截图、设备、网络、时段和测试服务器记录的数据不能视为本站独立实测，也不能预测你的实际速度。</blockquote><Content /><RelatedLinks links={speedLinks} title={`${brand.name}测速延伸阅读`} /></article> : <section class="source-panel"><div><span class="badge">资料要求</span><h2>数据来源与测试条件</h2><p>正式发布时，每组数据必须记录设备、网络、客户端、时段、原始截图和来源网址。</p></div></section>}
+  </main>
+</BaseLayout>

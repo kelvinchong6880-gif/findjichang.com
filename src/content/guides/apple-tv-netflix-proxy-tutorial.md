@@ -1,7 +1,7 @@
 ---
 title: "Apple TV怎么看Netflix？2026翻墙路由器与客户端配置教程"
-description: "2026最新Apple TV看Netflix指南。详解tvOS原生客户端配置、软路由旁网关智能分流，完美解决Netflix代理检测报错，畅享4K流媒体。"
-createdAt: 2026-08-24T02:00:00
+description: "2026最新Apple TV看Netflix指南。详解tvOS原生客户端配置、软路由旁网关智能分流，用于解决Netflix代理检测报错，畅享4K流媒体。"
+createdAt: 2026-08-23T02:00:00
 draft: true
 status: drafting
 primaryIntent: "指导用户如何在 Apple TV 上配置翻墙节点以顺利观看 Netflix，涵盖客户端与软路由双方案。"
@@ -69,7 +69,7 @@ bingChecklist:
 
 ## 第七章：高阶防封锁与 DNS 净化策略
 - **独立 DNS 嗅探**：在软路由 OpenClash 中，利用嗅探功能为 `netflix.com` 等核心域名分配纯净的海外 DNS 服务器解析，防止运营商层面的 SNI 阻断与污染。
-- **Fake-IP 模式优化**：启用 Fake-IP (TUN 模式) 配合 NameServer 分流策略，可大幅降低海报墙加载的 DNS 握手延迟，实现影片封面毫秒级的“秒开”体验。
+- **Fake-IP 模式优化**：启用 Fake-IP (TUN 模式) 配合 NameServer 分流策略，可大幅降低海报墙加载的 DNS 握手延迟，实现影片封面毫秒级的“减少加载等待”体验。
 
 ## 第八章：常见播放报错深度排障 (Q&A)
 
@@ -85,7 +85,7 @@ bingChecklist:
 
 ---
 
-**站长建议**：Apple TV 的绝佳视听体验，离不开网络的高速稳定。如果您经常在 Apple TV 上观看 Netflix、Disney+ 4K 影视，强烈推荐您搭配具有原生 IP 与高速率专线的优质机场。前往我们的 **[流媒体解锁优质机场推荐](/recommend/)**，获取最适合您的网络加速方案。
+**站长建议**：Apple TV 的绝佳视听体验，离不开网络的高速稳定。如果您经常在 Apple TV 上观看 Netflix、Disney+ 4K 影视，建议您搭配具有原生 IP 与高速率专线的优质机场。前往我们的 **[流媒体解锁优质机场推荐](/recommend/)**，获取最适合您的网络加速方案。
 
 
 ---

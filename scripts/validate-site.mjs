@@ -21,6 +21,11 @@ for (const file of htmlFiles) {
   const articleMatch = html.match(/<article[^>]*class="[^"]*article-content[^"]*"[^>]*>([\s\S]*?)<\/article>/);
   if (articleMatch) {
     articleRoutes.add(route);
+    const visibleArticle = articleMatch[1].replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    if (visibleArticle.length < 1200) failures.push(`${route}: 正文可见内容不足 1200 字符`);
+    if (!html.includes('name="keywords"')) failures.push(`${route}: 缺少核心词与长尾词 meta 输出`);
+    if (!html.includes('property="og:type" content="article"')) failures.push(`${route}: og:type 不是 article`);
+    if (!html.includes('"@type":"Article"')) failures.push(`${route}: 缺少 Article JSON-LD`);
     const articleLinks = [...articleMatch[1].matchAll(/href="(\/[^"]+)"/g)]
       .map((match) => match[1].replace(/&amp;/g, '&'))
       .filter((href) => !href.startsWith('//') && !href.startsWith('/go/'));
@@ -60,6 +65,22 @@ for (const route of articleRoutes) {
 if (!failures.some((item) => item.includes('正文相关内链') || item.includes('正文内链缺少尾部斜杠') || item.includes('文章没有任何站内入口'))) {
   pass.push(`${articleRoutes.size} 篇正文通过相关内链、URL 规范与孤立页检查`);
 }
+if (!failures.some((item) => item.includes('正文可见内容') || item.includes('核心词与长尾词') || item.includes('og:type') || item.includes('Article JSON-LD'))) {
+  pass.push(`${articleRoutes.size} 篇正文通过内容长度、关键词、Open Graph 与 Article 结构化数据检查`);
+}
+
+const markdownFiles = [];
+const collectMarkdown = (dir) => { for (const name of readdirSync(dir)) { const path = join(dir, name); statSync(path).isDirectory() ? collectMarkdown(path) : name.endsWith('.md') && markdownFiles.push(path); } };
+collectMarkdown(join(root, 'src/content'));
+collectMarkdown(join(root, 'src/pages/recommend'));
+const exaggerated = /完美|顶级|极速|秒开|终极|全网第一|永久解锁|零丢包|强烈推荐/;
+for (const file of markdownFiles) {
+  const source = readFileSync(file, 'utf8');
+  if (exaggerated.test(source)) failures.push(`${relative(root, file)}: 仍含夸张或绝对化营销措辞`);
+  const created = source.match(/^createdAt:\s*([^\s]+)/m)?.[1];
+  if (created && new Date(created) > new Date('2026-08-23T23:59:59+08:00')) failures.push(`${relative(root, file)}: 创建日期晚于当前审核日期`);
+}
+if (!failures.some((item) => item.includes('营销措辞') || item.includes('创建日期晚于'))) pass.push(`${markdownFiles.length} 个内容源通过营销措辞与日期真实性检查`);
 
 const reviewDirs = readdirSync(join(dist, 'jichang'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;
 const speedDirs = readdirSync(join(dist, 'speed-test'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;
