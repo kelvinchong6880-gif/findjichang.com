@@ -13,7 +13,7 @@ const guides = await getCollection('guides');
           <h2 style="font-size: 18px; margin-top: 0;">{guide.data.title}</h2>
           <p style="font-size: 13px; line-height: 1.6; min-height: 80px;">{guide.data.description}</p>
           <div class="card-actions">
-            <a class="button button-secondary" href={`/guide/${guide.slug ?? guide.id}/`}>阅读完整教程</a>
+            <a class="button button-secondary" href={`/guide/${guide.id}/`}>阅读完整教程</a>
           </div>
         </li>
       ))}

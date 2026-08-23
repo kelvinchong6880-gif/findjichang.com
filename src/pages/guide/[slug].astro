@@ -6,7 +6,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
   return guides.map(entry => ({
-    params: { slug: entry.slug ?? entry.id },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
