@@ -1,8 +1,78 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import SectionPage from '../../components/SectionPage.astro';
-import { getCollection } from 'astro:content';
-const entries = await getCollection('comparisons');
-entries.sort((a,b) => a.data.createdAt.getTime() - b.data.createdAt.getTime());
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { brands } from '../../data/brands';
+import { itemListSchema } from '../../lib/structured-data';
+
+const preferred = ['weifeng', 'feimao-yun', 'sogo-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao'];
+const orderedBrands = [...preferred.map((slug) => brands.find((brand) => brand.slug === slug)), ...brands.filter((brand) => !preferred.includes(brand.slug))].filter((brand): brand is (typeof brands)[number] => Boolean(brand));
+const schema = itemListSchema('36 家机场资料对比表', orderedBrands.map((brand) => ({ name: brand.name, path: `/jichang/${brand.slug}/` })));
 ---
-<BaseLayout title="机场对比｜找机场" description="按相同维度比较机场公开资料与待核验项目。"><SectionPage title="机场对比" description="对比页只整理可核对信息与测试清单；没有独立证据时，不给出速度胜负。"><ul class="brand-grid">{entries.map(entry=><li class="brand-card"><span class="badge">双品牌对比</span><h2>{entry.data.title}</h2><p>{entry.data.description}</p><a class="text-link" href={`/compare/${entry.id}/`}>查看对比 <span>→</span></a></li>)}</ul></SectionPage></BaseLayout>
+
+<BaseLayout title="36 家机场对比表：价格、资料、测速与注册链接｜找机场" description="整理 36 家机场的起步价、品牌资料、测速页面与站内注册链接；表格顺序不等于性能排名，购买前请复核价格和条款。">
+  <JsonLd data={schema} />
+  <main class="page-shell section-page compare-page">
+    <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '机场对比' }]} />
+    <header class="compare-heading">
+      <p class="eyebrow">36 家资料总览</p><h1>机场对比表</h1>
+      <p class="section-lead">把 36 家机场的公开入口放在同一张表里，方便先看资料、再看测速，最后决定是否前往注册。前 9 家按本站当前展示优先级排列，其余按资料库顺序展示。</p>
+      <div class="compare-notice"><strong>请先看说明：</strong>展示顺序不是速度、稳定性或安全性排名。起步价来自本站当前资料记录，套餐可能调整；注册或付款前请在服务商页面重新核对价格、流量、倍率、退款和并发限制。</div>
+    </header>
+
+    <section aria-labelledby="comparison-table-title">
+      <h2 id="comparison-table-title">36 家机场完整对比</h2>
+      <p class="table-disclosure">推广披露：表格中的“前往注册”统一经过站内 <code>/go/</code> 跳转。你通过链接注册或购买时，本站可能获得佣金，但不会因此提高你的支付价格。点击只表示离开本站，不代表已经注册或付费。</p>
+      <div class="comparison-table-wrap"><table class="comparison-table">
+        <caption>36 家机场的展示顺序、起步价与资料入口</caption>
+        <thead><tr><th scope="col">顺序</th><th scope="col">机场</th><th scope="col">当前记录起步价</th><th scope="col">资料状态</th><th scope="col">站内资料</th><th scope="col">注册链接</th></tr></thead>
+        <tbody>{orderedBrands.map((brand, index) => <tr>
+          <td><span class:list={['rank-number', { featured: index < 9 }]}>{index + 1}</span></td>
+          <th scope="row"><span class="brand-cell">{brand.avatar && <img src={brand.avatar} width="34" height="34" alt={`${brand.name}品牌标识`} loading="lazy" />}<span><strong>{brand.name}</strong>{index < 9 && <small>优先展示</small>}</span></span></th>
+          <td>{brand.minPrice ?? '待核验'}</td><td><span class="status-note">价格需复核</span></td>
+          <td><span class="table-links"><a href={`/jichang/${brand.slug}/`}>品牌资料</a><a href={`/speed-test/${brand.slug}/`}>测速资料</a></span></td>
+          <td><a class="register-link" href={`/go/${brand.slug}/?from=/compare/&placement=table`}>前往注册 <span aria-hidden="true">↗</span></a></td>
+        </tr>)}</tbody>
+      </table></div>
+      <p class="table-footnote">“待核验”或“价格需复核”不代表服务异常，只表示本站不把可能变化的信息写成长期承诺。测速页中的第三方图片和历史样本也不能直接代表你所在地区的实际体验。</p>
+    </section>
+
+    <article class="article-content compare-guide">
+      <h2>怎样使用这张 36 家机场对比表</h2>
+      <p>这张表的用途不是帮你从 36 个名字中盲选第一名，而是缩短资料入口之间的距离。机场体验会同时受到所在地区、宽带运营商、使用时段、客户端、入口负载和出口线路影响。别人测试很快，只能说明对方当时的条件；它不能直接变成你的速度保证。</p>
+
+      <h2>第一步：先按预算筛选，不要先被折扣吸引</h2>
+      <p>起步价适合用来做第一轮筛选，但不能等同于真实月成本。低价套餐可能有较少流量、更高节点倍率、限速、设备或并发限制；年付套餐虽然折算月价较低，却会增加服务变化和退款困难时的损失。第一次接触某家服务时，通常更适合先选择月付或其他短周期。</p>
+      <p>比较价格时，应同时抄下套餐周期、实际流量、节点倍率、流量重置日期、设备与连接限制。只比较“每月多少钱”，很容易把不同规格的套餐误认为同一种产品。关于倍率的计算方法，可以继续阅读<a href="/knowledge/traffic-multiplier-and-renewal/">流量倍率与重置日期指南</a>。</p>
+
+      <h2>第二步：把品牌资料和测速资料分开看</h2>
+      <p>品牌资料页主要回答“服务商公开写了什么”，例如套餐、线路标签、客户端支持和服务条款；测速资料页回答“在特定条件下出现过什么结果”。两类证据不能互相替代。服务商写有专线，不等于本站已经核验底层线路；一张高速截图，也不等于所有节点在晚高峰都能达到相同速度。</p>
+      <p>建议至少确认测速日期、测试地区、运营商、设备、客户端、节点、测速服务器和测试时段。缺少这些条件的图片可以保留作线索，但不应成为长期付款的唯一依据。本站如何区分声明、第三方资料和独立测试，可查看<a href="/methodology/">评测与测速方法</a>。</p>
+
+      <h2>第三步：根据使用场景决定观察重点</h2>
+      <table><thead><tr><th>使用场景</th><th>优先观察</th><th>不应只看</th></tr></thead><tbody>
+        <tr><td>日常网页与社交</td><td>连接成功率、首屏响应、国内外分流</td><td>单次最高下载速度</td></tr>
+        <tr><td>视频与流媒体</td><td>持续吞吐、缓冲、目标平台实际播放</td><td>节点名称中的“解锁”标签</td></tr>
+        <tr><td>远程办公</td><td>稳定性、丢包、断线恢复与备用线路</td><td>节点数量多少</td></tr>
+        <tr><td>多设备家庭</td><td>设备、连接数、路由器支持和总流量</td><td>“不限设备”四个字</td></tr>
+        <tr><td>AI 平台</td><td>官方支持地区、账户状态与实际功能</td><td>“AI 专线”营销名称</td></tr>
+      </tbody></table>
+
+      <h2>第四步：注册前完成一次风险检查</h2>
+      <ol><li><strong>确认入口：</strong>只从站内品牌资料页或表格中的注册链接进入，核对浏览器地址和结算页面。</li><li><strong>保存条款：</strong>记录购买日期、套餐内容、退款规则和服务商当时的说明。</li><li><strong>控制金额：</strong>不要因为一次测试或限时折扣投入超出承受范围的长期费用。</li><li><strong>保护凭据：</strong>不要公开订阅链接、Cookie、UUID、订单号或完整账户截图。</li><li><strong>准备备用方案：</strong>工作和学习等重要用途不应完全依赖单一服务。</li></ol>
+
+      <h2>为什么这张表不填写“绝对速度排名”</h2>
+      <p>如果没有统一设备、统一网络、统一时间、统一节点距离和连续多日样本，把 36 家直接排成速度榜会制造虚假的精确感。即使在同一地点完成测试，结果也只适用于当次条件。更诚实的做法是提供可复现的测试入口，并明确哪些信息已经核对、哪些仍然未知。</p>
+      <p>同理，所谓“稳定率 99.9%”“永久解锁”或“零丢包”都需要长期原始数据支持。本站目前没有足够证据时不会填写这些数字。你可以参考<a href="/knowledge/how-to-read-speed-test/">测速结果阅读指南</a>，自己建立一份包含白天、晚高峰和周末的记录。</p>
+
+      <h2>常见问题</h2>
+      <h3>表格前 9 名就是推荐排名吗？</h3><p>不是。它们是你指定的优先展示顺序，方便读者先查看这些品牌，不代表前面的服务在所有地区、时段和用途上优于后面的服务。</p>
+      <h3>为什么点击注册会先经过 /go/？</h3><p>站内跳转用于统一披露推广关系并记录不包含个人身份的汇总点击信息。跳转后的注册、付款、隐私和退款由第三方服务商处理，具体说明见<a href="/affiliate-disclosure/">推广披露</a>与<a href="/privacy/">隐私政策</a>。</p>
+      <h3>起步价可以直接作为购买价格吗？</h3><p>不可以。价格是容易变化的信息，且最低价套餐可能附带周期或规格条件。表格用于初筛，最终应以你进入服务商结算页时看到的套餐和条款为准。</p>
+
+      <h2>结论：先缩小范围，再用自己的网络验证</h2>
+      <p>面对 36 家服务，最有效的顺序是：先按预算和用途缩小到三至五家，再查看品牌资料和测速条件，最后选择短周期进行自己的多时段测试。这样即使服务表现与预期不同，损失也更容易控制。注册链接只是资料流程的最后一步，不应代替前面的核对。</p>
+      <p><strong>最后更新：</strong>2026 年 8 月 23 日。本文不构成购买保证或法律意见；使用相关网络服务前，请了解所在地规则并遵守第三方平台条款。</p>
+    </article>
+  </main>
+</BaseLayout>

@@ -65,6 +65,13 @@ if (/https?:\/\/[^\s)]*(?:code=|register)/.test(recommendationSource)) failures.
 if (/独立测速团队|自费购买了|上百次|700Mbps|0\.00%/.test(recommendationSource)) failures.push('推荐页仍包含旧虚构实测文案'); else pass.push('推荐页已移除旧虚构实测文案');
 if (!existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-tutorial/index.html')) || !existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-guide/index.html'))) failures.push('Shadowrocket 两篇教程未同时生成'); else pass.push('Shadowrocket 两篇教程独立生成');
 
+const compareIndex = readFileSync(join(dist, 'compare/index.html'), 'utf8');
+const compareGoLinks = [...compareIndex.matchAll(/href="\/go\/([^/?]+)\/\?from=\/compare\/&amp;placement=table"/g)].map((match) => match[1]);
+const expectedCompareTop = ['weifeng', 'feimao-yun', 'sogo-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao'];
+if (compareGoLinks.length !== 36 || new Set(compareGoLinks).size !== 36) failures.push(`机场总对比注册链接为 ${compareGoLinks.length} 个且唯一值为 ${new Set(compareGoLinks).size} 个，应均为 36`); else pass.push('机场总对比包含 36 个唯一 /go/ 注册入口');
+if (expectedCompareTop.some((slug, index) => compareGoLinks[index] !== slug)) failures.push('机场总对比前 9 家顺序错误'); else pass.push('机场总对比前 9 家顺序正确');
+if (!compareIndex.includes('怎样使用这张 36 家机场对比表') || !compareIndex.includes('为什么这张表不填写“绝对速度排名”')) failures.push('机场总对比下方指南文章缺失'); else pass.push('机场总对比下方指南文章已生成');
+
 const brandsSource = readFileSync(join(root, 'src/data/brands.ts'), 'utf8');
 const brandRows = [...brandsSource.matchAll(/^\s*\['([^']+)', '([^']+)', '([^']+)'\],?$/gm)].map((match) => ({ name: match[1], slug: match[2], url: match[3] }));
 if (brandRows.length !== 36) failures.push(`品牌资料为 ${brandRows.length}，应为 36`); else pass.push('36 个品牌资料');
