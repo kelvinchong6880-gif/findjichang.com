@@ -1,7 +1,7 @@
 ---
 title: 【2026最新】Windows电脑科学上网完全指南：主流客户端配置、订阅导入与故障排查（零基础小白教程）
 description: 本文提供2026年最详尽的Windows电脑端代理配置教程。涵盖Clash Verge Rev、v2rayN、Sing-box及Hiddify等主流客户端的下载安装、订阅链接导入、分流模式设置、TUN虚拟网卡游戏加速及常见连不上网排查，助你零门槛实现高速网络访问。
-createdAt: 2026-08-23
+createdAt: 2026-08-23T01:00:00
 primaryIntent: "提供2026年最新Windows电脑科学上网完全指南，解决用户配置、导入与故障排查需求。"
 originalValue: "全面整合Windows主流客户端教程与常见排障手册，为零基础小白提供开箱即用的解决方案。"
 keywords:

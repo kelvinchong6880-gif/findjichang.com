@@ -1,7 +1,7 @@
 ---
 title: "【2026最新】Clash Verge Rev Windows 版下载与配置保姆级教程 (替代已停更的 Clash for Windows)"
 description: "2026年最全面的 Clash Verge Rev Windows 电脑端使用教程。详细讲解如何从 GitHub 下载、安装汉化、一键导入机场订阅及开启 TUN 虚拟网卡模式。完美替代已停更的 Clash for Windows (CFW)，解决各类连不上网的疑难杂症，零基础新手也能轻松实现全网科学上网。"
-createdAt: 2026-08-23
+createdAt: 2026-08-23T02:00:00
 primaryIntent: "提供最新的 Clash Verge Rev Windows 版下载与配置详细教程，帮助用户替代已停更的 CFW。"
 originalValue: "深度解析 Mihomo 内核优势，提供从零开始的保姆级配置图文解析与常见故障排除指南。"
 keywords:
