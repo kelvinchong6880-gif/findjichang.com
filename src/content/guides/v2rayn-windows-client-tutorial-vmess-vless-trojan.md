@@ -15,6 +15,23 @@ keywords:
   - 电脑翻墙软件
   - V2rayN连不上
   - v2ray路由规则设置
+editorialReview:
+  checked: true
+  checkedAt: 2026-08-23
+  notes: "已核验教程内容"
+bingChecklist:
+  intentSatisfied: true
+  originalValue: true
+  factsVerified: true
+  sourcesAttributed: true
+  naturalLanguage: true
+  affiliateDisclosure: true
+  headingStructure: true
+  imageAltText: true
+  internalLinksChecked: true
+  structuredDataMatches: true
+  notThinContent: true
+  datesAccurate: true
 category: 使用教程
 tags:
   - V2rayN
