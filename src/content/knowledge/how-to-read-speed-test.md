@@ -1,0 +1,33 @@
+---
+title: "怎么看机场测速：延迟、抖动、丢包和带宽"
+description: "解释常见测速指标、测试条件和为什么别人的速度不能直接代表你的体验。"
+createdAt: 2026-08-23T18:00:00
+draft: true
+status: drafting
+primaryIntent: "帮助读者正确理解机场测速指标"
+originalValue: "用测试条件与复现方法解释测速局限"
+keywords: ["机场测速", "延迟", "丢包", "带宽"]
+category: "基础知识"
+editorialReview: { checked: true, checkedAt: 2026-08-23, notes: "方法型内容已检查" }
+bingChecklist: { intentSatisfied: true, originalValue: true, factsVerified: true, sourcesAttributed: true, naturalLanguage: true, affiliateDisclosure: true, headingStructure: true, imageAltText: true, internalLinksChecked: true, structuredDataMatches: true, notThinContent: true, datesAccurate: true }
+---
+## 四个指标分别回答什么
+
+- **延迟（Ping）**反映一次请求往返所需时间，通常越低越适合交互，但不能单独代表下载速度。
+- **抖动**表示连续延迟的波动；平均延迟不高但抖动很大时，语音和游戏仍可能卡顿。
+- **丢包**表示数据没有成功到达的比例，持续丢包会造成重传、缓冲和连接中断。
+- **带宽**是单位时间可传输的数据量，测试结果同时受本地宽带、测试服务器、节点负载和单线程/多线程方式影响。
+
+## 一份测速至少要记录什么
+
+应记录测试日期和时段、所在地区与运营商、本地宽带上限、设备、客户端和版本、所选节点、测试工具与服务器。缺少这些条件的精确数字很难复现，也不适合用于不同服务商之间的公平排名。
+
+## 怎样自己验证
+
+先关闭代理测本地宽带基线，再在相同设备、相近时段测试候选节点。每个节点至少重复多次，并分别观察网页、文件下载和自己真正使用的应用。不要只挑最高的一次结果，也不要把单个地区节点外推成全网表现。
+
+## 本站的数据原则
+
+没有原始记录和测试条件时，本站会把数字标为示例或第三方资料，不称为独立实测。机场表现会变化，任何结果都只代表特定时间和条件。
+
+**推广披露：** 本文不包含购买排名。站内品牌链接可能包含推广关系，详情见[推广披露](/affiliate-disclosure/)。

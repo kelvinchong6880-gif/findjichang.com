@@ -1,14 +1,21 @@
 {
-  "generatedAt": "2026-08-23T09:39:42.159Z",
-  "htmlPages": 123,
+  "generatedAt": "2026-08-23T09:59:00.175Z",
+  "htmlPages": 128,
   "reviewRoutes": 36,
   "speedRoutes": 36,
+  "knowledgeRoutes": 3,
+  "comparisonRoutes": 2,
   "brands": 36,
   "failures": [],
   "warnings": [],
   "pass": [
     "36 个品牌测评路由",
     "36 个测速资料路由",
+    "3 个机场知识路由",
+    "2 个机场对比路由",
+    "推荐页推广入口统一使用 /go/",
+    "推荐页已移除旧虚构实测文案",
+    "Shadowrocket 两篇教程独立生成",
     "36 个品牌资料",
     "开发阶段 Sitemap 为空",
     "robots.txt 允许抓取并指向 Sitemap"

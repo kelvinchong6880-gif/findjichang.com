@@ -1,5 +1,8 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import SectionPage from '../../components/SectionPage.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionPage from '../../components/SectionPage.astro';
+import { getCollection } from 'astro:content';
+const entries = await getCollection('comparisons');
+entries.sort((a,b) => a.data.createdAt.getTime() - b.data.createdAt.getTime());
 ---
-<BaseLayout title="机场对比｜找机场" description="在相同维度下对比不同机场。"><SectionPage title="机场对比" description="对比页将同时链接双方的测评与测速资料页，不进入主导航。" /></BaseLayout>
-
+<BaseLayout title="机场对比｜找机场" description="按相同维度比较机场公开资料与待核验项目。"><SectionPage title="机场对比" description="对比页只整理可核对信息与测试清单；没有独立证据时，不给出速度胜负。"><ul class="brand-grid">{entries.map(entry=><li class="brand-card"><span class="badge">双品牌对比</span><h2>{entry.data.title}</h2><p>{entry.data.description}</p><a class="text-link" href={`/compare/${entry.id}/`}>查看对比 <span>→</span></a></li>)}</ul></SectionPage></BaseLayout>

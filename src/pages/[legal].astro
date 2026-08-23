@@ -4,5 +4,6 @@ import SectionPage from '../components/SectionPage.astro';
 import { legalPages } from '../data/legal-pages';
 export function getStaticPaths() { return Object.entries(legalPages).map(([legal, page]) => ({ params: { legal }, props: page })); }
 const { title, description, sections } = Astro.props as { title: string; description: string; sections: readonly (readonly [string, string])[] };
+const isContact = Astro.params.legal === 'contact';
 ---
-<BaseLayout title={`${title}｜找机场`} description={description}><SectionPage title={title} description={description}>{sections.length > 0 && <div class="legal-content">{sections.map(([heading, body]) => <section><h2>{heading}</h2><p>{body}</p></section>)}</div>}</SectionPage></BaseLayout>
+<BaseLayout title={`${title}｜找机场`} description={description}><SectionPage title={title} description={description}>{sections.length > 0 && <div class="legal-content">{sections.map(([heading, body]) => <section><h2>{heading}</h2><p>{body}</p></section>)}{isContact && <p><a class="button button-secondary" href="https://github.com/kelvinchong6880-gif/findjichang.com/issues" rel="noopener noreferrer">前往 GitHub Issues 提交反馈</a></p>}</div>}</SectionPage></BaseLayout>

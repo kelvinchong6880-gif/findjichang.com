@@ -36,8 +36,17 @@ for (const file of htmlFiles) {
 
 const reviewDirs = readdirSync(join(dist, 'jichang'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;
 const speedDirs = readdirSync(join(dist, 'speed-test'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;
+const knowledgeDirs = readdirSync(join(dist, 'knowledge'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;
+const comparisonDirs = readdirSync(join(dist, 'compare'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;
 reviewDirs === 36 ? pass.push('36 个品牌测评路由') : failures.push(`品牌测评路由为 ${reviewDirs}，应为 36`);
 speedDirs === 36 ? pass.push('36 个测速资料路由') : failures.push(`测速资料路由为 ${speedDirs}，应为 36`);
+knowledgeDirs === 3 ? pass.push('3 个机场知识路由') : failures.push(`机场知识路由为 ${knowledgeDirs}，应为 3`);
+comparisonDirs === 2 ? pass.push('2 个机场对比路由') : failures.push(`机场对比路由为 ${comparisonDirs}，应为 2`);
+
+const recommendationSource = readFileSync(join(root, 'src/pages/recommend/_recommend-article.md'), 'utf8');
+if (/https?:\/\/[^\s)]*(?:code=|register)/.test(recommendationSource)) failures.push('推荐页仍包含直接推广链接'); else pass.push('推荐页推广入口统一使用 /go/');
+if (/独立测速团队|自费购买了|上百次|700Mbps|0\.00%/.test(recommendationSource)) failures.push('推荐页仍包含旧虚构实测文案'); else pass.push('推荐页已移除旧虚构实测文案');
+if (!existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-tutorial/index.html')) || !existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-guide/index.html'))) failures.push('Shadowrocket 两篇教程未同时生成'); else pass.push('Shadowrocket 两篇教程独立生成');
 
 const brandsSource = readFileSync(join(root, 'src/data/brands.ts'), 'utf8');
 const brandRows = [...brandsSource.matchAll(/^\s*\['([^']+)', '([^']+)', '([^']+)'\],?$/gm)].map((match) => ({ name: match[1], slug: match[2], url: match[3] }));
@@ -53,7 +62,7 @@ if (/<url>/.test(sitemap)) failures.push('开发阶段 Sitemap 不应包含内�
 const robots = readFileSync(join(dist, 'robots.txt'), 'utf8');
 if (!robots.includes('Allow: /') || !robots.includes('sitemap-index.xml')) failures.push('robots.txt 配置错误'); else pass.push('robots.txt 允许抓取并指向 Sitemap');
 
-const result = { generatedAt: new Date().toISOString(), htmlPages: htmlFiles.length, reviewRoutes: reviewDirs, speedRoutes: speedDirs, brands: brandRows.length, failures, warnings, pass, status: failures.length ? 'failed' : 'passed' };
+const result = { generatedAt: new Date().toISOString(), htmlPages: htmlFiles.length, reviewRoutes: reviewDirs, speedRoutes: speedDirs, knowledgeRoutes: knowledgeDirs, comparisonRoutes: comparisonDirs, brands: brandRows.length, failures, warnings, pass, status: failures.length ? 'failed' : 'passed' };
 mkdirSync(join(root, 'outputs/qa'), { recursive: true });
 writeFileSync(join(root, 'outputs/qa/automated-validation.json'), JSON.stringify(result, null, 2));
 console.log(JSON.stringify(result, null, 2));

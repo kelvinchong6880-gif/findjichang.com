@@ -1,0 +1,9 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { isPublishable } from '../../lib/seo';
+export async function getStaticPaths(){return (await getCollection('comparisons')).map(entry=>({params:{slug:entry.id},props:{entry}}));}
+const { entry } = Astro.props; const { Content } = await render(entry);
+---
+<BaseLayout title={`${entry.data.title}｜找机场`} description={entry.data.description} indexable={isPublishable(entry)}><main class="page-shell detail-page"><Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场对比',href:'/compare/'},{label:entry.data.title}]}/><section class="review-hero" style="grid-template-columns:1fr"><div><span class="badge">资料对比</span><h1>{entry.data.title}</h1><p>{entry.data.description}</p></div></section><section class="content-layout" style="grid-template-columns:1fr"><article class="article-content"><Content/></article></section></main></BaseLayout>
