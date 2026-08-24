@@ -3,6 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionPage from '../components/SectionPage.astro';
 import { legalPages } from '../data/legal-pages';
 export function getStaticPaths() { return Object.entries(legalPages).map(([legal, page]) => ({ params: { legal }, props: page })); }
-const { title, description, sections } = Astro.props as { title: string; description: string; sections: readonly (readonly [string, string])[] };
+const { title, description, sections, contact = false } = Astro.props as { title: string; description: string; sections: readonly (readonly [string, string])[]; contact?: boolean };
 ---
-<BaseLayout title={`${title}｜找机场`} description={description}><SectionPage title={title} description={description}>{sections.length > 0 && <div class="legal-content">{sections.map(([heading, body]) => <section><h2>{heading}</h2><p>{body}</p></section>)}</div>}</SectionPage></BaseLayout>
+<BaseLayout title={`${title}｜找机场`} description={description}><SectionPage title={title} description={description}>{sections.length > 0 && <div class="legal-content">{contact && <section class="contact-panel"><h2>公开联系方式</h2><p><strong>Telegram：</strong><a href="https://t.me/kelvin8chong" target="_blank" rel="me noopener noreferrer">@kelvin8chong</a></p><p><strong>电子邮箱：</strong><a href="mailto:kelvinchong6880@gmail.com">kelvinchong6880@gmail.com</a></p></section>}{sections.map(([heading, body]) => <section><h2>{heading}</h2><p>{body}</p></section>)}</div>}</SectionPage></BaseLayout>

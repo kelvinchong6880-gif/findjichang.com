@@ -39,3 +39,4 @@
 @media(max-width:620px){.article-related ul{grid-template-columns:1fr}}
 .article-content>.article-brand-image:first-child{width:150px;height:150px;object-fit:cover;margin:0 auto 26px;border:0;background:transparent}
 .speed-sample-notice{margin:0 0 14px;padding:13px 16px;border-left:4px solid var(--orange);border-radius:0 9px 9px 0;background:#fff8ef;color:#6a5139;font-size:12px;line-height:1.65}
+.legal-content a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}.legal-content .contact-panel{border-color:#c9d7f5;background:#f5f8ff}.contact-panel p+p{margin-top:8px}.contact-panel strong{color:var(--ink)}

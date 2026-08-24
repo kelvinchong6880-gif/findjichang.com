@@ -10,8 +10,10 @@ export const primaryNavigation = [
 
 export const footerNavigation = [
   { label: '关于找机场', href: '/about/' },
+  { label: '作者与编辑团队', href: '/author/' },
   { label: '联系我们', href: '/contact/' },
   { label: '评测与测速资料方法', href: '/methodology/' },
+  { label: '更正机制', href: '/corrections/' },
   { label: '推广披露', href: '/affiliate-disclosure/' },
   { label: '隐私政策', href: '/privacy/' },
   { label: '使用条款', href: '/terms/' },
