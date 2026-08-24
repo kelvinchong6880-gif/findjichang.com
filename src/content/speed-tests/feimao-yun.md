@@ -2,7 +2,7 @@
 title: "飞猫云机场测速：节点清单、测试方案与结果记录（2026）"
 description: "整理飞猫云机场71条后台节点记录，并提供晚高峰、延迟、丢包和平台可用性的可复现测试矩阵；当前不虚构测速数字。"
 createdAt: 2026-08-22
-updatedAt: 2026-08-24T13:00:00+08:00
+updatedAt: 2026-08-24T18:30:00+08:00
 draft: true
 status: researching
 keywords:
@@ -28,7 +28,49 @@ bingChecklist:
   notThinContent: false
 brandSlug: "feimao-yun"
 reviewSlug: "feimao-yun"
-sources: []
+sources:
+  - label: "飞猫云品牌入口"
+    publisher: "飞猫云"
+    url: "https://flycat1.flycatvipaff.cc/"
+    sourceType: "official"
+    collectedAt: 2026-08-24
+    supports:
+      - "品牌注册或用户中心入口"
+      - "购买前复核套餐与规则的原始入口"
+    mayBeOutdated: true
+    notes: "站内现有品牌入口；页面主体、套餐、条款和域名变更仍需在付款前再次核对。"
+  - label: "机场测速与公开资料索引"
+    publisher: "TiziNodes"
+    url: "https://tizinodes.com/airport-test/"
+    sourceType: "third-party-review"
+    publishedAt: 2026-08-10
+    collectedAt: 2026-08-24
+    supports:
+      - "第三方公开资料分类"
+      - "官网可达性监测口径"
+    mayBeOutdated: true
+    notes: "该页面的响应时间是第三方监测环境到官网的 HTTPS 响应，不是机场节点延迟。"
+  - label: "飞猫云评测：套餐价格、协议支持与全节点样本"
+    publisher: "AI灯塔"
+    url: "https://www.aidengta.blog/review/feimaoyun/"
+    sourceType: "third-party-test"
+    publishedAt: 2026-07-31
+    collectedAt: 2026-08-24
+    supports:
+      - "第三方 56 节点样本"
+      - "分地区 TLS RTT 与吞吐区间"
+    mayBeOutdated: true
+    notes: "第三方单次测试；网络位置、工具和时段与本站未来测试不可直接横比。"
+  - label: "飞猫云套餐与公开信息核验"
+    publisher: "机场知库"
+    url: "https://jichangzhiku.com/reviews/feimaoyun/"
+    sourceType: "third-party-review"
+    publishedAt: 2026-08-06
+    collectedAt: 2026-08-24
+    supports:
+      - "第三方套餐整理"
+      - "公开信息不足提示"
+    mayBeOutdated: true
 ---
 
 > **测试状态：尚未开始。** 当前没有 飞猫云 的真实节点、有效测试日志或可复核截图。本页不展示模拟速度、随机延迟、推测丢包、虚构解锁结果或由品牌宣传推导出的性能结论。旧版模拟报告已撤下。
@@ -138,3 +180,17 @@ sources: []
 ## 当前结论
 
 飞猫云 尚无可发布的真实测速结果。下一步是接收去敏后的官网节点资料，建立测试清单，再按统一环境采集原始证据。完成以前，本页不会展示数值、排名或推荐结论，也不会被提交给搜索引擎作为完成内容。
+
+
+## 第三方测速资料与可比性
+
+| 来源 | 发布者 | 类型 | 本次采集 | 可支持的内容 |
+| --- | --- | --- | --- | --- |
+| [飞猫云品牌入口](https://flycat1.flycatvipaff.cc/) | 飞猫云 | 品牌入口/原始页面 | 2026-08-24 | 品牌注册或用户中心入口；购买前复核套餐与规则的原始入口 |
+| [机场测速与公开资料索引](https://tizinodes.com/airport-test/) | TiziNodes | 第三方整理 | 2026-08-24 | 第三方公开资料分类；官网可达性监测口径 |
+| [飞猫云评测：套餐价格、协议支持与全节点样本](https://www.aidengta.blog/review/feimaoyun/) | AI灯塔 | 第三方测试 | 2026-08-24 | 第三方 56 节点样本；分地区 TLS RTT 与吞吐区间 |
+| [飞猫云套餐与公开信息核验](https://jichangzhiku.com/reviews/feimaoyun/) | 机场知库 | 第三方整理 | 2026-08-24 | 第三方套餐整理；公开信息不足提示 |
+
+AI灯塔公开了一组 2026-07-31 的 56 节点第三方样本，并按香港、台湾、新加坡、日本、美国等地区给出 TLS RTT 与吞吐区间。本文只把它当作该来源、该时点的外部观察，不将其改写成本站测速，也不与本站后台 71 条节点快照强行一一对应。
+
+第三方数据的价值是提供外部样本，不是替本站完成测试。不同来源的网络接入、城市、设备、客户端、并发、测速服务器和时段往往不同，因此本文不会把它们直接横向排名，也不会把 MB/s 与 Mbps 混用。只有来源明确给出的数字才会引用；没有测试方法或仅有营销结论的页面不进入结果表。

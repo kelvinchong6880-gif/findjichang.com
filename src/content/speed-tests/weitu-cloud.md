@@ -2,7 +2,7 @@
 title: "唯兔云机场测速：节点清单、测试方案与结果记录（2026）"
 description: "整理唯兔云机场72条后台节点记录，并提供晚高峰、延迟、丢包和平台可用性的可复现测试矩阵；当前不虚构测速数字。"
 createdAt: 2026-08-22
-updatedAt: 2026-08-24T13:00:00+08:00
+updatedAt: 2026-08-24T18:30:00+08:00
 draft: true
 status: researching
 keywords:
@@ -28,7 +28,48 @@ bingChecklist:
   notThinContent: false
 brandSlug: "weitu-cloud"
 reviewSlug: "weitu-cloud"
-sources: []
+sources:
+  - label: "唯兔云品牌入口"
+    publisher: "唯兔云"
+    url: "https://fast.v2yunvipaff.com/"
+    sourceType: "official"
+    collectedAt: 2026-08-24
+    supports:
+      - "品牌注册或用户中心入口"
+      - "购买前复核套餐与规则的原始入口"
+    mayBeOutdated: true
+    notes: "站内现有品牌入口；页面主体、套餐、条款和域名变更仍需在付款前再次核对。"
+  - label: "机场测速与公开资料索引"
+    publisher: "TiziNodes"
+    url: "https://tizinodes.com/airport-test/"
+    sourceType: "third-party-review"
+    publishedAt: 2026-08-10
+    collectedAt: 2026-08-24
+    supports:
+      - "第三方公开资料分类"
+      - "官网可达性监测口径"
+    mayBeOutdated: true
+    notes: "该页面的响应时间是第三方监测环境到官网的 HTTPS 响应，不是机场节点延迟。"
+  - label: "唯兔云 50 节点第三方测试"
+    publisher: "机场推荐指南"
+    url: "https://githubvpn.pro/reviews/weituyun"
+    sourceType: "third-party-test"
+    publishedAt: 2026-07-19
+    collectedAt: 2026-08-24
+    supports:
+      - "第三方测试时间与节点样本"
+      - "香港与新加坡 TLS RTT 区间"
+    mayBeOutdated: true
+    notes: "测试发生在 17:24，来源明确提示不是晚高峰；速度单位与工具需按原页理解。"
+  - label: "唯兔云历史测速与状态更新"
+    publisher: "茶波博客"
+    url: "https://clashx.pro/onlyrabbit-review/"
+    sourceType: "third-party-review"
+    collectedAt: 2026-08-24
+    supports:
+      - "多运营商测速截图入口"
+      - "历史状态更新"
+    mayBeOutdated: true
 ---
 
 > **测试状态：尚未开始。** 当前没有 唯兔云 的真实节点、有效测试日志或可复核截图。本页不展示模拟速度、随机延迟、推测丢包、虚构解锁结果或由品牌宣传推导出的性能结论。旧版模拟报告已撤下。
@@ -131,3 +172,17 @@ sources: []
 ## 当前结论
 
 唯兔云 尚无可发布的真实测速结果。下一步是接收去敏后的官网节点资料，建立测试清单，再按统一环境采集原始证据。完成以前，本页不会展示数值、排名或推荐结论，也不会被提交给搜索引擎作为完成内容。
+
+
+## 第三方测速资料与可比性
+
+| 来源 | 发布者 | 类型 | 本次采集 | 可支持的内容 |
+| --- | --- | --- | --- | --- |
+| [唯兔云品牌入口](https://fast.v2yunvipaff.com/) | 唯兔云 | 品牌入口/原始页面 | 2026-08-24 | 品牌注册或用户中心入口；购买前复核套餐与规则的原始入口 |
+| [机场测速与公开资料索引](https://tizinodes.com/airport-test/) | TiziNodes | 第三方整理 | 2026-08-24 | 第三方公开资料分类；官网可达性监测口径 |
+| [唯兔云 50 节点第三方测试](https://githubvpn.pro/reviews/weituyun) | 机场推荐指南 | 第三方测试 | 2026-08-24 | 第三方测试时间与节点样本；香港与新加坡 TLS RTT 区间 |
+| [唯兔云历史测速与状态更新](https://clashx.pro/onlyrabbit-review/) | 茶波博客 | 第三方整理 | 2026-08-24 | 多运营商测速截图入口；历史状态更新 |
+
+机场推荐指南标注了 2026-07-19 17:24 的 50 节点测试，香港 TLS RTT 为 81–113ms、新加坡为 81–108ms，并明确提示并非晚高峰。茶波博客另有不同时间与运营商的历史记录，且后续状态评价发生变化，说明单次漂亮结果不能替代持续复测。
+
+第三方数据的价值是提供外部样本，不是替本站完成测试。不同来源的网络接入、城市、设备、客户端、并发、测速服务器和时段往往不同，因此本文不会把它们直接横向排名，也不会把 MB/s 与 Mbps 混用。只有来源明确给出的数字才会引用；没有测试方法或仅有营销结论的页面不进入结果表。

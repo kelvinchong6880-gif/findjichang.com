@@ -2,7 +2,7 @@
 title: "光速云机场怎么样？套餐、节点资料与核验进度（2026）"
 description: "基于官网套餐与后台快照整理光速云机场的69条节点记录、在线状态、异常项及待验证的真实测速项目。"
 createdAt: 2026-08-22
-updatedAt: 2026-08-24T13:00:00+08:00
+updatedAt: 2026-08-24T18:30:00+08:00
 draft: true
 status: researching
 keywords:
@@ -28,7 +28,48 @@ bingChecklist:
   notThinContent: false
 brandSlug: "guangsu"
 speedTestSlug: "guangsu"
-sources: []
+sources:
+  - label: "光速云品牌入口"
+    publisher: "光速云"
+    url: "https://mdlky.gsyaff.com/"
+    sourceType: "official"
+    collectedAt: 2026-08-24
+    supports:
+      - "品牌注册或用户中心入口"
+      - "购买前复核套餐与规则的原始入口"
+    mayBeOutdated: true
+    notes: "站内现有品牌入口；页面主体、套餐、条款和域名变更仍需在付款前再次核对。"
+  - label: "机场测速与公开资料索引"
+    publisher: "TiziNodes"
+    url: "https://tizinodes.com/airport-test/"
+    sourceType: "third-party-review"
+    publishedAt: 2026-08-10
+    collectedAt: 2026-08-24
+    supports:
+      - "第三方公开资料分类"
+      - "官网可达性监测口径"
+    mayBeOutdated: true
+    notes: "该页面的响应时间是第三方监测环境到官网的 HTTPS 响应，不是机场节点延迟。"
+  - label: "光速云第三方全节点测试"
+    publisher: "AI灯塔"
+    url: "https://www.aidengta.blog/review/guangsuyun/"
+    sourceType: "third-party-test"
+    publishedAt: 2026-07-31
+    collectedAt: 2026-08-24
+    supports:
+      - "第三方 63 节点测试"
+      - "协议与地区样本"
+    mayBeOutdated: true
+  - label: "光速云 MiaoKo 历史测试解读"
+    publisher: "川沐"
+    url: "https://www.cuanmu.com/blog/guangsuyun-vpn-review/"
+    sourceType: "third-party-test"
+    publishedAt: 2026-06-15
+    collectedAt: 2026-08-24
+    supports:
+      - "2025-12 历史测速样本"
+      - "测试工具与节点数说明"
+    mayBeOutdated: true
 ---
 
 > **资料状态：等待核验。** 本页不是现成的推荐结论，也不代表我们已经购买、登录或测试过 光速云。旧版页面中无法由原始证据支持的速度数字、节点数量、线路类型、流媒体解锁率、价格结论及“本站实测”表述已经删除。本页暂不提供注册链接，待官网与测试证据核验后再更新。
@@ -144,3 +185,21 @@ sources: []
 ## 当前结论
 
 目前没有足够证据判断 光速云 是否适合购买，也不能给出速度、稳定性、解锁或性价比排名。最诚实的结论是：资料正在收集中，旧版虚构与模拟内容已经撤下，页面保持不参与搜索索引；待你提供去敏后的官网和节点信息、并完成可复现测试后，再发布正式评测。
+
+
+## 公开资料与第三方信息核验
+
+本轮于 **2026-08-24** 对 光速云 的品牌入口、公开评测与可见测试资料进行了检索。来源分级如下；链接可能包含推广关系的页面也只作为外部资料使用，不能替代原始日志或本站独立测试。
+
+| 来源 | 发布者 | 类型 | 本次采集 | 可支持的内容 |
+| --- | --- | --- | --- | --- |
+| [光速云品牌入口](https://mdlky.gsyaff.com/) | 光速云 | 品牌入口/原始页面 | 2026-08-24 | 品牌注册或用户中心入口；购买前复核套餐与规则的原始入口 |
+| [机场测速与公开资料索引](https://tizinodes.com/airport-test/) | TiziNodes | 第三方整理 | 2026-08-24 | 第三方公开资料分类；官网可达性监测口径 |
+| [光速云第三方全节点测试](https://www.aidengta.blog/review/guangsuyun/) | AI灯塔 | 第三方测试 | 2026-08-24 | 第三方 63 节点测试；协议与地区样本 |
+| [光速云 MiaoKo 历史测试解读](https://www.cuanmu.com/blog/guangsuyun-vpn-review/) | 川沐 | 第三方测试 | 2026-08-24 | 2025-12 历史测速样本；测试工具与节点数说明 |
+
+AI灯塔记录了 2026-07-31 的 63 节点第三方测试；川沐引用 MiaoKo 的 2025-12 历史样本。两组资料测试日期、协议和环境不同，只能分别呈现，不能合并成一个“平均速度”。
+
+### 这些资料怎样进入结论
+
+套餐名称、价格、周期和流量优先与品牌入口交叉核对；第三方整理若与现有套餐表冲突，会保留采集日期并标记差异。线路、带宽、原生 IP、解锁与“专线”等宣传词，除非有路由、逐节点测试或平台访问证据，否则只写成运营方或第三方的表述。第三方测速必须保留发布者、测试日期、环境与限制，不参与本站实测排名。

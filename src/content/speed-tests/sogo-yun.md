@@ -2,7 +2,7 @@
 title: "SOGO云机场测速：节点清单、测试方案与结果记录（2026）"
 description: "SOGO云机场暂缺真实节点与测速证据；本页提供测试环境、样本选择、原始记录和结果发布标准。"
 createdAt: 2026-08-22
-updatedAt: 2026-08-24T13:00:00+08:00
+updatedAt: 2026-08-24T18:30:00+08:00
 draft: true
 status: researching
 keywords:
@@ -28,7 +28,38 @@ bingChecklist:
   notThinContent: false
 brandSlug: "sogo-yun"
 reviewSlug: "sogo-yun"
-sources: []
+sources:
+  - label: "SOGO云品牌入口"
+    publisher: "SOGO云"
+    url: "https://wzjc.sogoyunaff.cc/"
+    sourceType: "official"
+    collectedAt: 2026-08-24
+    supports:
+      - "品牌注册或用户中心入口"
+      - "购买前复核套餐与规则的原始入口"
+    mayBeOutdated: true
+    notes: "站内现有品牌入口；页面主体、套餐、条款和域名变更仍需在付款前再次核对。"
+  - label: "机场测速与公开资料索引"
+    publisher: "TiziNodes"
+    url: "https://tizinodes.com/airport-test/"
+    sourceType: "third-party-review"
+    publishedAt: 2026-08-10
+    collectedAt: 2026-08-24
+    supports:
+      - "第三方公开资料分类"
+      - "官网可达性监测口径"
+    mayBeOutdated: true
+    notes: "该页面的响应时间是第三方监测环境到官网的 HTTPS 响应，不是机场节点延迟。"
+  - label: "SOGO云公开资料与截图样本说明"
+    publisher: "二毛"
+    url: "https://www.ermao.net/blog/sogoyun/"
+    sourceType: "third-party-review"
+    publishedAt: 2026-04-14
+    collectedAt: 2026-08-24
+    supports:
+      - "第三方套餐与客户端信息"
+      - "截图样本的证据边界"
+    mayBeOutdated: true
 ---
 
 > **测试状态：尚未开始。** 当前没有 SOGO云 的真实节点、有效测试日志或可复核截图。本页不展示模拟速度、随机延迟、推测丢包、虚构解锁结果或由品牌宣传推导出的性能结论。旧版模拟报告已撤下。
@@ -107,3 +138,16 @@ sources: []
 ## 当前结论
 
 SOGO云 尚无可发布的真实测速结果。下一步是接收去敏后的官网节点资料，建立测试清单，再按统一环境采集原始证据。完成以前，本页不会展示数值、排名或推荐结论，也不会被提交给搜索引擎作为完成内容。
+
+
+## 第三方测速资料与可比性
+
+| 来源 | 发布者 | 类型 | 本次采集 | 可支持的内容 |
+| --- | --- | --- | --- | --- |
+| [SOGO云品牌入口](https://wzjc.sogoyunaff.cc/) | SOGO云 | 品牌入口/原始页面 | 2026-08-24 | 品牌注册或用户中心入口；购买前复核套餐与规则的原始入口 |
+| [机场测速与公开资料索引](https://tizinodes.com/airport-test/) | TiziNodes | 第三方整理 | 2026-08-24 | 第三方公开资料分类；官网可达性监测口径 |
+| [SOGO云公开资料与截图样本说明](https://www.ermao.net/blog/sogoyun/) | 二毛 | 第三方整理 | 2026-08-24 | 第三方套餐与客户端信息；截图样本的证据边界 |
+
+二毛的页面说明其结论来自提供的测速截图，并明确提醒样本不代表所有地区与时段。这类截图可以证明曾出现过某次结果，但缺少完整原始日志时不进入本站性能排名。
+
+第三方数据的价值是提供外部样本，不是替本站完成测试。不同来源的网络接入、城市、设备、客户端、并发、测速服务器和时段往往不同，因此本文不会把它们直接横向排名，也不会把 MB/s 与 Mbps 混用。只有来源明确给出的数字才会引用；没有测试方法或仅有营销结论的页面不进入结果表。
