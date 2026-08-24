@@ -2,8 +2,10 @@
 title: "电脑翻墙后微软应用商店 (UWP应用) 连不上网的用于解决办法"
 description: "用于解决 Windows 10/11 开启代理软件后，微软应用商店及 Xbox 等 UWP 应用无法联网报错的问题。深度解析 Network Isolation 隔离机制，提供 EnableLoopback 豁免、CMD 指令及 TUN 虚拟网卡模式的完整排障指南。"
 createdAt: 2026-08-23T06:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供解决 Windows 配置代理后 UWP 应用（如微软商店）无法联网的详细故障排查教程。"
 originalValue: "深度解析 Windows 沙盒网络隔离原理，提供三种针对主流与老旧客户端的彻底解决方案。"
 keywords:
@@ -40,6 +42,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 很多刚刚配置好电脑翻墙客户端的朋友，往往会遭遇一个极其崩溃的场景：刚买完优质的机场节点，打开浏览器能减少加载等待 YouTube，但在任务栏点击 **微软应用商店 (Microsoft Store)**、Xbox 甚至自带的邮件应用时，却遇到界面疯狂转圈，最后无情地弹出 `0x80072F8F` 或 `0x80131500` 等网络错误代码。
 

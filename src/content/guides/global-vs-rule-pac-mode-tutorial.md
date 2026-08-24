@@ -2,8 +2,10 @@
 title: "全局模式与规则模式PAC有什么区别？2026翻墙新手科普"
 description: "翻墙客户端模式怎么选？2026最新科学上网路由模式科普。深度解析全局模式、规则模式(PAC/Rule)与直连模式的区别，教您避免国内网站卡顿与流量浪费。"
 createdAt: 2026-08-23T04:30:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "解释翻墙软件中全局模式、规则模式（PAC）与直连模式的区别，帮助新手正确选择路由模式。"
 originalValue: "用通俗易懂的语言科普代理客户端的核心路由机制，提供场景化选型建议与新手高频踩坑避坑指南。"
 keywords:
@@ -36,6 +38,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 ## 一、 为什么路由分流是科学上网的第一课？
 

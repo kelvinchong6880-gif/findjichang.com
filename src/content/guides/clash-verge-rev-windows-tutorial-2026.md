@@ -2,8 +2,10 @@
 title: "Clash Verge Rev Windows 版下载与配置保姆级教程 (替代已停更的 Clash for Window"
 description: "Clash Verge Rev Windows 使用教程：从官方 GitHub 核对版本，完成订阅导入、规则模式、系统代理、TUN 与常见断网回滚。"
 createdAt: 2026-08-23T02:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供最新的 Clash Verge Rev Windows 版下载与配置详细教程，帮助用户替代已停更的 CFW。"
 originalValue: "深度解析 Mihomo 内核优势，提供从零开始的保姆级配置图文解析与常见故障排除指南。"
 keywords:

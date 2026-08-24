@@ -2,15 +2,29 @@
 title: "机场订阅链接是什么？为什么不能发给别人？"
 description: "解释订阅令牌、泄露后果和安全处理。"
 createdAt: 2026-08-23T19:00:00
-updatedAt: 2026-08-24T12:20:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "解释订阅令牌、泄露后果和安全处理。"
 originalValue: "围绕“机场订阅链接是什么为什么不能发给别人”提供独立判断框架、反例和操作清单"
 keywords: ["机场订阅链接是什么","为什么不能发给别人"]
 category: "机场知识"
 editorialReview: { checked: true, checkedAt: 2026-08-24, notes: "已按独立搜索意图重写并检查来源、风险与内链" }
-bingChecklist: { intentSatisfied: true, originalValue: true, factsVerified: true, sourcesAttributed: true, naturalLanguage: true, affiliateDisclosure: true, headingStructure: true, imageAltText: true, internalLinksChecked: true, structuredDataMatches: true, notThinContent: true, datesAccurate: true }
+bingChecklist:
+  intentSatisfied: true
+  originalValue: true
+  factsVerified: true
+  sourcesAttributed: true
+  naturalLanguage: true
+  affiliateDisclosure: true
+  headingStructure: true
+  imageAltText: true
+  internalLinksChecked: true
+  structuredDataMatches: true
+  notThinContent: true
+  datesAccurate: true
+
 ---
 ## 先把名词拆开
 
@@ -78,6 +92,8 @@ bingChecklist: { intentSatisfied: true, originalValue: true, factsVerified: true
 协议定义和基础概念在官方文档变化时复核；价格、节点、平台可用性和客户端界面则应在每次购买或操作当天确认。文章的更新时间只表示编辑检查时间，不是服务保证。
 
 ## 来源、更新与利益披露
+
+- [推广关系与链接说明](/affiliate-disclosure/)：了解注册链接的用途、属性和本站的编辑独立性。
 
 - [本站隐私政策](/privacy/)：核对本文涉及的基础定义或平台规则。
 - [评测与测速资料方法](/methodology/)：了解本站如何区分官方声明、第三方资料和独立测试。

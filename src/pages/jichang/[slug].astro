@@ -7,6 +7,7 @@ import RelatedLinks from '../../components/RelatedLinks.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import { articleSchema } from '../../lib/structured-data';
 import { keywordSet } from '../../lib/seo-keywords';
+import { isPublishable } from '../../lib/seo';
 import { brands, type Brand } from '../../data/brands';
 export function getStaticPaths() { return brands.map((brand) => ({ params: { slug: brand.slug }, props: { brand } })); }
 const { brand } = Astro.props as { brand: Brand };
@@ -62,7 +63,7 @@ const tocItems = isWeifeng ? [
   ['#品牌资料','品牌概况'],['#套餐与价格','套餐与价格'],['#线路与节点','线路与节点'],['#速度与稳定性','测速资料'],['#注册前检查清单','注册前检查'],
 ];
 ---
-<BaseLayout title={entry?.data.title ?? `${brand.name}机场测评｜找机场`} description={entry?.data.description ?? `${brand.name}机场的独立测评页面。`} indexable={false} ogType="article" keywords={keywords} socialImage={brand.avatar}>
+<BaseLayout title={entry?.data.title ?? `${brand.name}机场测评｜找机场`} description={entry?.data.description ?? `${brand.name}机场的独立测评页面。`} indexable={entry ? isPublishable(entry) : false} ogType="article" keywords={keywords} socialImage={brand.avatar}>
 <JsonLd data={schema} />
 <main class="page-shell detail-page"><Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场测评',href:'/jichang/'},{label:`${brand.name}机场测评`}]} />
 <section class="review-hero"><div><div class="detail-meta"><span class="badge">品牌测评</span><span>优先级 {brand.rank}</span><span>资料状态：{Content ? articleStatus : '核验中'}</span></div><h1>{entry?.data.title ?? `${brand.name}机场测评`}</h1><p>{entry?.data.description ?? '价格、套餐、线路和使用表现将在内容阶段依据可核验资料逐项填写。'}</p><div class="hero-actions"><AffiliateButton brand={brand} placement="hero" sourcePage={pagePath} /><a class="button button-secondary" href={`/speed-test/${brand.slug}/`}>查看测速资料</a></div><small>提示：通过本站链接访问官网，只代表您的访问意向，不代表已完成注册或购买操作。</small></div><aside class="verdict-card"><span>文章重点</span><strong>{Content ? articleVerdict : '等待资料核验'}</strong><p>{Content ? articleVerdictNote : '关键价格与服务信息核验前，不给出推荐结论。'}</p></aside></section>

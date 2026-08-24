@@ -2,8 +2,10 @@
 title: "Shadowrocket Mac版下载与配置教程：支持M1/M2/M3苹果电脑"
 description: "2026最新苹果电脑翻墙指南！教您如何在 Mac (M1/M2/M3/M4 芯片) 上免费安装 iOS 版 Shadowrocket (小火箭)。涵盖外区 ID 下载技巧、机场节点订阅导入、全局路由分流及断网排障 Q&A。"
 createdAt: 2026-08-23T00:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "指导 Apple Silicon Mac 用户如何下载、安装并配置 iOS 版的 Shadowrocket（小火箭）。"
 originalValue: "利用 Apple Silicon 的兼容性，提供零成本在 Mac 运行小火箭的图文指南，解决外区下载隐藏与操作逻辑割裂问题。"
 keywords:
@@ -39,6 +41,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 **引言**：提到 iOS 端的科学上网神器，几乎所有老玩家都会脱口而出：Shadowrocket（俗称“小火箭”）。它以极低的售价、全协议的支持和极其稳定的性能，稳居 iPhone 翻墙客户端的霸主地位。
 

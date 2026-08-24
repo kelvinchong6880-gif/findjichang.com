@@ -2,8 +2,10 @@
 title: "机场订阅格式不支持？2026 Subconverter节点转换教程"
 description: "机场节点订阅链接无法导入Clash或Sing-box？2026最新Subconverter订阅转换工具保姆级教程，教您一键实现多协议节点格式互转与多机场合并。"
 createdAt: 2026-08-23T03:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "指导用户使用 Subconverter 工具解决机场订阅链接格式不兼容的问题，包括节点转换与多机场订阅合并。"
 originalValue: "全面剖析订阅转换的底层逻辑，提供网页端转换实操、节点过滤及安全防盗刷的本地化部署进阶建议。"
 keywords:
@@ -35,6 +37,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 ## 一、 订阅格式不兼容的核心痛点解析
 

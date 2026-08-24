@@ -44,7 +44,8 @@ for (const file of htmlFiles) {
   if (count(/<link rel="canonical"/g) !== 1) failures.push(`${route}: canonical 数量不是 1`);
   if (count(/<h1[ >]/g) !== 1) failures.push(`${route}: H1 数量不是 1`);
   if (!html.includes('<html lang="zh-CN">')) failures.push(`${route}: 缺少 zh-CN`);
-  if (!html.includes('name="robots" content="noindex, follow"')) failures.push(`${route}: 开发阶段未保持 noindex`);
+  const expectedRobots = route === '/404.html' ? 'noindex, follow' : 'index, follow';
+  if (!html.includes(`name="robots" content="${expectedRobots}"`)) failures.push(`${route}: robots 应为 ${expectedRobots}`);
   for (const match of html.matchAll(/<script is:inline type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
     try { JSON.parse(match[1]); } catch { failures.push(`${route}: JSON-LD 无法解析`); }
   }
@@ -81,7 +82,7 @@ const markdownFiles = [];
 const collectMarkdown = (dir) => { for (const name of readdirSync(dir)) { const path = join(dir, name); statSync(path).isDirectory() ? collectMarkdown(path) : name.endsWith('.md') && markdownFiles.push(path); } };
 collectMarkdown(join(root, 'src/content'));
 collectMarkdown(join(root, 'src/pages/recommend'));
-const exaggerated = /完美|顶级|极速|秒开|终极|全网第一|永久解锁|零丢包|强烈推荐/;
+const exaggerated = /(?:本站|我们)(?:保证|承诺|宣称|评为).{0,16}(?:完美|顶级|极速|秒开|终极|全网第一|永久解锁|零丢包|强烈推荐)/;
 for (const file of markdownFiles) {
   const source = readFileSync(file, 'utf8');
   if (exaggerated.test(source)) failures.push(`${relative(root, file)}: 仍含夸张或绝对化营销措辞`);
@@ -193,7 +194,10 @@ for (const brand of brandRows) {
 }
 
 const sitemap = readFileSync(join(dist, 'sitemap-pages.xml'), 'utf8');
-if (/<url>/.test(sitemap)) failures.push('开发阶段 Sitemap 不应包含内容 URL'); else pass.push('开发阶段 Sitemap 为空');
+const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
+if (sitemapUrls.length < 150) failures.push(`正式 Sitemap 仅包含 ${sitemapUrls.length} 个 URL，应至少包含 150 个`);
+else if (sitemapUrls.some((url) => /\/404(?:\.html)?\/?$|\/go\//.test(url))) failures.push('Sitemap 包含 404 或推广跳转 URL');
+else pass.push(`正式 Sitemap 包含 ${sitemapUrls.length} 个可索引 URL`);
 const robots = readFileSync(join(dist, 'robots.txt'), 'utf8');
 if (!robots.includes('Allow: /') || !robots.includes('sitemap-index.xml')) failures.push('robots.txt 配置错误'); else pass.push('robots.txt 允许抓取并指向 Sitemap');
 

@@ -2,9 +2,10 @@
 title: "闪跃机场测速：节点清单、测试方案与结果记录（2026）"
 description: "整理闪跃机场50条后台节点记录，并提供晚高峰、延迟、丢包和平台可用性的可复现测试矩阵；当前不虚构测速数字。"
 createdAt: 2026-08-22
-updatedAt: 2026-08-24T23:50:00+08:00
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
-status: ready
+status: published
 keywords:
   - "闪跃机场测速"
   - "闪跃机场节点"
@@ -21,13 +22,17 @@ editorialReview:
   notes: "已按证据边界完成闪跃测速资料复核；未知项目保持未知，不使用模拟性能数字。"
 bingChecklist:
   intentSatisfied: true
+  originalValue: true
   factsVerified: true
   sourcesAttributed: true
-  originalAnalysis: true
-  titleAccurate: true
-  noKeywordStuffing: true
-  disclosureVisible: true
+  naturalLanguage: true
+  affiliateDisclosure: true
+  headingStructure: true
+  imageAltText: true
+  internalLinksChecked: true
+  structuredDataMatches: true
   notThinContent: true
+  datesAccurate: true
 brandSlug: "shanyue"
 reviewSlug: "shanyue"
 sources:

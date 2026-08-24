@@ -26,6 +26,7 @@ const related = relatedContent(current, [...guideCandidates, ...knowledgeCandida
 const path = `/guide/${entry.id}/`;
 const keywords = keywordSet({ title: entry.data.title, supplied: entry.data.keywords, type: 'guide' });
 const schema = articleSchema({ title: entry.data.title, description: entry.data.description, path, publishedAt: entry.data.publishedAt ?? entry.data.createdAt, updatedAt: entry.data.updatedAt });
+const updatedText = (entry.data.updatedAt ?? entry.data.createdAt).toISOString().split('T')[0];
 ---
 <BaseLayout title={`${entry.data.title}｜找机场`} description={entry.data.description} indexable={isPublishable(entry)} ogType="article" keywords={keywords}>
   <JsonLd data={schema} />
@@ -36,7 +37,7 @@ const schema = articleSchema({ title: entry.data.title, description: entry.data.
       <div>
         <div class="detail-meta">
           <span class="badge">客户端配置教程</span>
-          <span>更新日期：{entry.data.createdAt.toISOString().split('T')[0]}</span>
+          <span>更新日期：{updatedText}</span>
         </div>
         <h1>{entry.data.title}</h1>
         <p>{entry.data.description}</p>

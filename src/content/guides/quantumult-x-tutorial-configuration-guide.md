@@ -2,8 +2,10 @@
 title: "Quantumult X (圈X) 教程：2026新手小白保姆级配置与分流规则指南"
 description: "寻找最全的 Quantumult X 教程？本文提供2026年最新圈X新手小白配置指南，详细讲解机场节点导入、分流规则添加、Rewrite重写及MITM证书安装。保姆级教学，带你轻松玩转圈X高级代理。"
 createdAt: 2026-08-23T10:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供 Quantumult X (圈X) 的全面配置教程，包括节点导入、分流规则及重写功能。"
 originalValue: "针对 Quantumult X 这款进阶工具，提供从基础连接到 MITM 证书配置、广告拦截的全栈级新手入门指南。"
 keywords:
@@ -39,6 +41,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 寻找最全的 Quantumult X (圈X) 教程？本文为您提供 2026 年最新、最详细的圈X新手小白配置指南。从美区 Apple ID 下载、机场节点订阅导入、到高级分流规则添加、Rewrite 重写及 MITM 证书配置。无论您是初学者还是进阶玩家，只需跟着这篇保姆级教程，即可轻松实现高效网络代理与广告拦截。
 

@@ -2,8 +2,10 @@
 title: "OpenClash插件图文教程：八步实现全家设备无感科学上网"
 description: "2026最新软路由OpenClash保姆级教程。手把手教您通过八大步骤完成Meta内核安装、订阅导入、Fake-IP设置与防污染，实现无感翻墙。"
 createdAt: 2026-08-23T01:30:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供在 OpenWRT 软路由上安装和配置 OpenClash 插件的分步指南。"
 originalValue: "以八大核心步骤为主轴，清晰拆解 OpenClash 从环境检查、内核替换到 Fake-IP 与 DNS 防污染的复杂配置流程。"
 keywords:
@@ -35,6 +37,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 ## 一、 为什么选择 OpenClash 实现全屋无感翻墙？
 

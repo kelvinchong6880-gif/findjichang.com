@@ -2,8 +2,10 @@
 title: "Mac开启翻墙代理后终端无法联网？2026命令行代理设置保姆级教程"
 description: "2026最新 Mac 终端命令行代理设置指南！解决 Mac 开启代理后 Terminal、Git、Brew、Pip 依然断网问题。详解临时 export、zshrc 永久别名函数、SSH 代理配置与 Q&A 排障，手把手带您搞定命令行出海。"
 createdAt: 2026-08-23T23:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供解决 Mac 开启代理后终端仍无法连网问题的完整指南，包括配置终端代理环境变量和特殊开发工具的配置。"
 originalValue: "全面剖析终端不走系统代理的原因，提供从临时 export 到 .zshrc 函数别名再到 TUN 增强模式的多种实操方案，覆盖 Git, Brew, Pip 等高频开发工具。"
 keywords:
@@ -40,6 +42,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 **引言**：许多 Mac 用户在日常开发或极客探索中都会遇到一个极其困惑的现象：电脑明明已经开启了 Clash Verge、Surge、V2rayU 或其他代理软件，浏览器看 YouTube、访问 Google 和 ChatGPT 都丝滑流畅，但一打开 Mac 自带的“终端 (Terminal)”，运行 `git clone`、`brew install`、`curl` 或 `pip install` 时，却依然频频卡死、龟速甚至直接报 `Connection timed out` 错误！
 
@@ -269,7 +272,7 @@ pip config set global.proxy http://127.0.0.1:7890
 - **原因**：这是因为本地代理与 Git 的 SSL 校验发生了重试冲突，或者所连接的代理节点在握手期间异常断开。
 - **解决**：检查代理客户端中是否选到了有效的绿色延迟节点。如果是因为公司网络或 MitM 证书解密引起的 SSL 拦截，可临时执行 `git config --global http.sslVerify false`（仅建议在受信任网络下使用）。
 
-### Q4: 开启终端代理后，本地内网开发服务器（如 http://localhost:3000 或 192.168.x.x）访问失败？
+### Q4: 开启终端代理后，本地内网开发服务器（如 `http://localhost:3000` 或 `192.168.x.x`）访问失败？
 - **原因**：本地回环流量被错误路由给了代理软件。
 - **解决**：在终端中补充 `no_proxy` 环境变量以放行本地回环地址：
    ```bash

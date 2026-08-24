@@ -2,8 +2,10 @@
 title: "Loon 客户端入门教程：2026苹果手机科学上网轻量化选择与配置指南"
 description: "想要寻找高颜值且轻量化的 iOS 代理工具？本文为您提供2026年最新 Loon 客户端新手保姆级教程。从苹果外区下载、机场节点订阅导入、策略组分流配置，到强大的 Loon 插件与 MITM 证书安装，手把手带您轻松科学上网。"
 createdAt: 2026-08-23T12:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供 Loon 客户端的基础配置、机场节点订阅导入、策略组设置、插件配置及 MITM 证书安装教程。"
 originalValue: "全面解析 Loon 的轻量化优势与独特的插件系统，提供针对新手的保姆级配置图文指南。"
 keywords:
@@ -41,6 +43,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 **引言**：提到 iOS 平台上的网络代理工具，很多人第一时间想到的是老牌的 Shadowrocket（小火箭）、高端昂贵的 Surge 或是极客范十足的 Quantumult X（圈X）。然而，近年来有一款名为 Loon 的工具异军突起，它不仅拥有媲美 Surge 的精美 UI 界面，还具备超越小火箭的强大规则与插件管理能力，同时价格亲民（买断制）。如果您觉得小火箭界面太陈旧，又觉得圈X和 Surge 配置太硬核，那么 Loon 绝对是您苹果手机上最较好的“轻量化科学上网选择”。本文将带您从零开始，玩转 Loon！
 

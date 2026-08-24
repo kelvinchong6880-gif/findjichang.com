@@ -2,8 +2,10 @@
 title: "安卓手机翻墙耗电快怎么办？2026主流代理软件省电优化保姆级指南"
 description: "安卓手机开启科学上网后发热掉电快？本文深度解析翻墙耗电元凶，详解 Clash、v2rayNG、Sing-box 及 Surfboard 降低耗电技巧，包括关闭后台高频测速、分应用代理与系统调优，轻松延长续航。"
 createdAt: 2026-08-23T17:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "解析安卓手机科学上网耗电的原因，提供 Clash、v2rayNG、Sing-box 及 Surfboard 的省电优化指南。"
 originalValue: "针对安卓用户痛点，深入浅出地讲解底层发热掉电机制，并提供系统与软件双层面的保姆级优化方案。"
 keywords:
@@ -38,6 +40,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 **引言**：许多安卓手机用户在开启科学上网工具后，常常会遇到一个令人头疼的问题——手机掉电速度明显加快、机身发热，甚至在锁屏待机状态下一夜掉电 15% 到 20%。很多人误以为是手机电池老化或代理软件本身有 Bug，但实际上，这往往是因为代理客户端的后台测速机制、虚拟网卡唤醒机制以及分流规则配置不当所导致的。本文将深入剖析安卓翻墙耗电的底层机理，并手把手教您在主流客户端（Clash、v2rayNG、Sing-box、Surfboard）及系统层面上进行深度省电优化！
 

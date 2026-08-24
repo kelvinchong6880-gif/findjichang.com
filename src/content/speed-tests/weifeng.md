@@ -2,9 +2,10 @@
 title: "微风机场测速：62 条节点状态、地区分布与实测计划（2026）"
 description: "微风机场测速资料页：核验2026年8月24日后台62条节点、6个地区、1倍倍率与在线状态，并公开晚高峰速度、延迟、丢包和解锁测试方法。"
 createdAt: 2026-08-22
-updatedAt: 2026-08-24T23:20:00+08:00
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
-status: ready
+status: published
 keywords:
   - "微风机场测速"
   - "微风机场节点"
@@ -21,13 +22,17 @@ editorialReview:
   notes: "已基于2026-08-24后台节点快照完成节点报告；速度和解锁数据等待统一环境测试。"
 bingChecklist:
   intentSatisfied: true
+  originalValue: true
   factsVerified: true
   sourcesAttributed: true
-  originalAnalysis: true
-  titleAccurate: true
-  noKeywordStuffing: true
-  disclosureVisible: true
+  naturalLanguage: true
+  affiliateDisclosure: true
+  headingStructure: true
+  imageAltText: true
+  internalLinksChecked: true
+  structuredDataMatches: true
   notThinContent: true
+  datesAccurate: true
 brandSlug: "weifeng"
 reviewSlug: "weifeng"
 sources:

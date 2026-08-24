@@ -2,8 +2,10 @@
 title: "新一代翻墙神器：Sing-box Windows 客户端新手配置与节点导入指南（2026最新版）"
 description: "全面解析 2026 年新一代科学上网神器 Sing-box。本文提供详细的 Sing-box Windows 客户端 (GUI.for.SingBox/Hiddify) 下载、安装及节点订阅导入保姆级教程。深入讲解分流规则配置、TUN 虚拟网卡开启及常见报错解决，助您轻松驾驭全协议网络代理。"
 createdAt: 2026-08-23T04:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供详细的 Sing-box GUI for Windows 下载、安装及配置图文教程。"
 originalValue: "全面涵盖从底层协议解析、GUI 工具选型对比，到高级 TUN 模式开启与报错自检手册。"
 keywords:
@@ -41,6 +43,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 如果你一直在关注科学上网技术的演进，那你一定在各大技术论坛或机场群组里频繁听到一个名字——**Sing-box**。
 

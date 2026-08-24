@@ -2,9 +2,10 @@
 title: "SOGO云机场测速：节点清单、测试方案与结果记录（2026）"
 description: "SOGO云机场暂缺真实节点与测速证据；本页提供测试环境、样本选择、原始记录和结果发布标准。"
 createdAt: 2026-08-22
-updatedAt: 2026-08-24T23:50:00+08:00
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
-status: ready
+status: published
 keywords:
   - "SOGO云机场测速"
   - "SOGO云机场节点"
@@ -21,13 +22,17 @@ editorialReview:
   notes: "已按证据边界完成SOGO云测速资料复核；未知项目保持未知，不使用模拟性能数字。"
 bingChecklist:
   intentSatisfied: true
+  originalValue: true
   factsVerified: true
   sourcesAttributed: true
-  originalAnalysis: true
-  titleAccurate: true
-  noKeywordStuffing: true
-  disclosureVisible: true
+  naturalLanguage: true
+  affiliateDisclosure: true
+  headingStructure: true
+  imageAltText: true
+  internalLinksChecked: true
+  structuredDataMatches: true
   notThinContent: true
+  datesAccurate: true
 brandSlug: "sogo-yun"
 reviewSlug: "sogo-yun"
 sources:

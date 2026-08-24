@@ -2,8 +2,10 @@
 title: "翻墙后无法上网？节点全部红色与超时排查指南"
 description: "2026最新科学上网断网排查教程。详解机场节点全部红色、测速Timeout、无法连网的核心原因与解决办法，涵盖时间同步、订阅失效与端口冲突排查。"
 createdAt: 2026-08-23T04:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供针对所有节点变红、测速Timeout及完全无法连网的系统级深度排查指南。"
 originalValue: "全面剖析时间同步、订阅阻断、DNS缓存与TUN驱动冲突等核心断网诱因，给出立竿见影的排障措施。"
 keywords:
@@ -34,6 +36,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 ## 一、 节点“全红 / Timeout”底层机制剖析
 

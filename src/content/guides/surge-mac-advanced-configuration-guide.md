@@ -2,8 +2,10 @@
 title: "Surge Mac版进阶使用教程：2026从节点导入到接管系统网络完整指南"
 description: "2026最新 Surge for Mac 进阶保姆级教程！深度讲解机场托管订阅导入、增强模式(Enhanced Mode)全局接管、旁路网关设置、模块化配置与 Q&A 断网排障，带您彻底掌握 Mac 代理天花板。"
 createdAt: 2026-08-23T21:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供针对 Surge Mac 版的进阶使用指南，包括订阅导入、Enhanced Mode 增强模式接管、网关模式与模块配置。"
 originalValue: "全面涵盖 Surge for Mac 作为高端代理与网络调试工具的核心高阶功能，提供图文保姆级排障指导。"
 keywords:
@@ -39,6 +41,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 **引言**：在 macOS 的网络代理工具生态中，如果说其他客户端是满足日常出海冲浪的“代步车”，那么 Surge for Mac 毫无疑问就是殿堂级的“航空母舰”。它不仅是一款质量较高的网络代理工具，更是专为开发者、网络工程师以及追求极致体验的极客量身打造的全功能网络调试与流量治理平台。然而，Surge 丰富的功能和专业的术语常常让许多进阶用户望而却步。本文将从托管配置导入、底层增强模式接管、网关旁路路由、模块化管理到深度排障，为您全景式拆解 Surge Mac 的进阶玩法。
 

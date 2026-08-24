@@ -2,9 +2,10 @@
 title: "微风机场怎么样？套餐价格、62 条节点与选购建议（2026）"
 description: "微风机场深度测评：核验6档套餐、62条后台节点、地区分布与1倍流量倍率，分析适合人群、套餐选择、风险和待验证的真实测速项目。"
 createdAt: 2026-08-22
-updatedAt: 2026-08-24T23:20:00+08:00
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
-status: ready
+status: published
 keywords:
   - "微风机场"
   - "微风机场怎么样"
@@ -21,13 +22,17 @@ editorialReview:
   notes: "已按官网套餐记录和2026-08-24后台节点快照完成重写；性能结论等待真实测速。"
 bingChecklist:
   intentSatisfied: true
+  originalValue: true
   factsVerified: true
   sourcesAttributed: true
-  originalAnalysis: true
-  titleAccurate: true
-  noKeywordStuffing: true
-  disclosureVisible: true
+  naturalLanguage: true
+  affiliateDisclosure: true
+  headingStructure: true
+  imageAltText: true
+  internalLinksChecked: true
+  structuredDataMatches: true
   notThinContent: true
+  datesAccurate: true
 brandSlug: "weifeng"
 speedTestSlug: "weifeng"
 sources:

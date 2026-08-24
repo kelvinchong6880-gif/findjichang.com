@@ -2,8 +2,10 @@
 title: "苹果 iOS (iPhone/iPad) 科学上网与小火箭配置完全指南"
 description: "2026年最详尽的苹果 iPhone/iPad 科学上网保姆级教程。从美区 Apple ID 注册与防封机登录技巧，到 Shadowrocket (小火箭) 客户端下载、一键导入机场订阅、全局路由智能分流配置，以及解决后台断流、TikTok 黑屏等全套疑难解答。"
 createdAt: 2026-08-23T07:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供苹果 iOS 科学上网完整流程，包括外区 Apple ID 获取及 Shadowrocket (小火箭) 详细配置教程。"
 originalValue: "全面剖析 iOS 沙盒隔离与防封禁机制，提供从账号获取到 TikTok 解锁的全链条排障方案。"
 keywords:
@@ -41,6 +43,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 > **本文定位：** 重点解释 Apple 账号、安装来源、安全风险与完整排障。只想快速导入订阅并启动连接，可阅读另一篇基础操作教程。
 

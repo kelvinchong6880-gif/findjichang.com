@@ -2,8 +2,10 @@
 title: "Clash for Android 已停更：旧版配置与安全迁移教程"
 description: "Clash for Android 原项目已经停更。本文说明旧版配置、安装包风险、订阅迁移和退出前的网络恢复方法，不再推荐新用户安装。"
 createdAt: 2026-08-23T13:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供 Clash for Android (CFA) 的安全下载、机场节点订阅导入、分流模式选择及应用绕过设置等基础配置教程。"
 originalValue: "全面涵盖 Clash for Android 客户端在安卓端的安装、订阅配置、代理模式切换及后台保活优化等图文指南。"
 keywords:
@@ -40,6 +42,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 **引言**：在 Android 生态中有多种代理客户端可选。Clash for Android（简称 CFA）曾拥有较多用户，但原项目已停止正常维护；本文保留给仍在使用旧版的读者，并把迁移与安装包安全放在首位。无论您是跨国贸易从业者、海外学术研究人员，还是高清流媒体爱好者，掌握 Clash for Android 的配置方法都是畅游全球网络的必修课。本文将为您带来详尽的保姆级安装与订阅配置指南。
 

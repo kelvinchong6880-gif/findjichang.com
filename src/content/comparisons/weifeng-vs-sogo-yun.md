@@ -2,14 +2,29 @@
 title: "微风与 SOGO云怎么选：公开资料核对清单"
 description: "不使用虚构测速，用预算、设备、倍率、退款与自行测试步骤比较两个候选品牌。"
 createdAt: 2026-08-23T18:30:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供微风与SOGO云的购买前对比框架"
 originalValue: "把未知信息和读者测试项明确列出"
 keywords: ["微风", "SOGO云", "机场对比"]
 brandSlugs: ["weifeng", "sogo-yun"]
 editorialReview: { checked: true, checkedAt: 2026-08-23, notes: "未使用独立测速结论" }
-bingChecklist: { intentSatisfied: true, originalValue: true, factsVerified: true, sourcesAttributed: true, naturalLanguage: true, affiliateDisclosure: true, headingStructure: true, imageAltText: true, internalLinksChecked: true, structuredDataMatches: true, notThinContent: true, datesAccurate: true }
+bingChecklist:
+  intentSatisfied: true
+  originalValue: true
+  factsVerified: true
+  sourcesAttributed: true
+  naturalLanguage: true
+  affiliateDisclosure: true
+  headingStructure: true
+  imageAltText: true
+  internalLinksChecked: true
+  structuredDataMatches: true
+  notThinContent: true
+  datesAccurate: true
+
 ---
 ## 当前对比原则
 

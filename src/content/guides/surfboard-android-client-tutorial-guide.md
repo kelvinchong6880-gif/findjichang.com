@@ -2,8 +2,10 @@
 title: "Surfboard (冲浪板) 安卓端使用教程：较好兼容 Surge 格式的翻墙利器 (2026最新)"
 description: "2026最新 Surfboard (冲浪板) 安卓新手保姆级教程！全面解析最新版 APK 安全下载、Surge 格式托管订阅导入、策略组与分流规则配置、分应用代理及后台防杀保活设置，附带详尽 Q&A 排障，带您轻松玩转安卓端科学上网。"
 createdAt: 2026-08-23T15:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供 Surfboard (冲浪板) 安卓端的最新 APK 下载、Surge 格式订阅导入、分流规则配置及后台保活设置教程。"
 originalValue: "全面涵盖 Surfboard 的 Surge 兼容性优势，提供针对安卓系统的高级防杀保活和分应用代理图文指南。"
 keywords:
@@ -41,6 +43,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 **引言**：在 iOS 平台上，Surge 凭借其无与伦比的规则分流、模块扩展和极简 UI 稳坐“极客神器”的王座；而在开源开放的 Android 生态中，有没有一款工具能够较好复刻甚至无缝继承 Surge 的所有生态与配置文件？答案就是 **Surfboard**（中文俗称“冲浪板”）。Surfboard 原生支持 Surge 3/4 配置文件语法，拥有极具现代美感的 Material Design 界面与极低的系统功耗，是进阶安卓用户出海冲浪的绝佳利器。本文将为您带来全网最详尽的 Surfboard 基础配置、订阅导入与进阶实操全攻略。
 

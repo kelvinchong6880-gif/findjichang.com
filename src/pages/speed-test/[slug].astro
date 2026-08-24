@@ -7,6 +7,7 @@ import JsonLd from '../../components/JsonLd.astro';
 import { brands, type Brand } from '../../data/brands';
 import { articleSchema } from '../../lib/structured-data';
 import { keywordSet } from '../../lib/seo-keywords';
+import { isPublishable } from '../../lib/seo';
 export function getStaticPaths() { return brands.map((brand) => ({ params: { slug: brand.slug }, props: { brand } })); }
 const { brand } = Astro.props as { brand: Brand };
 const entry = (await getCollection('speedTests')).find((item) => item.id === brand.slug);
@@ -25,7 +26,7 @@ const speedLinks = [
   { href: '/knowledge/latency-reference-ranges/', title: '延迟参考范围与误区' },
 ];
 ---
-<BaseLayout title={`${pageTitle}｜找机场`} description={description} indexable={false} ogType="article" keywords={keywords} socialImage={brand.avatar}>
+<BaseLayout title={`${pageTitle}｜找机场`} description={description} indexable={entry ? isPublishable(entry) : false} ogType="article" keywords={keywords} socialImage={brand.avatar}>
   <JsonLd data={schema} />
   <main class="page-shell detail-page">
     <Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场测速',href:'/speed-test/'},{label:`${brand.name}机场测速资料汇总`}]} />

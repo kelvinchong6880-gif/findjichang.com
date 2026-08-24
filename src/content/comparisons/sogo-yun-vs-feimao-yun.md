@@ -2,14 +2,29 @@
 title: "SOGO云与飞猫云怎么选：低预算套餐核对方法"
 description: "围绕实际成本、倍率、客户端、到期规则和短期测试比较两个低预算候选。"
 createdAt: 2026-08-23T18:40:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供SOGO云与飞猫云的购买前对比框架"
 originalValue: "以总成本和核对方法代替虚构速度排名"
 keywords: ["SOGO云", "飞猫云", "机场对比"]
 brandSlugs: ["sogo-yun", "feimao-yun"]
 editorialReview: { checked: true, checkedAt: 2026-08-23, notes: "未使用独立测速结论" }
-bingChecklist: { intentSatisfied: true, originalValue: true, factsVerified: true, sourcesAttributed: true, naturalLanguage: true, affiliateDisclosure: true, headingStructure: true, imageAltText: true, internalLinksChecked: true, structuredDataMatches: true, notThinContent: true, datesAccurate: true }
+bingChecklist:
+  intentSatisfied: true
+  originalValue: true
+  factsVerified: true
+  sourcesAttributed: true
+  naturalLanguage: true
+  affiliateDisclosure: true
+  headingStructure: true
+  imageAltText: true
+  internalLinksChecked: true
+  structuredDataMatches: true
+  notThinContent: true
+  datesAccurate: true
+
 ---
 ## 不要只看最低月价
 

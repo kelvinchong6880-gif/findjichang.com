@@ -2,8 +2,10 @@
 title: "苹果 iOS 怎么翻墙？Shadowrocket（小火箭）下载与节点订阅完整教程"
 description: "2026年最新苹果 iOS 科学上网保姆级教程。全面解析美区 Apple ID 免信用卡注册、正版 Shadowrocket (小火箭) 下载、支付宝礼品卡充值，以及机场节点一键订阅、全局路由智能分流与高频排障，助您零门槛用 iPhone 畅游国际互联网。"
 createdAt: 2026-08-23T09:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供苹果 iOS 科学上网完整流程，包括正版 Shadowrocket (小火箭) 下载及节点订阅教程。"
 originalValue: "全面剖析苹果 iOS 生态锁区机制，提供从美区 Apple ID 注册到机场节点导入的全链路解决方案。"
 keywords:
@@ -42,6 +44,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 > **本文定位：** 这是快速上手版，只覆盖下载安装、订阅导入、节点选择和基础故障。账号安全与高级规则原理请参考完整指南。
 

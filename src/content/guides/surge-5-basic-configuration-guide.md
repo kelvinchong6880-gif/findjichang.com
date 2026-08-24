@@ -2,8 +2,10 @@
 title: "完整极客神器 Surge 5 基础配置与机场节点导入保姆级教程(2026最新)"
 description: "想要真正发挥极客神器 Surge 5 的强大功能？本文为您提供2026年最新 Surge 5 基础配置教程，从零开始详细讲解机场节点订阅导入、策略组设置、分流规则添加及模块使用，保姆级教学带你轻松接管网络。"
 createdAt: 2026-08-23T11:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供 Surge 5 的基础配置、机场节点订阅导入、策略组设置及分流规则配置教程。"
 originalValue: "全面涵盖 Surge 5 的极客功能，包含模块使用、Ponte 技术简介以及 MITM 证书安装等进阶技巧。"
 keywords:
@@ -41,6 +43,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 **引言**：在 iOS 和 macOS 平台的网络代理工具生态中，如果说 Shadowrocket（小火箭）是平民超跑，Quantumult X (圈X) 是性能小钢炮，那么 Surge 5 就是毋庸置疑的“航空母舰”。作为一款售价高昂、定位“极客”的网络调试与接管工具，Surge 5 的功能早已超越了单纯的“翻墙”，它是您掌控设备全部网络请求的完整武器。本文将用最通俗易懂的语言，带您从零开始完成 Surge 5 的基础配置与机场节点导入，彻底驯服这头性能猛兽。
 

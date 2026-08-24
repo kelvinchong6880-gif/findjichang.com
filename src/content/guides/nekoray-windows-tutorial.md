@@ -2,8 +2,10 @@
 title: "NekoRay Windows 已停更：旧用户配置识别与迁移指南"
 description: "NekoRay 官方项目已经归档停止维护。本文供旧用户识别原有配置、导出必要参数并迁移到仍维护的 Windows 客户端。"
 createdAt: 2026-08-23T05:00:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供详细的 NekoRay Windows 客户端下载、安装及双内核配置教程。"
 originalValue: "全面涵盖 Xray 与 Sing-box 核心切换、节点导入以及高级 Hysteria2 协议专属路由优化指南。"
 keywords:
@@ -37,6 +39,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 在众多 Windows 代理工具中，NekoRay 凭借极低的资源占用和强大的双内核支持，成为了追求极致性能用户的首选。本文将为您详细梳理 NekoRay 的核心配置技巧，提供一份符合规范且易于上手的实操指南。
 

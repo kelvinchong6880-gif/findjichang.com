@@ -2,8 +2,10 @@
 title: "2026 进阶网络与路由器翻墙教程：软路由与全屋科学上网指南"
 description: "寻找路由器翻墙教程？本文为您带来2026最新全屋科学上网进阶指南。深度解析硬路由与软路由选型，手把手教您配置 OpenWrt 旁路由、OpenClash 与 PassWall，用于解决 Apple TV 与 PS5 翻墙难题。"
 createdAt: 2026-08-23T00:30:00
-draft: true
-status: drafting
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
+draft: false
+status: published
 primaryIntent: "提供硬核的软路由、旁路由配置指南，帮助用户实现全屋科学上网及特殊设备（Apple TV/PS5）的网络优化。"
 originalValue: "全面对比硬路由与软路由、OpenClash 与 PassWall，提供旁路由模式配置及防火墙 NAT 优化的图文实操指南。"
 keywords:
@@ -41,6 +43,7 @@ bingChecklist:
   structuredDataMatches: true
   notThinContent: true
   datesAccurate: true
+
 ---
 **引言**：当您手头的设备不再仅限于手机和电脑，而是加入了 Apple TV、PlayStation 5、Nintendo Switch、甚至海外版智能音箱与智能家居时，传统的“在每台设备上安装翻墙客户端”的模式将彻底失效。
 

@@ -23,7 +23,7 @@ const keywords = keywordSet({ title: entry.data.title, supplied: entry.data.keyw
   <JsonLd data={schema} />
   <main class="page-shell detail-page">
     <Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场知识',href:'/knowledge/'},{label:entry.data.title}]}/>
-    <section class="review-hero" style="grid-template-columns:1fr"><div><span class="badge">机场知识</span><h1>{entry.data.title}</h1><p>{entry.data.description}</p><p class="article-meta">首次整理：{createdText} · 最近更新：{updatedText} · 当前状态：编辑中</p></div></section>
+    <section class="review-hero" style="grid-template-columns:1fr"><div><span class="badge">机场知识</span><h1>{entry.data.title}</h1><p>{entry.data.description}</p><p class="article-meta">首次整理：{createdText} · 最近更新：{updatedText} · 当前状态：已发布并持续更新</p></div></section>
     <section class="content-layout" style="grid-template-columns:1fr"><article class="article-content"><Content/><RelatedLinks links={related} title="相关知识与教程" /></article></section>
   </main>
 </BaseLayout>

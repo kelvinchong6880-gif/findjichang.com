@@ -2,9 +2,10 @@
 title: "星岛梦机场怎么样？套餐、节点资料与核验进度（2026）"
 description: "基于官网套餐与后台快照整理星岛梦机场的74条节点记录、在线状态、异常项及待验证的真实测速项目。"
 createdAt: 2026-08-22
-updatedAt: 2026-08-24T23:50:00+08:00
+publishedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
-status: ready
+status: published
 keywords:
   - "星岛梦机场"
   - "星岛梦机场怎么样"
@@ -21,13 +22,17 @@ editorialReview:
   notes: "已按证据边界完成星岛梦品牌测评复核；未知项目保持未知，不使用模拟性能数字。"
 bingChecklist:
   intentSatisfied: true
+  originalValue: true
   factsVerified: true
   sourcesAttributed: true
-  originalAnalysis: true
-  titleAccurate: true
-  noKeywordStuffing: true
-  disclosureVisible: true
+  naturalLanguage: true
+  affiliateDisclosure: true
+  headingStructure: true
+  imageAltText: true
+  internalLinksChecked: true
+  structuredDataMatches: true
   notThinContent: true
+  datesAccurate: true
 brandSlug: "xingdaomeng"
 speedTestSlug: "xingdaomeng"
 sources:

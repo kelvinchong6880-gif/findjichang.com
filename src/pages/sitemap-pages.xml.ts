@@ -11,11 +11,17 @@ export const GET: APIRoute = async () => {
   }
   const names = ['reviews', 'speedTests', 'guides', 'knowledge', 'comparisons'] as const;
   const groups = await Promise.all(names.map((name) => getCollection(name)));
-  const urls = groups.flat().filter(isPublishable).map((entry) => {
+  const articleUrls = groups.flat().filter(isPublishable).map((entry) => {
     const loc = new URL(entryPath(entry.collection, entry.id), site.url).toString();
     const lastmod = (entry.data.updatedAt ?? entry.data.publishedAt)!.toISOString();
     return `<url><loc>${escapeXml(loc)}</loc><lastmod>${lastmod}</lastmod></url>`;
   });
-  const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.join('')}</urlset>`;
+  const staticPaths = [
+    '/', '/recommend/', '/recommend/feimao-yun/', '/recommend/firefly-streaming-ai/', '/recommend/weifeng-stability/',
+    '/jichang/', '/speed-test/', '/compare/', '/guide/', '/knowledge/',
+    '/about/', '/author/', '/contact/', '/methodology/', '/corrections/', '/affiliate-disclosure/', '/privacy/', '/terms/', '/disclaimer/',
+  ];
+  const staticUrls = staticPaths.map((path) => `<url><loc>${escapeXml(new URL(path, site.url).toString())}</loc></url>`);
+  const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${[...staticUrls, ...articleUrls].join('')}</urlset>`;
   return new Response(body, { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });
 };
