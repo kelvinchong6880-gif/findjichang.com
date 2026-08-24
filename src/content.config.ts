@@ -56,7 +56,7 @@ const speedTests = defineCollection({
     ...shared,
     brandSlug,
     reviewSlug: brandSlug,
-    sources: z.array(source).min(1),
+    sources: z.array(source).default([]),
     testContext: z.object({
       device: z.string(), network: z.string(), client: z.string(), period: z.string(),
       originalScreenshot: z.string().optional(), screenshotEdited: z.boolean().default(false),
