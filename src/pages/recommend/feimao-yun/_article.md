@@ -149,7 +149,7 @@
 - 飞猫云公开线路检测页与注册页面，本站于 2026 年 8 月 23 日核对页面名称、检测说明、注册字段和条款入口；
 - [飞猫云品牌资料](/jichang/feimao-yun/)与[飞猫云测速资料](/speed-test/feimao-yun/)；
 - [本站评测与证据方法](/methodology/)；
-- [推广披露](/affiliate-disclosure/)、[隐私政策](/privacy/)与[免责声明](/disclaimer/)。
+- [隐私政策](/privacy/)与[免责声明](/disclaimer/)。
 
 **核心关键词：**飞猫云、飞猫云机场、飞猫云推荐、飞猫云怎么样。
 

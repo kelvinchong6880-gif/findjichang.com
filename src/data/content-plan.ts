@@ -33,7 +33,7 @@ const comparisonItems = [
 const pageItems = [
   ['recommendation','机场候选与购买前检查','/recommend/','drafting'],
   ['about','关于找机场','/about/','ready'],['contact','联系我们','/contact/','ready'],
-  ['methodology','评测与测速资料方法','/methodology/','ready'],['affiliate-disclosure','推广披露','/affiliate-disclosure/','ready'],
+  ['methodology','评测与测速资料方法','/methodology/','ready'],
   ['privacy','隐私政策','/privacy/','ready'],['terms','使用条款','/terms/','ready'],['disclaimer','免责声明','/disclaimer/','ready'],
 ] as const;
 

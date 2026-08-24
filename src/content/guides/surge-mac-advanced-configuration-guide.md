@@ -193,4 +193,4 @@ Surge for Mac 无疑是网络代理领域的工业级艺术品。通过本文的
 - [Surge 官方手册](https://manual.nssurge.com/)
 - [Apple Account 官方支持](https://support.apple.com/apple-account)
 
-**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。
+**提示：** 文中部分机场入口跳转至官网。具体的付款与服务条款由第三方负责。

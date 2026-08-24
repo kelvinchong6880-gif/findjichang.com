@@ -6,7 +6,7 @@ import Logo from './Logo.astro';
   <div class="footer-shell">
     <div class="footer-intro"><a href="/"><Logo /></a><p>把复杂的机场信息，整理成容易看懂的选择依据。</p></div>
     <nav aria-label="页脚导航">{footerNavigation.map((item) => <a href={item.href}>{item.label}</a>)}</nav>
-    <div class="disclosure"><strong>推广披露</strong><p>本站部分链接为第三方推广链接。你通过链接注册时，我们可能获得佣金，但不会因此提高你的价格。服务信息可能变化，请在购买前自行核实。</p></div>
+    <div class="disclosure"><strong>用户提示</strong><p>本站提供的注册链接仅用于跳转，以便统计受欢迎程度。因服务商政策和价格可能随时间变化，请您在购买前务必以官方最新信息为准并自行评估风险。</p></div>
   </div>
   <div class="footer-bottom"><span>© {new Date().getFullYear()} 找机场</span><span>资料用于选择参考，不构成服务保证</span></div>
 </footer>

@@ -14,7 +14,6 @@ export const footerNavigation = [
   { label: '联系我们', href: '/contact/' },
   { label: '评测与测速资料方法', href: '/methodology/' },
   { label: '更正机制', href: '/corrections/' },
-  { label: '推广披露', href: '/affiliate-disclosure/' },
   { label: '隐私政策', href: '/privacy/' },
   { label: '使用条款', href: '/terms/' },
   { label: '免责声明', href: '/disclaimer/' },

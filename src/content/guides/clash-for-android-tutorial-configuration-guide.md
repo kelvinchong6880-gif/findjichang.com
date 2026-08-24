@@ -208,4 +208,4 @@ Clash for Android 凭借其工业级的稳定内核与灵活强大的分流控�
 - [v2rayNG 官方项目](https://github.com/2dust/v2rayNG)
 - [Surfboard 官方网站](https://getsurfboard.com/)
 
-**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。
+**提示：** 文中部分机场入口跳转至官网。具体的付款与服务条款由第三方负责。

@@ -177,7 +177,7 @@ Firefly 适合放在“流媒体与 AI”入口中，作为一个值得优先核
 - Firefly 公开注册页面，本站于 2026 年 8 月 23 日核对页面品牌、注册字段与条款入口；
 - [Netflix 官方代理错误帮助](https://help.netflix.com/en/node/277)；
 - [OpenAI 支持的国家和地区](https://help.openai.com/en/articles/7947663-chatgpt-supported-countries)及[旅行与地区错误帮助](https://help.openai.com/en/articles/9022015-i-m-travelling-to-a-different-country-and-i-can-t-access-chatgpt-or-the-api)；
-- [Firefly 品牌资料](/jichang/firefly/)、[本站评测方法](/methodology/)与[推广披露](/affiliate-disclosure/)。
+- [Firefly 品牌资料](/jichang/firefly/)与[本站评测方法](/methodology/)。
 
 **核心关键词：**Firefly机场、Firefly机场推荐、Firefly机场怎么样、流媒体机场推荐、AI机场推荐。
 

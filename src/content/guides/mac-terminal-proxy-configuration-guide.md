@@ -300,4 +300,4 @@ Mac 终端命令行是每位极客与开发者的生产力中枢。掌握了“�
 - [Clash Verge Rev 官方项目](https://github.com/clash-verge-rev/clash-verge-rev)
 - [Mihomo 官方文档](https://wiki.metacubex.one/)
 
-**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。
+**提示：** 文中部分机场入口跳转至官网。具体的付款与服务条款由第三方负责。

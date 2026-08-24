@@ -29,7 +29,7 @@ bingChecklist: { intentSatisfied: true, originalValue: true, factsVerified: true
 
 查看[SOGO云资料](/jichang/sogo-yun/)或[飞猫云资料](/jichang/feimao-yun/)。第三方入口：[SOGO云](/go/sogo-yun/?from=/compare/sogo-yun-vs-feimao-yun/&placement=article-end)、[飞猫云](/go/feimao-yun/?from=/compare/sogo-yun-vs-feimao-yun/&placement=article-end)。
 
-**推广披露：** 页面包含推广链接。请把官方结算页和自己的短期测试作为购买依据。
+**提示：** 页面包含的跳转链接仅作统计用途。请把官方结算页和自己的短期测试作为购买依据。
 
 ## 先把“低预算”换算成真实成本
 

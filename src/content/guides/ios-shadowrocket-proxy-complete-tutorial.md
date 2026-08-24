@@ -202,4 +202,4 @@ bingChecklist:
 - [Shadowrocket App Store 页面](https://apps.apple.com/us/app/shadowrocket/id932747118)
 - [Apple Account 官方支持](https://support.apple.com/apple-account)
 
-**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。
+**提示：** 文中部分机场入口跳转至官网。具体的付款与服务条款由第三方负责。

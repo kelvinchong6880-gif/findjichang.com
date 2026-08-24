@@ -165,7 +165,7 @@
 - 微风网络公开注册页面，本站于 2026 年 8 月 23 日核对页面品牌、注册字段与条款入口；
 - [微风机场综合推荐](/recommend/)、[微风机场品牌资料](/jichang/weifeng/)与[微风机场测速资料](/speed-test/weifeng/)；
 - [本站评测与证据方法](/methodology/)；
-- [推广披露](/affiliate-disclosure/)、[隐私政策](/privacy/)与[免责声明](/disclaimer/)。
+- [隐私政策](/privacy/)与[免责声明](/disclaimer/)。
 
 **核心关键词：**微风机场、微风机场稳定吗、微风机场稳定性、稳定机场推荐。
 

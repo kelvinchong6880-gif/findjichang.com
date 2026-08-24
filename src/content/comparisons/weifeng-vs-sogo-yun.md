@@ -29,7 +29,7 @@ bingChecklist: { intentSatisfied: true, originalValue: true, factsVerified: true
 
 查看[微风资料](/jichang/weifeng/)或[SOGO云资料](/jichang/sogo-yun/)。前往第三方页面：[微风](/go/weifeng/?from=/compare/weifeng-vs-sogo-yun/&placement=article-end)、[SOGO云](/go/sogo-yun/?from=/compare/weifeng-vs-sogo-yun/&placement=article-end)。
 
-**推广披露：** 两个服务商入口均可能为本站带来佣金，佣金不构成性能证据。
+**提示：** 注册入口仅用于跳转统计，不构成性能证据。
 
 ## 先确定你真正要比较的是什么
 

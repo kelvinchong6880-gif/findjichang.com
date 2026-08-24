@@ -117,4 +117,4 @@ NekoRay 官方仓库已于 2025 年 3 月归档，并明确提示“不再维护
 - [NekoRay 官方项目归档](https://github.com/MatsuriDayo/nekoray)
 - [sing-box 官方文档](https://sing-box.sagernet.org/)
 
-**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。
+**提示：** 文中部分机场入口跳转至官网。具体的付款与服务条款由第三方负责。

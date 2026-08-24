@@ -103,4 +103,4 @@ AI 或流媒体不可用不一定是节点故障。先确认服务是否支持�
 - [OpenAI 支持国家与地区](https://help.openai.com/en/articles/7947663-chatgpt-supported-countries)
 - [Netflix 代理错误官方帮助](https://help.netflix.com/en/node/277)
 
-**推广披露：** 文中部分机场入口属于推广链接。若读者通过链接注册或购买，本站可能获得佣金，但不会增加读者的支付价格。详情见[推广披露](/affiliate-disclosure/)。
+**提示：** 文中部分机场入口跳转至官网。具体的付款与服务条款由第三方负责。
