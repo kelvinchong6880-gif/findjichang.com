@@ -2,7 +2,7 @@
 
 > **先看结论：** 如果你的主要需求是 Netflix、Disney+、YouTube 等流媒体，以及 ChatGPT、Claude、Gemini 等 AI 服务，Firefly 机场可以作为优先核对的候选。但节点名称中的“解锁”不是平台认证，任何一次成功也不能证明永久可用。
 
-**推广披露：** 本文包含 Firefly 推广链接。你通过链接注册或购买时，本站可能获得佣金，但不会因此提高你的支付价格。第三方服务商负责账户、付款、退款和隐私处理；本站不会因为推广关系承诺平台可用性。
+**提示：** 第三方服务商负责实际的账户、付款、退款和隐私处理；本站不对具体的平台可用性作绝对承诺。
 
 [前往 Firefly 注册页面](/go/firefly/?from=/recommend/firefly-streaming-ai/&placement=hero)　·　[查看 Firefly 品牌资料](/jichang/firefly/)　·　[查看 Firefly 测速资料](/speed-test/firefly/)
 
