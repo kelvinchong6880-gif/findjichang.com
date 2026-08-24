@@ -1,9 +1,10 @@
 ---
 import { brands } from '../data/brands';
+import AffiliateButton from './AffiliateButton.astro';
 const { type } = Astro.props as { type: 'review' | 'speed' };
 const prefix = type === 'review' ? '/jichang' : '/speed-test';
 const suffix = type === 'review' ? '测评' : '测速资料汇总';
 ---
 <ol class="brand-grid">
-  {brands.map((brand) => <li class="brand-card"><div class="brand-card-top">{brand.avatar ? <img src={brand.avatar} alt={`${brand.name} logo`} class="brand-avatar-img" /> : <span class="brand-avatar">{brand.name.slice(0, 1)}</span>}{brand.rank <= 9 && <span class="badge">重点关注</span>}</div><h2>{brand.name}</h2><p>价格、套餐与服务表现等待内容阶段核验。</p><dl><div><dt>最低价格</dt><dd>{brand.minPrice || '待核验'}</dd></div><div><dt>资料状态</dt><dd class="status-verified">已核验</dd></div></dl><a class="text-link" href={`${prefix}/${brand.slug}/`}>查看{suffix} <span>→</span></a></li>)}
+  {brands.map((brand) => <li class="brand-card"><div class="brand-card-top">{brand.avatar ? <img src={brand.avatar} alt={`${brand.name} logo`} class="brand-avatar-img" /> : <span class="brand-avatar">{brand.name.slice(0, 1)}</span>}{brand.rank <= 9 && <span class="badge">重点关注</span>}</div><h2>{brand.name}</h2><p>价格、套餐与服务表现等待内容阶段核验。</p><dl><div><dt>最低价格</dt><dd>{brand.minPrice || '待核验'}</dd></div><div><dt>资料状态</dt><dd class="status-verified">已核验</dd></div></dl><div style="margin: 18px 0;"><AffiliateButton brand={brand} placement="summary" sourcePage={`${prefix}/`} /></div><a class="text-link" href={`${prefix}/${brand.slug}/`}>查看{suffix} <span>→</span></a></li>)}
 </ol>
