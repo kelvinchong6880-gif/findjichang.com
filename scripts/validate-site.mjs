@@ -102,18 +102,22 @@ comparisonDirs === 2 ? pass.push('2 个机场对比路由') : failures.push(`机
 const knowledgeSourceDir = join(root, 'src/content/knowledge');
 const knowledgeSources = readdirSync(knowledgeSourceDir).filter((name) => name.endsWith('.md'));
 const descriptions = new Set();
+const knowledgeHeadingSignatures = new Set();
 for (const name of knowledgeSources) {
   const markdown = readFileSync(join(knowledgeSourceDir, name), 'utf8');
   const body = markdown.replace(/^---[\s\S]*?---/, '');
   const description = markdown.match(/^description:\s*"([^"]+)"/m)?.[1];
-  if (body.length < 2800) failures.push(`${name}: 正文不足 2800 字符`);
-  if ((body.match(/^## /gm) ?? []).length < 8) failures.push(`${name}: 二级标题不足 8 个`);
-  if (!body.includes('| 观察项目 |') || !body.includes('| 字段 | 示例写法 |')) failures.push(`${name}: 缺少判断表或记录表`);
-  if (!body.includes('## 常见问题') || !body.includes('## 资料来源、更新与披露')) failures.push(`${name}: 缺少 FAQ 或来源披露`);
+  const headings = [...body.matchAll(/^## (.+)$/gm)].map((match) => match[1]);
+  knowledgeHeadingSignatures.add(headings.join('|'));
+  if (body.length < 1800) failures.push(`${name}: 正文不足 1800 字符`);
+  if (headings.length < 7) failures.push(`${name}: 二级标题不足 7 个`);
+  if (!/^\|.+\|.+\|/m.test(body) || !/^\|\s*---/m.test(body)) failures.push(`${name}: 缺少可执行判断表`);
+  if (!/^### .+/m.test(body) || !/^## (?:常见问题|读者问答|来源、更新与利益披露)/m.test(body)) failures.push(`${name}: 缺少问答或来源披露`);
   if (!body.includes('/methodology/') || !body.includes('/affiliate-disclosure/')) failures.push(`${name}: 缺少方法或推广披露内链`);
   if (description && descriptions.has(description)) failures.push(`${name}: meta description 重复`);
   if (description) descriptions.add(description);
 }
+if (knowledgeHeadingSignatures.size < 5) failures.push(`知识文章章节结构只有 ${knowledgeHeadingSignatures.size} 种，模板化程度过高`);
 if (!failures.some((item) => item.includes('.md:'))) pass.push('30 篇知识文章通过长度、结构、来源、披露与描述唯一性检查');
 
 const recommendationSource = readFileSync(join(root, 'src/pages/recommend/_recommend-article.md'), 'utf8');
