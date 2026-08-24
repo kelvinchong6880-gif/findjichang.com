@@ -1,8 +1,87 @@
 ---
 import type { Brand } from '../data/brands';
 interface Props { brand: Brand; placement: 'hero' | 'summary' | 'pricing' | 'sidebar' | 'article-end' | 'recommend-card' | 'comparison-table' | 'mobile-bottom'; sourcePage: string; label?: string; class?: string }
-const { brand, placement, sourcePage, label = '前往机场官网', class: className = 'button' } = Astro.props;
+const { brand, placement, sourcePage, label = '前往官网', class: className = '' } = Astro.props;
 const href = `/go/${brand.slug}/?from=${encodeURIComponent(sourcePage)}&placement=${placement}`;
 ---
-<a class={className} href={href} rel="sponsored nofollow noopener" target="_blank" data-brand={brand.slug} data-placement={placement}>{label} <span>↗</span></a>
+<a class={`aff-card ${className}`} href={href} rel="sponsored nofollow noopener" target="_blank" data-brand={brand.slug} data-placement={placement}>
+  <div class="aff-card-left">
+    {brand.avatar && <img src={brand.avatar} alt={brand.name} class="aff-card-avatar" width="36" height="36" loading="lazy" />}
+    <div class="aff-card-info">
+      <span class="aff-card-name">{brand.name}</span>
+      {brand.minPrice && <span class="aff-card-price">{brand.minPrice}</span>}
+    </div>
+  </div>
+  <div class="aff-card-right">
+    <span class="aff-card-btn">{label} <span>↗</span></span>
+  </div>
+</a>
 
+<style>
+  .aff-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 14px;
+    background: #ffffff;
+    border: 1px solid var(--line, #e4e9f2);
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(45, 62, 95, 0.03);
+    min-width: 240px;
+  }
+  .aff-card:hover {
+    border-color: #b9c9ed;
+    box-shadow: 0 8px 24px rgba(45, 62, 95, 0.08);
+    transform: translateY(-2px);
+  }
+  .aff-card-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .aff-card-avatar {
+    border-radius: 9px;
+    object-fit: cover;
+    background: #f8fafc;
+    border: 1px solid var(--line, #e4e9f2);
+  }
+  .aff-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .aff-card-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--ink, #0b1736);
+    line-height: 1.1;
+  }
+  .aff-card-price {
+    font-size: 11px;
+    color: var(--muted, #667085);
+    line-height: 1.1;
+  }
+  .aff-card-right {
+    display: flex;
+    align-items: center;
+  }
+  .aff-card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    background: #eff4ff;
+    color: var(--blue, #2457e6);
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .aff-card:hover .aff-card-btn {
+    background: var(--blue, #2457e6);
+    color: #ffffff;
+  }
+</style>
