@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import rehypeLinkPolicy from './src/lib/rehype-link-policy.mjs';
 
 export default defineConfig({
-  site: 'https://findjichang.com',
+  site: 'https://www.findjichang.com',
   output: 'static',
   markdown: {
     processor: unified({ rehypePlugins: [rehypeLinkPolicy] }),
