@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 const guides = await getCollection('guides');
 guides.sort((a, b) => a.data.createdAt.getTime() - b.data.createdAt.getTime());
 ---
-<BaseLayout title="使用教程｜找机场" description="找机场为您提供最全面的各平台客户端安装使用教程与进阶配置指南，涵盖 Windows、macOS、Android 以及 iOS 设备。无论您是需要导入机场订阅、解决节点连接超时，还是遇到流媒体解锁失败的问题，我们的图文教程都能为您提供清晰、实用的排错步骤与解决常见问题的技巧。">
+<BaseLayout title="科学上网客户端安装全平台教程：解决节点超时与流媒体报错｜找机场" description="找机场为您提供最全面的各平台客户端安装使用教程与进阶配置指南，涵盖 Windows、macOS、Android 以及 iOS 设备。无论您是需要导入机场订阅、解决节点连接超时，还是遇到流媒体解锁失败的问题，我们的图文教程都能为您提供清晰、实用的排错步骤与解决常见问题的技巧。">
   <SectionPage title="使用教程" description="为 Windows、macOS、Android 与 iOS 新手整理安装、配置和排错教程。">
     <ul class="brand-grid" style="margin-top: 40px;">
       {guides.map(guide => (
