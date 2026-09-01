@@ -7,33 +7,33 @@ import { articleSchema, itemListSchema } from '../../lib/structured-data';
 import { getCollection } from 'astro:content';
 import RelatedLinks from '../../components/RelatedLinks.astro';
 
-const preferred = ['weifeng', 'feimao-yun', 'firefly', 'wuyou', 'kuajie-yun', 'lingmao', 'shanyue'];
+const preferred = ['weifeng', 'jiuyun', 'feimao-yun', 'firefly', 'wuyou', 'kuajie-yun', 'lingmao', 'shanyue'];
 const orderedBrands = [...preferred.map((slug) => brands.find((brand) => brand.slug === slug)), ...brands.filter((brand) => !preferred.includes(brand.slug))].filter((brand): brand is (typeof brands)[number] => Boolean(brand));
-const schema = itemListSchema('36 家机场资料对比表', orderedBrands.map((brand) => ({ name: brand.name, path: `/jichang/${brand.slug}/` })));
-const article = articleSchema({ title: '36 家机场对比表：价格、资料、测速与注册链接', description: '整理 36 家机场的起步价、品牌资料、测速页面与站内注册链接；购买前请复核动态价格和条款。', path: '/compare/', publishedAt: new Date('2026-08-23T00:00:00+08:00') });
-const keywords = ['机场对比', '机场推荐对比', '36家机场对比', '机场价格对比', '机场测速对比', '机场怎么选'];
+const schema = itemListSchema('37 家机场资料对比表', orderedBrands.map((brand) => ({ name: brand.name, path: `/jichang/${brand.slug}/` })));
+const article = articleSchema({ title: '37 家机场对比表：价格、资料、测速与注册链接', description: '整理 37 家机场的起步价、品牌资料、测速页面与站内注册链接；购买前请复核动态价格和条款。', path: '/compare/', publishedAt: new Date('2026-08-23T00:00:00+08:00') });
+const keywords = ['机场对比', '机场推荐对比', '37家机场对比', '机场价格对比', '机场测速对比', '机场怎么选'];
 const detailedComparisons = (await getCollection('comparisons')).map((entry) => ({ href: `/compare/${entry.id}/`, title: entry.data.title, description: entry.data.description }));
 ---
 
-<BaseLayout title="36 家机场对比表：价格、资料、测速与注册链接｜找机场" description="整理 36 家机场的起步价、品牌资料、测速页面与站内注册链接；表格顺序不等于性能排名，购买前请复核价格和条款。" ogType="article" keywords={keywords}>
+<BaseLayout title="37 家机场对比表：价格、资料、测速与注册链接｜找机场" description="整理 37 家机场的起步价、品牌资料、测速页面与站内注册链接；表格顺序不等于性能排名，购买前请复核价格和条款。" ogType="article" keywords={keywords}>
   <JsonLd data={[schema, article]} />
   <main class="page-shell section-page compare-page">
     <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '机场对比' }]} />
     <header class="compare-heading">
-      <p class="eyebrow">36 家资料总览</p><h1>机场对比表</h1>
-      <p class="section-lead">把 36 家机场的公开入口放在同一张表里，方便先看资料、再看测速，最后决定是否前往注册。前 7 家按本站当前展示优先级排列，其余采用固定的随机展示顺序。</p>
+      <p class="eyebrow">37 家资料总览</p><h1>机场对比表</h1>
+      <p class="section-lead">把 37 家机场的公开入口放在同一张表里，方便先看资料、再看测速，最后决定是否前往注册。前 8 家按本站当前展示优先级排列，其余采用固定的随机展示顺序。</p>
       <div class="compare-notice"><strong>请先看说明：</strong>展示顺序不是速度、稳定性或安全性排名。起步价来自本站当前资料记录，套餐可能调整；注册或付款前请在服务商页面重新核对价格、流量、倍率、退款和并发限制。</div>
     </header>
 
     <section aria-labelledby="comparison-table-title">
-      <h2 id="comparison-table-title">36 家机场完整对比</h2>
+      <h2 id="comparison-table-title">37 家机场完整对比</h2>
       <p class="table-disclosure">提示：表格中的“前往注册”统一经过站内 <code>/go/</code> 跳转，以便本站统计受欢迎程度。点击只表示离开本站前往官网，不代表已经注册或付费。</p>
       <div class="comparison-table-wrap"><table class="comparison-table">
-        <caption>36 家机场的展示顺序、起步价与资料入口</caption>
+        <caption>37 家机场的展示顺序、起步价与资料入口</caption>
         <thead><tr><th scope="col">顺序</th><th scope="col">机场</th><th scope="col">当前记录起步价</th><th scope="col">资料状态</th><th scope="col">站内资料</th><th scope="col">注册链接</th></tr></thead>
         <tbody>{orderedBrands.map((brand, index) => <tr>
-          <td><span class:list={['rank-number', { featured: index < 7 }]}>{index + 1}</span></td>
-          <th scope="row"><span class="brand-cell">{brand.avatar && <img src={brand.avatar} width="34" height="34" alt={`${brand.name}品牌标识`} loading="lazy" />}<span><strong>{brand.name}</strong>{index < 7 && <small>优先展示</small>}</span></span></th>
+          <td><span class:list={['rank-number', { featured: index < 8 }]}>{index + 1}</span></td>
+          <th scope="row"><span class="brand-cell">{brand.avatar && <img src={brand.avatar} width="34" height="34" alt={`${brand.name}品牌标识`} loading="lazy" />}<span><strong>{brand.name}</strong>{index < 8 && <small>优先展示</small>}</span></span></th>
           <td>{brand.minPrice ?? '待核验'}</td><td><span class="status-note">价格需复核</span></td>
           <td><span class="table-links"><a href={`/jichang/${brand.slug}/`}>品牌资料</a><a href={`/speed-test/${brand.slug}/`}>测速资料</a></span></td>
           <td><a class="register-link" href={`/go/${brand.slug}/?from=%2Fcompare%2F&placement=comparison-table`} rel="sponsored nofollow noopener noreferrer" target="_blank">前往注册 <span aria-hidden="true">↗</span></a></td>
@@ -43,8 +43,8 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
     </section>
 
     <article class="article-content compare-guide">
-      <h2>怎样使用这张 36 家机场对比表</h2>
-      <p>这张表的用途不是帮你从 36 个名字中盲选第一名，而是缩短资料入口之间的距离。机场体验会同时受到所在地区、宽带运营商、使用时段、客户端、入口负载和出口线路影响。别人测试很快，只能说明对方当时的条件；它不能直接变成你的速度保证。</p>
+      <h2>怎样使用这张 37 家机场对比表</h2>
+      <p>这张表的用途不是帮你从 37 个名字中盲选第一名，而是缩短资料入口之间的距离。机场体验会同时受到所在地区、宽带运营商、使用时段、客户端、入口负载和出口线路影响。别人测试很快，只能说明对方当时的条件；它不能直接变成你的速度保证。</p>
 
       <h2>第一步：先按预算筛选，不要先被折扣吸引</h2>
       <p>起步价适合用来做第一轮筛选，但不能等同于真实月成本。低价套餐可能有较少流量、更高节点倍率、限速、设备或并发限制；年付套餐虽然折算月价较低，却会增加服务变化和退款困难时的损失。第一次接触某家服务时，通常更适合先选择月付或其他短周期。</p>
@@ -67,16 +67,16 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
       <ol><li><strong>确认入口：</strong>只从站内品牌资料页或表格中的注册链接进入，核对浏览器地址和结算页面。</li><li><strong>保存条款：</strong>记录购买日期、套餐内容、退款规则和服务商当时的说明。</li><li><strong>控制金额：</strong>不要因为一次测试或限时折扣投入超出承受范围的长期费用。</li><li><strong>保护凭据：</strong>不要公开订阅链接、Cookie、UUID、订单号或完整账户截图。</li><li><strong>准备备用方案：</strong>工作和学习等重要用途不应完全依赖单一服务。</li></ol>
 
       <h2>为什么这张表不填写“绝对速度排名”</h2>
-      <p>如果没有统一设备、统一网络、统一时间、统一节点距离和连续多日样本，把 36 家直接排成速度榜会制造虚假的精确感。即使在同一地点完成测试，结果也只适用于当次条件。更诚实的做法是提供可复现的测试入口，并明确哪些信息已经核对、哪些仍然未知。</p>
+      <p>如果没有统一设备、统一网络、统一时间、统一节点距离和连续多日样本，把 37 家直接排成速度榜会制造虚假的精确感。即使在同一地点完成测试，结果也只适用于当次条件。更诚实的做法是提供可复现的测试入口，并明确哪些信息已经核对、哪些仍然未知。</p>
       <p>同理，所谓“稳定率 99.9%”“永久解锁”或“零丢包”都需要长期原始数据支持。本站目前没有足够证据时不会填写这些数字。你可以参考<a href="/knowledge/how-to-read-speed-test/">测速结果阅读指南</a>，自己建立一份包含白天、晚高峰和周末的记录。</p>
 
       <h2>常见问题</h2>
-      <h3>表格前 7 名就是性能排名吗？</h3><p>不是。它们是你指定的优先展示顺序，方便读者先查看这些品牌，不代表前面的服务在所有地区、时段和用途上优于后面的服务。</p>
+      <h3>表格前 8 名就是性能排名吗？</h3><p>不是。它们是你指定的优先展示顺序，方便读者先查看这些品牌，不代表前面的服务在所有地区、时段和用途上优于后面的服务。</p>
       <h3>为什么点击注册会先经过 /go/？</h3><p>站内跳转仅用于统计受欢迎程度，不包含个人身份信息。跳转后的注册、付款、隐私和退款由具体服务商官网处理。</p>
       <h3>起步价可以直接作为购买价格吗？</h3><p>不可以。价格是容易变化的信息，且最低价套餐可能附带周期或规格条件。表格用于初筛，最终应以你进入服务商结算页时看到的套餐和条款为准。</p>
 
       <h2>结论：先缩小范围，再用自己的网络验证</h2>
-      <p>面对 36 家服务，最有效的顺序是：先按预算和用途缩小到三至五家，再查看品牌资料和测速条件，最后选择短周期进行自己的多时段测试。这样即使服务表现与预期不同，损失也更容易控制。注册链接只是资料流程的最后一步，不应代替前面的核对。</p>
+      <p>面对 37 家服务，最有效的顺序是：先按预算和用途缩小到三至五家，再查看品牌资料和测速条件，最后选择短周期进行自己的多时段测试。这样即使服务表现与预期不同，损失也更容易控制。注册链接只是资料流程的最后一步，不应代替前面的核对。</p>
       <p><strong>最后更新：</strong>2026 年 8 月 23 日。本文不构成购买保证或法律意见；使用相关网络服务前，请了解所在地规则并遵守第三方平台条款。</p>
       <RelatedLinks links={detailedComparisons} title="查看详细机场对比" />
     </article>
