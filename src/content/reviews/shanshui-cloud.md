@@ -38,7 +38,7 @@ speedTestSlug: "shanshui-cloud"
 sources:
   - label: "山水云品牌入口"
     publisher: "山水云"
-    url: "https://ss2.byvvcsx.com/"
+    url: "https://sldm1.ssyylf.com/"
     sourceType: "official"
     collectedAt: 2026-08-24
     supports:
@@ -119,7 +119,7 @@ sources:
 
 | 来源 | 发布者 | 类型 | 本次采集 | 可支持的内容 |
 | --- | --- | --- | --- | --- |
-| [山水云品牌入口](https://ss2.byvvcsx.com/) | 山水云 | 品牌入口/原始页面 | 2026-08-24 | 品牌注册或用户中心入口；购买前复核套餐与规则的原始入口 |
+| [山水云品牌入口](https://sldm1.ssyylf.com/) | 山水云 | 品牌入口/原始页面 | 2026-08-24 | 品牌注册或用户中心入口；购买前复核套餐与规则的原始入口 |
 
 本轮公开检索没有找到同时具备明确测试日期、网络环境、工具、节点样本和原始记录的独立性能报告。为了避免用搜索摘要或营销转载补数字，本文保留“尚无可复现第三方测速”的结论；读者仍可通过上表入口复核当前套餐与规则。
 

@@ -38,7 +38,7 @@ reviewSlug: "guangnian"
 sources:
   - label: "光年梯品牌入口"
     publisher: "光年梯"
-    url: "https://ggmq.gntaff.com/"
+    url: "https://vv3dbvb.guangnianertt1.homes/"
     sourceType: "official"
     collectedAt: 2026-08-24
     supports:
@@ -128,7 +128,7 @@ sources:
 
 | 来源 | 发布者 | 类型 | 本次采集 | 可支持的内容 |
 | --- | --- | --- | --- | --- |
-| [光年梯品牌入口](https://ggmq.gntaff.com/) | 光年梯 | 品牌入口/原始页面 | 2026-08-24 | 品牌注册或用户中心入口；购买前复核套餐与规则的原始入口 |
+| [光年梯品牌入口](https://vv3dbvb.guangnianertt1.homes/) | 光年梯 | 品牌入口/原始页面 | 2026-08-24 | 品牌注册或用户中心入口；购买前复核套餐与规则的原始入口 |
 | [机场测速与公开资料索引](https://tizinodes.com/airport-test/) | TiziNodes | 第三方整理 | 2026-08-24 | 第三方公开资料分类；官网可达性监测口径 |
 
 本轮公开检索没有找到同时具备明确测试日期、网络环境、工具、节点样本和原始记录的独立性能报告。为了避免用搜索摘要或营销转载补数字，本文保留“尚无可复现第三方测速”的结论；读者仍可通过上表入口复核当前套餐与规则。

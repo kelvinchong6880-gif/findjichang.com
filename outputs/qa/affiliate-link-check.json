@@ -1,10 +1,9 @@
 {
-  "checkedAt": "2026-08-18T07:59:04.211Z",
+  "checkedAt": "2026-08-24T07:42:09.617Z",
   "note": "自动检查只表示技术可达性；失败不等于服务失效，更不代表跑路。最终状态必须人工确认。",
   "counts": {
-    "reachable": 34,
-    "blocked-or-limited": 1,
-    "needs-manual-check": 1
+    "reachable": 35,
+    "blocked-or-limited": 1
   },
   "results": [
     {
@@ -14,70 +13,16 @@
       "status": 200,
       "classification": "reachable",
       "location": null,
-      "elapsedMs": 286
-    },
-    {
-      "name": "Sogo云",
-      "slug": "sogo-yun",
-      "url": "https://afasfw.sogotztz2.sbs/#/?code=BC2BL855",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 478
+      "elapsedMs": 118
     },
     {
       "name": "飞猫云",
       "slug": "feimao-yun",
-      "url": "https://m1cfjgcx.feimaogfttt1.xyz/#/?code=w5lO9fqB",
-      "status": 200,
+      "url": "https://flycat1.flycatvipaff.cc/#/?code=w5lO9fqB",
+      "status": 307,
       "classification": "reachable",
-      "location": null,
-      "elapsedMs": 99
-    },
-    {
-      "name": "暮光",
-      "slug": "muguang",
-      "url": "https://asfawsf.twilightttt.sbs/#/?code=2ILQOoYB",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 275
-    },
-    {
-      "name": "无忧",
-      "slug": "wuyou",
-      "url": "https://wep01.worryfreeaff.com/#/?code=s1kH64A8",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 401
-    },
-    {
-      "name": "跨界云",
-      "slug": "kuajie-yun",
-      "url": "https://vip02.kuajieaff.com/#/?code=hh3QezsW",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 639
-    },
-    {
-      "name": "闪跃",
-      "slug": "shanyue",
-      "url": "https://wep01.flashleapaff.com/#/?code=cs0ekCMG",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 240
-    },
-    {
-      "name": "灵猫",
-      "slug": "lingmao",
-      "url": "https://edp01.civetaff.com/#/?code=CYg7QSJo",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 465
+      "location": "https://s1.fei9sjf.xyz/",
+      "elapsedMs": 66
     },
     {
       "name": "Firefly",
@@ -86,7 +31,232 @@
       "status": 200,
       "classification": "reachable",
       "location": null,
-      "elapsedMs": 422
+      "elapsedMs": 241
+    },
+    {
+      "name": "无忧",
+      "slug": "wuyou",
+      "url": "https://wep01.worryfreeaff.com/#/?code=s1kH64A8",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 189
+    },
+    {
+      "name": "跨界云",
+      "slug": "kuajie-yun",
+      "url": "https://vip02.kuajieaff.com/#/?code=hh3QezsW",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 336
+    },
+    {
+      "name": "灵猫",
+      "slug": "lingmao",
+      "url": "https://edp01.civetaff.com/#/?code=CYg7QSJo",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 385
+    },
+    {
+      "name": "闪跃",
+      "slug": "shanyue",
+      "url": "https://wep01.flashleapaff.com/#/?code=cs0ekCMG",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 164
+    },
+    {
+      "name": "暮光",
+      "slug": "muguang",
+      "url": "https://varnexa.twilightaff.com/#/?code=2ILQOoYB",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 413
+    },
+    {
+      "name": "SOGO云",
+      "slug": "sogo-yun",
+      "url": "https://wzjc.sogoyunaff.cc/#/?code=BC2BL855",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 409
+    },
+    {
+      "name": "星岛梦",
+      "slug": "xingdaomeng",
+      "url": "https://kfccbb.xingdaomeng.com/#/?code=0YcwWgSw",
+      "status": 302,
+      "classification": "reachable",
+      "location": "https://xdmaf01.xingdaomengaff.com/",
+      "elapsedMs": 255
+    },
+    {
+      "name": "唯兔云",
+      "slug": "weitu-cloud",
+      "url": "https://fast.v2yunvipaff.com/#/?code=nbBJVFQP",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 417
+    },
+    {
+      "name": "光速云",
+      "slug": "guangsu",
+      "url": "https://mdlky.gsyaff.com/#/?code=5PLKd4WN",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 455
+    },
+    {
+      "name": "U1S1",
+      "slug": "u1s1",
+      "url": "https://pkdj7.vipaff.cc/#/?code=YUCKdFlR",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 221
+    },
+    {
+      "name": "极连云",
+      "slug": "jilian-cloud",
+      "url": "https://kdjhao.jlyvipaff.com/#/?code=3d87WSjS",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 448
+    },
+    {
+      "name": "全球云",
+      "slug": "quanqiu-cloud",
+      "url": "https://sswdh.gcvipaff.com/#/?code=SHjBKSgm",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 169
+    },
+    {
+      "name": "光年梯",
+      "slug": "guangnian",
+      "url": "https://ggmq.gntaff.com/#/?code=hTN6UF4T",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 341
+    },
+    {
+      "name": "一翻云",
+      "slug": "yifan",
+      "url": "https://wzjc.1flyunaff.cc/#/?code=0tH3Mmch",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 489
+    },
+    {
+      "name": "二猫云",
+      "slug": "ermao",
+      "url": "https://wzjc.2maoyunaff.cc/#/?code=bvsFDmSt",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 575
+    },
+    {
+      "name": "宇宙云",
+      "slug": "yuzhou-cloud",
+      "url": "https://wzjc.yuzoucloud.cc/#/?code=IWowgER5",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 335
+    },
+    {
+      "name": "边缘节点",
+      "slug": "edgenova",
+      "url": "https://work.edgenovaaff.cc/#/?code=k7VCKPvN",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 351
+    },
+    {
+      "name": "可信云",
+      "slug": "kexin-cloud",
+      "url": "https://work.kosingaff.com/#/?code=k7T1sOyG",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 314
+    },
+    {
+      "name": "速界",
+      "slug": "sujie",
+      "url": "https://work.speedworldaff.cc/#/?code=wZYGdnTC",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 392
+    },
+    {
+      "name": "快狸",
+      "slug": "kuaili",
+      "url": "https://work.kuailicloud.cc/#/?code=azB6yNBW",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 409
+    },
+    {
+      "name": "飞V",
+      "slug": "flyv",
+      "url": "https://varnexa.flyvaff.com/#/?code=XsiIuDgj",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 423
+    },
+    {
+      "name": "梯子云",
+      "slug": "tizi-cloud",
+      "url": "https://varnexa.ladderaff.com/#/?code=zUCoDtv6",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 207
+    },
+    {
+      "name": "浪网",
+      "slug": "langwang-cloud",
+      "url": "https://varnexa.wavenetaff.com/#/?code=9U2hOtDu",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 205
+    },
+    {
+      "name": "灵动",
+      "slug": "lingdong-cloud",
+      "url": "https://varnexa.lingdongaff.com/#/?code=HDiWuF7L",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 247
+    },
+    {
+      "name": "隐形人",
+      "slug": "invisible-man",
+      "url": "https://varnexa.invisibleaff.com/#/?code=BtPRayAl",
+      "status": 200,
+      "classification": "reachable",
+      "location": null,
+      "elapsedMs": 384
     },
     {
       "name": "Flybit",
@@ -95,241 +265,70 @@
       "status": 200,
       "classification": "reachable",
       "location": null,
-      "elapsedMs": 484
+      "elapsedMs": 487
     },
     {
-      "name": "XSUS",
+      "name": "xsus",
       "slug": "xsus",
       "url": "https://xsus.cloud/register?code=QQh1M1i9",
       "status": 200,
       "classification": "reachable",
       "location": null,
-      "elapsedMs": 1577
+      "elapsedMs": 689
     },
     {
-      "name": "XX云",
-      "slug": "xx-yun",
+      "name": "xxyun",
+      "slug": "xxyun",
       "url": "https://www.xx-yun.com/?code=pi9fB906",
       "status": 200,
       "classification": "reachable",
       "location": null,
-      "elapsedMs": 2344
+      "elapsedMs": 710
     },
     {
       "name": "大哥云",
-      "slug": "dage-yun",
+      "slug": "dageyun",
       "url": "https://a03.dgy02.com/#/register?code=wojBN2a4",
       "status": 200,
       "classification": "reachable",
       "location": null,
-      "elapsedMs": 2079
+      "elapsedMs": 617
     },
     {
       "name": "网际快车",
-      "slug": "wangji-kuaiche",
+      "slug": "flashget-cloud",
       "url": "https://NGYHGO.快车.com",
       "status": 200,
       "classification": "reachable",
       "location": null,
-      "elapsedMs": 263
+      "elapsedMs": 165
     },
     {
       "name": "山水云",
-      "slug": "shanshui-yun",
+      "slug": "shanshui-cloud",
       "url": "https://ss2.byvvcsx.com/#/register?code=Rh44jFWe",
       "status": 200,
       "classification": "reachable",
       "location": null,
-      "elapsedMs": 1067
+      "elapsedMs": 410
     },
     {
       "name": "老猫云",
-      "slug": "laomao-yun",
+      "slug": "laomao-cloud",
       "url": "https://222.22laomao.com/#/register?code=jcPU1grl",
       "status": 200,
       "classification": "reachable",
       "location": null,
-      "elapsedMs": 525
+      "elapsedMs": 1265
     },
     {
       "name": "气泡云",
-      "slug": "qipao-yun",
+      "slug": "qipao-cloud",
       "url": "https://x1.qipaoyun.xyz/#/register?code=UtKCpyVa",
       "status": 403,
       "classification": "blocked-or-limited",
       "location": null,
-      "elapsedMs": 437
-    },
-    {
-      "name": "星岛梦",
-      "slug": "xingdaomeng",
-      "url": "https://dddsljsf.xdmttt4.lol/#/?code=0YcwWgSw",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 481
-    },
-    {
-      "name": "唯兔云",
-      "slug": "weitu-yun",
-      "url": "https://auifd.v2saat.club/#/?code=nbBJVFQP",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 203
-    },
-    {
-      "name": "光速云",
-      "slug": "guangsu-yun",
-      "url": "https://hdeuje.guangsut.sbs/#/?code=5PLKd4WN",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 193
-    },
-    {
-      "name": "U1S1",
-      "slug": "u1s1",
-      "url": "https://uisefgr.u1sat.my/#/?code=YUCKdFlR",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 257
-    },
-    {
-      "name": "极连云",
-      "slug": "jilian-yun",
-      "url": "https://bhjsehj3u.jilianat.homes/#/?code=3d87WSjS",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 207
-    },
-    {
-      "name": "全球云",
-      "slug": "quanqiu-yun",
-      "url": "https://n9nwg.quanqiugttt1.sbs/#/?code=SHjBKSgm",
-      "status": null,
-      "classification": "needs-manual-check",
-      "error": "The operation was aborted due to timeout",
-      "elapsedMs": 10002
-    },
-    {
-      "name": "光年梯",
-      "slug": "guangnian-ti",
-      "url": "https://vv3dbvb.guangnianertt1.homes/#/?code=hTN6UF4T",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 154
-    },
-    {
-      "name": "一翻云",
-      "slug": "yifan-yun",
-      "url": "https://czd4dcg.1fyohnzt.xyz/#/?code=0tH3Mmch",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 414
-    },
-    {
-      "name": "二猫云",
-      "slug": "ermao-yun",
-      "url": "https://connect.ermaotztz3.homes/#/?code=bvsFDmSt",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 385
-    },
-    {
-      "name": "宇宙云",
-      "slug": "yuzhou-yun",
-      "url": "https://qxzkpbrw.yuzhoutttt3.click/#/?code=IWowgER5",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 429
-    },
-    {
-      "name": "EdgeNova",
-      "slug": "edgenova",
-      "url": "https://zvbghs02.ztymforedge.lol/#/?code=k7VCKPvN",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 439
-    },
-    {
-      "name": "可信云",
-      "slug": "kexin-yun",
-      "url": "https://asfasf.kexintztz2.sbs/#/?code=k7T1sOyG",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 171
-    },
-    {
-      "name": "速界",
-      "slug": "sujie",
-      "url": "https://sa2dvqcfnd.tzztssuujj.xyz/#/?code=wZYGdnTC",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 569
-    },
-    {
-      "name": "快狸",
-      "slug": "kuaili",
-      "url": "https://iasfa.kuailitztz2.sbs/#/?code=azB6yNBW",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 400
-    },
-    {
-      "name": "飞V",
-      "slug": "fei-v",
-      "url": "https://asfweroasf.flyvttt.sbs/#/?code=XsiIuDgj",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 265
-    },
-    {
-      "name": "梯子云",
-      "slug": "tizi-yun",
-      "url": "https://asfawsf.ladderttt.sbs/#/?code=zUCoDtv6",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 246
-    },
-    {
-      "name": "浪网",
-      "slug": "langwang",
-      "url": "https://asfawsf.wavenetttt.homes/#/?code=9U2hOtDu",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 255
-    },
-    {
-      "name": "灵动",
-      "slug": "lingdong",
-      "url": "https://asfawsf.lingdongyunttt.homes/#/?code=HDiWuF7L",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 277
-    },
-    {
-      "name": "隐形人",
-      "slug": "yinxingren",
-      "url": "https://asfawsf.invisibleattt.sbs/#/?code=BtPRayAl",
-      "status": 200,
-      "classification": "reachable",
-      "location": null,
-      "elapsedMs": 312
+      "elapsedMs": 338
     }
   ]
 }

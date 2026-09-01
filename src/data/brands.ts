@@ -11,6 +11,7 @@ export interface Brand {
 
 export const brands: Brand[] = [
   ['微风', 'weifeng', 'https://edp01.breezenetaff.com/#/?code=hM8APccJ'],
+  ['九云', 'jiuyun', 'https://888.jiuyundl.com/#/register?code=INW5fS7Q'],
   ['飞猫云', 'feimao-yun', 'https://flycat1.flycatvipaff.cc/#/?code=w5lO9fqB'],
   ['Firefly', 'firefly', 'https://vip02.fireflyaff.com/#/?code=8nDg6OEY'],
   ['无忧', 'wuyou', 'https://wep01.worryfreeaff.com/#/?code=s1kH64A8'],
@@ -23,9 +24,9 @@ export const brands: Brand[] = [
   ['唯兔云', 'weitu-cloud', 'https://fast.v2yunvipaff.com/#/?code=nbBJVFQP'],
   ['光速云', 'guangsu', 'https://mdlky.gsyaff.com/#/?code=5PLKd4WN'],
   ['U1S1', 'u1s1', 'https://pkdj7.vipaff.cc/#/?code=YUCKdFlR'],
-  ['极连云', 'jilian-cloud', 'https://kdjhao.jlyvipaff.com/#/?code=3d87WSjS'],
+  ['极连云', 'jilian-cloud', 'https://reuire23oure.jilianat.homes/#/?code=b2OTDcAo'],
   ['全球云', 'quanqiu-cloud', 'https://sswdh.gcvipaff.com/#/?code=SHjBKSgm'],
-  ['光年梯', 'guangnian', 'https://ggmq.gntaff.com/#/?code=hTN6UF4T'],
+  ['光年梯', 'guangnian', 'https://vv3dbvb.guangnianertt1.homes/#/?code=mv41lVsv'],
   ['一翻云', 'yifan', 'https://wzjc.1flyunaff.cc/#/?code=0tH3Mmch'],
   ['二猫云', 'ermao', 'https://wzjc.2maoyunaff.cc/#/?code=bvsFDmSt'],
   ['宇宙云', 'yuzhou-cloud', 'https://wzjc.yuzoucloud.cc/#/?code=IWowgER5'],
@@ -43,7 +44,7 @@ export const brands: Brand[] = [
   ['xxyun', 'xxyun', 'https://www.xx-yun.com/?code=pi9fB906'],
   ['大哥云', 'dageyun', 'https://a03.dgy02.com/#/register?code=wojBN2a4'],
   ['网际快车', 'flashget-cloud', 'https://NGYHGO.快车.com'],
-  ['山水云', 'shanshui-cloud', 'https://ss2.byvvcsx.com/#/register?code=Rh44jFWe'],
+  ['山水云', 'shanshui-cloud', 'https://sldm1.ssyylf.com/#/register?code=Rh44jFWe'],
   ['老猫云', 'laomao-cloud', 'https://222.22laomao.com/#/register?code=jcPU1grl'],
   ['气泡云', 'qipao-cloud', 'https://x1.qipaoyun.xyz/#/register?code=UtKCpyVa'],
 ].map(([name, slug, affiliateUrl], index) => {
@@ -60,6 +61,7 @@ export const brands: Brand[] = [
     "guangsu": "¥23/月起",
     "invisible-man": "¥24/月起",
     "jilian-cloud": "¥8/月起",
+    "jiuyun": "¥6/月起",
     "kexin-cloud": "¥15/月起",
     "kuaili": "¥15/月起",
     "kuajie-yun": "¥8/月起",
@@ -93,7 +95,7 @@ export const brands: Brand[] = [
     affiliateLinkStatus: 'unchecked' as const, 
     affiliateLinkCheckedAt: null, 
     minPrice: minPrices[slug] || '待核验',
-    avatar: ['weifeng', 'sogo-yun', 'feimao-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao', 'xingdaomeng', 'weitu-cloud', 'guangsu', 'u1s1', 'jilian-cloud', 'quanqiu-cloud', 'guangnian', 'yifan', 'ermao', 'yuzhou-cloud', 'edgenova', 'kexin-cloud', 'sujie', 'kuaili', 'flyv', 'tizi-cloud', 'langwang-cloud', 'lingdong-cloud', 'invisible-man', 'flybit', 'xsus', 'xxyun', 'dageyun', 'flashget-cloud', 'shanshui-cloud', 'laomao-cloud', 'qipao-cloud'].includes(slug) ? `/images/brands/${slug}${['shanyue', 'wuyou', 'edgenova', 'invisible-man'].includes(slug) ? '.jpg' : '.png'}` : undefined 
+    avatar: ['weifeng', 'jiuyun', 'sogo-yun', 'feimao-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao', 'xingdaomeng', 'weitu-cloud', 'guangsu', 'u1s1', 'jilian-cloud', 'quanqiu-cloud', 'guangnian', 'yifan', 'ermao', 'yuzhou-cloud', 'edgenova', 'kexin-cloud', 'sujie', 'kuaili', 'flyv', 'tizi-cloud', 'langwang-cloud', 'lingdong-cloud', 'invisible-man', 'flybit', 'xsus', 'xxyun', 'dageyun', 'flashget-cloud', 'shanshui-cloud', 'laomao-cloud', 'qipao-cloud'].includes(slug) ? `/images/brands/${slug}${['shanyue', 'wuyou', 'edgenova', 'invisible-man', 'jiuyun'].includes(slug) ? '.jpg' : '.png'}` : undefined 
   };
 });
 
