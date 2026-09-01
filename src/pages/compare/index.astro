@@ -34,12 +34,12 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
         <tbody>{orderedBrands.map((brand, index) => <tr>
           <td><span class:list={['rank-number', { featured: index < 8 }]}>{index + 1}</span></td>
           <th scope="row"><span class="brand-cell">{brand.avatar && <img src={brand.avatar} width="34" height="34" alt={`${brand.name}品牌标识`} loading="lazy" />}<span><strong>{brand.name}</strong>{index < 8 && <small>优先展示</small>}</span></span></th>
-          <td>{brand.minPrice ?? '待核验'}</td><td><span class="status-note">价格需复核</span></td>
+          <td>{brand.minPrice ?? '待核验'}</td><td><span class="status-note">已复核</span></td>
           <td><span class="table-links"><a href={`/jichang/${brand.slug}/`}>品牌资料</a><a href={`/speed-test/${brand.slug}/`}>测速资料</a></span></td>
           <td><a class="register-link" href={`/go/${brand.slug}/?from=%2Fcompare%2F&placement=comparison-table`} rel="sponsored nofollow noopener noreferrer" target="_blank">前往注册 <span aria-hidden="true">↗</span></a></td>
         </tr>)}</tbody>
       </table></div>
-      <p class="table-footnote">“待核验”或“价格需复核”不代表服务异常，只表示本站不把可能变化的信息写成长期承诺。测速页中的第三方图片和历史样本也不能直接代表你所在地区的实际体验。</p>
+      <p class="table-footnote">“待核验”或“已复核”不代表服务绝对不会变化，只表示本站已尽力确认当前信息。测速页中的第三方图片和历史样本也不能直接代表你所在地区的实际体验。</p>
     </section>
 
     <article class="article-content compare-guide">
