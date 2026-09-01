@@ -14,7 +14,7 @@ const clusters = [
 ] as const;
 const byId = new Map(entries.map(entry=>[entry.id,entry]));
 ---
-<BaseLayout title="机场知识｜找机场" description="理解线路、测速、流量倍率与购买风险。">
+<BaseLayout title="机场知识｜找机场" description="找机场为您科普最核心的机场基础知识，帮助小白用户深入理解网络线路类型、测速结果解读、流量倍率计算规则以及长周期套餐的购买风险。我们通过通俗易懂的原理讲解，带您看穿各家服务商的营销套路与宣传术语，让您在挑选代理服务和日常排错时不再迷茫，成为真正懂行的精明消费者。">
   <SectionPage title="机场知识" description="用不依赖特定服务商的基础知识，帮助你读懂套餐、测速结果和常见宣传术语。">
     {clusters.map(([label,ids]) => <section class="knowledge-cluster"><h2>{label}</h2><ul class="brand-grid">{ids.map(id=>byId.get(id)).filter(Boolean).map(entry => <li class="brand-card"><span class="badge">知识基础</span><h2>{entry!.data.title}</h2><p>{entry!.data.description}</p><a class="text-link" href={`/knowledge/${entry!.id}/`}>阅读文章 <span>→</span></a></li>)}</ul></section>)}
   </SectionPage>

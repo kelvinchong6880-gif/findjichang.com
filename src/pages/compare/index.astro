@@ -15,7 +15,7 @@ const keywords = ['机场对比', '机场推荐对比', '37家机场对比', '�
 const detailedComparisons = (await getCollection('comparisons')).map((entry) => ({ href: `/compare/${entry.id}/`, title: entry.data.title, description: entry.data.description }));
 ---
 
-<BaseLayout title="37 家机场对比表：价格、资料、测速与注册链接｜找机场" description="整理 37 家机场的起步价、品牌资料、测速页面与站内注册链接；表格顺序不等于性能排名，购买前请复核价格和条款。" ogType="article" keywords={keywords}>
+<BaseLayout title="37 家机场对比表：价格、资料、测速与注册链接｜找机场" description="找机场为您独家整理 37 家精选机场的起步价格、品牌详细资料、真实测速报告页面以及站内官方注册链接。我们通过一张完整的对比清单，让您轻松筛选符合预算的选项。请注意，本表格展示顺序不代表绝对性能排名，我们强烈建议您在最终购买与付费前，仔细复核各家的动态价格、退款政策与服务条款。" ogType="article" keywords={keywords}>
   <JsonLd data={[schema, article]} />
   <main class="page-shell section-page compare-page">
     <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '机场对比' }]} />
