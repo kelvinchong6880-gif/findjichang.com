@@ -7,6 +7,10 @@ import { articleSchema, itemListSchema } from '../../lib/structured-data';
 import { getCollection } from 'astro:content';
 import RelatedLinks from '../../components/RelatedLinks.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}', { eager: true });
+const getImage = (slug: string) => images[`/src/assets/brands/${slug}.png`]?.default || images[`/src/assets/brands/${slug}.jpg`]?.default;
 
 const preferred = ['weifeng', 'jisu-cloud', 'jiuyun', 'feimao-yun', 'firefly', 'wuyou', 'kuajie-yun', 'lingmao', 'shanyue'];
 const prefCount = preferred.length;
@@ -33,13 +37,15 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
       <div class="comparison-table-wrap"><table class="comparison-table">
         <caption>{brands.length} 家机场的展示顺序、起步价与资料入口</caption>
         <thead><tr><th scope="col">顺序</th><th scope="col">机场</th><th scope="col">当前记录起步价</th><th scope="col">资料状态</th><th scope="col">站内资料</th><th scope="col">注册链接</th></tr></thead>
-        <tbody>{orderedBrands.map((brand, index) => <tr>
+        <tbody>{orderedBrands.map((brand, index) => {
+          const avatarImg = getImage(brand.slug);
+          return <tr>
           <td><span class:list={['rank-number', { featured: index < prefCount }]}>{index + 1}</span></td>
-          <th scope="row"><span class="brand-cell">{brand.avatar && <img src={brand.avatar} width="34" height="34" alt={`${brand.name}品牌标识`} loading="lazy" />}<span><strong>{brand.name}</strong>{index < prefCount && <small>优先展示</small>}</span></span></th>
+          <th scope="row"><span class="brand-cell">{avatarImg && <Image src={avatarImg} width={34} height={34} alt={`${brand.name}品牌标识`} loading="lazy" />}<span><strong>{brand.name}</strong>{index < prefCount && <small>优先展示</small>}</span></span></th>
           <td>{brand.minPrice ?? '待核验'}</td><td><span class="status-note">已复核</span></td>
           <td><span class="table-links"><a href={`/jichang/${brand.slug}/`}>品牌资料</a><a href={`/speed-test/${brand.slug}/`}>测速资料</a></span></td>
           <td><AffiliateButton brand={brand} placement="comparison-table" sourcePage="/compare/" /></td>
-        </tr>)}</tbody>
+        </tr>})}</tbody>
       </table></div>
       <p class="table-footnote">“待核验”或“已复核”不代表服务绝对不会变化，只表示本站已尽力确认当前信息。测速页中的第三方图片和历史样本也不能直接代表你所在地区的实际体验。</p>
     </section>
