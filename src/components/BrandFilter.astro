@@ -1,0 +1,91 @@
+---
+export interface Props {
+  targetSelector: string; // '.brand-card' or '.comparison-table tbody tr'
+}
+const { targetSelector } = Astro.props;
+---
+<div class="brand-filter-bar" data-target={targetSelector}>
+  <div class="filter-group search-group">
+    <label for="brandSearch">搜索品牌</label>
+    <div class="input-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="search" id="brandSearch" placeholder="输入名称..." autocomplete="off" />
+    </div>
+  </div>
+  <div class="filter-group">
+    <label for="budgetFilter">月均预算</label>
+    <select id="budgetFilter">
+      <option value="all">不限</option>
+      <option value="under10">10元以下</option>
+      <option value="10to20">10元 - 20元</option>
+      <option value="above20">20元以上</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label for="billingFilter">付款周期</label>
+    <select id="billingFilter">
+      <option value="all">不限</option>
+      <option value="month">支持月付</option>
+      <option value="quarter">支持季付</option>
+      <option value="year">支持年付</option>
+    </select>
+  </div>
+</div>
+
+<script>
+  function initFilters() {
+    const filterBars = document.querySelectorAll('.brand-filter-bar');
+    if (!filterBars.length) return;
+
+    filterBars.forEach(bar => {
+      // Avoid attaching multiple times
+      if (bar.getAttribute('data-init')) return;
+      bar.setAttribute('data-init', 'true');
+
+      const targetSelector = bar.getAttribute('data-target');
+      if (!targetSelector) return;
+      
+      const searchInput = bar.querySelector('#brandSearch') as HTMLInputElement;
+      const budgetSelect = bar.querySelector('#budgetFilter') as HTMLSelectElement;
+      const billingSelect = bar.querySelector('#billingFilter') as HTMLSelectElement;
+
+      function updateFilters() {
+        const query = searchInput.value.toLowerCase().trim();
+        const budget = budgetSelect.value;
+        const billing = billingSelect.value;
+        const items = document.querySelectorAll(targetSelector as string);
+        
+        items.forEach((item) => {
+          const el = item as HTMLElement;
+          const name = el.getAttribute('data-name')?.toLowerCase() || '';
+          const price = parseFloat(el.getAttribute('data-price') || '999');
+          const billingCycles = el.getAttribute('data-billing') || '';
+
+          let matchSearch = name.includes(query);
+          
+          let matchBudget = true;
+          if (budget === 'under10') matchBudget = price < 10;
+          else if (budget === '10to20') matchBudget = price >= 10 && price <= 20;
+          else if (budget === 'above20') matchBudget = price > 20;
+
+          let matchBilling = true;
+          if (billing !== 'all') matchBilling = billingCycles.includes(billing);
+
+          if (matchSearch && matchBudget && matchBilling) {
+            el.style.display = '';
+          } else {
+            el.style.display = 'none';
+          }
+        });
+      }
+
+      searchInput?.addEventListener('input', updateFilters);
+      budgetSelect?.addEventListener('change', updateFilters);
+      billingSelect?.addEventListener('change', updateFilters);
+    });
+  }
+
+  // Support for both Astro ViewTransitions and standard load
+  document.addEventListener('DOMContentLoaded', initFilters);
+  document.addEventListener('astro:page-load', initFilters);
+</script>

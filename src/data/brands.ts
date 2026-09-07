@@ -7,6 +7,8 @@ export interface Brand {
   affiliateLinkCheckedAt: string | null;
   avatar?: string;
   minPrice?: string;
+  pricePerMonth?: number;
+  billingCycles?: string[];
 }
 
 export const brands: Brand[] = [
@@ -89,6 +91,13 @@ export const brands: Brand[] = [
     "yifan": "¥8.1/月起",
     "yuzhou-cloud": "¥25/月起"
 };
+  const minPriceStr = minPrices[slug];
+  const priceMatch = minPriceStr ? minPriceStr.match(/[\d\.]+/) : null;
+  const pricePerMonth = priceMatch ? parseFloat(priceMatch[0]) : 999;
+  
+  // Default billing cycles (mock data for now, user will update later)
+  const billingCycles = pricePerMonth < 15 ? ['month', 'quarter', 'year'] : ['month', 'year'];
+
   return { 
     name, 
     slug, 
@@ -96,7 +105,9 @@ export const brands: Brand[] = [
     rank: index + 1, 
     affiliateLinkStatus: 'unchecked' as const, 
     affiliateLinkCheckedAt: null, 
-    minPrice: minPrices[slug] || '待核验',
+    minPrice: minPriceStr || '待核验',
+    pricePerMonth,
+    billingCycles,
     avatar: ['weifeng', 'jiuyun', 'sogo-yun', 'feimao-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao', 'xingdaomeng', 'weitu-cloud', 'guangsu', 'u1s1', 'jilian-cloud', 'quanqiu-cloud', 'guangnian', 'yifan', 'ermao', 'yuzhou-cloud', 'edgenova', 'kexin-cloud', 'sujie', 'kuaili', 'flyv', 'tizi-cloud', 'langwang-cloud', 'lingdong-cloud', 'invisible-man', 'flybit', 'xsus', 'xxyun', 'dageyun', 'flashget-cloud', 'shanshui-cloud', 'laomao-cloud', 'qipao-cloud', 'jisu-cloud'].includes(slug) ? `/images/brands/${slug}${['shanyue', 'wuyou', 'edgenova', 'invisible-man', 'jiuyun'].includes(slug) ? '.jpg' : '.png'}` : undefined 
   };
 });

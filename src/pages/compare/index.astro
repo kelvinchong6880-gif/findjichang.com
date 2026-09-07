@@ -7,6 +7,7 @@ import { articleSchema, itemListSchema } from '../../lib/structured-data';
 import { getCollection } from 'astro:content';
 import RelatedLinks from '../../components/RelatedLinks.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
+import BrandFilter from '../../components/BrandFilter.astro';
 import { Image } from 'astro:assets';
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}', { eager: true });
@@ -33,13 +34,16 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
 
     <section aria-labelledby="comparison-table-title">
       <h2 id="comparison-table-title">{brands.length} 家机场完整对比</h2>
-      <p class="table-disclosure">提示：表格中的“前往注册”统一经过站内 <code>/go/</code> 跳转，以便本站统计受欢迎程度。点击只表示离开本站前往官网，不代表已经注册或付费。</p>
+      <p class="table-disclosure" style="margin-bottom: 20px;">提示：表格中的“前往注册”统一经过站内 <code>/go/</code> 跳转，以便本站统计受欢迎程度。点击只表示离开本站前往官网，不代表已经注册或付费。</p>
+      
+      <BrandFilter targetSelector=".comparison-table tbody tr" />
+
       <div class="comparison-table-wrap"><table class="comparison-table">
         <caption>{brands.length} 家机场的展示顺序、起步价与资料入口</caption>
         <thead><tr><th scope="col">顺序</th><th scope="col">机场</th><th scope="col">当前记录起步价</th><th scope="col">资料状态</th><th scope="col">站内资料</th><th scope="col">注册链接</th></tr></thead>
         <tbody>{orderedBrands.map((brand, index) => {
           const avatarImg = getImage(brand.slug);
-          return <tr>
+          return <tr data-name={brand.name} data-price={brand.pricePerMonth ?? 999} data-billing={(brand.billingCycles || []).join(',')}>
           <td><span class:list={['rank-number', { featured: index < prefCount }]}>{index + 1}</span></td>
           <th scope="row"><span class="brand-cell">{avatarImg && <Image src={avatarImg} width={34} height={34} alt={`${brand.name}品牌标识`} loading="lazy" />}<span><strong>{brand.name}</strong>{index < prefCount && <small>优先展示</small>}</span></span></th>
           <td>{brand.minPrice ?? '待核验'}</td><td><span class="status-note">已复核</span></td>
