@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AffiliateButton from '../../components/AffiliateButton.astro';
@@ -9,12 +10,20 @@ import { articleSchema } from '../../lib/structured-data';
 import { keywordSet } from '../../lib/seo-keywords';
 import { isPublishable } from '../../lib/seo';
 import { brands, type Brand } from '../../data/brands';
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}', { eager: true });
+const getImage = (slug: string) => images[`/src/assets/brands/${slug}.png`]?.default || images[`/src/assets/brands/${slug}.jpg`]?.default;
+
 export function getStaticPaths() { return brands.map((brand) => ({ params: { slug: brand.slug }, props: { brand } })); }
 const { brand } = Astro.props as { brand: Brand };
 const entry = (await getCollection('reviews')).find((item) => item.id === brand.slug);
 const rendered = entry ? await render(entry) : null;
 const Content = rendered?.Content;
+const headings = rendered?.headings ?? [];
 const pagePath = `/jichang/${brand.slug}/`;
+
+const avatarImg = getImage(brand.slug);
+
 const recommendationPaths: Record<string, { href: string; title: string }> = {
   weifeng: { href: '/recommend/', title: '微风机场推荐与购买前检查' },
   'feimao-yun': { href: '/recommend/feimao-yun/', title: '飞猫云预算套餐选择指南' },
@@ -28,44 +37,15 @@ const reviewLinks = [
   ...(recommendationPaths[brand.slug] ? [recommendationPaths[brand.slug]] : []),
 ];
 const keywords = keywordSet({ title: entry?.data.title ?? `${brand.name}机场测评`, supplied: entry?.data.keywords, brand: brand.name, type: 'review' });
-const schema = articleSchema({ title: entry?.data.title ?? `${brand.name}机场测评`, description: entry?.data.description ?? `${brand.name}机场资料与购买前核对指南。`, path: pagePath, publishedAt: entry?.data.publishedAt ?? entry?.data.createdAt ?? new Date('2026-08-23T00:00:00+08:00'), updatedAt: entry?.data.updatedAt, image: brand.avatar });
+const schema = articleSchema({ title: entry?.data.title ?? `${brand.name}机场测评`, description: entry?.data.description ?? `${brand.name}机场资料与购买前核对指南。`, path: pagePath, publishedAt: entry?.data.publishedAt ?? entry?.data.createdAt ?? new Date('2026-08-23T00:00:00+08:00'), updatedAt: entry?.data.updatedAt, image: avatarImg?.src });
 const articleStatus = entry?.data.status === 'published' ? '已发布并持续更新' : '事实核验中';
 const articleVerdict = entry?.data.primaryIntent ?? '资料汇总与购买参考';
 const articleVerdictNote = entry?.data.originalValue ?? '请结合正文中的来源、测试条件和限制说明判断是否适合。';
-const isWeifeng = brand.slug === 'weifeng';
-const isSogo = brand.slug === 'sogo-yun';
-const isFeimao = brand.slug === 'feimao-yun';
-const isMuguang = brand.slug === 'muguang';
-const isWuyou = brand.slug === 'wuyou';
-const isKuajie = brand.slug === 'kuajie-yun';
-const isShanyue = brand.slug === 'shanyue';
-const isLingmao = brand.slug === 'lingmao';
-const isFirefly = brand.slug === 'firefly';
-const tocItems = isWeifeng ? [
-  ['#微风机场是什么','品牌概况'],['#套餐与价格登录后官方面板截图已核验','套餐与价格'],['#线路和节点覆盖','线路与节点'],['#速度与稳定性','速度与稳定性'],['#注册前检查清单','注册前检查'],
-] : isSogo ? [
-  ['#sogo云是什么','品牌概况'],['#登录后官方面板的九种套餐','套餐与价格'],['#客户端和使用方式','客户端'],['#线路节点与解锁能力','线路与节点'],['#适合谁与主要风险','适用与风险'],
-] : isFeimao ? [
-  ['#飞猫云是什么','品牌概况'],['#登录后官方面板的七种套餐','套餐与价格'],['#线路与节点','线路与节点'],['#晚高峰表现与持续监测','测速与趋势'],['#注册前检查清单','注册前检查'],
-] : isMuguang ? [
-  ['#暮光机场是什么','品牌概况'],['#登录后官方面板的九种套餐','套餐与价格'],['#线路节点与使用方式','线路与节点'],['#晚间测速能说明什么','测速限制'],['#注册前检查清单','注册前检查'],
-] : isWuyou ? [
-  ['#无忧链接是什么','品牌概况'],['#套餐与价格','套餐与价格'],['#线路协议和节点','线路与节点'],['#晚间速度与解锁样本','测速与解锁'],['#注册前检查清单','注册前检查'],
-] : isKuajie ? [
-  ['#跨界云是什么','品牌概况'],['#登录后官方面板的五种套餐','套餐与价格'],['#线路协议与客户端','线路与客户端'],['#速度与解锁样本','测速与解锁'],['#注册前检查清单','注册前检查'],
-] : isShanyue ? [
-  ['#闪跃是什么','品牌概况'],['#登录后官方面板的五种套餐','套餐与价格'],['#线路节点与解锁权益','线路与解锁'],['#测速资料为什么不能直接采用','测速证据'],['#注册前检查清单','注册前检查'],
-] : isLingmao ? [
-  ['#灵猫是什么','品牌概况'],['#登录后官方面板的六种套餐','套餐与价格'],['#月付big的流量矛盾','流量矛盾'],['#线路带宽与解锁宣传','线路与解锁'],['#注册前检查清单','注册前检查'],
-] : isFirefly ? [
-  ['#firefly是什么','品牌概况'],['#登录后官方面板的六种套餐','套餐与价格'],['#不限时不等于无限流量','不限时套餐'],['#iplc协议与解锁资料','线路与解锁'],['#注册前检查清单','注册前检查'],
-] : [
-  ['#品牌资料','品牌概况'],['#套餐与价格','套餐与价格'],['#线路与节点','线路与节点'],['#速度与稳定性','测速资料'],['#注册前检查清单','注册前检查'],
-];
+const tocItems = headings.filter(h => h.depth === 2).map(h => [`#${h.slug}`, h.text]);
 ---
-<BaseLayout title={entry?.data.title ?? `${brand.name}机场测评｜找机场`} description={entry?.data.description ?? `${brand.name}机场的独立测评页面。`} indexable={entry ? isPublishable(entry) : false} ogType="article" keywords={keywords} socialImage={brand.avatar}>
+<BaseLayout title={entry?.data.title ?? `${brand.name}机场测评｜找机场`} description={entry?.data.description ?? `${brand.name}机场的独立测评页面。`} indexable={entry ? isPublishable(entry) : false} ogType="article" keywords={keywords} socialImage={avatarImg?.src}>
 <JsonLd data={schema} />
 <main class="page-shell detail-page"><Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场测评',href:'/jichang/'},{label:`${brand.name}机场测评`}]} />
 <section class="review-hero"><div><div class="detail-meta"><span class="badge">品牌测评</span><span>优先级 {brand.rank}</span><span>资料状态：{Content ? articleStatus : '核验中'}</span></div><h1>{entry?.data.title ?? `${brand.name}机场测评`}</h1><p>{entry?.data.description ?? '价格、套餐、线路和使用表现将在内容阶段依据可核验资料逐项填写。'}</p><div class="hero-actions"><AffiliateButton brand={brand} placement="hero" sourcePage={pagePath} /><a class="button button-secondary" href={`/speed-test/${brand.slug}/`}>查看测速资料</a></div><small>提示：通过本站链接访问官网，只代表您的访问意向，不代表已完成注册或购买操作。</small></div><aside class="verdict-card"><span>文章重点</span><strong>{Content ? articleVerdict : '等待资料核验'}</strong><p>{Content ? articleVerdictNote : '关键价格与服务信息核验前，不给出推荐结论。'}</p></aside></section>
-{Content ? <section class="content-layout"><article class="article-content">{brand.avatar && <img class="article-brand-image" src={brand.avatar} width="150" height="150" alt={`${brand.name}机场品牌标识`} loading="eager" />}<Content /><RelatedLinks links={reviewLinks} title={`${brand.name}相关资料`} /></article><aside class="toc-card"><b>本页目录</b>{tocItems.map(([href,label]) => <a href={href}>{label}</a>)}</aside></section> : <section class="content-layout"><article><div class="content-placeholder"><h2>测评内容结构</h2><div class="skeleton-lines"><i></i><i></i><i></i></div><p>后续补充套餐价格、优点不足、节点线路、流媒体及 AI 服务、适用人群和常见问题。</p></div></article><aside class="toc-card"><b>本页目录</b><a href="#">结论摘要</a><a href="#">套餐与价格</a><a href="#">线路与节点</a></aside></section>}
+{Content ? <section class="content-layout"><article class="article-content">{avatarImg && <Image class="article-brand-image" src={avatarImg} width={150} height={150} alt={`${brand.name}机场品牌标识`} loading="eager" />}<Content /><RelatedLinks links={reviewLinks} title={`${brand.name}相关资料`} /></article><aside class="toc-card"><b>本页目录</b>{tocItems.map(([href,label]) => <a href={href}>{label}</a>)}</aside></section> : <section class="content-layout"><article><div class="content-placeholder"><h2>测评内容结构</h2><div class="skeleton-lines"><i></i><i></i><i></i></div><p>后续补充套餐价格、优点不足、节点线路、流媒体及 AI 服务、适用人群和常见问题。</p></div></article><aside class="toc-card"><b>本页目录</b><a href="#">结论摘要</a><a href="#">套餐与价格</a><a href="#">线路与节点</a></aside></section>}
 </main></BaseLayout>
