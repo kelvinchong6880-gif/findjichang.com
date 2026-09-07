@@ -11,6 +11,7 @@ export interface Brand {
 
 export const brands: Brand[] = [
   ['微风', 'weifeng', 'https://edp01.breezenetaff.com/#/?code=hM8APccJ'],
+  ['极速cloud', 'jisu-cloud', 'https://kelvin.jsjc456789.com'],
   ['九云', 'jiuyun', 'https://888.jiuyundl.com/#/register?code=INW5fS7Q'],
   ['飞猫云', 'feimao-yun', 'https://flycat1.flycatvipaff.cc/#/?code=w5lO9fqB'],
   ['Firefly', 'firefly', 'https://vip02.fireflyaff.com/#/?code=8nDg6OEY'],
@@ -61,6 +62,7 @@ export const brands: Brand[] = [
     "guangsu": "¥23/月起",
     "invisible-man": "¥24/月起",
     "jilian-cloud": "¥8/月起",
+    "jisu-cloud": "¥8.9/月起",
     "jiuyun": "¥6/月起",
     "kexin-cloud": "¥15/月起",
     "kuaili": "¥15/月起",
@@ -95,7 +97,7 @@ export const brands: Brand[] = [
     affiliateLinkStatus: 'unchecked' as const, 
     affiliateLinkCheckedAt: null, 
     minPrice: minPrices[slug] || '待核验',
-    avatar: ['weifeng', 'jiuyun', 'sogo-yun', 'feimao-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao', 'xingdaomeng', 'weitu-cloud', 'guangsu', 'u1s1', 'jilian-cloud', 'quanqiu-cloud', 'guangnian', 'yifan', 'ermao', 'yuzhou-cloud', 'edgenova', 'kexin-cloud', 'sujie', 'kuaili', 'flyv', 'tizi-cloud', 'langwang-cloud', 'lingdong-cloud', 'invisible-man', 'flybit', 'xsus', 'xxyun', 'dageyun', 'flashget-cloud', 'shanshui-cloud', 'laomao-cloud', 'qipao-cloud'].includes(slug) ? `/images/brands/${slug}${['shanyue', 'wuyou', 'edgenova', 'invisible-man', 'jiuyun'].includes(slug) ? '.jpg' : '.png'}` : undefined 
+    avatar: ['weifeng', 'jiuyun', 'sogo-yun', 'feimao-yun', 'muguang', 'firefly', 'kuajie-yun', 'shanyue', 'wuyou', 'lingmao', 'xingdaomeng', 'weitu-cloud', 'guangsu', 'u1s1', 'jilian-cloud', 'quanqiu-cloud', 'guangnian', 'yifan', 'ermao', 'yuzhou-cloud', 'edgenova', 'kexin-cloud', 'sujie', 'kuaili', 'flyv', 'tizi-cloud', 'langwang-cloud', 'lingdong-cloud', 'invisible-man', 'flybit', 'xsus', 'xxyun', 'dageyun', 'flashget-cloud', 'shanshui-cloud', 'laomao-cloud', 'qipao-cloud', 'jisu-cloud'].includes(slug) ? `/images/brands/${slug}${['shanyue', 'wuyou', 'edgenova', 'invisible-man', 'jiuyun'].includes(slug) ? '.jpg' : '.png'}` : undefined 
   };
 });
 
