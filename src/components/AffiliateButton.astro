@@ -2,13 +2,14 @@
 import type { Brand } from '../data/brands';
 import { Image } from 'astro:assets';
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}', { eager: true });
-const getImage = (slug: string) => images[`/src/assets/brands/${slug}.png`]?.default || images[`/src/assets/brands/${slug}.jpg`]?.default;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}');
 
 interface Props { brand: Brand; placement: 'hero' | 'summary' | 'pricing' | 'sidebar' | 'article-end' | 'recommend-card' | 'comparison-table' | 'mobile-bottom'; sourcePage: string; label?: string; class?: string }
 const { brand, placement, sourcePage, label = '前往官网', class: className = '' } = Astro.props;
+
+const loader = images[`/src/assets/brands/${brand.slug}.png`] || images[`/src/assets/brands/${brand.slug}.jpg`];
+const avatarImg = loader ? (await loader()).default : null;
 const href = `/go/${brand.slug}/?from=${encodeURIComponent(sourcePage)}&placement=${placement}`;
-const avatarImg = getImage(brand.slug);
 ---
 <a class={`aff-card ${className}`} href={href} rel="sponsored nofollow noopener" target="_blank" data-brand={brand.slug} data-placement={placement}>
   <div class="aff-card-left">

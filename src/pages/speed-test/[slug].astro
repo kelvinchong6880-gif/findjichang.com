@@ -10,8 +10,7 @@ import { articleSchema } from '../../lib/structured-data';
 import { keywordSet } from '../../lib/seo-keywords';
 import { isPublishable } from '../../lib/seo';
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}', { eager: true });
-const getImage = (slug: string) => images[`/src/assets/brands/${slug}.png`]?.default || images[`/src/assets/brands/${slug}.jpg`]?.default;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}');
 
 export function getStaticPaths() { return brands.map((brand) => ({ params: { slug: brand.slug }, props: { brand } })); }
 const { brand } = Astro.props as { brand: Brand };
@@ -20,10 +19,12 @@ const rendered = entry ? await render(entry) : null;
 const Content = rendered?.Content;
 const pageTitle = entry?.data.title ?? `${brand.name}机场测速资料汇总`;
 const description = entry?.data.description ?? `${brand.name}机场测速资料、测试条件与来源汇总。`;
-const path = `/speed-test/${brand.slug}/`;
-const avatarImg = getImage(brand.slug);
+const pagePath = `/speed-test/${brand.slug}/`;
+
+const loader = images[`/src/assets/brands/${brand.slug}.png`] || images[`/src/assets/brands/${brand.slug}.jpg`];
+const avatarImg = loader ? (await loader()).default : null;
 const keywords = keywordSet({ title: pageTitle, supplied: entry?.data.keywords, brand: brand.name, type: 'speed-test' });
-const schema = articleSchema({ title: pageTitle, description, path, publishedAt: entry?.data.publishedAt ?? entry?.data.createdAt ?? new Date('2026-08-23T00:00:00+08:00'), updatedAt: entry?.data.updatedAt, image: avatarImg?.src });
+const schema = articleSchema({ title: pageTitle, description, path: pagePath, publishedAt: entry?.data.publishedAt ?? entry?.data.createdAt ?? new Date('2026-08-23T00:00:00+08:00'), updatedAt: entry?.data.updatedAt, image: avatarImg?.src });
 const speedLinks = [
   { href: `/jichang/${brand.slug}/`, title: `${brand.name}机场完整测评`, description: '返回品牌资料、套餐与风险说明。' },
   { href: '/knowledge/how-to-read-speed-test/', title: '怎样看懂机场测速结果' },

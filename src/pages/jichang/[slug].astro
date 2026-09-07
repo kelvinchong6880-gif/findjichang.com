@@ -11,8 +11,7 @@ import { keywordSet } from '../../lib/seo-keywords';
 import { isPublishable } from '../../lib/seo';
 import { brands, type Brand } from '../../data/brands';
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}', { eager: true });
-const getImage = (slug: string) => images[`/src/assets/brands/${slug}.png`]?.default || images[`/src/assets/brands/${slug}.jpg`]?.default;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}');
 
 export function getStaticPaths() { return brands.map((brand) => ({ params: { slug: brand.slug }, props: { brand } })); }
 const { brand } = Astro.props as { brand: Brand };
@@ -22,7 +21,8 @@ const Content = rendered?.Content;
 const headings = rendered?.headings ?? [];
 const pagePath = `/jichang/${brand.slug}/`;
 
-const avatarImg = getImage(brand.slug);
+const loader = images[`/src/assets/brands/${brand.slug}.png`] || images[`/src/assets/brands/${brand.slug}.jpg`];
+const avatarImg = loader ? (await loader()).default : null;
 
 const recommendationPaths: Record<string, { href: string; title: string }> = {
   weifeng: { href: '/recommend/', title: '微风机场推荐与购买前检查' },

@@ -6,16 +6,22 @@ import { brands } from '../../data/brands';
 import { articleSchema, itemListSchema } from '../../lib/structured-data';
 import { getCollection } from 'astro:content';
 import RelatedLinks from '../../components/RelatedLinks.astro';
-import AffiliateButton from '../../components/AffiliateButton.astro';
 import BrandFilter from '../../components/BrandFilter.astro';
 import { Image } from 'astro:assets';
+import AffiliateButton from '../../components/AffiliateButton.astro';
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}', { eager: true });
-const getImage = (slug: string) => images[`/src/assets/brands/${slug}.png`]?.default || images[`/src/assets/brands/${slug}.jpg`]?.default;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}');
 
 const preferred = ['weifeng', 'jisu-cloud', 'jiuyun', 'feimao-yun', 'firefly', 'wuyou', 'kuajie-yun', 'lingmao', 'shanyue'];
 const prefCount = preferred.length;
 const orderedBrands = [...preferred.map((slug) => brands.find((brand) => brand.slug === slug)), ...brands.filter((brand) => !preferred.includes(brand.slug))].filter((brand): brand is (typeof brands)[number] => Boolean(brand));
+
+const brandsWithImages = await Promise.all(orderedBrands.map(async (brand) => {
+  const loader = images[`/src/assets/brands/${brand.slug}.png`] || images[`/src/assets/brands/${brand.slug}.jpg`];
+  const avatarImg = loader ? (await loader()).default : null;
+  return { ...brand, avatarImg };
+}));
+
 const schema = itemListSchema(`${brands.length} 家机场资料对比表`, orderedBrands.map((brand) => ({ name: brand.name, path: `/jichang/${brand.slug}/` })));
 const article = articleSchema({ title: `${brands.length} 家机场对比表：价格、资料、测速与注册链接`, description: `整理 ${brands.length} 家机场的起步价、品牌资料、测速页面与站内注册链接；购买前请复核动态价格和条款。`, path: '/compare/', publishedAt: new Date('2026-08-23T00:00:00+08:00') });
 const keywords = ['机场对比', '机场推荐对比', `${brands.length}家机场对比`, '机场价格对比', '机场测速对比', '机场怎么选'];
@@ -41,11 +47,10 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
       <div class="comparison-table-wrap"><table class="comparison-table">
         <caption>{brands.length} 家机场的展示顺序、起步价与资料入口</caption>
         <thead><tr><th scope="col">顺序</th><th scope="col">机场</th><th scope="col">当前记录起步价</th><th scope="col">资料状态</th><th scope="col">站内资料</th><th scope="col">注册链接</th></tr></thead>
-        <tbody>{orderedBrands.map((brand, index) => {
-          const avatarImg = getImage(brand.slug);
+        <tbody>{brandsWithImages.map((brand, index) => {
           return <tr data-name={brand.name} data-price={brand.pricePerMonth ?? 999} data-billing={(brand.billingCycles || []).join(',')}>
           <td><span class:list={['rank-number', { featured: index < prefCount }]}>{index + 1}</span></td>
-          <th scope="row"><span class="brand-cell">{avatarImg && <Image src={avatarImg} width={34} height={34} alt={`${brand.name}品牌标识`} loading="lazy" />}<span><strong>{brand.name}</strong>{index < prefCount && <small>优先展示</small>}</span></span></th>
+          <th scope="row"><span class="brand-cell">{brand.avatarImg && <Image src={brand.avatarImg} width={34} height={34} alt={`${brand.name}品牌标识`} loading="lazy" />}<span><strong>{brand.name}</strong>{index < prefCount && <small>优先展示</small>}</span></span></th>
           <td>{brand.minPrice ?? '待核验'}</td><td><span class="status-note">已复核</span></td>
           <td><span class="table-links"><a href={`/jichang/${brand.slug}/`}>品牌资料</a><a href={`/speed-test/${brand.slug}/`}>测速资料</a></span></td>
           <td><AffiliateButton brand={brand} placement="comparison-table" sourcePage="/compare/" /></td>
