@@ -55,6 +55,7 @@ const { targetSelector } = Astro.props;
         const billing = billingSelect.value;
         const items = document.querySelectorAll(targetSelector as string);
         
+        let matchCount = 0;
         items.forEach((item) => {
           const el = item as HTMLElement;
           const name = el.getAttribute('data-name')?.toLowerCase() || '';
@@ -73,10 +74,35 @@ const { targetSelector } = Astro.props;
 
           if (matchSearch && matchBudget && matchBilling) {
             el.style.display = '';
+            matchCount++;
           } else {
             el.style.display = 'none';
           }
         });
+        
+        // Handle Empty State
+        let emptyState = document.querySelector('.filter-empty-state') as HTMLElement;
+        if (!emptyState) {
+           const container = (items[0] as HTMLElement)?.parentElement;
+           if (container) {
+             emptyState = document.createElement('div');
+             emptyState.className = 'filter-empty-state';
+             emptyState.style.padding = '2rem';
+             emptyState.style.textAlign = 'center';
+             emptyState.innerHTML = '<p>没有找到符合条件的品牌，<button type="button" class="clear-filters-btn" style="color:var(--primary);text-decoration:underline;">清空筛选条件</button></p>';
+             container.appendChild(emptyState);
+             
+             emptyState.querySelector('.clear-filters-btn')?.addEventListener('click', () => {
+               searchInput.value = '';
+               budgetSelect.value = 'all';
+               billingSelect.value = 'all';
+               updateFilters();
+             });
+           }
+        }
+        if (emptyState) {
+          emptyState.style.display = matchCount === 0 ? 'block' : 'none';
+        }
       }
 
       searchInput?.addEventListener('input', updateFilters);
