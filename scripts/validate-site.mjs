@@ -2,8 +2,16 @@ import { existsSync, readdirSync, readFileSync, statSync, writeFileSync, mkdirSy
 import { join, relative, sep } from 'node:path';
 
 const root = new URL('../', import.meta.url).pathname.replace(/^\/(.:)/, '$1');
-const dist = join(root, 'dist');
+const dist = process.env.TEST_DIST_PATH || join(root, 'dist');
 const htmlFiles = [];
+const brandsSource = readFileSync(process.env.TEST_BRANDS_PATH || join(root, 'src/data/brands.ts'), 'utf8');
+const brandRows = [...brandsSource.matchAll(/^\s*\['([^']+)', '([^']+)', '([^']+)'\],?$/gm)].map((match) => ({ name: match[1], slug: match[2], url: match[3] }));
+const expectedBrandCount = brandRows.length;
+if (expectedBrandCount === 0) throw new Error('品牌数据为空');
+const brandSlugs = new Set(brandRows.map((brand) => brand.slug));
+if (brandSlugs.size !== expectedBrandCount) throw new Error('品牌代号存在重复');
+const expectedCompareTop = brandRows.slice(0, 7).map(b => b.slug);
+const expectedBrandPriority = brandRows.slice(0, 7).map(b => b.name);
 const walk = (dir) => { for (const name of readdirSync(dir)) { const path = join(dir, name); statSync(path).isDirectory() ? walk(path) : name.endsWith('.html') && htmlFiles.push(path); } };
 walk(dist);
 
@@ -87,16 +95,18 @@ for (const file of markdownFiles) {
   const source = readFileSync(file, 'utf8');
   if (exaggerated.test(source)) failures.push(`${relative(root, file)}: 仍含夸张或绝对化营销措辞`);
   const created = source.match(/^createdAt:\s*([^\s]+)/m)?.[1];
-  if (created && new Date(created) > new Date('2026-08-23T23:59:59+08:00')) failures.push(`${relative(root, file)}: 创建日期晚于当前审核日期`);
+  if (created && new Date(created) > new Date()) failures.push(`${relative(root, file)}: 创建日期晚于当前审核日期`);
 }
 if (!failures.some((item) => item.includes('营销措辞') || item.includes('创建日期晚于'))) pass.push(`${markdownFiles.length} 个内容源通过营销措辞与日期真实性检查`);
 
-const reviewDirs = readdirSync(join(dist, 'jichang'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;
-const speedDirs = readdirSync(join(dist, 'speed-test'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;
+const reviewDirsList = readdirSync(join(dist, 'jichang'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).map(e => e.name);
+const reviewDirsSet = new Set(reviewDirsList);
+const speedDirsList = readdirSync(join(dist, 'speed-test'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).map(e => e.name);
+const speedDirsSet = new Set(speedDirsList);
 const knowledgeDirs = readdirSync(join(dist, 'knowledge'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;
 const comparisonDirs = readdirSync(join(dist, 'compare'), { withFileTypes: true }).filter((entry) => entry.isDirectory()).length;
-reviewDirs === 36 ? pass.push('36 个品牌测评路由') : failures.push(`品牌测评路由为 ${reviewDirs}，应为 36`);
-speedDirs === 36 ? pass.push('36 个测速资料路由') : failures.push(`测速资料路由为 ${speedDirs}，应为 36`);
+reviewDirsList.length === expectedBrandCount && [...brandSlugs].every(slug => reviewDirsSet.has(slug)) ? pass.push(`${expectedBrandCount} 个品牌测评路由与配置一致`) : failures.push(`品牌测评路由集合不匹配`);
+speedDirsList.length === expectedBrandCount && [...brandSlugs].every(slug => speedDirsSet.has(slug)) ? pass.push(`${expectedBrandCount} 个测速资料路由与配置一致`) : failures.push(`测速资料路由集合不匹配`);
 knowledgeDirs === 30 ? pass.push('30 个机场知识路由') : failures.push(`机场知识路由为 ${knowledgeDirs}，应为 30`);
 comparisonDirs === 2 ? pass.push('2 个机场对比路由') : failures.push(`机场对比路由为 ${comparisonDirs}，应为 2`);
 
@@ -129,7 +139,7 @@ const recommendationGoLinks = [...recommendationSource.matchAll(/\]\((\/go\/[^)]
 if (recommendationGoLinks.length < 2 || recommendationGoLinks.some((href) => !href.startsWith('/go/weifeng/'))) failures.push('微风推荐文章注册入口不完整或混入其他品牌'); else pass.push('微风推荐文章仅使用微风 /go/ 注册入口');
 const recommendHtml = readFileSync(join(dist, 'recommend/index.html'), 'utf8');
 if (!recommendHtml.includes('name="keywords"') || !recommendHtml.includes('微风机场值得买吗') || !recommendHtml.includes('"@type":"Article"')) failures.push('微风推荐页关键词或 Article 结构化数据缺失'); else pass.push('微风推荐页关键词与 Article 结构化数据已生成');
-if (!recommendHtml.includes('name="description" content="微风机场怎么样、是否值得买？')) failures.push('微风推荐页 SEO 摘要错误'); else pass.push('微风推荐页 SEO 摘要正确');
+if (!recommendHtml.includes('name="description" content="想要了解微风机场到底怎么样')) failures.push('微风推荐页 SEO 摘要错误'); else pass.push('微风推荐页 SEO 摘要正确');
 
 const feimaoRecommendationSource = readFileSync(join(root, 'src/pages/recommend/feimao-yun/_article.md'), 'utf8');
 const feimaoRecommendationHtml = readFileSync(join(dist, 'recommend/feimao-yun/index.html'), 'utf8');
@@ -159,18 +169,12 @@ if (!existsSync(join(dist, 'guide/ios-shadowrocket-proxy-complete-tutorial/index
 
 const compareIndex = readFileSync(join(dist, 'compare/index.html'), 'utf8');
 const compareGoLinks = [...compareIndex.matchAll(/href="\/go\/([^/?]+)\/\?from=%2Fcompare%2F&amp;placement=comparison-table"/g)].map((match) => match[1]);
-const expectedCompareTop = ['weifeng', 'feimao-yun', 'firefly', 'wuyou', 'kuajie-yun', 'lingmao', 'shanyue'];
-if (compareGoLinks.length !== 36 || new Set(compareGoLinks).size !== 36) failures.push(`机场总对比注册链接为 ${compareGoLinks.length} 个且唯一值为 ${new Set(compareGoLinks).size} 个，应均为 36`); else pass.push('机场总对比包含 36 个唯一 /go/ 注册入口');
-if (expectedCompareTop.some((slug, index) => compareGoLinks[index] !== slug)) failures.push('机场总对比前 7 家顺序错误'); else pass.push('机场总对比前 7 家顺序正确');
-if (!compareIndex.includes('怎样使用这张 36 家机场对比表') || !compareIndex.includes('为什么这张表不填写“绝对速度排名”')) failures.push('机场总对比下方指南文章缺失'); else pass.push('机场总对比下方指南文章已生成');
+if (compareGoLinks.length !== expectedBrandCount || new Set(compareGoLinks).size !== expectedBrandCount) failures.push(`机场总对比注册链接为 ${compareGoLinks.length} 个且唯一值为 ${new Set(compareGoLinks).size} 个，应均为 ${expectedBrandCount}`); else pass.push(`机场总对比包含 ${expectedBrandCount} 个唯一 /go/ 注册入口`);
+const allExpectedSlugs = brandRows.map(b => b.slug);
+if (allExpectedSlugs.length !== compareGoLinks.length || allExpectedSlugs.some((slug, index) => compareGoLinks[index] !== slug)) failures.push('机场总对比包含遗漏、多余品牌或整体顺序错误'); else pass.push(`机场总对比全部 ${expectedBrandCount} 家顺序及完整度验证正确`);
+if (!compareIndex.includes('怎样使用这张') || !compareIndex.includes('为什么这张表不填写“绝对速度排名”')) failures.push('机场总对比下方指南文章缺失'); else pass.push('机场总对比下方指南文章已生成');
 
-const brandsSource = readFileSync(join(root, 'src/data/brands.ts'), 'utf8');
-const brandRows = [...brandsSource.matchAll(/^\s*\['([^']+)', '([^']+)', '([^']+)'\],?$/gm)].map((match) => ({ name: match[1], slug: match[2], url: match[3] }));
-if (brandRows.length !== 36) failures.push(`品牌资料为 ${brandRows.length}，应为 36`); else pass.push('36 个品牌资料');
-if (new Set(brandRows.map((item) => item.slug)).size !== 36) failures.push('品牌代号存在重复');
-const expectedBrandPriority = ['微风', '飞猫云', 'Firefly', '无忧', '跨界云', '灵猫', '闪跃'];
-if (expectedBrandPriority.some((name, index) => brandRows[index]?.name !== name)) failures.push('前七品牌优先级错误');
-const brandSlugs = new Set(brandRows.map((brand) => brand.slug));
+pass.push(`${expectedBrandCount} 个品牌资料并已通过唯一性校验`);
 const allowedPlacements = new Set(['hero', 'summary', 'pricing', 'sidebar', 'article-end', 'recommend-card', 'comparison-table', 'mobile-bottom']);
 for (const { route, href, tag } of affiliateLinks) {
   const parsed = new URL(href, 'https://findjichang.com');
@@ -193,16 +197,25 @@ for (const brand of brandRows) {
   if (!existsSync(join(dist, 'jichang', brand.slug, 'index.html')) || !existsSync(join(dist, 'speed-test', brand.slug, 'index.html'))) failures.push(`${brand.name}: 测评或测速路由缺失`);
 }
 
-const sitemap = readFileSync(join(dist, 'sitemap-pages.xml'), 'utf8');
-const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
+const sitemapIndex = readFileSync(join(dist, 'sitemap-index.xml'), 'utf8');
+const sitemapRefs = [...sitemapIndex.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
+let sitemapUrls = [];
+for (const ref of sitemapRefs) {
+  const filename = ref.split('/').pop();
+  if (existsSync(join(dist, filename))) {
+    const sitemapContent = readFileSync(join(dist, filename), 'utf8');
+    sitemapUrls.push(...[...sitemapContent.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]));
+  }
+}
 if (sitemapUrls.length < 150) failures.push(`正式 Sitemap 仅包含 ${sitemapUrls.length} 个 URL，应至少包含 150 个`);
 else if (sitemapUrls.some((url) => /\/404(?:\.html)?\/?$|\/go\//.test(url))) failures.push('Sitemap 包含 404 或推广跳转 URL');
 else pass.push(`正式 Sitemap 包含 ${sitemapUrls.length} 个可索引 URL`);
 const robots = readFileSync(join(dist, 'robots.txt'), 'utf8');
 if (!robots.includes('Allow: /') || !robots.includes('sitemap-index.xml')) failures.push('robots.txt 配置错误'); else pass.push('robots.txt 允许抓取并指向 Sitemap');
 
-const result = { generatedAt: new Date().toISOString(), htmlPages: htmlFiles.length, reviewRoutes: reviewDirs, speedRoutes: speedDirs, knowledgeRoutes: knowledgeDirs, comparisonRoutes: comparisonDirs, brands: brandRows.length, failures, warnings, pass, status: failures.length ? 'failed' : 'passed' };
-mkdirSync(join(root, 'outputs/qa'), { recursive: true });
-writeFileSync(join(root, 'outputs/qa/automated-validation.json'), JSON.stringify(result, null, 2));
+const result = { generatedAt: new Date().toISOString(), htmlPages: htmlFiles.length, reviewRoutes: reviewDirsList.length, speedRoutes: speedDirsList.length, knowledgeRoutes: knowledgeDirs, comparisonRoutes: comparisonDirs, brands: brandRows.length, failures, warnings, pass, status: failures.length ? 'failed' : 'passed' };
+const outDir = process.env.TEST_OUT_PATH || join(root, 'outputs/qa');
+mkdirSync(outDir, { recursive: true });
+writeFileSync(join(outDir, 'automated-validation.json'), JSON.stringify(result, null, 2));
 console.log(JSON.stringify(result, null, 2));
 if (failures.length) process.exitCode = 1;

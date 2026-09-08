@@ -43,7 +43,7 @@ speedTestSlug: "jisu-cloud"
 sources:
   - label: "极速cloud品牌入口"
     publisher: "极速cloud"
-    url: "https://kelvin.jsjc456789.com"
+    url: "https://www.findjichang.com/go/jisu-cloud/"
     sourceType: "official"
     collectedAt: 2026-09-07
     supports:
@@ -129,7 +129,7 @@ sources:
 
 通过本站入口注册可能产生推广收益，但这不会影响我们对其优缺点的客观评价。我们特别指出了其“10倍倍率”与“不退款”的风险点，目的就是让读者在全面知情的情况下做出购买决策。对风险敏感的读者，我们坚决建议优先选择月付。
 
-如果你决定尝试，建议从 [¥8.9 体验套餐](/go/jisu-cloud/) 开始，连续观察两到三个晚高峰的表现，再决定是否升级。你可以阅读 [极速cloud测速与节点报告](/speed-test/jisu-cloud/) 以及我们的 [测试方法](/methodology/)。准备注册时，请再次确认其结算页面的服务条款。
+如果你决定尝试，建议从 [¥8.9 体验套餐](/go/jisu-cloud/?from=/jichang/jisu-cloud/&placement=summary) 开始，连续观察两到三个晚高峰的表现，再决定是否升级。你可以阅读 [极速cloud测速与节点报告](/speed-test/jisu-cloud/) 以及我们的 [测试方法](/methodology/)。准备注册时，请再次确认其结算页面的服务条款。
 
 ## 极速cloud 常见问题解答 (FAQ)
 
@@ -157,6 +157,6 @@ sources:
 
 | 来源 | 发布者 | 类型 | 本次采集 | 可支持的内容 |
 | --- | --- | --- | --- | --- |
-| [极速cloud品牌入口](https://kelvin.jsjc456789.com) | 极速cloud | 品牌入口 | 2026-09-07 | 品牌注册或用户中心入口；购买前复核套餐与规则的原始页面 |
+| [极速cloud品牌入口](/go/jisu-cloud/?from=/jichang/jisu-cloud/&placement=article-end) | 极速cloud | 品牌入口 | 2026-09-07 | 品牌注册或用户中心入口；购买前复核套餐与规则的原始页面 |
 
 本文的套餐分析与警告条款均基于品牌官方页面的原始文字和截图，不使用模糊的搜索摘要或营销转载来粉饰数据。节点倍率与退款政策是购买极速cloud前必须知悉的核心事实。

@@ -11,7 +11,9 @@
     "preview": "astro preview",
     "check": "astro check",
     "validate": "node scripts/validate-site.mjs && node scripts/test-go-route.mjs",
-    "deploy:check": "pnpm build && pnpm validate",
+    "test:e2e": "playwright test",
+    "test:perf": "node scripts/run-performance-playwright.mjs",
+    "deploy:check": "pnpm build && pnpm validate && pnpm test:e2e",
     "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
@@ -23,6 +25,7 @@
     "typescript": "5.9.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "sharp": "^0.35.4"
   }
 }

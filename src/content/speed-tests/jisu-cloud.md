@@ -41,7 +41,7 @@ reviewSlug: "jisu-cloud"
 sources:
   - label: "极速cloud品牌入口"
     publisher: "极速cloud"
-    url: "https://kelvin.jsjc456789.com"
+    url: "https://www.findjichang.com/go/jisu-cloud/"
     sourceType: "official"
     collectedAt: 2026-09-07
     supports:
@@ -150,7 +150,7 @@ sources:
 
 | 来源 | 发布者 | 类型 | 本次采集 | 可支持的内容 |
 | --- | --- | --- | --- | --- |
-| [极速cloud品牌入口](https://kelvin.jsjc456789.com) | 极速cloud | 品牌入口 | 2026-09-07 | 品牌注册或用户中心入口；购买前复核规则的页面 |
+| [极速cloud品牌入口](/go/jisu-cloud/?from=/speed-test/jisu-cloud/&placement=article-end) | 极速cloud | 品牌入口 | 2026-09-07 | 品牌注册或用户中心入口；购买前复核规则的页面 |
 | Impart 测速报告 | 第三方 | 晚高峰测速 | 2026-07-11 | 提供北京联通、上海移动、北京电信晚高峰速度参考 |
 
 本文的实测数据基于真实的晚高峰测速日志提取。通过严谨的数据分析，不仅证实了极速cloud超乎寻常的物理大带宽，同时也挖掘出了被隐藏在宣传背后的“x15 原生节点倍率”陷阱。读者在享受极速的同时，请务必留意实际流量消耗。

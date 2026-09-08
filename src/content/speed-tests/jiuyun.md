@@ -38,7 +38,7 @@ reviewSlug: "jiuyun"
 sources:
   - label: "九云品牌入口"
     publisher: "九云"
-    url: "https://888.jiuyundl.com/#/register?code=INW5fS7Q"
+    url: "https://www.findjichang.com/go/jiuyun/"
     sourceType: "official"
     collectedAt: 2026-09-01
     supports:
@@ -118,6 +118,6 @@ sources:
 
 | 来源 | 发布者 | 类型 | 本次采集 | 可支持的内容 |
 | --- | --- | --- | --- | --- |
-| [九云品牌入口](https://888.jiuyundl.com/#/register?code=INW5fS7Q) | 九云 | 品牌入口/原始页面 | 2026-09-01 | 品牌注册或用户中心入口；购买前复核套餐与规则的原始入口 |
+| [九云品牌入口](/go/jiuyun/?from=/speed-test/jiuyun/&placement=article-end) | 九云 | 品牌入口/原始页面 | 2026-09-01 | 品牌注册或用户中心入口；购买前复核套餐与规则的原始入口 |
 
 第三方数据的价值是提供外部样本，不是替本站完成测试。不同来源的网络接入、城市、设备、客户端、并发、测速服务器和时段往往不同，因此本文不会把它们直接横向排名，也不会把 MB/s 与 Mbps 混用。只有来源明确给出的数字才会引用；没有测试方法或仅有营销结论的页面不进入结果表。

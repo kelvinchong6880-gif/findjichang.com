@@ -12,9 +12,8 @@ import AffiliateButton from '../../components/AffiliateButton.astro';
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}');
 
-const preferred = ['weifeng', 'jisu-cloud', 'jiuyun', 'feimao-yun', 'firefly', 'wuyou', 'kuajie-yun', 'lingmao', 'shanyue'];
-const prefCount = preferred.length;
-const orderedBrands = [...preferred.map((slug) => brands.find((brand) => brand.slug === slug)), ...brands.filter((brand) => !preferred.includes(brand.slug))].filter((brand): brand is (typeof brands)[number] => Boolean(brand));
+const prefCount = 7;
+const orderedBrands = brands;
 
 const brandsWithImages = await Promise.all(orderedBrands.map(async (brand) => {
   const loader = images[`/src/assets/brands/${brand.slug}.png`] || images[`/src/assets/brands/${brand.slug}.jpg`];
@@ -50,7 +49,7 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
         <tbody>{brandsWithImages.map((brand, index) => {
           return <tr data-name={brand.name} data-price={brand.pricePerMonth ?? 999} data-billing={(brand.billingCycles || []).join(',')}>
           <td><span class:list={['rank-number', { featured: index < prefCount }]}>{index + 1}</span></td>
-          <th scope="row"><span class="brand-cell">{brand.avatarImg && <Image src={brand.avatarImg} width={34} height={34} alt={`${brand.name}品牌标识`} loading="lazy" />}<span><strong>{brand.name}</strong>{index < prefCount && <small>优先展示</small>}</span></span></th>
+          <th scope="row"><span class="brand-cell">{brand.avatarImg && <Image src={brand.avatarImg} width={34} height={34} alt={`${brand.name}品牌标识`} loading={index < 8 ? "eager" : "lazy"} />}<span><strong>{brand.name}</strong>{index < prefCount && <small>优先展示</small>}</span></span></th>
           <td>{brand.minPrice ?? '待核验'}</td><td><span class="status-note">已复核</span></td>
           <td><span class="table-links"><a href={`/jichang/${brand.slug}/`}>品牌资料</a><a href={`/speed-test/${brand.slug}/`}>测速资料</a></span></td>
           <td><AffiliateButton brand={brand} placement="comparison-table" sourcePage="/compare/" /></td>

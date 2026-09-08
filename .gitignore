@@ -22,3 +22,7 @@ Thumbs.db
 .idea/
 .vscode/*
 !.vscode/extensions.json
+
+performance-baseline.json
+test-results/
+playwright-report/
