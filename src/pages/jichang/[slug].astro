@@ -1,51 +1,118 @@
 ---
 import { getCollection, render } from 'astro:content';
-import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import AffiliateButton from '../../components/AffiliateButton.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
 import JsonLd from '../../components/JsonLd.astro';
+import Go from '../../components/fj/Go.astro';
+import Promo from '../../components/fj/Promo.astro';
+import Faq from '../../components/fj/Faq.astro';
 import { articleSchema } from '../../lib/structured-data';
-import { keywordSet } from '../../lib/seo-keywords';
-import { isPublishable } from '../../lib/seo';
+import { isPublishable, hasRealSpeedData } from '../../lib/seo';
+import { brandImage } from '../../lib/brand-image';
 import { brands, type Brand } from '../../data/brands';
-
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}');
+import { planOf, monthLabel, fmtGB, yuan, perGB, UPDATED, UPDATED_LABEL } from '../../data/plans';
 
 export function getStaticPaths() { return brands.map((brand) => ({ params: { slug: brand.slug }, props: { brand } })); }
 const { brand } = Astro.props as { brand: Brand };
 const entry = (await getCollection('reviews')).find((item) => item.id === brand.slug);
+const speed = (await getCollection('speedTests')).find((item) => item.id === brand.slug);
 const rendered = entry ? await render(entry) : null;
 const Content = rendered?.Content;
-const headings = rendered?.headings ?? [];
 const pagePath = `/jichang/${brand.slug}/`;
+const n = brand.name;
+const p = planOf(brand.slug);
+const img = brandImage(brand.slug);
 
-const loader = images[`/src/assets/brands/${brand.slug}.png`] || images[`/src/assets/brands/${brand.slug}.jpg`];
-const avatarImg = loader ? (await loader()).default : null;
+const body = entry?.body ?? '';
+const nodeMatch = body.match(/共收到 \*\*(\d+) 条节点记录\*\*/) ?? body.match(/识别到 \*\*(\d+) 个不同节点/) ?? body.match(/共计 (\d+) 个活跃节点/);
+const nodes = nodeMatch ? Number(nodeMatch[1]) : null;
+const planRows = (body.match(/^## 套餐价格[\s\S]*?(?=^## )/m)?.[0].match(/^\|(?!\s*-)/gm)?.length ?? 1) - 1;
+const planCount = planRows > 0 ? planRows : null;
 
-const recommendationPaths: Record<string, { href: string; title: string }> = {
-  weifeng: { href: '/recommend/', title: '微风机场推荐与购买前检查' },
-  'feimao-yun': { href: '/recommend/feimao-yun/', title: '飞猫云预算套餐选择指南' },
-  firefly: { href: '/recommend/firefly-streaming-ai/', title: 'Firefly 流媒体与 AI 推荐指南' },
-};
-const reviewLinks = [
-  { href: `/speed-test/${brand.slug}/`, title: `${brand.name}机场测速资料`, description: '查看测试条件、样本来源与限制。' },
-  { href: '/compare/', title: '36 家机场资料对比表', description: '从预算、资料状态和使用场景缩小范围。' },
-  { href: '/knowledge/line-types-explained/', title: '直连、中转、IPLC 与 IEPL 的区别' },
-  { href: '/knowledge/peak-hour-testing/', title: '晚高峰应该怎样测试机场' },
-  ...(recommendationPaths[brand.slug] ? [recommendationPaths[brand.slug]] : []),
+const priceBits = [p.month && `月付 ${yuan(p.month.price)} 起（${fmtGB(p.month.gb)}）`, p.year && `年付 ${yuan(p.year.price)}（每月 ${fmtGB(p.year.gb)}）`, !p.month && !p.year && p.once && `不限时 ${yuan(p.once.price)} / ${fmtGB(p.once.gb)}`].filter(Boolean).join('，');
+const title = `${n}机场怎么样？${n}测评：套餐价格、节点与购买建议（2026）`;
+const baseDesc = `${n}机场怎么样？本页整理${n}官网${planCount ? ` ${planCount} 档` : ''}套餐：${priceBits}${nodes ? `，后台记录 ${nodes} 个节点` : ''}${p.promo ? `，结算可用优惠码 ${p.promo}` : ''}。附适合人群、套餐怎么选、注意事项和常见问题，2026年10月更新。`;
+const description = baseDesc.length < 95 ? baseDesc.replace('。附适合人群', '。本文还整理了适合人群、购买前注意事项、买完怎么导入 Clash 和小火箭') .replace('、套餐怎么选、注意事项和常见问题', '，以及常见问题') : baseDesc;
+
+const fits: string[] = [];
+if (p.month && p.month.price <= 20) fits.push(`预算有限、想先月付试用的新手：月付 ${yuan(p.month.price)} 就有 ${fmtGB(p.month.gb)}。`);
+else if (p.month) fits.push(`想按月付费、随时可以换的人：月付 ${monthLabel(p)}。`);
+if (p.month && p.month.gb >= 150) fits.push('每天刷视频、看 YouTube 的用户，入门月付套餐的流量基本够用。');
+if (p.year && p.year.price <= 100) fits.push(`流量用得少、只想一年付一次的人：年付 ${yuan(p.year.price)}，每月 ${fmtGB(p.year.gb)}。`);
+if (p.once) fits.push(`偶尔才用、想买不限时流量包当备用的人：${yuan(p.once.price)} 买 ${fmtGB(p.once.gb)}，不按月清零。`);
+if (nodes && nodes >= 50) fits.push(`需要多地区节点的人：本站记录到 ${nodes} 个节点。`);
+const cautions: string[] = [];
+if (!p.month) cautions.push('没有月付套餐，第一次购买就要付一整年，建议先确认自己确实需要。');
+if (p.note) cautions.push(p.note + '。');
+cautions.push('第一次买建议先买最短周期，晚上高峰期用几天，稳定再续费或换年付。');
+cautions.push('订阅链接相当于账号密码，不要发给别人；泄露后在后台重置。');
+
+const faq = [
+  { q: `${n}机场多少钱一个月？`, a: p.month ? `${n}最便宜的月付套餐是「${p.month.name}」，${yuan(p.month.price)}/月，每月 ${fmtGB(p.month.gb)} 流量，折合每 GB 约 ¥${perGB(p.month).toFixed(2)}。${p.year ? `年付最低是「${p.year.name}」${yuan(p.year.price)}/年，每月 ${fmtGB(p.year.gb)}。` : ''}` : `${n}目前没有月付套餐。${p.year ? `最便宜的是年付「${p.year.name}」${yuan(p.year.price)}/年（折合约 ${yuan(Math.round(p.year.price / 1.2) / 10)}/月），每月 ${fmtGB(p.year.gb)}。` : p.once ? `最便宜的是不限时流量包 ${yuan(p.once.price)}（${fmtGB(p.once.gb)}）。` : ''}` },
+  p.promo
+    ? { q: `${n}机场有优惠码吗？`, a: `有。在${n}官网下单结算时，在“优惠码”输入框填入 ${p.promo}，点击使用后价格会直接变化。优惠力度以官网结算页显示为准。` }
+    : { q: `${n}机场怎么注册购买？`, a: `点击本页的“前往官网”进入${n}，用邮箱注册账号，选择套餐后用支付宝、微信或 USDT 付款即可。第一次买建议先选最短周期的套餐。` },
+  { q: `${n}机场买完怎么用？`, a: `在${n}后台复制订阅链接，导入客户端即可：Windows 用 Clash Verge Rev，iPhone 用小火箭（Shadowrocket），安卓用 Clash Meta 或 v2rayNG。本站使用教程有每个客户端的详细步骤。` },
+  { q: `${n}机场在本站排第几？`, a: `${n}目前在本站机场推荐中排第 ${brand.rank} 名。完整名单和价格对比见“机场排行榜”，按价格排序见“便宜机场”和“性价比机场”页面。` },
 ];
-const keywords = keywordSet({ title: entry?.data.title ?? `${brand.name}机场测评`, supplied: entry?.data.keywords, brand: brand.name, type: 'review' });
-const schema = articleSchema({ title: entry?.data.title ?? `${brand.name}机场测评`, description: entry?.data.description ?? `${brand.name}机场资料与购买前核对指南。`, path: pagePath, publishedAt: entry?.data.publishedAt ?? entry?.data.createdAt ?? new Date('2026-08-23T00:00:00+08:00'), updatedAt: entry?.data.updatedAt, image: avatarImg?.src });
-const articleStatus = entry?.data.status === 'published' ? '已发布并持续更新' : '事实核验中';
-const articleVerdict = entry?.data.primaryIntent ?? '资料汇总与购买参考';
-const articleVerdictNote = entry?.data.originalValue ?? '请结合正文中的来源、测试条件和限制说明判断是否适合。';
-const tocItems = headings.filter(h => h.depth === 2).map(h => [`#${h.slug}`, h.text]);
+
+const reviewLinks = [
+  { href: '/recommend/', title: '2026 机场推荐', description: '按需求选机场，附每家的入门价格。' },
+  { href: '/ranking/', title: `机场排行榜：${brands.length} 家机场价格对比`, description: '本站推荐顺序与月付、年付价格一览。' },
+  { href: '/cheap-airport/', title: '便宜机场推荐', description: '按月付、年付价格从低到高排列。' },
+  ...(speed && hasRealSpeedData(speed) ? [{ href: `/speed-test/${brand.slug}/`, title: `${n}机场测速报告` }] : []),
+  { href: '/guide/clash-verge-rev-windows-tutorial-2026/', title: 'Clash Verge Rev 使用教程（Windows）' },
+  { href: '/knowledge/line-types-explained/', title: '直连、中转、IPLC 与 IEPL 的区别' },
+];
+const schema = articleSchema({ title, description, path: pagePath, publishedAt: entry?.data.publishedAt ?? entry?.data.createdAt ?? new Date('2026-08-23T00:00:00+08:00'), updatedAt: new Date(`${UPDATED}T00:00:00+08:00`), image: img?.src });
+const indexable = entry ? isPublishable(entry) : false;
 ---
-<BaseLayout title={entry?.data.title ?? `${brand.name}机场测评｜找机场`} description={entry?.data.description ?? `${brand.name}机场的独立测评页面。`} indexable={entry ? isPublishable(entry) : false} ogType="article" keywords={keywords} socialImage={avatarImg?.src}>
+<BaseLayout title={title} description={description} indexable={indexable} ogType="article">
 <JsonLd data={schema} />
-<main class="page-shell detail-page"><Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场测评',href:'/jichang/'},{label:`${brand.name}机场测评`}]} />
-<section class="review-hero"><div><div class="detail-meta"><span class="badge">品牌测评</span><span>优先级 {brand.rank}</span><span>资料状态：{Content ? articleStatus : '核验中'}</span></div><h1>{entry?.data.title ?? `${brand.name}机场测评`}</h1><p>{entry?.data.description ?? '价格、套餐、线路和使用表现将在内容阶段依据可核验资料逐项填写。'}</p><div class="hero-actions"><AffiliateButton brand={brand} placement="hero" sourcePage={pagePath} /><a class="button button-secondary" href={`/speed-test/${brand.slug}/`}>查看测速资料</a></div><small>提示：通过本站链接访问官网，只代表您的访问意向，不代表已完成注册或购买操作。</small></div><aside class="verdict-card"><span>文章重点</span><strong>{Content ? articleVerdict : '等待资料核验'}</strong><p>{Content ? articleVerdictNote : '关键价格与服务信息核验前，不给出推荐结论。'}</p></aside></section>
-{Content ? <section class="content-layout"><article class="article-content">{avatarImg && <Image class="article-brand-image" src={avatarImg} width={150} height={150} alt={`${brand.name}机场品牌标识`} loading="eager" />}<Content /><RelatedLinks links={reviewLinks} title={`${brand.name}相关资料`} /></article><aside class="toc-card"><b>本页目录</b>{tocItems.map(([href,label]) => <a href={href}>{label}</a>)}</aside></section> : <section class="content-layout"><article><div class="content-placeholder"><h2>测评内容结构</h2><div class="skeleton-lines"><i></i><i></i><i></i></div><p>后续补充套餐价格、优点不足、节点线路、流媒体及 AI 服务、适用人群和常见问题。</p></div></article><aside class="toc-card"><b>本页目录</b><a href="#">结论摘要</a><a href="#">套餐与价格</a><a href="#">线路与节点</a></aside></section>}
-</main></BaseLayout>
+<main class="page-shell detail-page">
+  <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '机场测评', href: '/jichang/' }, { label: `${n}机场测评` }]} />
+  <section class="review-hero">
+    <div>
+      <div class="detail-meta"><span class="badge badge-primary">本站推荐第 {brand.rank} 名</span><span>更新于 <time datetime={UPDATED}>{UPDATED_LABEL}</time></span></div>
+      <h1>{n}机场怎么样？2026 测评与套餐价格</h1>
+      <p>{n}{priceBits ? `：${priceBits}` : ''}{nodes ? `；本站记录到 ${nodes} 个节点` : ''}。下面是{n}的套餐价格、适合人群、注意事项和常见问题。</p>
+      <div class="hero-actions"><Go slug={brand.slug} from={pagePath} placement="hero" label={`前往${n}官网`} />{p.promo && <Promo code={p.promo} />}</div>
+      <small>通过本站链接购买，本站可能获得推广佣金，不影响你支付的价格。</small>
+    </div>
+    <aside class="verdict-card">
+      <span>一句话总结</span>
+      <strong>{p.month ? `月付 ${yuan(p.month.price)} 起` : p.year ? `年付 ${yuan(p.year.price)} 起` : p.once ? `不限时 ${yuan(p.once.price)} 起` : '价格以官网为准'}</strong>
+      <p>{p.month ? `入门套餐每月 ${fmtGB(p.month.gb)}，可以先买一个月试用。` : '没有月付，适合确定要长期用的人。'}{p.promo ? ` 优惠码：${p.promo}` : ''}</p>
+    </aside>
+  </section>
+
+  <section class="content-layout">
+    <article class="article-content">
+      <h2 id="summary">{n}机场套餐价格一览</h2>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">类型</th><th scope="col">最便宜套餐</th><th scope="col">价格</th><th scope="col">流量</th></tr></thead>
+        <tbody>
+          {p.month && <tr><td>月付</td><td>{p.month.name}</td><td class="fj-num fj-price">{yuan(p.month.price)}/月</td><td>{fmtGB(p.month.gb)}/月</td></tr>}
+          {p.quarter && <tr><td>季付</td><td>{p.quarter.name}</td><td class="fj-num">{yuan(p.quarter.price)}/季</td><td>{fmtGB(p.quarter.gb)}/月</td></tr>}
+          {p.year && <tr><td>年付</td><td>{p.year.name}</td><td class="fj-num">{yuan(p.year.price)}/年</td><td>{fmtGB(p.year.gb)}/月</td></tr>}
+          {p.once && <tr><td>不限时</td><td>{p.once.name}</td><td class="fj-num">{yuan(p.once.price)}</td><td>{fmtGB(p.once.gb)} 总量</td></tr>}
+        </tbody>
+      </table></div>
+      <p class="fj-muted">完整套餐见下方“套餐价格”表。价格整理于 {UPDATED_LABEL}，以官网结算页为准。</p>
+
+      <h2 id="fit">{n}适合谁</h2>
+      <ul>{fits.map((x) => <li>{x}</li>)}</ul>
+      <h2 id="caution">购买{n}前要注意</h2>
+      <ul>{cautions.map((x) => <li>{x}</li>)}</ul>
+
+      {Content && <Content />}
+
+      <Faq items={faq} title={`${n}机场常见问题`} />
+      <div class="fj-callout"><div class="fj-actions" style="margin-top:0"><Go slug={brand.slug} from={pagePath} placement="article-end" label={`前往${n}官网`} />{p.promo && <Promo code={p.promo} />}<a class="fj-link" href="/recommend/">看其他机场推荐 →</a></div></div>
+      <RelatedLinks links={reviewLinks} title={`${n}相关阅读`} />
+    </article>
+    <aside class="toc-card"><b>本页目录</b><a href="#summary">套餐价格一览</a><a href="#fit">适合谁</a><a href="#caution">购买前注意</a></aside>
+  </section>
+</main>
+</BaseLayout>

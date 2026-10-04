@@ -1,0 +1,12 @@
+---
+interface Props { code: string }
+const { code } = Astro.props;
+---
+<span class="fj-promo">优惠码 <code>{code}</code><button type="button" data-copy={code} aria-label={`复制优惠码 ${code}`}>复制</button></span>
+<script is:inline>
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest && e.target.closest('.fj-promo button');
+    if (!b || b.dataset.done) return;
+    navigator.clipboard?.writeText(b.dataset.copy).then(() => { const t = b.textContent; b.textContent = '已复制'; setTimeout(() => (b.textContent = t), 1500); });
+  });
+</script>

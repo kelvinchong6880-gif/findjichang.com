@@ -1,36 +1,83 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateButton from '../components/AffiliateButton.astro';
+import JsonLd from '../components/JsonLd.astro';
+import PickCard from '../components/fj/PickCard.astro';
+import RankTable from '../components/fj/RankTable.astro';
+import Faq from '../components/fj/Faq.astro';
 import { brands } from '../data/brands';
-import { Image } from 'astro:assets';
+import { rows, byMonthPrice, byYearPrice, yuan, fmtGB, UPDATED_LABEL, UPDATED_MONTH } from '../data/plans';
+import { reasons } from '../data/picks';
+import { itemListSchema } from '../lib/structured-data';
 
-const featured = brands.slice(0, 3);
-
-
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}', { eager: true });
-const getImage = (slug: string) => images[`/src/assets/brands/${slug}.png`]?.default || images[`/src/assets/brands/${slug}.jpg`]?.default;
-
+const top3 = rows.slice(0, 3);
+const top10 = rows.slice(0, 10);
+const cheapest = byMonthPrice[0];
+const cheapTop = byMonthPrice.filter((r) => r.brand.rank <= 10)[0];
 const needs = [
-  ['预算优先', '从套餐价格、流量和倍率开始比较', '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>', '/recommend/feimao-yun/'],
-  ['稳定优先', '重点查看晚高峰表现与线路情况', '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>', '/recommend/weifeng-stability/'],
-  ['流媒体与 AI', '核对 Netflix、Disney+ 与 AI 服务解锁资料', '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><polygon points="10 8 15 10 10 12 10 8"/></svg>', '/recommend/firefly-streaming-ai/'],
+  { t: '机场推荐', d: `按需求挑好的前十名，附价格和推荐理由。`, href: '/recommend/' },
+  { t: '机场排行榜', d: `${brands.length} 家机场排名，一张表看清月付、年付价格。`, href: '/ranking/' },
+  { t: '便宜机场', d: `月付最低 ${yuan(cheapest.plan.month!.price)} 起，${byMonthPrice.filter((r) => r.plan.month!.price <= 20).length} 家在 ¥20 以内。`, href: '/cheap-airport/' },
+  { t: '性价比机场', d: '按每 GB 单价排序，流量用得多的人看这里。', href: '/best-value-airport/' },
+  { t: 'ChatGPT / Netflix', d: 'Firefly 流媒体与 AI 使用指南，节点怎么选。', href: '/recommend/firefly-streaming-ai/' },
+  { t: '新手使用教程', d: 'Clash Verge Rev、小火箭、v2rayNG 导入订阅步骤。', href: '/guide/' },
 ];
+const faq = [
+  { q: '机场是什么？', a: '“机场”是提供代理节点订阅的服务，买了之后把订阅链接导入 Clash、小火箭等客户端，就能访问 Google、YouTube、ChatGPT 等海外网站。' },
+  { q: '2026 年推荐哪个机场？', a: `本站${UPDATED_MONTH}机场推荐前三名是 ${top3.map((r) => r.brand.name).join('、')}。新手想先试用，可以买${cheapTop.brand.name}月付 ${yuan(cheapTop.plan.month!.price)}（${fmtGB(cheapTop.plan.month!.gb)}）；用得少可以买年付小包，一年 ${yuan(byYearPrice[0].plan.year!.price)} 起。` },
+  { q: '机场多少钱一个月？', a: `本站收录的 ${brands.length} 家机场，月付入门价大多在 ¥15–¥30，每月 100–200GB；年付小包一年 ¥80–¥120。` },
+  { q: '买了机场怎么用？', a: '在机场后台复制订阅链接，Windows 用 Clash Verge Rev、iPhone 用小火箭、安卓用 Clash Meta 或 v2rayNG，导入订阅后选择节点即可。本站使用教程有详细步骤。' },
+];
+const title = `机场推荐2026：${brands.length}家机场测评、价格对比与排行榜｜找机场`;
+const description = `找机场整理${brands.length}家机场的测评、套餐价格和节点资料，给出2026年机场推荐前十名、机场排行榜、便宜机场和性价比机场对比，月付最低 ${yuan(cheapest.plan.month!.price)} 起，并提供 Clash、小火箭等客户端新手教程（${UPDATED_MONTH}更新）。`;
 ---
-<BaseLayout title="找机场｜2026年最新机场测评、真实测速报告与科学上网新手教程汇总" description="找机场是一个专注于提供客观中立的机场测评、真实测速数据分析、详细套餐规格对比以及各平台客户端使用教程的导航网站。我们致力于帮助用户在注册购买任何网络服务前，全面了解服务商的价格陷阱、晚高峰节点表现、流媒体解锁能力与潜在的使用风险，让你找到真正适合自己的高速稳定机场。">
+<BaseLayout title={title} description={description}>
+  <JsonLd data={itemListSchema(`${UPDATED_MONTH}机场推荐`, top10.map((r) => ({ name: `${r.brand.name}机场`, path: `/jichang/${r.brand.slug}/` })))} />
   <main>
-    <section class="hero"><div class="hero-glow"></div><div class="page-shell hero-grid"><div class="hero-copy"><p class="eyebrow"><span></span> 独立整理 · 持续更新</p><h1>找到真正<br /><em>适合你的机场</em></h1><p class="hero-lead">汇总机场测评、测速资料、套餐信息和使用教程，帮助你在注册前看清价格、表现与使用风险。</p><div class="hero-actions"><a class="button" href="/recommend/">查看机场推荐 <span>→</span></a><a class="button button-secondary" href="/jichang/">浏览机场测评</a></div><p class="hero-note"><i>✓</i> 资料已明确标注来源与采集日期</p></div><div class="decision-card"><div class="decision-head"><span>选择参考</span><span class="live-dot">持续更新</span></div><div class="decision-score"><div><strong>{brands.length}</strong><span>品牌档案</span></div><i></i><div><strong>{brands.length * 2}</strong><span>测评与测速页</span></div></div><ul><li><span>01</span><div><b>先看需求</b><small>预算、稳定性、使用场景</small></div></li><li><span>02</span><div><b>再看证据</b><small>来源、时间与测试条件</small></div></li><li><span>03</span><div><b>最后注册</b><small>核实价格、条款与风险</small></div></li></ul></div></div></section>
-    <section class="trust-strip"><div class="page-shell"><div><b>资料透明</b><span>标注来源与采集时间</span></div><div><b>拒绝猜测</b><span>未核验信息明确说明</span></div><div><b>新手友好</b><span>用简单语言解释复杂概念</span></div><div><b>客观中立</b><span>不为服务商提供保证</span></div></div></section>
-    <section class="page-shell home-section"><div class="section-heading"><div><p class="eyebrow">优先整理</p><h2>重点品牌测评</h2></div><a class="text-link" href="/jichang/">查看全部 {brands.length} 家 <span>→</span></a></div><div class="featured-grid">{featured.map((brand, index) => {
-      const avatarImg = getImage(brand.slug);
-      return <article class="featured-card">
-        <div class="brand-card-top">
-          {avatarImg ? <Image src={avatarImg} width={48} height={48} alt={`${brand.name}品牌头像`} loading={index < 3 ? "eager" : "lazy"} class="brand-avatar-img large" /> : <span class="brand-avatar large">{brand.name.slice(0,1)}</span>}
-          <span class:list={['badge', index === 0 && 'badge-primary']}>{index === 0 ? '近期收录' : '重点关注'}</span>
-        </div>
-        <h3>{brand.name}</h3><p>套餐、节点与来源资料已按证据边界整理。</p><div class="status-row"><span><i style="background:var(--green)"></i>资料已整理</span><span>持续复核</span></div><div style="margin: 18px 0;"><AffiliateButton brand={brand} placement="summary" sourcePage="/" /></div><div class="card-actions"><a class="button button-secondary" href={`/jichang/${brand.slug}/`}>查看测评</a><a class="text-link" href={`/speed-test/${brand.slug}/`}>测速资料 →</a></div></article>
-    })}</div></section>
+    <section class="hero"><div class="hero-glow"></div><div class="page-shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> {UPDATED_MONTH}更新 · 收录 {brands.length} 家</p>
+        <h1>机场推荐<br /><em>2026 测评与价格对比</em></h1>
+        <p class="hero-lead">整理 {brands.length} 家机场的套餐价格、流量和节点资料，按需求告诉你买哪家。月付最低 {yuan(cheapest.plan.month!.price)} 起，第一次买建议先月付试用。</p>
+        <div class="hero-actions"><a class="button" href="/recommend/">查看机场推荐 <span>→</span></a><a class="button button-secondary" href="/ranking/">机场排行榜</a></div>
+        <p class="hero-note"><i>✓</i> 价格整理于 {UPDATED_LABEL}，每家都有独立测评页</p>
+      </div>
+      <div class="decision-card">
+        <div class="decision-head"><span>推荐前三名</span><span class="live-dot">{UPDATED_MONTH}</span></div>
+        <ul style="margin-top:16px">
+          {top3.map((r, i) => <li><span>0{i + 1}</span><div><b><a href={`/jichang/${r.brand.slug}/`}>{r.brand.name}机场</a></b><small>{r.plan.month ? `月付 ${yuan(r.plan.month.price)} · ${fmtGB(r.plan.month.gb)}` : ''}{r.plan.year ? ` / 年付 ${yuan(r.plan.year.price)}` : ''}</small></div></li>)}
+        </ul>
+      </div>
+    </div></section>
 
-    <section class="needs-section"><div class="page-shell"><div class="section-heading"><div><p class="eyebrow">按需求选择</p><h2>不必从 {brands.length} 家里盲选</h2></div><p>先确定最重要的需求，再缩小选择范围。</p></div><div class="needs-grid">{needs.map(([title, desc, icon, href]) => <a href={href} class="need-card"><span class="icon-wrap" set:html={icon} /><div class="need-content"><h3>{title}</h3><p>{desc}</p></div><div class="need-action"><span>查看推荐指南</span><i>→</i></div></a>)}</div></div></section>
-    <section class="page-shell methodology"><div><p class="eyebrow">我们的资料原则</p><h2>每个结论，都应该能找到依据</h2><p>本站区分服务商公开资料、后台节点快照、第三方样本和独立测试。只有保留测试日期、设备、网络、时段与原始记录的结果，才会标注为本站实测。</p><a class="text-link" href="/methodology/">查看完整方法说明 <span>→</span></a></div><ol><li><span>1</span><div><b>核验</b><p>记录资料来源、采集日期和适用边界</p></div></li><li><span>2</span><div><b>测试</b><p>具备完整环境与原始记录时才标注实测</p></div></li><li><span>3</span><div><b>更正</b><p>发现变化或错误后更新正文并保留说明</p></div></li></ol></section>
+    <div class="fj-page" style="padding-top:8px">
+      <section class="fj-section">
+        <h2>按需求找机场</h2>
+        <div class="fj-grid">{needs.map((x) => <a class="fj-box" href={x.href}><strong>{x.t} →</strong><span>{x.d}</span></a>)}</div>
+      </section>
+
+      <section class="fj-section">
+        <h2>{UPDATED_MONTH}机场推荐前三名</h2>
+        <div class="fj-cards">{top3.map((r, i) => <PickCard brand={r.brand} num={i + 1} reason={reasons[r.brand.slug]} from="/" top={i === 0} />)}</div>
+        <p style="margin-top:14px"><a class="fj-link" href="/recommend/">查看完整机场推荐前十名 →</a></p>
+      </section>
+
+      <section class="fj-section">
+        <h2>机场排行榜前十名</h2>
+        <RankTable rows={top10} from="/" mode="rank" />
+        <p><a class="fj-link" href="/ranking/">查看全部 {brands.length} 家机场排行 →</a></p>
+      </section>
+
+      <section class="fj-section">
+        <h2>新手怎么选机场</h2>
+        <div class="fj-grid">
+          <div class="fj-box"><strong>1. 估算流量</strong><span>查资料约 50GB/月，每天刷视频约 150GB，常看 4K 约 300GB。</span></div>
+          <div class="fj-box"><strong>2. 定预算</strong><span>月付入门一般 ¥15–¥30；只想一年付一次，看 ¥80–¥120 的年付小包。</span></div>
+          <div class="fj-box"><strong>3. 先月付试用</strong><span>晚上高峰期用几天，稳定再续费。不要一次买两三年。</span></div>
+          <div class="fj-box"><strong>4. 导入客户端</strong><span>复制订阅链接导入 Clash Verge Rev、小火箭等，看 <a href="/guide/">使用教程</a>。</span></div>
+        </div>
+      </section>
+
+      <Faq items={faq} title="机场推荐常见问题" />
+    </div>
   </main>
 </BaseLayout>

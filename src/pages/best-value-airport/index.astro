@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import RankTable from '../../components/fj/RankTable.astro';
+import PickCard from '../../components/fj/PickCard.astro';
+import Faq from '../../components/fj/Faq.astro';
+import { rows, byPerGB, perGB, yuan, fmtGB, UPDATED, UPDATED_LABEL, UPDATED_MONTH } from '../../data/plans';
+import { itemListSchema, articleSchema } from '../../lib/structured-data';
+
+const path = '/best-value-airport/';
+// 极速cloud 为 10 倍倍率，账面单价不可比，单独说明
+const table = byPerGB.filter((r) => r.brand.slug !== 'jisu-cloud');
+const picks = rows.filter((r) => r.plan.month && r.plan.month.gb >= 150 && perGB(r.plan.month) <= 0.17).slice(0, 5);
+const best = table[0];
+const usage = [
+  { u: '查资料、用 ChatGPT', gb: 50, tip: '年付小包就够，一年 ¥80–¥100。' },
+  { u: '每天刷 1–2 小时视频', gb: 150, tip: '月付 ¥20–¥25 的入门套餐。' },
+  { u: '常看 4K、YouTube', gb: 300, tip: '月付 ¥40–¥50 的中档套餐。' },
+  { u: '全家共用、经常下载', gb: 600, tip: '看每 GB 单价最低的大流量套餐。' },
+];
+const pickReason = (r: (typeof rows)[number]) => `月付 ${yuan(r.plan.month!.price)} 每月 ${fmtGB(r.plan.month!.gb)}，每 GB 约 ¥${perGB(r.plan.month!).toFixed(3)}；在本站推荐中排第 ${r.brand.rank} 名。`;
+const faq = [
+  { q: '性价比最高的机场是哪家？', a: `只看月付入门套餐的每 GB 单价，${best.brand.name}最低：${yuan(best.plan.month!.price)} 每月 ${fmtGB(best.plan.month!.gb)}，每 GB 约 ¥${perGB(best.plan.month!).toFixed(3)}。但性价比还要看稳定性和倍率，综合来看本站推荐 ${picks.slice(0, 3).map((r) => r.brand.name).join('、')}。` },
+  { q: '性价比怎么算？', a: '用套餐价格除以每月流量，得到每 GB 单价。例如 ¥25 买 150GB，每 GB 约 ¥0.167。同时要看倍率：10 倍倍率的套餐，实际每 GB 成本要乘以 10。' },
+  { q: '我每个月要多少流量？', a: '查资料、用 ChatGPT 约 50GB；每天刷 1–2 小时视频约 150GB；常看 4K 约 300GB；全家共用 600GB 以上。先按用量选档位，再比单价。' },
+  { q: '大流量套餐是不是更划算？', a: '单价通常更低，但如果用不完就是浪费。流量不够可以在后台加购流量包，比一开始就买大套餐更灵活。' },
+];
+const title = `性价比机场推荐2026：按每GB单价排序的高性价比机场（${UPDATED_MONTH}）`;
+const description = `性价比机场推荐（${UPDATED_MONTH}更新）：把${table.length}家机场的月付入门套餐按每 GB 单价从低到高排序，最低约 ¥${perGB(best.plan.month!).toFixed(2)}/GB，并按查资料、刷视频、看 4K、全家共用四种用量告诉你该买哪一档，附本站推荐的高性价比机场。`;
+const schemas = [
+  itemListSchema(`${UPDATED_MONTH}性价比机场推荐`, picks.map((r) => ({ name: `${r.brand.name}机场`, path: `/jichang/${r.brand.slug}/` }))),
+  articleSchema({ title, description, path, publishedAt: new Date('2026-10-04T00:00:00+08:00'), updatedAt: new Date(`${UPDATED}T00:00:00+08:00`) }),
+];
+---
+<BaseLayout title={title} description={description} ogType="article">
+  <JsonLd data={schemas} />
+  <main class="fj-page">
+    <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '性价比机场推荐' }]} />
+    <p class="fj-updated">更新于 <time datetime={UPDATED}>{UPDATED_LABEL}</time></p>
+    <h1>性价比机场推荐 2026：按每 GB 单价排序</h1>
+    <p class="fj-lead">便宜不一定划算。这一页用“月付价格 ÷ 每月流量”算出每 GB 单价，把 {table.length} 家机场从低到高排好，再按你的用量告诉你买哪一档最合适。</p>
+    <p class="fj-note">价格整理于 {UPDATED_LABEL}，以官网结算页为准。单价表按数据客观排序；“推荐的高性价比机场”按本站推荐顺序挑选（每月 150GB 以上、每 GB 不超过 ¥0.17）。</p>
+
+    <section class="fj-section">
+      <h2>先看你每月要多少流量</h2>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">用法</th><th scope="col">每月大约</th><th scope="col">建议</th></tr></thead>
+        <tbody>{usage.map((x) => <tr><td><strong>{x.u}</strong></td><td class="fj-num">{fmtGB(x.gb)}</td><td>{x.tip}</td></tr>)}</tbody>
+      </table></div>
+    </section>
+
+    <section class="fj-section">
+      <h2>推荐的高性价比机场</h2>
+      <div class="fj-cards">{picks.map((r, i) => <PickCard brand={r.brand} num={i + 1} reason={pickReason(r)} from={path} top={i === 0} />)}</div>
+    </section>
+
+    <section class="fj-section">
+      <h2>机场每 GB 单价排行（月付入门套餐）</h2>
+      <RankTable rows={table} from={path} mode="pergb" />
+      <p class="fj-muted">极速cloud 账面 ¥8.9 / 100GB，但官网标注 10 倍倍率（原生节点 15 倍），实际每 GB 成本约 ¥0.89 以上，所以没有放进上表。</p>
+    </section>
+
+    <section class="fj-section">
+      <h2>怎么判断一个机场划不划算</h2>
+      <ul class="fj-list">
+        <li><strong>单价</strong>：月付价格 ÷ 每月流量，越低越好。</li>
+        <li><strong>倍率</strong>：高倍率节点会成倍扣流量，单价要乘以倍率。</li>
+        <li><strong>线路</strong>：IPLC / IEPL 专线晚上更稳，同价位的专线比中转更值。</li>
+        <li><strong>付款周期</strong>：年付通常再省 20% 左右，但先月付试用。</li>
+      </ul>
+      <p>只想找最便宜的，看 <a class="fj-link" href="/cheap-airport/">便宜机场</a>；想看综合推荐，看 <a class="fj-link" href="/recommend/">机场推荐</a>。</p>
+    </section>
+
+    <Faq items={faq} title="性价比机场常见问题" />
+  </main>
+</BaseLayout>

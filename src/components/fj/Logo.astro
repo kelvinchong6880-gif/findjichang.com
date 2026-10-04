@@ -1,0 +1,8 @@
+---
+import { Image } from 'astro:assets';
+import { brandImage } from '../../lib/brand-image';
+interface Props { slug: string; name: string; size?: number; eager?: boolean }
+const { slug, name, size = 32, eager = false } = Astro.props;
+const img = brandImage(slug);
+---
+{img ? <Image src={img} alt={`${name}机场 logo`} width={size} height={size} loading={eager ? 'eager' : 'lazy'} class="fj-logo" /> : <span class="fj-logo fj-logo-text" style={`width:${size}px;height:${size}px`}>{name.slice(0, 1)}</span>}

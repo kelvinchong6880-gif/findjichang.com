@@ -1,0 +1,30 @@
+---
+import type { Brand } from '../../data/brands';
+import { planOf, monthLabel, yearLabel, fmtGB, yuan } from '../../data/plans';
+import Logo from './Logo.astro';
+import Go from './Go.astro';
+import Promo from './Promo.astro';
+interface Props { brand: Brand; tag?: string; reason?: string; from: string; top?: boolean; num?: number }
+const { brand, tag, reason, from, top = false, num } = Astro.props;
+const p = planOf(brand.slug);
+---
+<article class:list={['fj-card', top && 'is-top']}>
+  <div class="fj-card-head">
+    {num !== undefined && <span class:list={['fj-rank', num === 1 && 'is-1']}>{num}</span>}
+    <Logo slug={brand.slug} name={brand.name} size={44} eager={top} />
+    <h3><a href={`/jichang/${brand.slug}/`}>{brand.name}机场</a></h3>
+    {tag && <span class="fj-tag">{tag}</span>}
+  </div>
+  {reason && <p class="fj-reason">{reason}</p>}
+  <dl class="fj-facts">
+    <div><dt>月付入门</dt><dd>{monthLabel(p)}</dd></div>
+    <div><dt>年付最低</dt><dd>{yearLabel(p)}</dd></div>
+    {p.once && <div><dt>不限时</dt><dd>{yuan(p.once.price)} · {fmtGB(p.once.gb)}</dd></div>}
+  </dl>
+  {p.note && <p class="fj-muted">{p.note}</p>}
+  <div class="fj-actions">
+    <Go slug={brand.slug} from={from} />
+    {p.promo && <Promo code={p.promo} />}
+    <a class="fj-link" href={`/jichang/${brand.slug}/`}>看{brand.name}测评 →</a>
+  </div>
+</article>

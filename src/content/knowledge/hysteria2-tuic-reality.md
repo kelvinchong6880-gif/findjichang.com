@@ -1,6 +1,6 @@
 ---
 title: "Hysteria2、TUIC 和 REALITY 分别适合什么网络？"
-description: "区分基于 UDP 的方案与传输安全方案。"
+description: "Hysteria2、TUIC 和 VLESS REALITY 有什么区别、分别适合什么网络？本文用通俗的话说明基于 UDP 的加速协议和基于 TLS 伪装的安全协议各自的优缺点，以及在丢包严重、运营商限速 UDP 等情况下该怎么选。"
 createdAt: 2026-08-23T19:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
 updatedAt: 2026-08-24T15:45:00+08:00

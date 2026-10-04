@@ -1,6 +1,7 @@
 ---
 import type { Brand } from '../data/brands';
 import { Image } from 'astro:assets';
+import { planOf, entryLabel } from '../data/plans';
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}');
 
@@ -16,7 +17,7 @@ const href = `/go/${brand.slug}/?from=${encodeURIComponent(sourcePage)}&placemen
     {avatarImg && <Image src={avatarImg} alt={brand.name} class="aff-card-avatar" width={36} height={36} loading="lazy" />}
     <div class="aff-card-info">
       <span class="aff-card-name">{brand.name}</span>
-      {brand.minPrice && <span class="aff-card-price">{brand.minPrice}</span>}
+      <span class="aff-card-price">{entryLabel(planOf(brand.slug))}</span>
     </div>
   </div>
   <div class="aff-card-right">

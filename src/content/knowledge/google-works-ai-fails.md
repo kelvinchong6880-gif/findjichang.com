@@ -1,6 +1,6 @@
 ---
 title: "为什么能打开 Google，却打不开 ChatGPT 或 Claude？"
-description: "区分基础连通、服务地区、IP策略和账户状态。"
+description: "为什么开了代理能打开 Google、YouTube，却打不开 ChatGPT 或 Claude？本文区分网络连通、服务支持地区、IP 被识别和账户状态四种原因，告诉你该换哪个地区的节点，以及香港节点为什么用不了 ChatGPT。"
 createdAt: 2026-08-23T19:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
 updatedAt: 2026-08-24T15:45:00+08:00

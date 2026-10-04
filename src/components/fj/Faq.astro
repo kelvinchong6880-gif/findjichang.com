@@ -1,0 +1,11 @@
+---
+import JsonLd from '../JsonLd.astro';
+import { faqSchema, type QA } from '../../lib/faq';
+interface Props { items: QA[]; title?: string }
+const { items, title = '常见问题' } = Astro.props;
+---
+<section class="fj-section">
+  <h2>{title}</h2>
+  {items.map((x) => <div class="fj-qa"><h3>{x.q}</h3><p>{x.a}</p></div>)}
+  <JsonLd data={faqSchema(items)} />
+</section>

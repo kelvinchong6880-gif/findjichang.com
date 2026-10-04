@@ -1,0 +1,6 @@
+---
+interface Props { slug: string; from: string; placement?: string; label?: string; small?: boolean }
+const { slug, from, placement = 'recommend-card', label = '前往官网', small = false } = Astro.props;
+const href = `/go/${slug}/?from=${encodeURIComponent(from)}&placement=${placement}`;
+---
+<a class:list={['fj-btn', small && 'fj-btn-sm']} href={href} target="_blank" rel="sponsored nofollow noopener">{label} ↗</a>

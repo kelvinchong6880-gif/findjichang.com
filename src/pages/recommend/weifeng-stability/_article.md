@@ -4,7 +4,7 @@
 
 **提示：** 注册链接会跳转至官方网站。具体的服务条款、隐私、付款和退款均由第三方服务商负责。
 
-[前往微风机场注册页面](/go/weifeng/?from=/recommend/weifeng-stability/&placement=hero)　·　[查看微风机场综合推荐](/recommend/)　·　[查看微风机场资料](/jichang/weifeng/)
+[前往微风机场注册页面](/go/weifeng/?from=/recommend/weifeng-stability/&placement=hero)　·　[查看微风机场综合推荐](/recommend/weifeng/)　·　[查看微风机场资料](/jichang/weifeng/)
 
 ## 为什么“稳定优先”推荐微风机场
 
@@ -163,7 +163,7 @@
 ## 资料来源与关键词说明
 
 - 微风网络公开注册页面，本站于 2026 年 8 月 23 日核对页面品牌、注册字段与条款入口；
-- [微风机场综合推荐](/recommend/)、[微风机场品牌资料](/jichang/weifeng/)与[微风机场测速资料](/speed-test/weifeng/)；
+- [微风机场综合推荐](/recommend/weifeng/)、[微风机场品牌资料](/jichang/weifeng/)与[微风机场测速资料](/speed-test/weifeng/)；
 - [本站评测与证据方法](/methodology/)；
 - [隐私政策](/privacy/)与[免责声明](/disclaimer/)。
 

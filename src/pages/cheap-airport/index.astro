@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import RankTable from '../../components/fj/RankTable.astro';
+import PickCard from '../../components/fj/PickCard.astro';
+import Logo from '../../components/fj/Logo.astro';
+import Go from '../../components/fj/Go.astro';
+import Faq from '../../components/fj/Faq.astro';
+import { rows, byMonthPrice, byYearPrice, yuan, fmtGB, UPDATED, UPDATED_LABEL, UPDATED_MONTH } from '../../data/plans';
+import { itemListSchema, articleSchema } from '../../lib/structured-data';
+
+const path = '/cheap-airport/';
+const under20 = byMonthPrice.filter((r) => r.plan.month!.price <= 20);
+const picks = rows.filter((r) => r.plan.month && r.plan.month.price <= 20).slice(0, 5);
+const onceRows = rows.filter((r) => r.plan.once).sort((a, b) => a.plan.once!.price - b.plan.once!.price);
+const cheapest = byMonthPrice[0];
+const pickReason = (r: (typeof rows)[number]) => `月付 ${yuan(r.plan.month!.price)} 每月 ${fmtGB(r.plan.month!.gb)}${r.plan.year ? `，年付 ${yuan(r.plan.year.price)} 每月 ${fmtGB(r.plan.year.gb)}` : ''}；在本站推荐中排第 ${r.brand.rank} 名。`;
+const faq = [
+  { q: '最便宜的机场是哪家？', a: `按月付入门价算，${cheapest.brand.name}最便宜：${yuan(cheapest.plan.month!.price)}/月 ${fmtGB(cheapest.plan.month!.gb)}。不过价格特别低的机场要多注意稳定性，建议先买一个月试用。` },
+  { q: '20 元以内能买到什么机场？', a: `本站收录的机场里，有 ${under20.length} 家月付入门价在 ¥20 以内，例如 ${picks.map((r) => `${r.brand.name}（${yuan(r.plan.month!.price)}/${fmtGB(r.plan.month!.gb)}）`).join('、')}。每月 100GB 左右，日常查资料、刷视频够用。` },
+  { q: '便宜机场能用吗？会不会很卡？', a: '便宜不等于不能用，但价格很低的套餐常见三个问题：走 BGP 中转、晚上高峰期变慢；节点倍率高（例如 10 倍倍率，100GB 实际只能用 10GB）；跑路风险更大。先月付、看清倍率就能避开大部分坑。' },
+  { q: '年付便宜还是月付便宜？', a: `年付折算下来更便宜，例如年付小包一年 ${yuan(byYearPrice[0].plan.year!.price)} 起，折合每月不到 ¥7，但流量一般只有每月 40–60GB。第一次买建议先月付，用稳了再换年付。` },
+  { q: '有没有不按月清零的便宜机场？', a: `有，叫“不限时套餐”或“流量包”，买多少用多少，不按月重置。本站收录的最便宜的是${onceRows[0].brand.name}：${yuan(onceRows[0].plan.once!.price)} 买 ${fmtGB(onceRows[0].plan.once!.gb)}，适合偶尔用或当备用。` },
+];
+const title = `便宜机场推荐2026：月付20元以内的低价机场排行（${UPDATED_MONTH}）`;
+const description = `便宜机场推荐（${UPDATED_MONTH}更新）：按月付入门价从低到高列出${byMonthPrice.length}家机场，最低 ${yuan(cheapest.plan.month!.price)}/月起，另附年付最便宜机场和不限时流量包，并说明便宜机场常见的倍率、中转和跑路风险，帮你花最少的钱买到能用的机场。`;
+const schemas = [
+  itemListSchema(`${UPDATED_MONTH}便宜机场推荐`, picks.map((r) => ({ name: `${r.brand.name}机场`, path: `/jichang/${r.brand.slug}/` }))),
+  articleSchema({ title, description, path, publishedAt: new Date('2026-10-04T00:00:00+08:00'), updatedAt: new Date(`${UPDATED}T00:00:00+08:00`) }),
+];
+---
+<BaseLayout title={title} description={description} ogType="article">
+  <JsonLd data={schemas} />
+  <main class="fj-page">
+    <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '便宜机场推荐' }]} />
+    <p class="fj-updated">更新于 <time datetime={UPDATED}>{UPDATED_LABEL}</time></p>
+    <h1>便宜机场推荐 2026：月付 20 元以内的低价机场</h1>
+    <p class="fj-lead">预算有限、第一次买机场，先看这一页。本站收录的机场里，有 {under20.length} 家月付入门价在 ¥20 以内，最低 {yuan(cheapest.plan.month!.price)}/月。下面按价格从低到高排列，并告诉你便宜机场要注意什么。</p>
+    <p class="fj-note">价格整理于 {UPDATED_LABEL}，以官网结算页为准。表格按价格客观排序；“推荐的便宜机场”按本站推荐顺序挑选。</p>
+
+    <section class="fj-section">
+      <h2>推荐的便宜机场（月付 ¥20 以内）</h2>
+      <div class="fj-cards">{picks.map((r, i) => <PickCard brand={r.brand} num={i + 1} reason={pickReason(r)} from={path} top={i === 0} />)}</div>
+    </section>
+
+    <section class="fj-section">
+      <h2>月付最便宜的机场排行</h2>
+      <p>按月付入门价从低到高。价格一样时，按本站推荐顺序排。</p>
+      <RankTable rows={byMonthPrice} from={path} mode="month" />
+      <p class="fj-muted">注意：极速cloud 官网标注 10 倍流量倍率，¥8.9 的 100GB 实际约可用 10GB；九云、气泡云等超低价机场建议先买一个月观察。</p>
+    </section>
+
+    <section class="fj-section">
+      <h2>年付最便宜的机场</h2>
+      <p>一年只付一次，折合每月 ¥7–¥10，适合只查资料、用 ChatGPT 的轻度用户。</p>
+      <RankTable rows={byYearPrice.slice(0, 12)} from={path} mode="year" />
+    </section>
+
+    <section class="fj-section">
+      <h2>不限时流量包（不按月清零）</h2>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">机场</th><th scope="col">套餐</th><th scope="col">价格</th><th scope="col">流量</th><th scope="col">官网</th></tr></thead>
+        <tbody>{onceRows.map((r) => <tr><td><a class="fj-brand" href={`/jichang/${r.brand.slug}/`}><Logo slug={r.brand.slug} name={r.brand.name} size={28} />{r.brand.name}</a></td><td>{r.plan.once!.name}</td><td class="fj-num fj-price">{yuan(r.plan.once!.price)}</td><td>{fmtGB(r.plan.once!.gb)}</td><td><Go slug={r.brand.slug} from={path} placement="comparison-table" label="官网" small /></td></tr>)}</tbody>
+      </table></div>
+    </section>
+
+    <section class="fj-section">
+      <h2>买便宜机场的 4 个注意事项</h2>
+      <ol class="fj-list">
+        <li><strong>看月付价，不看“¥7 起”</strong>：很多首页写的是年付除以 12 的价格，点进去只能买年付。</li>
+        <li><strong>看倍率</strong>：1 倍率用 1GB 扣 1GB，10 倍率用 1GB 扣 10GB，便宜的大流量套餐经常是高倍率。</li>
+        <li><strong>先月付</strong>：便宜机场跑路风险更高，不要一次买两三年。</li>
+        <li><strong>备一个备用</strong>：主力机场出问题时，有个便宜的不限时流量包可以马上切换。</li>
+      </ol>
+      <p>想比较每 GB 单价，看 <a class="fj-link" href="/best-value-airport/">性价比机场</a>；想看综合推荐，看 <a class="fj-link" href="/recommend/">机场推荐</a>。</p>
+    </section>
+
+    <Faq items={faq} title="便宜机场常见问题" />
+  </main>
+</BaseLayout>

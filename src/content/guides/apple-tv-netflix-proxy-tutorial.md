@@ -72,7 +72,7 @@ bingChecklist:
 
 ## 第七章：高阶防封锁与 DNS 净化策略
 - **独立 DNS 嗅探**：在软路由 OpenClash 中，利用嗅探功能为 `netflix.com` 等核心域名分配纯净的海外 DNS 服务器解析，防止运营商层面的 SNI 阻断与污染。
-- **Fake-IP 模式优化**：启用 Fake-IP (TUN 模式) 配合 NameServer 分流策略，可大幅降低海报墙加载的 DNS 握手延迟，实现影片封面毫秒级的“减少加载等待”体验。
+- **Fake-IP 模式优化**：启用 Fake-IP (TUN 模式) 配合 NameServer 分流策略，可大幅降低海报墙加载的 DNS 握手延迟，实现影片封面毫秒级的“更快打开”体验。
 
 ## 第八章：常见播放报错深度排障 (Q&A)
 

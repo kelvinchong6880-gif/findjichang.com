@@ -5,10 +5,9 @@ import JsonLd from '../../../components/JsonLd.astro';
 import { articleSchema } from '../../../lib/structured-data';
 import { Content as FireflyContent } from './_article.md';
 
-const keywords = ['Firefly机场', 'Firefly机场推荐', 'Firefly机场怎么样', '流媒体机场推荐', 'AI机场推荐', 'Netflix机场推荐', 'ChatGPT机场推荐', 'Firefly Netflix', 'Firefly ChatGPT', '流媒体解锁机场', '2026 机场推荐'];
-const schema = articleSchema({ title: 'Firefly机场推荐：流媒体与 AI 平台兼容性指南（2026）', description: 'Firefly机场支持 Netflix 和 ChatGPT 吗？从节点地区、平台规则、实际播放、账户状态和测试方法进行分析。', path: '/recommend/firefly-streaming-ai/', publishedAt: new Date('2026-08-23T00:00:00+08:00'), updatedAt: new Date('2026-08-23T00:00:00+08:00'), image: '/images/brands/firefly.png' });
+const schema = articleSchema({ title: 'Firefly机场推荐：流媒体与 AI 使用指南（2026）', description: 'Firefly 机场适合看 Netflix、用 ChatGPT 吗？本文整理 Firefly 的套餐价格（月付 Lite ¥25 / 150GB、年付 ¥96）、节点地区、流媒体与 AI 平台的使用方法和排查步骤，帮你判断 Firefly 是否适合追剧和 AI 需求。', path: '/recommend/firefly-streaming-ai/', publishedAt: new Date('2026-08-23T00:00:00+08:00'), updatedAt: new Date('2026-10-04T00:00:00+08:00') });
 ---
-<BaseLayout title="Firefly机场推荐：流媒体与 AI 平台兼容性指南（2026）｜找机场" description="Firefly机场支持 Netflix 和 ChatGPT 吗？从节点地区、平台规则、实际播放、账户状态和测试方法分析流媒体与 AI 兼容性。" socialImage="/images/brands/firefly.png" ogType="article" keywords={keywords}>
+<BaseLayout title="Firefly机场推荐：流媒体与 AI 使用指南（2026）" description="Firefly 机场适合看 Netflix、用 ChatGPT 吗？本文整理 Firefly 的套餐价格（月付 Lite ¥25 / 150GB、年付 ¥96）、节点地区、流媒体与 AI 平台的使用方法和排查步骤，帮你判断 Firefly 是否适合追剧和 AI 需求。" ogType="article">
   <JsonLd data={schema} />
   <SectionPage title="Firefly 流媒体与 AI 推荐指南" description="把“解锁”拆成地区、登录、播放和实际功能，再判断 Firefly 是否适合你的 Netflix 与 AI 使用需求。">
     <div class="content-layout recommend-article"><article class="article-content mt-8"><FireflyContent /></article></div>

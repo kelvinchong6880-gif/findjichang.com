@@ -9,10 +9,10 @@ import RelatedLinks from '../../components/RelatedLinks.astro';
 import BrandFilter from '../../components/BrandFilter.astro';
 import { Image } from 'astro:assets';
 import AffiliateButton from '../../components/AffiliateButton.astro';
+import { planOf, monthLabel, yearLabel } from '../../data/plans';
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brands/*.{png,jpg}');
 
-const prefCount = 7;
 const orderedBrands = brands;
 
 const brandsWithImages = await Promise.all(orderedBrands.map(async (brand) => {
@@ -23,18 +23,17 @@ const brandsWithImages = await Promise.all(orderedBrands.map(async (brand) => {
 
 const schema = itemListSchema(`${brands.length} 家机场资料对比表`, orderedBrands.map((brand) => ({ name: brand.name, path: `/jichang/${brand.slug}/` })));
 const article = articleSchema({ title: `${brands.length} 家机场对比表：价格、资料、测速与注册链接`, description: `整理 ${brands.length} 家机场的起步价、品牌资料、测速页面与站内注册链接；购买前请复核动态价格和条款。`, path: '/compare/', publishedAt: new Date('2026-08-23T00:00:00+08:00') });
-const keywords = ['机场对比', '机场推荐对比', `${brands.length}家机场对比`, '机场价格对比', '机场测速对比', '机场怎么选'];
 const detailedComparisons = (await getCollection('comparisons')).map((entry) => ({ href: `/compare/${entry.id}/`, title: entry.data.title, description: entry.data.description }));
 ---
 
-<BaseLayout title={`${brands.length} 家机场对比表：价格、资料、测速与注册链接｜找机场`} description={`找机场为您独家整理 ${brands.length} 家精选机场的起步价格、品牌详细资料、真实测速报告页面以及站内官方注册链接。我们通过一张完整的对比清单，让您轻松筛选符合预算的选项。请注意，本表格展示顺序不代表绝对性能排名，我们强烈建议您在最终购买与付费前，仔细复核各家的动态价格、退款政策与服务条款。`} ogType="article" keywords={keywords}>
+<BaseLayout title={`机场对比表：${brands.length}家机场价格、流量与测评一览（2026）｜找机场`} description={`机场对比表（2026年10月更新）：把 ${brands.length} 家机场的入门价格、付款周期、测评页和官网入口放在同一张表里，可以按名称、预算和月付、季付、年付筛选，方便快速比较；另附微风、SOGO云、飞猫云的两两对比文章。`} ogType="article">
   <JsonLd data={[schema, article]} />
   <main class="page-shell section-page compare-page">
     <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '机场对比' }]} />
     <header class="compare-heading">
       <p class="eyebrow">{brands.length} 家资料总览</p><h1>机场对比表</h1>
-      <p class="section-lead">把 {brands.length} 家机场的公开入口放在同一张表里，方便先看资料、再看测速，最后决定是否前往注册。前 {prefCount} 家按本站当前展示优先级排列，其余采用固定的随机展示顺序。</p>
-      <div class="compare-notice"><strong>请先看说明：</strong>展示顺序不是速度、稳定性或安全性排名。起步价来自本站当前资料记录，套餐可能调整；注册或付款前请在服务商页面重新核对价格、流量、倍率、退款和并发限制。</div>
+      <p class="section-lead">把 {brands.length} 家机场的公开入口放在同一张表里，按本站推荐顺序排列，一眼看清每家的月付入门价和年付最低价，再点进测评页看完整套餐。</p>
+      <div class="compare-notice"><strong>说明：</strong>价格整理于 2026 年 10 月 4 日，套餐可能调整；付款前请在官网结算页核对价格、流量、倍率和退款规则。排序是本站推荐顺序，不是速度测试排名。</div>
     </header>
 
     <section aria-labelledby="comparison-table-title">
@@ -44,18 +43,18 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
       <BrandFilter targetSelector=".comparison-table tbody tr" />
 
       <div class="comparison-table-wrap"><table class="comparison-table">
-        <caption>{brands.length} 家机场的展示顺序、起步价与资料入口</caption>
-        <thead><tr><th scope="col">顺序</th><th scope="col">机场</th><th scope="col">当前记录起步价</th><th scope="col">资料状态</th><th scope="col">站内资料</th><th scope="col">注册链接</th></tr></thead>
+        <caption>{brands.length} 家机场的推荐顺序、入门价格与测评入口</caption>
+        <thead><tr><th scope="col">排名</th><th scope="col">机场</th><th scope="col">月付入门</th><th scope="col">年付最低</th><th scope="col">测评</th><th scope="col">官网</th></tr></thead>
         <tbody>{brandsWithImages.map((brand, index) => {
           return <tr data-name={brand.name} data-price={brand.pricePerMonth ?? 999} data-billing={(brand.billingCycles || []).join(',')}>
-          <td><span class:list={['rank-number', { featured: index < prefCount }]}>{index + 1}</span></td>
-          <th scope="row"><span class="brand-cell">{brand.avatarImg && <Image src={brand.avatarImg} width={34} height={34} alt={`${brand.name}品牌标识`} loading={index < 8 ? "eager" : "lazy"} />}<span><strong>{brand.name}</strong>{index < prefCount && <small>优先展示</small>}</span></span></th>
-          <td>{brand.minPrice ?? '待核验'}</td><td><span class="status-note">已复核</span></td>
-          <td><span class="table-links"><a href={`/jichang/${brand.slug}/`}>品牌资料</a><a href={`/speed-test/${brand.slug}/`}>测速资料</a></span></td>
+          <td><span class:list={['rank-number', { featured: index < 3 }]}>{index + 1}</span></td>
+          <th scope="row"><span class="brand-cell">{brand.avatarImg && <Image src={brand.avatarImg} width={34} height={34} alt={`${brand.name}品牌标识`} loading={index < 8 ? "eager" : "lazy"} />}<span><strong>{brand.name}</strong>{index < 3 && <small>推荐前三</small>}</span></span></th>
+          <td>{monthLabel(planOf(brand.slug))}</td><td>{yearLabel(planOf(brand.slug))}</td>
+          <td><span class="table-links"><a href={`/jichang/${brand.slug}/`}>{brand.name}测评</a></span></td>
           <td><AffiliateButton brand={brand} placement="comparison-table" sourcePage="/compare/" /></td>
         </tr>})}</tbody>
       </table></div>
-      <p class="table-footnote">“待核验”或“已复核”不代表服务绝对不会变化，只表示本站已尽力确认当前信息。测速页中的第三方图片和历史样本也不能直接代表你所在地区的实际体验。</p>
+      <p class="table-footnote">想按价格排序，看 <a href="/cheap-airport/">便宜机场</a>；想按每 GB 单价排序，看 <a href="/best-value-airport/">性价比机场</a>；想看推荐理由，看 <a href="/recommend/">机场推荐</a>。</p>
     </section>
 
     <article class="article-content compare-guide">
@@ -87,13 +86,13 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
       <p>同理，所谓“稳定率 99.9%”“永久解锁”或“零丢包”都需要长期原始数据支持。本站目前没有足够证据时不会填写这些数字。你可以参考<a href="/knowledge/how-to-read-speed-test/">测速结果阅读指南</a>，自己建立一份包含白天、晚高峰和周末的记录。</p>
 
       <h2>常见问题</h2>
-      <h3>表格前 {prefCount} 名就是性能排名吗？</h3><p>不是。它们是你指定的优先展示顺序，方便读者先查看这些品牌，不代表前面的服务在所有地区、时段和用途上优于后面的服务。</p>
+      <h3>表格的排序是怎么来的？</h3><p>按本站推荐顺序排列，综合了套餐价格、流量、节点数量和资料完整度，不是统一环境下的速度测试排名。完整说明见 <a href="/ranking/">机场排行榜</a>。</p>
       <h3>为什么点击注册会先经过 /go/？</h3><p>站内跳转仅用于统计受欢迎程度，不包含个人身份信息。跳转后的注册、付款、隐私和退款由具体服务商官网处理。</p>
       <h3>起步价可以直接作为购买价格吗？</h3><p>不可以。价格是容易变化的信息，且最低价套餐可能附带周期或规格条件。表格用于初筛，最终应以你进入服务商结算页时看到的套餐和条款为准。</p>
 
       <h2>结论：先缩小范围，再用自己的网络验证</h2>
       <p>面对 {brands.length} 家服务，最有效的顺序是：先按预算和用途缩小到三至五家，再查看品牌资料和测速条件，最后选择短周期进行自己的多时段测试。这样即使服务表现与预期不同，损失也更容易控制。注册链接只是资料流程的最后一步，不应代替前面的核对。</p>
-      <p><strong>最后更新：</strong>2026 年 8 月 23 日。本文不构成购买保证或法律意见；使用相关网络服务前，请了解所在地规则并遵守第三方平台条款。</p>
+      <p><strong>最后更新：</strong>2026 年 10 月 4 日。本文不构成购买保证或法律意见；使用相关网络服务前，请了解所在地规则并遵守第三方平台条款。</p>
       <RelatedLinks links={detailedComparisons} title="查看详细机场对比" />
     </article>
   </main>

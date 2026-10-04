@@ -1,0 +1,78 @@
+/* 找机场 · 关键词页组件（fj- 前缀） */
+.fj-page{width:min(1180px,calc(100% - 48px));margin-inline:auto;padding:36px 0 80px}
+.fj-page h1{margin:10px 0 14px;color:var(--ink);font-size:clamp(28px,4.4vw,44px);line-height:1.25;letter-spacing:-.04em}
+.fj-page h2{margin:0 0 14px;color:var(--ink);font-size:clamp(22px,3vw,28px);line-height:1.35}
+.fj-page h3{margin:0 0 8px;color:var(--ink);font-size:18px}
+.fj-page p{line-height:1.8}
+.fj-lead{max-width:820px;color:#4a5670;font-size:16.5px}
+.fj-updated{color:var(--blue);font-size:13px;font-weight:700}
+.fj-muted{color:var(--muted);font-size:13px}
+.fj-section{margin:44px 0}
+.fj-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.fj-grid>*,.fj-card{min-width:0}
+.fj-box{display:block;padding:20px;border:1px solid var(--line);border-radius:14px;background:white;color:inherit}
+a.fj-box:hover{border-color:#b9c9ed;box-shadow:0 10px 26px rgba(36,87,230,.08)}
+.fj-box strong{display:block;margin-bottom:6px;color:var(--blue);font-size:16px}
+.fj-box span{color:var(--muted);font-size:13px;line-height:1.7}
+.fj-callout{margin:20px 0;padding:18px 20px;border:1px solid #c9d7fb;border-radius:14px;background:#eef3ff}
+.fj-note{margin:16px 0;padding:12px 16px;border-left:4px solid var(--orange);border-radius:0 10px 10px 0;background:#fff8ef;color:#6b4b2a;font-size:13px;line-height:1.75}
+.fj-list{margin:0;padding-left:20px}.fj-list li{margin:6px 0;line-height:1.75}
+
+/* cards */
+.fj-cards{display:grid;gap:16px}
+.fj-card{padding:22px;border:1px solid var(--line);border-radius:16px;background:white;box-shadow:0 6px 22px rgba(45,62,95,.04)}
+.fj-card.is-top{border:2px solid var(--blue);box-shadow:0 14px 34px rgba(36,87,230,.1)}
+.fj-card-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px}
+.fj-card-head h3{flex:1;min-width:120px;margin:0;font-size:20px}
+.fj-card-head h3 a:hover{color:var(--blue)}
+.fj-reason{margin:6px 0 10px;color:#3d4963}
+.fj-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px 16px;margin:12px 0;padding:12px 14px;border-radius:12px;background:#f5f8fd}
+.fj-facts dt{color:var(--muted);font-size:12px}.fj-facts dd{margin:2px 0 0;font-weight:700;font-size:14px}
+.fj-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:12px}
+.fj-logo{flex:none;border-radius:10px;object-fit:cover;background:#f6f8fc;border:1px solid var(--line)}
+.fj-logo-text{display:inline-grid;place-items:center;color:var(--blue);font-weight:900}
+.fj-tag{padding:4px 10px;border-radius:999px;background:#e5ecff;color:var(--blue);font-size:12px;font-weight:800}
+.fj-rank{display:inline-grid;place-items:center;min-width:28px;height:28px;border-radius:999px;background:#eef2f8;color:#536078;font-size:13px;font-weight:800}
+.fj-rank.is-1{background:var(--blue);color:white}
+.fj-btn{display:inline-flex;align-items:center;gap:4px;padding:9px 16px;border-radius:9px;background:var(--blue);color:white!important;font-size:14px;font-weight:700;white-space:nowrap}
+.fj-btn:hover{background:var(--blue-dark)}
+.fj-btn-sm{padding:6px 11px;font-size:12px}
+.fj-btn-ghost{border:1px solid #b9cbf8;background:white;color:var(--blue)!important}
+.fj-link{color:var(--blue);font-size:14px;font-weight:700}
+.fj-promo{display:inline-flex;align-items:center;gap:6px;padding:4px 6px 4px 10px;border:1px dashed #f59e0b;border-radius:9px;background:#fffbeb;color:#92400e;font-size:13px;white-space:nowrap}
+.fj-promo code{font-weight:800;color:#b45309}
+.fj-promo button{border:0;border-radius:6px;background:#f59e0b;color:white;padding:3px 9px;font-size:12px;cursor:pointer}
+
+/* table */
+.fj-table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:14px;background:white}
+.fj-table{width:100%;min-width:640px;border-collapse:collapse;font-size:14px}
+.fj-table caption{padding:12px 14px;text-align:left;color:var(--muted);font-size:12px}
+.fj-table th,.fj-table td{padding:11px 12px;border-top:1px solid var(--line);text-align:left;vertical-align:middle}
+.fj-table thead th{background:#f2f6fc;color:#475467;font-size:12.5px;white-space:nowrap}
+.fj-table tr.is-hl td{background:#eef3ff}
+.fj-num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.fj-price{color:var(--blue);font-weight:800}
+.fj-brand{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--ink);white-space:nowrap}
+.fj-brand:hover{color:var(--blue)}
+
+/* faq */
+.fj-qa{padding:14px 0;border-bottom:1px solid var(--line)}
+.fj-qa h3{margin:0 0 6px;font-size:16.5px}
+.fj-qa p{margin:0;color:#3d4963}
+
+/* review summary */
+.fj-summary{margin-top:24px;padding:24px;border:1px solid var(--line);border-radius:16px;background:white}
+.fj-summary h2{margin:0 0 10px;color:var(--ink);font-size:22px}
+
+/* footer friends */
+.footer-friends{width:min(1180px,calc(100% - 48px));margin:auto;padding:16px 0;border-top:1px solid #1f2b49;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;font-size:12px}
+.footer-friends strong{color:#b1bdd4}
+.footer-friends a{color:#8f9dba}
+.footer-friends a:hover{color:white}
+
+@media(max-width:620px){
+  .fj-page{width:min(100% - 32px,1180px);padding:22px 0 60px}
+  .fj-section{margin:32px 0}
+  .fj-card{padding:16px}
+  .footer-friends{width:min(100% - 32px,1180px)}
+}

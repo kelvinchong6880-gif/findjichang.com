@@ -1,6 +1,6 @@
 ---
 title: "VMess、VLESS、Trojan、Shadowsocks 有什么区别？"
-description: "用协议职责和兼容性比较常见选择。"
+description: "VMess、VLESS、Trojan 和 Shadowsocks 有什么区别？本文从加密方式、抗识别能力、速度和客户端兼容性几个方面比较这四种常见代理协议，告诉你机场节点用的是什么协议，以及不同客户端分别支持哪些协议。"
 createdAt: 2026-08-23T19:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
 updatedAt: 2026-08-24T15:45:00+08:00

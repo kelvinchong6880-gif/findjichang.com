@@ -1,0 +1,33 @@
+---
+import type { Row } from '../../data/plans';
+import { monthLabel, yearLabel, perGB } from '../../data/plans';
+import Logo from './Logo.astro';
+import Go from './Go.astro';
+interface Props { rows: Row[]; from: string; mode?: 'rank' | 'month' | 'year' | 'pergb'; caption?: string; highlight?: string }
+const { rows, from, mode = 'rank', caption, highlight } = Astro.props;
+---
+<div class="fj-table-wrap">
+  <table class="fj-table">
+    {caption && <caption>{caption}</caption>}
+    <thead><tr>
+      <th scope="col">{mode === 'rank' ? '排名' : '#'}</th><th scope="col">机场</th>
+      {mode === 'pergb' && <th scope="col">每 GB 单价</th>}
+      <th scope="col">月付入门</th><th scope="col">年付最低</th>
+      {mode === 'rank' && <th scope="col">折合月价</th>}
+      <th scope="col">官网</th>
+    </tr></thead>
+    <tbody>
+      {rows.map((r, i) => (
+        <tr class:list={[highlight === r.brand.slug && 'is-hl']}>
+          <td><span class:list={['fj-rank', i === 0 && 'is-1']}>{mode === 'rank' ? r.brand.rank : i + 1}</span></td>
+          <td><a class="fj-brand" href={`/jichang/${r.brand.slug}/`}><Logo slug={r.brand.slug} name={r.brand.name} size={28} />{r.brand.name}</a></td>
+          {mode === 'pergb' && <td class="fj-num fj-price">¥{perGB(r.plan.month!).toFixed(3)}</td>}
+          <td class:list={['fj-num', mode === 'month' && 'fj-price']}>{monthLabel(r.plan)}</td>
+          <td class:list={['fj-num', mode === 'year' && 'fj-price']}>{yearLabel(r.plan)}</td>
+          {mode === 'rank' && <td class="fj-num">{r.eq !== null ? `¥${(Math.round(r.eq * 10) / 10)}/月起` : '不限时包'}</td>}
+          <td><Go slug={r.brand.slug} from={from} placement="comparison-table" label="官网" small /></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

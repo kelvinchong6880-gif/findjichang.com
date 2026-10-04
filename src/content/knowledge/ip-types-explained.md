@@ -1,6 +1,6 @@
 ---
 title: "原生 IP、住宅 IP、广播 IP、机房 IP 有什么区别？"
-description: "解释常见 IP 标签、数据库识别差异和验证限制。"
+description: "机场宣传的原生 IP、住宅 IP、广播 IP 和机房 IP 有什么区别？本文解释这些 IP 标签的含义、为什么不同 IP 数据库识别结果不一样，以及它们对解锁 Netflix、使用 ChatGPT 和 TikTok 的实际影响和验证方法。"
 createdAt: 2026-08-23T19:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
 updatedAt: 2026-08-24T15:45:00+08:00

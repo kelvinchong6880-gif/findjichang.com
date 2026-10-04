@@ -1,6 +1,6 @@
 ---
 title: "ChatGPT 1020、Access Denied 和地区不可用有什么区别？"
-description: "按错误类型建立合规排查顺序。"
+description: "ChatGPT 提示 1020、Access Denied 或“所在地区不可用”分别是什么原因？本文按错误类型讲清 IP 被拦截、节点地区不支持和账户状态问题的区别，并给出合规的排查顺序：先换哪个地区的节点、再检查什么。"
 createdAt: 2026-08-23T19:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
 updatedAt: 2026-08-24T15:45:00+08:00

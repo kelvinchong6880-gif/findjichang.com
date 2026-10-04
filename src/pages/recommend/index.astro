@@ -1,19 +1,79 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import SectionPage from '../../components/SectionPage.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import JsonLd from '../../components/JsonLd.astro';
-import { articleSchema } from '../../lib/structured-data';
-import { Content as RecommendContent } from './_recommend-article.md';
-const keywords = ['微风机场', '微风机场推荐', '微风机场怎么样', '微风机场值得买吗', '微风机场套餐价格', '微风机场注册链接', '微风机场 IPLC', '微风机场多设备', '2026 机场推荐', '机场购买指南'];
-const schema = articleSchema({ title: '微风机场推荐：套餐、适合人群与购买前检查（2026）', description: '从套餐结构、使用场景、设备需求和购买风险分析微风机场是否适合你，并提供注册前核对清单。', path: '/recommend/', publishedAt: new Date('2026-08-23T00:00:00+08:00'), updatedAt: new Date('2026-08-23T00:00:00+08:00'), image: '/images/brands/weifeng.png' });
+import PickCard from '../../components/fj/PickCard.astro';
+import RankTable from '../../components/fj/RankTable.astro';
+import Faq from '../../components/fj/Faq.astro';
+import { brands } from '../../data/brands';
+import { rows, byMonthPrice, byYearPrice, yuan, fmtGB, UPDATED, UPDATED_LABEL, UPDATED_MONTH } from '../../data/plans';
+import { reasons } from '../../data/picks';
+import { itemListSchema, articleSchema } from '../../lib/structured-data';
+
+const path = '/recommend/';
+const top10 = rows.slice(0, 10);
+const cheapMonth = byMonthPrice.filter((r) => r.brand.rank <= 10)[0];
+const cheapYear = byYearPrice.filter((r) => r.brand.rank <= 10)[0];
+const tags: Record<string, string> = { weifeng: '综合首选', 'feimao-yun': '节点最多', firefly: '流媒体 / AI', wuyou: '年付最便宜', 'kuajie-yun': '大流量', lingmao: '只卖年付', shanyue: '均衡', 'jilian-cloud': '月付门槛最低', u1s1: '节点多', flyv: '追剧' };
+const scenes = [
+  { t: '第一次买、预算有限', d: `${cheapMonth.brand.name} 月付 ${yuan(cheapMonth.plan.month!.price)} / ${fmtGB(cheapMonth.plan.month!.gb)}，先买一个月试用。`, href: '/cheap-airport/', l: '看便宜机场' },
+  { t: '每天刷视频、追剧', d: `微风月付 ¥27 每月 200GB，流量给得足；想看单价对比看性价比机场。`, href: '/best-value-airport/', l: '看性价比机场' },
+  { t: '用得少，一年付一次', d: `${cheapYear.brand.name} 年付 ${yuan(cheapYear.plan.year!.price)}，飞猫云学生版 ¥84/年，每月 40–50GB 够查资料。`, href: '/ranking/', l: '看完整排行榜' },
+  { t: '看 Netflix、用 ChatGPT', d: 'Firefly 有流媒体与 AI 使用指南；ChatGPT 记得选日本、新加坡、美国节点。', href: '/recommend/firefly-streaming-ai/', l: '看 Firefly 指南' },
+];
+const faq = [
+  { q: '2026 年哪个机场最好？', a: `按本站目前的推荐顺序，前三名是 ${top10.slice(0, 3).map((r) => r.brand.name).join('、')}。微风月付 ¥27 每月 200GB，流量最足；飞猫云节点最多（71 个）；Firefly 套餐梯度清楚。没有哪一家对所有人都最好，按预算和用量选更重要。` },
+  { q: '新手第一次买机场选哪家？', a: `先选有月付的机场买一个月试用，例如 ${cheapMonth.brand.name}（${yuan(cheapMonth.plan.month!.price)}/月）或微风（¥27/月）。用一周，晚上高峰期也稳定再续费或换年付。` },
+  { q: '机场一个月要多少钱？', a: `本站收录的 ${brands.length} 家机场里，月付入门价大多在 ¥15–¥30 之间，每月 100–200GB；年付小包一年 ¥80–¥120，每月 40–70GB。查资料、用 ChatGPT 一个月约 50GB，每天刷视频约 150GB。` },
+  { q: '机场推荐的排名是怎么来的？', a: '本站综合套餐价格、流量、节点数量、资料完整程度和读者反馈排出推荐顺序。价格和节点数据都写在每家的测评页里，可以自己对照判断。' },
+  { q: '买机场要注意什么？', a: '第一次买选月付，不要一次买两三年；看清流量倍率（例如 10 倍倍率的机场实际流量要除以 10）；保护好订阅链接；准备一个便宜的备用机场。' },
+];
+const title = `机场推荐2026：${brands.length}家机场测评后的推荐名单与价格（${UPDATED_MONTH}更新）`;
+const description = `2026年机场推荐（${UPDATED_MONTH}更新）：从${brands.length}家机场里选出推荐前十名，列出每家的月付、年付入门价格和流量、适合人群与优惠码，并按预算、追剧、轻度使用、ChatGPT 和 Netflix 等需求告诉你该选哪家。`;
+const schemas = [
+  itemListSchema(`${UPDATED_MONTH}机场推荐前十名`, top10.map((r) => ({ name: `${r.brand.name}机场`, path: `/jichang/${r.brand.slug}/` }))),
+  articleSchema({ title, description, path, publishedAt: new Date('2026-08-23T00:00:00+08:00'), updatedAt: new Date(`${UPDATED}T00:00:00+08:00`) }),
+];
 ---
-<BaseLayout title="微风机场推荐：套餐、适合人群与购买前检查（2026）｜找机场" description="想要了解微风机场到底怎么样、是否值得购买吗？本篇深度推荐指南从微风机场的套餐结构设计、适合的使用场景、跨平台设备支持需求以及潜在的购买风险等全方位为您剖析微风机场。我们还为您准备了详尽的注册前必备核对清单，帮助您全面评估微风机场的综合性价比与稳定性表现，避免踩坑。" socialImage="/images/brands/weifeng.png" ogType="article" keywords={keywords}>
-  <JsonLd data={schema} />
-  <SectionPage title="微风机场推荐与购买指南" description="不靠夸张测速给结论：先看微风机场适合谁、哪些信息仍需核对，再决定是否用短周期套餐测试。">
-    <div class="content-layout recommend-article">
-      <article class="article-content mt-8">
-        <RecommendContent />
-      </article>
-    </div>
-  </SectionPage>
+<BaseLayout title={title} description={description} ogType="article">
+  <JsonLd data={schemas} />
+  <main class="fj-page">
+    <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '机场推荐' }]} />
+    <p class="fj-updated">更新于 <time datetime={UPDATED}>{UPDATED_LABEL}</time> · 共收录 {brands.length} 家</p>
+    <h1>机场推荐 2026：{brands.length} 家机场测评后的推荐名单</h1>
+    <p class="fj-lead">这份机场推荐名单来自本站收录的 {brands.length} 家机场。下面先按需求给出快速选择，再列出推荐前十名的价格、流量和推荐理由，最后附上完整排行榜和选购常见问题。</p>
+    <p class="fj-note">通过本站链接购买，本站可能获得推广佣金，不影响你支付的价格。价格整理于 {UPDATED_LABEL}，以官网结算页为准。</p>
+
+    <section class="fj-section">
+      <h2>按需求快速选择</h2>
+      <div class="fj-grid">
+        {scenes.map((s) => <a class="fj-box" href={s.href}><strong>{s.t}</strong><span>{s.d}</span><br /><span class="fj-link">{s.l} →</span></a>)}
+      </div>
+    </section>
+
+    <section class="fj-section">
+      <h2>机场推荐前十名（{UPDATED_MONTH}）</h2>
+      <div class="fj-cards">
+        {top10.map((r, i) => <PickCard brand={r.brand} num={i + 1} tag={tags[r.brand.slug]} reason={reasons[r.brand.slug]} from={path} top={i === 0} />)}
+      </div>
+    </section>
+
+    <section class="fj-section">
+      <h2>{brands.length} 家机场价格一览</h2>
+      <p>按本站推荐顺序排列。想按价格排序，看 <a class="fj-link" href="/cheap-airport/">便宜机场</a>；想比较每 GB 单价，看 <a class="fj-link" href="/best-value-airport/">性价比机场</a>。</p>
+      <RankTable rows={rows} from={path} mode="rank" highlight="weifeng" />
+    </section>
+
+    <section class="fj-section">
+      <h2>怎么选机场：3 个步骤</h2>
+      <ol class="fj-list">
+        <li><strong>估算流量</strong>：查资料、用 ChatGPT 约 50GB/月；每天刷 1–2 小时视频约 150GB；常看 4K 约 300GB；全家共用 600GB 以上。</li>
+        <li><strong>定预算</strong>：月付入门一般 ¥15–¥30；只想一年付一次，可以看 ¥80–¥120 的年付小包。</li>
+        <li><strong>先月付试用</strong>：买最短周期，晚上 8–11 点高峰期用几天，稳定再续费。买完照着 <a href="/guide/">使用教程</a> 导入订阅即可。</li>
+      </ol>
+      <p class="fj-muted">线路、倍率这些概念不清楚，可以看 <a href="/knowledge/line-types-explained/">直连、中转、IPLC 与 IEPL 的区别</a> 和 <a href="/knowledge/traffic-multiplier-and-renewal/">流量倍率与重置日期</a>。</p>
+    </section>
+
+    <Faq items={faq} title="机场推荐常见问题" />
+  </main>
 </BaseLayout>
