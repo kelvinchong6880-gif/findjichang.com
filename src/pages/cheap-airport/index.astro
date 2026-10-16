@@ -13,6 +13,7 @@ import { itemListSchema, articleSchema } from '../../lib/structured-data';
 const path = '/cheap-airport/';
 const under20 = byMonthPrice.filter((r) => r.plan.month!.price <= 20);
 const picks = rows.filter((r) => r.plan.month && r.plan.month.price <= 20).slice(0, 5);
+const cards = [rows[0], ...picks.filter((r) => r.brand.slug !== rows[0].brand.slug).slice(0, 4)];
 const onceRows = rows.filter((r) => r.plan.once).sort((a, b) => a.plan.once!.price - b.plan.once!.price);
 const cheapest = byMonthPrice[0];
 const pickReason = (r: (typeof rows)[number]) => `月付 ${yuan(r.plan.month!.price)} 每月 ${fmtGB(r.plan.month!.gb)}${r.plan.year ? `，年付 ${yuan(r.plan.year.price)} 每月 ${fmtGB(r.plan.year.gb)}` : ''}；在本站推荐中排第 ${r.brand.rank} 名。`;
@@ -26,7 +27,7 @@ const faq = [
 const title = `便宜机场推荐2026：月付20元以内的低价机场排行（${UPDATED_MONTH}）`;
 const description = `便宜机场推荐（${UPDATED_MONTH}更新）：按月付入门价从低到高列出${byMonthPrice.length}家机场，最低 ${yuan(cheapest.plan.month!.price)}/月起，另附年付最便宜机场和不限时流量包，并说明便宜机场常见的倍率、中转和跑路风险，帮你花最少的钱买到能用的机场。`;
 const schemas = [
-  itemListSchema(`${UPDATED_MONTH}便宜机场推荐`, picks.map((r) => ({ name: `${r.brand.name}机场`, path: `/jichang/${r.brand.slug}/` }))),
+  itemListSchema(`${UPDATED_MONTH}便宜机场推荐`, cards.map((r) => ({ name: `${r.brand.name}机场`, path: `/jichang/${r.brand.slug}/` }))),
   articleSchema({ title, description, path, publishedAt: new Date('2026-10-04T00:00:00+08:00'), updatedAt: new Date(`${UPDATED}T00:00:00+08:00`) }),
 ];
 ---
@@ -40,8 +41,8 @@ const schemas = [
     <p class="fj-note">价格整理于 {UPDATED_LABEL}，以官网结算页为准。表格按价格客观排序；“推荐的便宜机场”按本站推荐顺序挑选。</p>
 
     <section class="fj-section">
-      <h2>推荐的便宜机场（月付 ¥20 以内）</h2>
-      <div class="fj-cards">{picks.map((r, i) => <PickCard brand={r.brand} num={i + 1} reason={pickReason(r)} from={path} top={i === 0} />)}</div>
+      <h2>推荐的便宜机场（月付 ¥20 以内或年付折合 ¥10/月以内）</h2>
+      <div class="fj-cards">{cards.map((r, i) => <PickCard brand={r.brand} num={i + 1} reason={pickReason(r)} from={path} top={i === 0} />)}</div>
     </section>
 
     <section class="fj-section">
@@ -73,7 +74,7 @@ const schemas = [
         <li><strong>先月付</strong>：便宜机场跑路风险更高，不要一次买两三年。</li>
         <li><strong>备一个备用</strong>：主力机场出问题时，有个便宜的不限时流量包可以马上切换。</li>
       </ol>
-      <p>想比较每 GB 单价，看 <a class="fj-link" href="/best-value-airport/">性价比机场</a>；想看综合推荐，看 <a class="fj-link" href="/recommend/">机场推荐</a>。</p>
+      <p>想比较每 GB 单价，看 <a class="fj-link" href="/best-value-airport/">性价比机场</a>；想看综合推荐，看 <a class="fj-link" href="/">机场推荐</a>。</p>
     </section>
 
     <Faq items={faq} title="便宜机场常见问题" />

@@ -14,7 +14,7 @@ const path = '/recommend/';
 const top10 = rows.slice(0, 10);
 const cheapMonth = byMonthPrice.filter((r) => r.brand.rank <= 10)[0];
 const cheapYear = byYearPrice.filter((r) => r.brand.rank <= 10)[0];
-const tags: Record<string, string> = { weifeng: '综合首选', 'feimao-yun': '节点最多', firefly: '流媒体 / AI', wuyou: '年付最便宜', 'kuajie-yun': '大流量', lingmao: '只卖年付', shanyue: '均衡', 'jilian-cloud': '月付门槛最低', u1s1: '节点多', flyv: '追剧' };
+const tags: Record<string, string> = { 'sogo-yun': '综合首选', weifeng: '流量最足', 'feimao-yun': '节点最多', firefly: '流媒体 / AI', wuyou: '年付最便宜', 'kuajie-yun': '大流量', lingmao: '只卖年付', shanyue: '均衡', 'jilian-cloud': '月付门槛最低', u1s1: '节点多', flyv: '追剧' };
 const scenes = [
   { t: '第一次买、预算有限', d: `${cheapMonth.brand.name} 月付 ${yuan(cheapMonth.plan.month!.price)} / ${fmtGB(cheapMonth.plan.month!.gb)}，先买一个月试用。`, href: '/cheap-airport/', l: '看便宜机场' },
   { t: '每天刷视频、追剧', d: `微风月付 ¥27 每月 200GB，流量给得足；想看单价对比看性价比机场。`, href: '/best-value-airport/', l: '看性价比机场' },
@@ -22,26 +22,26 @@ const scenes = [
   { t: '看 Netflix、用 ChatGPT', d: 'Firefly 有流媒体与 AI 使用指南；ChatGPT 记得选日本、新加坡、美国节点。', href: '/recommend/firefly-streaming-ai/', l: '看 Firefly 指南' },
 ];
 const faq = [
-  { q: '2026 年哪个机场最好？', a: `按本站目前的推荐顺序，前三名是 ${top10.slice(0, 3).map((r) => r.brand.name).join('、')}。微风月付 ¥27 每月 200GB，流量最足；飞猫云节点最多（71 个）；Firefly 套餐梯度清楚。没有哪一家对所有人都最好，按预算和用量选更重要。` },
-  { q: '新手第一次买机场选哪家？', a: `先选有月付的机场买一个月试用，例如 ${cheapMonth.brand.name}（${yuan(cheapMonth.plan.month!.price)}/月）或微风（¥27/月）。用一周，晚上高峰期也稳定再续费或换年付。` },
+  { q: '2026 年哪个机场最好？', a: `按本站目前的推荐顺序，前三名是 ${top10.slice(0, 3).map((r) => r.brand.name).join('、')}。SOGO云月付 ¥25 / 150GB、年付 ¥98，套餐档位齐全，新手好上手；微风月付 ¥27 每月 200GB，流量最足；飞猫云节点最多（71 个）。没有哪一家对所有人都最好，按预算和用量选更重要。` },
+  { q: '新手第一次买机场选哪家？', a: `先选有月付的机场买一个月试用，例如 ${cheapMonth.brand.name}（${yuan(cheapMonth.plan.month!.price)}/月）或 SOGO云（¥25/月）。用一周，晚上高峰期也稳定再续费或换年付。` },
   { q: '机场一个月要多少钱？', a: `本站收录的 ${brands.length} 家机场里，月付入门价大多在 ¥15–¥30 之间，每月 100–200GB；年付小包一年 ¥80–¥120，每月 40–70GB。查资料、用 ChatGPT 一个月约 50GB，每天刷视频约 150GB。` },
-  { q: '机场推荐的排名是怎么来的？', a: '本站综合套餐价格、流量、节点数量、资料完整程度和读者反馈排出推荐顺序。价格和节点数据都写在每家的测评页里，可以自己对照判断。' },
+  { q: '这份前十名单是怎么排出来的？', a: '本站综合套餐价格、流量、节点数量、资料完整程度和读者反馈排出推荐顺序。价格和节点数据都写在每家的测评页里，可以自己对照判断。' },
   { q: '买机场要注意什么？', a: '第一次买选月付，不要一次买两三年；看清流量倍率（例如 10 倍倍率的机场实际流量要除以 10）；保护好订阅链接；准备一个便宜的备用机场。' },
 ];
-const title = `机场推荐2026：${brands.length}家机场测评后的推荐名单与价格（${UPDATED_MONTH}更新）`;
-const description = `2026年机场推荐（${UPDATED_MONTH}更新）：从${brands.length}家机场里选出推荐前十名，列出每家的月付、年付入门价格和流量、适合人群与优惠码，并按预算、追剧、轻度使用、ChatGPT 和 Netflix 等需求告诉你该选哪家。`;
+const title = `找机场前十名单2026：${brands.length}家机场里值得买的10家与价格（${UPDATED_MONTH}更新）`;
+const description = `找机场不知道选哪家？（${UPDATED_MONTH}更新）本页从${brands.length}家机场里挑出值得买的前十名，列出每家的月付、年付入门价格和流量、适合人群与优惠码，并按预算、追剧、轻度使用、ChatGPT 和 Netflix 等需求告诉你该选哪家。`;
 const schemas = [
-  itemListSchema(`${UPDATED_MONTH}机场推荐前十名`, top10.map((r) => ({ name: `${r.brand.name}机场`, path: `/jichang/${r.brand.slug}/` }))),
+  itemListSchema(`${UPDATED_MONTH}找机场前十名单`, top10.map((r) => ({ name: `${r.brand.name}机场`, path: `/jichang/${r.brand.slug}/` }))),
   articleSchema({ title, description, path, publishedAt: new Date('2026-08-23T00:00:00+08:00'), updatedAt: new Date(`${UPDATED}T00:00:00+08:00`) }),
 ];
 ---
 <BaseLayout title={title} description={description} ogType="article">
   <JsonLd data={schemas} />
   <main class="fj-page">
-    <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '机场推荐' }]} />
+    <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '前十名单' }]} />
     <p class="fj-updated">更新于 <time datetime={UPDATED}>{UPDATED_LABEL}</time> · 共收录 {brands.length} 家</p>
-    <h1>机场推荐 2026：{brands.length} 家机场测评后的推荐名单</h1>
-    <p class="fj-lead">这份机场推荐名单来自本站收录的 {brands.length} 家机场。下面先按需求给出快速选择，再列出推荐前十名的价格、流量和推荐理由，最后附上完整排行榜和选购常见问题。</p>
+    <h1>找机场前十名单 2026：{brands.length} 家机场里值得买的 10 家</h1>
+    <p class="fj-lead">这份前十名单来自本站收录的 {brands.length} 家机场。下面先按需求给出快速选择，再列出推荐前十名的价格、流量和推荐理由，最后附上完整排行榜和选购常见问题。</p>
     <p class="fj-note">通过本站链接购买，本站可能获得推广佣金，不影响你支付的价格。价格整理于 {UPDATED_LABEL}，以官网结算页为准。</p>
 
     <section class="fj-section">
@@ -52,7 +52,7 @@ const schemas = [
     </section>
 
     <section class="fj-section">
-      <h2>机场推荐前十名（{UPDATED_MONTH}）</h2>
+      <h2>找机场前十名（{UPDATED_MONTH}）</h2>
       <div class="fj-cards">
         {top10.map((r, i) => <PickCard brand={r.brand} num={i + 1} tag={tags[r.brand.slug]} reason={reasons[r.brand.slug]} from={path} top={i === 0} />)}
       </div>
@@ -61,7 +61,7 @@ const schemas = [
     <section class="fj-section">
       <h2>{brands.length} 家机场价格一览</h2>
       <p>按本站推荐顺序排列。想按价格排序，看 <a class="fj-link" href="/cheap-airport/">便宜机场</a>；想比较每 GB 单价，看 <a class="fj-link" href="/best-value-airport/">性价比机场</a>。</p>
-      <RankTable rows={rows} from={path} mode="rank" highlight="weifeng" />
+      <RankTable rows={rows} from={path} mode="rank" highlight="sogo-yun" />
     </section>
 
     <section class="fj-section">
@@ -74,6 +74,6 @@ const schemas = [
       <p class="fj-muted">线路、倍率这些概念不清楚，可以看 <a href="/knowledge/line-types-explained/">直连、中转、IPLC 与 IEPL 的区别</a> 和 <a href="/knowledge/traffic-multiplier-and-renewal/">流量倍率与重置日期</a>。</p>
     </section>
 
-    <Faq items={faq} title="机场推荐常见问题" />
+    <Faq items={faq} title="找机场常见问题" />
   </main>
 </BaseLayout>

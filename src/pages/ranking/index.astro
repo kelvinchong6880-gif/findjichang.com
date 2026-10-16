@@ -14,12 +14,12 @@ import { itemListSchema, articleSchema } from '../../lib/structured-data';
 const path = '/ranking/';
 const top10 = rows.slice(0, 10);
 const faq = [
-  { q: '机场排行榜第一名是哪家？', a: `本站${UPDATED_MONTH}机场排行榜第一名是${rows[0].brand.name}：月付「乘风」¥27 每月 200GB，另有不限时套餐，后台记录 62 个节点。第二、三名是${rows[1].brand.name}和${rows[2].brand.name}。` },
+  { q: '机场排行榜第一名是哪家？', a: `本站${UPDATED_MONTH}机场排行榜第一名是${rows[0].brand.name}：月付基础版 ¥25 每月 150GB，年付小包 ¥98（每月 60GB），月付最高有 1.1TB 的大流量档，优惠码 sogo10000。第二、三名是${rows[1].brand.name}和${rows[2].brand.name}。` },
   { q: '十大机场有哪些？', a: `本站排行榜前十名依次是：${top10.map((r) => r.brand.name).join('、')}。每家的价格和推荐理由见本页表格，详细情况看各自的测评页。` },
   { q: '排行榜多久更新一次？', a: '价格和套餐每月复核一次，有机场调整套餐、涨价或停运时会及时更新排名，页面顶部显示最近更新日期。' },
   { q: '排行榜靠后的机场是不是不好？', a: '不一定。排名综合了价格、流量、节点数量和资料完整度，靠后的机场有的价格很低（例如九云月付 ¥6），只是资料较少或套餐选择不多。按自己的预算和用量选最重要。' },
 ];
-const title = `机场排行榜2026：${brands.length}家机场推荐排名与价格对比（${UPDATED_MONTH}）`;
+const title = `机场排行榜2026：${brands.length}家机场排名与价格对比（${UPDATED_MONTH}）`;
 const description = `2026机场排行榜（${UPDATED_MONTH}更新）：${brands.length}家机场按本站推荐顺序排名，一张表看清每家的月付入门价、年付最低价、流量和折合月价，附十大机场推荐理由和排行榜常见问题，买机场前先对比一下。`;
 const schemas = [
   itemListSchema(`${UPDATED_MONTH}机场排行榜`, rows.map((r) => ({ name: `${r.brand.name}机场`, path: `/jichang/${r.brand.slug}/` }))),
@@ -53,7 +53,7 @@ const schemas = [
     <section class="fj-section">
       <h2>怎么用这份排行榜</h2>
       <div class="fj-grid">
-        <a class="fj-box" href="/recommend/"><strong>不知道怎么选</strong><span>看机场推荐，按预算、追剧、轻度使用和 AI 需求直接给答案。</span></a>
+        <a class="fj-box" href="/"><strong>不知道怎么选</strong><span>看机场推荐，按预算、追剧、轻度使用和 AI 需求直接给答案。</span></a>
         <a class="fj-box" href="/cheap-airport/"><strong>只看价格</strong><span>便宜机场页按月付、年付价格从低到高排列。</span></a>
         <a class="fj-box" href="/best-value-airport/"><strong>想比单价</strong><span>性价比机场页按每 GB 单价排序，流量用得多的人看这个。</span></a>
         <a class="fj-box" href="/compare/"><strong>想并排比较</strong><span>机场对比表把所有机场的资料和测评入口放在一张表里。</span></a>

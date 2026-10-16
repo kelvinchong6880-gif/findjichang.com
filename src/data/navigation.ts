@@ -1,5 +1,5 @@
 export const primaryNavigation = [
-  { label: '机场推荐', href: '/recommend/' },
+  { label: '机场推荐', href: '/' },
   { label: '机场排行榜', href: '/ranking/' },
   { label: '便宜机场', href: '/cheap-airport/' },
   { label: '性价比机场', href: '/best-value-airport/' },

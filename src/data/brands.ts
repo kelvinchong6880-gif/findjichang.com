@@ -11,6 +11,7 @@ export interface Brand {
 }
 
 export const brands: Brand[] = [
+  ['SOGO云', 'sogo-yun', 'https://wzjc.sogoyunaff.cc/#/?code=BC2BL855'],
   ['微风', 'weifeng', 'https://edp01.breezenetaff.com/#/?code=hM8APccJ'],
   ['飞猫云', 'feimao-yun', 'https://flycat1.flycatvipaff.cc/#/?code=w5lO9fqB'],
   ['Firefly', 'firefly', 'https://vip02.fireflyaff.com/#/?code=8nDg6OEY'],
@@ -25,7 +26,6 @@ export const brands: Brand[] = [
   ['xsus', 'xsus', 'https://xsus.cloud/register?code=QQh1M1i9'],
   ['快狸', 'kuaili', 'https://work.kuailicloud.cc/#/?code=azB6yNBW'],
   ['山水云', 'shanshui-cloud', 'https://sldm1.ssyylf.com/#/register?code=Rh44jFWe'],
-  ['SOGO云', 'sogo-yun', 'https://wzjc.sogoyunaff.cc/#/?code=BC2BL855'],
   ['宇宙云', 'yuzhou-cloud', 'https://wzjc.yuzoucloud.cc/#/?code=IWowgER5'],
   ['灵动', 'lingdong-cloud', 'https://varnexa.lingdongaff.com/#/?code=HDiWuF7L'],
   ['老猫云', 'laomao-cloud', 'https://222.22laomao.com/#/register?code=jcPU1grl'],

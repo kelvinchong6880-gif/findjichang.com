@@ -58,7 +58,7 @@ const faq = [
 ];
 
 const reviewLinks = [
-  { href: '/recommend/', title: '2026 机场推荐', description: '按需求选机场，附每家的入门价格。' },
+  { href: '/', title: '2026 机场推荐', description: '按需求选机场，附每家的入门价格。' },
   { href: '/ranking/', title: `机场排行榜：${brands.length} 家机场价格对比`, description: '本站推荐顺序与月付、年付价格一览。' },
   { href: '/cheap-airport/', title: '便宜机场推荐', description: '按月付、年付价格从低到高排列。' },
   ...(speed && hasRealSpeedData(speed) ? [{ href: `/speed-test/${brand.slug}/`, title: `${n}机场测速报告` }] : []),
@@ -109,7 +109,7 @@ const indexable = entry ? isPublishable(entry) : false;
       {Content && <Content />}
 
       <Faq items={faq} title={`${n}机场常见问题`} />
-      <div class="fj-callout"><div class="fj-actions" style="margin-top:0"><Go slug={brand.slug} from={pagePath} placement="article-end" label={`前往${n}官网`} />{p.promo && <Promo code={p.promo} />}<a class="fj-link" href="/recommend/">看其他机场推荐 →</a></div></div>
+      <div class="fj-callout"><div class="fj-actions" style="margin-top:0"><Go slug={brand.slug} from={pagePath} placement="article-end" label={`前往${n}官网`} />{p.promo && <Promo code={p.promo} />}<a class="fj-link" href="/">看其他机场推荐 →</a></div></div>
       <RelatedLinks links={reviewLinks} title={`${n}相关阅读`} />
     </article>
     <aside class="toc-card"><b>本页目录</b><a href="#summary">套餐价格一览</a><a href="#fit">适合谁</a><a href="#caution">购买前注意</a></aside>

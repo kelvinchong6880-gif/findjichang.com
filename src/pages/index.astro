@@ -14,7 +14,7 @@ const top10 = rows.slice(0, 10);
 const cheapest = byMonthPrice[0];
 const cheapTop = byMonthPrice.filter((r) => r.brand.rank <= 10)[0];
 const needs = [
-  { t: '机场推荐', d: `按需求挑好的前十名，附价格和推荐理由。`, href: '/recommend/' },
+  { t: '前十名单', d: `按需求挑好的前十名，附价格和推荐理由。`, href: '/recommend/' },
   { t: '机场排行榜', d: `${brands.length} 家机场排名，一张表看清月付、年付价格。`, href: '/ranking/' },
   { t: '便宜机场', d: `月付最低 ${yuan(cheapest.plan.month!.price)} 起，${byMonthPrice.filter((r) => r.plan.month!.price <= 20).length} 家在 ¥20 以内。`, href: '/cheap-airport/' },
   { t: '性价比机场', d: '按每 GB 单价排序，流量用得多的人看这里。', href: '/best-value-airport/' },
@@ -25,6 +25,8 @@ const faq = [
   { q: '机场是什么？', a: '“机场”是提供代理节点订阅的服务，买了之后把订阅链接导入 Clash、小火箭等客户端，就能访问 Google、YouTube、ChatGPT 等海外网站。' },
   { q: '2026 年推荐哪个机场？', a: `本站${UPDATED_MONTH}机场推荐前三名是 ${top3.map((r) => r.brand.name).join('、')}。新手想先试用，可以买${cheapTop.brand.name}月付 ${yuan(cheapTop.plan.month!.price)}（${fmtGB(cheapTop.plan.month!.gb)}）；用得少可以买年付小包，一年 ${yuan(byYearPrice[0].plan.year!.price)} 起。` },
   { q: '机场多少钱一个月？', a: `本站收录的 ${brands.length} 家机场，月付入门价大多在 ¥15–¥30，每月 100–200GB；年付小包一年 ¥80–¥120。` },
+  { q: '机场推荐排名是按什么排的？', a: `本站把 ${brands.length} 家机场按套餐价格、每月流量、节点数量和地区覆盖、资料是否完整、读者反馈五个方面综合排序，每家的价格和节点数据都写在独立测评页里，可以自己核对。价格每月复查一次，${UPDATED_MONTH}是最近一次更新。` },
+  { q: '机场和 VPN 有什么区别？', a: '机场一般按月或按年卖流量套餐，一个订阅里有几十个不同地区的节点，配合 Clash、小火箭等客户端使用，价格比传统 VPN 便宜；传统 VPN 多是一键连接的独立 App，操作简单但节点少、价格偏高。' },
   { q: '买了机场怎么用？', a: '在机场后台复制订阅链接，Windows 用 Clash Verge Rev、iPhone 用小火箭、安卓用 Clash Meta 或 v2rayNG，导入订阅后选择节点即可。本站使用教程有详细步骤。' },
 ];
 const title = `机场推荐2026：${brands.length}家机场测评、价格对比与排行榜｜找机场`;
@@ -38,7 +40,7 @@ const description = `找机场整理${brands.length}家机场的测评、套餐�
         <p class="eyebrow"><span></span> {UPDATED_MONTH}更新 · 收录 {brands.length} 家</p>
         <h1>机场推荐<br /><em>2026 测评与价格对比</em></h1>
         <p class="hero-lead">整理 {brands.length} 家机场的套餐价格、流量和节点资料，按需求告诉你买哪家。月付最低 {yuan(cheapest.plan.month!.price)} 起，第一次买建议先月付试用。</p>
-        <div class="hero-actions"><a class="button" href="/recommend/">查看机场推荐 <span>→</span></a><a class="button button-secondary" href="/ranking/">机场排行榜</a></div>
+        <div class="hero-actions"><a class="button" href="/recommend/">查看前十名单 <span>→</span></a><a class="button button-secondary" href="/ranking/">机场排行榜</a></div>
         <p class="hero-note"><i>✓</i> 价格整理于 {UPDATED_LABEL}，每家都有独立测评页</p>
       </div>
       <div class="decision-card">
@@ -58,7 +60,7 @@ const description = `找机场整理${brands.length}家机场的测评、套餐�
       <section class="fj-section">
         <h2>{UPDATED_MONTH}机场推荐前三名</h2>
         <div class="fj-cards">{top3.map((r, i) => <PickCard brand={r.brand} num={i + 1} reason={reasons[r.brand.slug]} from="/" top={i === 0} />)}</div>
-        <p style="margin-top:14px"><a class="fj-link" href="/recommend/">查看完整机场推荐前十名 →</a></p>
+        <p style="margin-top:14px"><a class="fj-link" href="/recommend/">查看完整前十名单与推荐理由 →</a></p>
       </section>
 
       <section class="fj-section">
@@ -75,6 +77,12 @@ const description = `找机场整理${brands.length}家机场的测评、套餐�
           <div class="fj-box"><strong>3. 先月付试用</strong><span>晚上高峰期用几天，稳定再续费。不要一次买两三年。</span></div>
           <div class="fj-box"><strong>4. 导入客户端</strong><span>复制订阅链接导入 Clash Verge Rev、小火箭等，看 <a href="/guide/">使用教程</a>。</span></div>
         </div>
+      </section>
+
+      <section class="fj-section">
+        <h2>2026 机场推荐是怎么排出来的</h2>
+        <p>这份机场推荐不是凭印象排的。本站目前收录 {brands.length} 家机场，每家都有独立测评页，记录官网套餐价格、每月流量、节点数量和覆盖地区。排名时主要看五点：<strong>入门价格</strong>（月付和年付各要多少钱）、<strong>流量是否够用</strong>（每月 GB 数和是否有倍率）、<strong>节点数量与地区</strong>（香港、日本、新加坡、美国等常用地区是否齐全）、<strong>资料完整程度</strong>（官网信息能否核对）和<strong>读者反馈</strong>。</p>
+        <p>排在前面的机场不代表对每个人都最好：每天刷视频的人更看重流量，偶尔查资料的人更看重年付总价，用 ChatGPT 和 Netflix 的人更看重节点地区。所以除了综合排名，本站还按价格做了 <a class="fj-link" href="/cheap-airport/">便宜机场</a>、按每 GB 单价做了 <a class="fj-link" href="/best-value-airport/">性价比机场</a>，并把 {brands.length} 家机场放进 <a class="fj-link" href="/compare/">机场对比表</a>。价格每月复查一次，购买前请以官网结算页为准。</p>
       </section>
 
       <Faq items={faq} title="机场推荐常见问题" />
