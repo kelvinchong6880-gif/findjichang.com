@@ -14,7 +14,8 @@
     "test:e2e": "playwright test",
     "test:perf": "node scripts/run-performance-playwright.mjs",
     "deploy:check": "pnpm build && pnpm validate && pnpm test:e2e",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "readme": "node scripts/gen-readme.mjs"
   },
   "dependencies": {
     "@astrojs/check": "0.9.10",
