@@ -14,15 +14,20 @@ const path = '/recommend/';
 const top10 = rows.slice(0, 10);
 const cheapMonth = byMonthPrice.filter((r) => r.brand.rank <= 10)[0];
 const cheapYear = byYearPrice.filter((r) => r.brand.rank <= 10)[0];
-const tags: Record<string, string> = { 'sogo-yun': '综合首选', weifeng: '流量最足', 'feimao-yun': '节点最多', firefly: '流媒体 / AI', wuyou: '年付最便宜', 'kuajie-yun': '大流量', lingmao: '只卖年付', shanyue: '均衡', 'jilian-cloud': '月付门槛最低', u1s1: '节点多', flyv: '追剧' };
+const tags: Record<string, string> = { 'sogo-yun': '综合首选', 'feimao-yun': '节点最多', muguang: '入门实惠', weifeng: '流量最足', 'yuzhou-cloud': '月付流量多', ermao: '低价均衡', guangsu: '均衡', xingdaomeng: '新手易懂', firefly: '流媒体 / AI', wuyou: '年付最便宜', 'kuajie-yun': '大流量', lingmao: '只卖年付', shanyue: '均衡', 'jilian-cloud': '月付门槛最低', u1s1: '节点多', flyv: '追剧' };
 const scenes = [
-  { t: '第一次买、预算有限', d: `${cheapMonth.brand.name} 月付 ${yuan(cheapMonth.plan.month!.price)} / ${fmtGB(cheapMonth.plan.month!.gb)}，先买一个月试用。`, href: '/cheap-airport/', l: '看便宜机场' },
-  { t: '每天刷视频、追剧', d: `微风月付 ¥27 每月 200GB，流量给得足；想看单价对比看性价比机场。`, href: '/best-value-airport/', l: '看性价比机场' },
-  { t: '用得少，一年付一次', d: `${cheapYear.brand.name} 年付 ${yuan(cheapYear.plan.year!.price)}，飞猫云学生版 ¥84/年，每月 40–50GB 够查资料。`, href: '/ranking/', l: '看完整排行榜' },
-  { t: '看 Netflix、用 ChatGPT', d: 'Firefly 有流媒体与 AI 使用指南；ChatGPT 记得选日本、新加坡、美国节点。', href: '/recommend/firefly-streaming-ai/', l: '看 Firefly 指南' },
+  { t: '第一次买、预算有限', r: cheapMonth, d: `月付 ${yuan(cheapMonth.plan.month!.price)} / ${fmtGB(cheapMonth.plan.month!.gb)}，先买一个月试用。`, href: '/knowledge/monthly-vs-annual-plan/', l: '月付和年付怎么选' },
+  { t: '每天刷视频、追剧', r: rows.find((r) => r.brand.slug === 'weifeng')!, d: '月付 ¥27 每月 200GB，前十名里入门流量最多。', href: '/recommend/weifeng/', l: '微风机场专题' },
+  { t: '用得少，一年付一次', r: cheapYear, d: `年付 ${yuan(cheapYear.plan.year!.price)}；飞猫云学生版 ¥84/年也可以，每月 40–50GB 够查资料。`, href: '/knowledge/monthly-data-estimator/', l: '每月流量估算' },
+  { t: '看 Netflix、用 ChatGPT', r: rows.find((r) => r.brand.slug === 'firefly')!, d: '有专门的流媒体与 AI 使用指南；ChatGPT 记得选日本、新加坡、美国节点。', href: '/recommend/firefly-streaming-ai/', l: 'Firefly 流媒体与 AI 指南' },
+];
+const howto = [
+  { k: '估算流量', d: '查资料、用 ChatGPT 约 50GB/月；每天刷 1–2 小时视频约 150GB；常看 4K 约 300GB；全家共用 600GB 以上。', l: '每月流量估算', href: '/knowledge/monthly-data-estimator/' },
+  { k: '定预算', d: '月付入门一般 ¥15–¥30；只想一年付一次，可以看 ¥80–¥120 的年付小包。', l: '流量倍率与重置日期', href: '/knowledge/traffic-multiplier-and-renewal/' },
+  { k: '先月付试用', d: '买最短周期，晚上 8–11 点高峰期用几天，稳定再续费。', l: '使用教程', href: '/guide/' },
 ];
 const faq = [
-  { q: '2026 年哪个机场最好？', a: `按本站目前的推荐顺序，前三名是 ${top10.slice(0, 3).map((r) => r.brand.name).join('、')}。SOGO云月付 ¥25 / 150GB、年付 ¥98，套餐档位齐全，新手好上手；微风月付 ¥27 每月 200GB，流量最足；飞猫云节点最多（71 个）。没有哪一家对所有人都最好，按预算和用量选更重要。` },
+  { q: '2026 年哪个机场最好？', a: `按本站目前的推荐顺序，前三名是 ${top10.slice(0, 3).map((r) => r.brand.name).join('、')}。SOGO云月付 ¥25 / 150GB、年付 ¥98，套餐档位齐全，新手好上手；飞猫云节点最多（71 个），还有 ¥84/年的学生版；暮光月付 ¥20 / 120GB，入门门槛低。如果流量用得多，第四名微风月付 ¥27 每月 200GB，流量最足。没有哪一家对所有人都最好，按预算和用量选更重要。` },
   { q: '新手第一次买机场选哪家？', a: `先选有月付的机场买一个月试用，例如 ${cheapMonth.brand.name}（${yuan(cheapMonth.plan.month!.price)}/月）或 SOGO云（¥25/月）。用一周，晚上高峰期也稳定再续费或换年付。` },
   { q: '机场一个月要多少钱？', a: `本站收录的 ${brands.length} 家机场里，月付入门价大多在 ¥15–¥30 之间，每月 100–200GB；年付小包一年 ¥80–¥120，每月 40–70GB。查资料、用 ChatGPT 一个月约 50GB，每天刷视频约 150GB。` },
   { q: '这份前十名单是怎么排出来的？', a: '本站综合套餐价格、流量、节点数量、资料完整程度和读者反馈排出推荐顺序。价格和节点数据都写在每家的测评页里，可以自己对照判断。' },
@@ -41,18 +46,21 @@ const schemas = [
     <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '前十名单' }]} />
     <p class="fj-updated">更新于 <time datetime={UPDATED}>{UPDATED_LABEL}</time> · 共收录 {brands.length} 家</p>
     <h1>找机场前十名单 2026：{brands.length} 家机场里值得买的 10 家</h1>
-    <p class="fj-lead">这份前十名单来自本站收录的 {brands.length} 家机场。下面先按需求给出快速选择，再列出推荐前十名的价格、流量和推荐理由，最后附上完整排行榜和选购常见问题。</p>
+    <p class="fj-lead">这份前十名单来自本站收录的 {brands.length} 家机场。下面先按需求给出快速选择，再列出推荐前十名的价格、流量和推荐理由，最后附上完整价格一览和选购常见问题。</p>
     <p class="fj-note">通过本站链接购买，本站可能获得推广佣金，不影响你支付的价格。价格整理于 {UPDATED_LABEL}，以官网结算页为准。</p>
 
     <section class="fj-section">
       <h2>按需求快速选择</h2>
-      <div class="fj-grid">
-        {scenes.map((s) => <a class="fj-box" href={s.href}><strong>{s.t}</strong><span>{s.d}</span><br /><span class="fj-link">{s.l} →</span></a>)}
-      </div>
+      <p class="fj-why">很多人找机场时并不需要看完全部十家，只要知道“像我这种情况买哪家”。下表按四种最常见的需求直接给出答案，并附上对应的专题或文章。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">情况</th><th scope="col">推荐</th><th scope="col">理由</th><th scope="col">延伸阅读</th></tr></thead>
+        <tbody>{scenes.map((x) => <tr><td><strong>{x.t}</strong></td><td><a href={`/jichang/${x.r.brand.slug}/`}>{x.r.brand.name}</a></td><td>{x.d}</td><td><a href={x.href}>{x.l}</a></td></tr>)}</tbody>
+      </table></div>
     </section>
 
     <section class="fj-section">
       <h2>找机场前十名（{UPDATED_MONTH}）</h2>
+      <p class="fj-why">这十家是从 {brands.length} 家机场里按价格、流量、节点和资料完整度综合挑出来的，每家都标了最适合的人群。每张卡片都列出月付和年付的入门价格，有优惠码的也一并写出。</p>
       <div class="fj-cards">
         {top10.map((r, i) => <PickCard brand={r.brand} num={i + 1} tag={tags[r.brand.slug]} reason={reasons[r.brand.slug]} from={path} top={i === 0} />)}
       </div>
@@ -60,20 +68,19 @@ const schemas = [
 
     <section class="fj-section">
       <h2>{brands.length} 家机场价格一览</h2>
-      <p>按本站推荐顺序排列。想按价格排序，看 <a class="fj-link" href="/cheap-airport/">便宜机场</a>；想比较每 GB 单价，看 <a class="fj-link" href="/best-value-airport/">性价比机场</a>。</p>
+      <p class="fj-why">前十名之外，你可能还想看看其他机场的价格作比较。下表按本站推荐顺序列出全部 {brands.length} 家的月付、年付和折合月价；想并排筛选，可以用 <a href="/compare/">机场对比表</a>。</p>
       <RankTable rows={rows} from={path} mode="rank" highlight="sogo-yun" />
     </section>
 
     <section class="fj-section">
       <h2>怎么选机场：3 个步骤</h2>
-      <ol class="fj-list">
-        <li><strong>估算流量</strong>：查资料、用 ChatGPT 约 50GB/月；每天刷 1–2 小时视频约 150GB；常看 4K 约 300GB；全家共用 600GB 以上。</li>
-        <li><strong>定预算</strong>：月付入门一般 ¥15–¥30；只想一年付一次，可以看 ¥80–¥120 的年付小包。</li>
-        <li><strong>先月付试用</strong>：买最短周期，晚上 8–11 点高峰期用几天，稳定再续费。买完照着 <a href="/guide/">使用教程</a> 导入订阅即可。</li>
-      </ol>
-      <p class="fj-muted">线路、倍率这些概念不清楚，可以看 <a href="/knowledge/line-types-explained/">直连、中转、IPLC 与 IEPL 的区别</a> 和 <a href="/knowledge/traffic-multiplier-and-renewal/">流量倍率与重置日期</a>。</p>
+      <p class="fj-why">挑机场最容易犯的错是先看排名、后看自己用量。按下面三步先确定流量和预算，再从前十名里挑，基本不会买错。线路名词不清楚可以看 <a href="/knowledge/line-types-explained/">直连、中转、IPLC 与 IEPL 的区别</a>。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">步骤</th><th scope="col">怎么做</th><th scope="col">延伸阅读</th></tr></thead>
+        <tbody>{howto.map((x, i) => <tr><td><strong>{i + 1}. {x.k}</strong></td><td>{x.d}</td><td><a href={x.href}>{x.l}</a></td></tr>)}</tbody>
+      </table></div>
     </section>
 
-    <Faq items={faq} title="找机场常见问题" />
+    <Faq items={faq} title="找机场常见问题" intro="找机场时读者问得最多的是哪家最好、新手买哪家、多少钱，下面逐一回答。" />
   </main>
 </BaseLayout>

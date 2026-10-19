@@ -1,4 +1,4 @@
-// 各机场入门套餐（整理自本站测评页中的官网套餐表，2026-10-04 复核整理）
+// 各机场入门套餐（整理自本站测评页中的官网套餐表，2026-10-19 复核整理）
 // month：最便宜的月付套餐；year：最便宜的年付套餐（流量为每月）；once：最便宜的不限时 / 一次性流量包
 import { brands, type Brand } from './brands';
 
@@ -12,8 +12,8 @@ export interface PlanSet {
   note?: string;
 }
 
-export const UPDATED = '2026-10-04';
-export const UPDATED_LABEL = '2026 年 10 月 4 日';
+export const UPDATED = '2026-10-19';
+export const UPDATED_LABEL = '2026 年 10 月 19 日';
 export const UPDATED_MONTH = '2026年10月';
 
 export const plans: Record<string, PlanSet> = {

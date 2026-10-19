@@ -16,12 +16,51 @@ const picks = rows.filter((r) => r.plan.month && r.plan.month.price <= 20).slice
 const cards = [rows[0], ...picks.filter((r) => r.brand.slug !== rows[0].brand.slug).slice(0, 4)];
 const onceRows = rows.filter((r) => r.plan.once).sort((a, b) => a.plan.once!.price - b.plan.once!.price);
 const cheapest = byMonthPrice[0];
+// 按月付入门价分档
+const tiers = [
+  { t: '¥10 以内', min: 0, max: 10, fit: '超低价，适合当备用或短期试用；注意倍率和稳定性。' },
+  { t: '¥10–15', min: 10.01, max: 15, fit: '流量多在 50–170GB，查资料、偶尔看视频够用。' },
+  { t: '¥15–20', min: 15.01, max: 20, fit: '便宜机场的主力价位，每月 100–150GB，日常刷视频也够。' },
+  { t: '¥20–25', min: 20.01, max: 25, fit: '价格略高，但排行榜前排机场多集中在这一档，每月约 125–160GB。' },
+  { t: '¥25 以上', min: 25.01, max: 9999, fit: '部分入门套餐流量更大（例如每月 200GB、300GB），流量用得多的人可以看。' },
+].map((x) => ({ ...x, list: byMonthPrice.filter((r) => r.plan.month!.price >= x.min && r.plan.month!.price <= x.max).sort((a, b) => a.brand.rank - b.brand.rank) }));
+const top20 = rows.slice(0, 20);
+const cheapMonthTop = top20.filter((r) => r.plan.month).sort((a, b) => a.plan.month!.price - b.plan.month!.price || a.brand.rank - b.brand.rank)[0];
+const cheapYearTop = top20.filter((r) => r.plan.year).sort((a, b) => a.plan.year!.price - b.plan.year!.price || a.brand.rank - b.brand.rank)[0];
+const cheap150 = top20.filter((r) => r.plan.month && r.plan.month.gb >= 150).sort((a, b) => a.plan.month!.price - b.plan.month!.price || a.brand.rank - b.brand.rank)[0];
+const who = [
+  { t: '只查资料、用 ChatGPT', need: '每月 30–50GB', r: cheapYearTop, how: `年付小包：${yuan(cheapYearTop.plan.year!.price)}/年，每月 ${fmtGB(cheapYearTop.plan.year!.gb)}`, l: '每月流量估算', href: '/knowledge/monthly-data-estimator/' },
+  { t: '想先试一个月', need: '不确定', r: cheapMonthTop, how: `前 20 名里月付最便宜：${yuan(cheapMonthTop.plan.month!.price)}/月 · ${fmtGB(cheapMonthTop.plan.month!.gb)}`, l: '月付和年付怎么选', href: '/knowledge/monthly-vs-annual-plan/' },
+  { t: '每天刷视频', need: '每月 150GB 左右', r: cheap150, how: `月付 150GB 档：${yuan(cheap150.plan.month!.price)}/月 · ${fmtGB(cheap150.plan.month!.gb)}`, l: '流量倍率与重置日期', href: '/knowledge/traffic-multiplier-and-renewal/' },
+  { t: '偶尔用一次', need: '很少', r: onceRows[0], how: `不限时流量包：${yuan(onceRows[0].plan.once!.price)} 买 ${fmtGB(onceRows[0].plan.once!.gb)}，用完再买`, l: '订阅、节点和规则是什么', href: '/knowledge/nodes-subscriptions-rules/' },
+];
+const runaway = [
+  { k: '运营时间', d: '刚上线几个月、没有历史口碑的低价机场，先只买一个月。' },
+  { k: '官网和工单', d: '官网经常打不开、工单几天没人回，是明显的危险信号。' },
+  { k: '促销力度', d: '突然大幅降价、充值送余额、只推三年付，要格外小心。' },
+  { k: '退款规则', d: '官网写清楚退款条件的机场，一般更愿意长期经营。' },
+];
+const tips = [
+  { k: '看月付价，不看“¥7 起”', d: '很多首页写的是年付除以 12 的价格，点进去只能买年付。' },
+  { k: '看倍率', d: '1 倍率用 1GB 扣 1GB，10 倍率用 1GB 扣 10GB，便宜的大流量套餐经常是高倍率。' },
+  { k: '先月付', d: '便宜机场跑路风险更高，不要一次买两三年。' },
+  { k: '备一个备用', d: '主力机场出问题时，有个便宜的不限时流量包可以马上切换。' },
+];
+const diff = [
+  { k: '线路', a: '多为 BGP 中转或直连，晚上 8–11 点高峰期容易变慢。', b: '更多 IPLC / IEPL 专线，高峰期相对稳定。' },
+  { k: '流量倍率', a: '部分套餐节点倍率高，账面流量要除以倍率。', b: '多为 1 倍率，用多少扣多少。' },
+  { k: '节点数量', a: '节点较少，常用地区可能只有香港、日本、美国。', b: '地区更全，ChatGPT、Netflix 可用节点更多。' },
+  { k: '售后', a: '工单回复慢，退款规则不清楚的较多。', b: '一般有工单和使用文档，出问题处理更快。' },
+  { k: '跑路风险', a: '利润薄，风险相对更高，不建议长周期购买。', b: '相对低一些，但同样不建议一次买两三年。' },
+];
 const pickReason = (r: (typeof rows)[number]) => `月付 ${yuan(r.plan.month!.price)} 每月 ${fmtGB(r.plan.month!.gb)}${r.plan.year ? `，年付 ${yuan(r.plan.year.price)} 每月 ${fmtGB(r.plan.year.gb)}` : ''}；在本站推荐中排第 ${r.brand.rank} 名。`;
 const faq = [
   { q: '最便宜的机场是哪家？', a: `按月付入门价算，${cheapest.brand.name}最便宜：${yuan(cheapest.plan.month!.price)}/月 ${fmtGB(cheapest.plan.month!.gb)}。不过价格特别低的机场要多注意稳定性，建议先买一个月试用。` },
   { q: '20 元以内能买到什么机场？', a: `本站收录的机场里，有 ${under20.length} 家月付入门价在 ¥20 以内，例如 ${picks.map((r) => `${r.brand.name}（${yuan(r.plan.month!.price)}/${fmtGB(r.plan.month!.gb)}）`).join('、')}。每月 100GB 左右，日常查资料、刷视频够用。` },
   { q: '便宜机场能用吗？会不会很卡？', a: '便宜不等于不能用，但价格很低的套餐常见三个问题：走 BGP 中转、晚上高峰期变慢；节点倍率高（例如 10 倍倍率，100GB 实际只能用 10GB）；跑路风险更大。先月付、看清倍率就能避开大部分坑。' },
   { q: '年付便宜还是月付便宜？', a: `年付折算下来更便宜，例如年付小包一年 ${yuan(byYearPrice[0].plan.year!.price)} 起，折合每月不到 ¥7，但流量一般只有每月 40–60GB。第一次买建议先月付，用稳了再换年付。` },
+  { q: '学生党买哪个便宜机场？', a: `只查资料、用 ChatGPT，可以买年付小包，例如${cheapYearTop.brand.name}一年 ${yuan(cheapYearTop.plan.year!.price)}（每月 ${fmtGB(cheapYearTop.plan.year!.gb)}）；每天刷视频，选月付 150GB 左右的套餐，例如${cheap150.brand.name} ${yuan(cheap150.plan.month!.price)}/月。飞猫云还有 ¥84/年的学生版。` },
+  { q: '便宜机场怎么判断会不会跑路？', a: '看四点：开了多久、官网和工单是否正常、有没有突然的大额促销、是否只卖长周期套餐。满足越多越要小心。最稳妥的做法是只买月付或季付，并准备一个备用机场。' },
   { q: '有没有不按月清零的便宜机场？', a: `有，叫“不限时套餐”或“流量包”，买多少用多少，不按月重置。本站收录的最便宜的是${onceRows[0].brand.name}：${yuan(onceRows[0].plan.once!.price)} 买 ${fmtGB(onceRows[0].plan.once!.gb)}，适合偶尔用或当备用。` },
 ];
 const title = `便宜机场推荐2026：月付20元以内的低价机场排行（${UPDATED_MONTH}）`;
@@ -42,24 +81,34 @@ const schemas = [
 
     <section class="fj-section">
       <h2>推荐的便宜机场（月付 ¥20 以内或年付折合 ¥10/月以内）</h2>
+      <p class="fj-why">最便宜的机场不一定最值得买。这里的推荐先满足“月付 ¥20 以内”这个价格条件，再按本站综合排名挑选，所以价格低的同时，资料和套餐也相对完整，适合第一次买、预算有限的人。</p>
       <div class="fj-cards">{cards.map((r, i) => <PickCard brand={r.brand} num={i + 1} reason={pickReason(r)} from={path} top={i === 0} />)}</div>
     </section>
 
     <section class="fj-section">
+      <h2>便宜机场按价位分档</h2>
+      <p class="fj-why">同样叫“便宜”，¥6 和 ¥20 的机场差别很大。按价位分档后，你可以先定预算，再在对应价位里挑排名靠前的。同一档内按本站综合排名排序，点名字可以看测评。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">月付价位</th><th scope="col">家数</th><th scope="col">这一档的机场</th><th scope="col">适合谁</th></tr></thead>
+        <tbody>{tiers.map((x) => <tr><td><strong>{x.t}</strong></td><td class="fj-num">{x.list.length}</td><td style="min-width:260px">{x.list.map((r, i) => <>{i > 0 && '、'}<a href={`/jichang/${r.brand.slug}/`}>{r.brand.name}</a></>)}</td><td>{x.fit}</td></tr>)}</tbody>
+      </table></div>
+    </section>
+
+    <section class="fj-section">
       <h2>月付最便宜的机场排行</h2>
-      <p>按月付入门价从低到高。价格一样时，按本站推荐顺序排。</p>
+      <p class="fj-why">月付是第一次买机场最稳妥的方式：花钱少，不好用下个月就换。下表按月付入门价从低到高排列，价格一样时按本站推荐顺序排。注意极速cloud 官网标注 10 倍流量倍率，¥8.9 的 100GB 实际约可用 10GB；九云、气泡云等超低价机场建议先买一个月观察。</p>
       <RankTable rows={byMonthPrice} from={path} mode="month" />
-      <p class="fj-muted">注意：极速cloud 官网标注 10 倍流量倍率，¥8.9 的 100GB 实际约可用 10GB；九云、气泡云等超低价机场建议先买一个月观察。</p>
     </section>
 
     <section class="fj-section">
       <h2>年付最便宜的机场</h2>
-      <p>一年只付一次，折合每月 ¥7–¥10，适合只查资料、用 ChatGPT 的轻度用户。</p>
+      <p class="fj-why">如果你只查资料、用 ChatGPT，每月用不了多少流量，年付小包的总花费最低，折合每月只要 ¥7–¥10，还不用每月续费。代价是要一次付一年，所以建议先月付确认稳定再买年付。</p>
       <RankTable rows={byYearPrice.slice(0, 12)} from={path} mode="year" />
     </section>
 
     <section class="fj-section">
       <h2>不限时流量包（不按月清零）</h2>
+      <p class="fj-why">月付和年付的流量每月清零，用不完就浪费。不限时流量包买多少用多少，不按月重置，适合偶尔才用一次的人，或者当主力机场的备用。</p>
       <div class="fj-table-wrap"><table class="fj-table">
         <thead><tr><th scope="col">机场</th><th scope="col">套餐</th><th scope="col">价格</th><th scope="col">流量</th><th scope="col">官网</th></tr></thead>
         <tbody>{onceRows.map((r) => <tr><td><a class="fj-brand" href={`/jichang/${r.brand.slug}/`}><Logo slug={r.brand.slug} name={r.brand.name} size={28} />{r.brand.name}</a></td><td>{r.plan.once!.name}</td><td class="fj-num fj-price">{yuan(r.plan.once!.price)}</td><td>{fmtGB(r.plan.once!.gb)}</td><td><Go slug={r.brand.slug} from={path} placement="comparison-table" label="官网" small /></td></tr>)}</tbody>
@@ -67,16 +116,41 @@ const schemas = [
     </section>
 
     <section class="fj-section">
-      <h2>买便宜机场的 4 个注意事项</h2>
-      <ol class="fj-list">
-        <li><strong>看月付价，不看“¥7 起”</strong>：很多首页写的是年付除以 12 的价格，点进去只能买年付。</li>
-        <li><strong>看倍率</strong>：1 倍率用 1GB 扣 1GB，10 倍率用 1GB 扣 10GB，便宜的大流量套餐经常是高倍率。</li>
-        <li><strong>先月付</strong>：便宜机场跑路风险更高，不要一次买两三年。</li>
-        <li><strong>备一个备用</strong>：主力机场出问题时，有个便宜的不限时流量包可以马上切换。</li>
-      </ol>
-      <p>想比较每 GB 单价，看 <a class="fj-link" href="/best-value-airport/">性价比机场</a>；想看综合推荐，看 <a class="fj-link" href="/">机场推荐</a>。</p>
+      <h2>学生党和轻度用户怎么选便宜机场</h2>
+      <p class="fj-why">预算最紧的通常是学生和轻度用户，但他们的用量差别也很大。与其买最便宜的，不如先估算自己每月用多少流量，再选对应的套餐类型。下表按四种常见情况给出建议。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">情况</th><th scope="col">每月用量</th><th scope="col">推荐</th><th scope="col">买法</th><th scope="col">延伸阅读</th></tr></thead>
+        <tbody>{who.map((x) => <tr><td><strong>{x.t}</strong></td><td>{x.need}</td><td><a href={`/jichang/${x.r.brand.slug}/`}>{x.r.brand.name}</a></td><td>{x.how}</td><td><a href={x.href}>{x.l}</a></td></tr>)}</tbody>
+      </table></div>
     </section>
 
-    <Faq items={faq} title="便宜机场常见问题" />
+    <section class="fj-section">
+      <h2>便宜机场和贵的机场差在哪</h2>
+      <p class="fj-why">价格差一倍，体验不一定差一倍。很多人纠结要不要多花点钱，其实关键是看差价买到了什么。下表是低价套餐（月付 ¥20 以内）和中高价套餐常见的区别，线路名词不清楚可以看 <a href="/knowledge/line-types-explained/">直连、中转、IPLC 与 IEPL 的区别</a>。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">对比项</th><th scope="col">低价套餐常见情况</th><th scope="col">中高价套餐常见情况</th></tr></thead>
+        <tbody>{diff.map((d) => <tr><td><strong>{d.k}</strong></td><td>{d.a}</td><td>{d.b}</td></tr>)}</tbody>
+      </table></div>
+    </section>
+
+    <section class="fj-section">
+      <h2>怎么判断便宜机场会不会跑路</h2>
+      <p class="fj-why">便宜机场利润薄，跑路的风险比中高价机场更高，这是买便宜机场最大的隐患。下表是四个最容易看出问题的地方，完整清单见 <a href="/knowledge/shutdown-risk-checklist/">机场跑路风险自查清单</a>；免费节点风险更大，见 <a href="/knowledge/free-node-risks/">免费节点有哪些风险</a>。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">看什么</th><th scope="col">怎么判断</th></tr></thead>
+        <tbody>{runaway.map((x) => <tr><td><strong>{x.k}</strong></td><td>{x.d}</td></tr>)}</tbody>
+      </table></div>
+    </section>
+
+    <section class="fj-section">
+      <h2>买便宜机场的 4 个注意事项</h2>
+      <p class="fj-why">便宜机场的坑大多藏在细节里：标价方式、流量倍率、付款周期。买之前花一分钟对照下表检查一遍，可以避开大部分问题。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">注意事项</th><th scope="col">说明</th></tr></thead>
+        <tbody>{tips.map((x) => <tr><td><strong>{x.k}</strong></td><td>{x.d}</td></tr>)}</tbody>
+      </table></div>
+    </section>
+
+    <Faq items={faq} title="便宜机场常见问题" intro="关于便宜机场，读者最关心的是最低多少钱、能不能用、会不会跑路，下面逐一回答。" />
   </main>
 </BaseLayout>

@@ -7,16 +7,57 @@ import Logo from '../../components/fj/Logo.astro';
 import Go from '../../components/fj/Go.astro';
 import Faq from '../../components/fj/Faq.astro';
 import { brands } from '../../data/brands';
-import { rows, monthLabel, yearLabel, UPDATED, UPDATED_LABEL, UPDATED_MONTH } from '../../data/plans';
+import { rows, monthLabel, yearLabel, perGB, yuan, fmtGB, UPDATED, UPDATED_LABEL, UPDATED_MONTH } from '../../data/plans';
+import { prevRank, PREV_LABEL } from '../../data/rank-history';
 import { reasons } from '../../data/picks';
 import { itemListSchema, articleSchema } from '../../lib/structured-data';
 
 const path = '/ranking/';
 const top10 = rows.slice(0, 10);
+const top20 = rows.slice(0, 20);
+const next10 = rows.slice(10, 20);
+const change = (slug: string, now: number) => {
+  const prev = prevRank[slug];
+  if (!prev) return { t: '新上榜', c: 'up' };
+  if (prev > now) return { t: `↑ ${prev - now}`, c: 'up' };
+  if (prev < now) return { t: `↓ ${now - prev}`, c: 'down' };
+  return { t: '持平', c: '' };
+};
+const risers = top20.filter((r) => (prevRank[r.brand.slug] ?? 99) - r.brand.rank >= 5);
+// 分类小榜：只在前二十名里比较
+const withMonth = top20.filter((r) => r.plan.month);
+const boards = [
+  { t: '月付入门最便宜', note: '前二十名内，按月付入门价', list: [...withMonth].sort((a, b) => a.plan.month!.price - b.plan.month!.price || a.brand.rank - b.brand.rank).slice(0, 5), v: (r: (typeof rows)[number]) => `${yuan(r.plan.month!.price)}/月 · ${fmtGB(r.plan.month!.gb)}` },
+  { t: '年付最便宜', note: '前二十名内，按年付总价', list: top20.filter((r) => r.plan.year).sort((a, b) => a.plan.year!.price - b.plan.year!.price || a.brand.rank - b.brand.rank).slice(0, 5), v: (r: (typeof rows)[number]) => `${yuan(r.plan.year!.price)}/年 · 每月${fmtGB(r.plan.year!.gb)}` },
+  { t: '入门月付流量最多', note: '前二十名内，按入门月付每月流量', list: [...withMonth].sort((a, b) => b.plan.month!.gb - a.plan.month!.gb || a.brand.rank - b.brand.rank).slice(0, 5), v: (r: (typeof rows)[number]) => `${fmtGB(r.plan.month!.gb)} · ${yuan(r.plan.month!.price)}/月` },
+  { t: '每 GB 单价最低', note: '前二十名内，月付入门套餐', list: [...withMonth].sort((a, b) => perGB(a.plan.month!) - perGB(b.plan.month!) || a.brand.rank - b.brand.rank).slice(0, 5), v: (r: (typeof rows)[number]) => `¥${perGB(r.plan.month!).toFixed(3)}/GB` },
+];
+const risks = [
+  { k: '一次买两三年', d: '长周期套餐折扣大，但机场停运后余额很难退。', f: '第一次只买月付或季付，用稳了再换年付。', l: '月付和年付怎么选', href: '/knowledge/monthly-vs-annual-plan/' },
+  { k: '突然大促', d: '短时间大幅降价、充值送余额，有时是资金紧张的信号。', f: '促销期间也只买短周期，不要充大额余额。', l: '跑路风险自查清单', href: '/knowledge/shutdown-risk-checklist/' },
+  { k: '没有备用', d: '主力机场出问题时，临时找新机场容易买错。', f: '从第 11–20 名里挑一个低价套餐当备用。', l: '流量倍率与重置日期', href: '/knowledge/traffic-multiplier-and-renewal/' },
+  { k: '订阅链接泄露', d: '订阅链接被别人拿到，流量会被偷用。', f: '不要把订阅链接发到群里，泄露后马上在后台重置。', l: '订阅链接安全', href: '/knowledge/subscription-link-security/' },
+];
+const uses = [
+  { t: '想看某一家的详细情况', l: '机场测评', href: '/jichang/', d: `每家都有独立测评页，记录完整套餐、节点和测速资料。` },
+  { t: '想把几家放在一起比', l: '机场对比表', href: '/compare/', d: '按名称、预算和付款周期筛选，并排比较。' },
+  { t: '想看两家的详细对比', l: 'SOGO云 vs 飞猫云', href: '/compare/sogo-yun-vs-feimao-yun/', d: '前两名在价格、流量、节点上的逐项对比。' },
+  { t: '想看速度数据', l: '机场测速资料', href: '/speed-test/', d: '各家的测速资料和读法说明。' },
+  { t: '用 ChatGPT、看 Netflix', l: 'Firefly 流媒体与 AI 指南', href: '/recommend/firefly-streaming-ai/', d: 'AI 和流媒体该选哪些地区的节点。' },
+];
+const criteria = [
+  { k: '入门价格', d: '最便宜的月付、年付各要多少钱，是否有隐藏的“年付折算价”。', s: '官网套餐页，每月复核' },
+  { k: '每月流量', d: '入门套餐每月给多少 GB，是否有高倍率节点、流量是否按月重置。', s: '官网套餐页、本站测评页' },
+  { k: '节点与地区', d: '节点数量，香港、日本、新加坡、美国等常用地区是否齐全。', s: '官网资料与公开信息' },
+  { k: '资料完整度', d: '套餐、线路、退款和使用说明能否在官网查到并核对。', s: '官网、本站测评页' },
+  { k: '读者反馈', d: '读者通过联系页反馈的可用性问题、跑路和涨价消息。', s: '读者来信，核实后更新' },
+];
 const faq = [
   { q: '机场排行榜第一名是哪家？', a: `本站${UPDATED_MONTH}机场排行榜第一名是${rows[0].brand.name}：月付基础版 ¥25 每月 150GB，年付小包 ¥98（每月 60GB），月付最高有 1.1TB 的大流量档，优惠码 sogo10000。第二、三名是${rows[1].brand.name}和${rows[2].brand.name}。` },
   { q: '十大机场有哪些？', a: `本站排行榜前十名依次是：${top10.map((r) => r.brand.name).join('、')}。每家的价格和推荐理由见本页表格，详细情况看各自的测评页。` },
   { q: '排行榜多久更新一次？', a: '价格和套餐每月复核一次，有机场调整套餐、涨价或停运时会及时更新排名，页面顶部显示最近更新日期。' },
+  { q: '这次排行榜有哪些变化？', a: `${UPDATED_LABEL}这次调整后，前五名是 ${rows.slice(0, 5).map((r) => r.brand.name).join('、')}。${risers.length ? `排名上升较多的有 ${risers.map((r) => `${r.brand.name}（第 ${prevRank[r.brand.slug]} → 第 ${r.brand.rank} 名）`).join('、')}。` : ''}完整变化见本页“本月排名变化”表。` },
+  { q: '机场排行榜第 11–20 名值得买吗？', a: `可以作为备选。第 11–20 名是 ${next10.map((r) => r.brand.name).join('、')}，价格和流量和前十名差距不大，只是资料或套餐选择略少。想要一个便宜的备用机场，可以从这里挑。` },
   { q: '排行榜靠后的机场是不是不好？', a: '不一定。排名综合了价格、流量、节点数量和资料完整度，靠后的机场有的价格很低（例如九云月付 ¥6），只是资料较少或套餐选择不多。按自己的预算和用量选最重要。' },
 ];
 const title = `机场排行榜2026：${brands.length}家机场排名与价格对比（${UPDATED_MONTH}）`;
@@ -37,6 +78,7 @@ const schemas = [
 
     <section class="fj-section">
       <h2>十大机场排行（前十名）</h2>
+      <p class="fj-why">大多数人只会在前几名里挑，所以先把前十名单独列出来，并写清每家排在这里的理由。理由都来自官网套餐数据，可以在测评页核对；如果你的用量和预算比较特殊，再往下看分类榜单。</p>
       <div class="fj-table-wrap"><table class="fj-table">
         <thead><tr><th scope="col">排名</th><th scope="col">机场</th><th scope="col">推荐理由</th><th scope="col">月付入门</th><th scope="col">官网</th></tr></thead>
         <tbody>
@@ -46,20 +88,69 @@ const schemas = [
     </section>
 
     <section class="fj-section">
+      <h2>本月排名变化（前 20 名）</h2>
+      <p class="fj-why">机场会涨价、调整套餐，也会有新机场的资料变得更完整，所以排行榜每月都会重排。和上一版（{PREV_LABEL}）相比，本次按最新的套餐价格、流量和读者反馈重新排序，下表列出前 20 名的名次变化，方便你看出哪些机场在变好。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">本月排名</th><th scope="col">机场</th><th scope="col">上一版</th><th scope="col">变化</th><th scope="col">月付入门</th></tr></thead>
+        <tbody>
+          {top20.map((r) => { const c = change(r.brand.slug, r.brand.rank); return <tr><td><span class:list={['fj-rank', r.brand.rank === 1 && 'is-1']}>{r.brand.rank}</span></td><td><a class="fj-brand" href={`/jichang/${r.brand.slug}/`}><Logo slug={r.brand.slug} name={r.brand.name} size={28} />{r.brand.name}</a></td><td class="fj-num">{prevRank[r.brand.slug] ? `第 ${prevRank[r.brand.slug]} 名` : '—'}</td><td class="fj-num" style={c.c === 'up' ? 'color:#15803d;font-weight:600' : c.c === 'down' ? 'color:#b91c1c' : ''}>{c.t}</td><td class="fj-num">{r.plan.month ? monthLabel(r.plan) : yearLabel(r.plan)}</td></tr>; })}
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="fj-section">
+      <h2>分类排行榜：按价格、流量和单价</h2>
+      <p class="fj-why">综合排名把很多因素混在一起，但很多人其实只在意一项，比如“最便宜”或“流量最多”。所以这里把前 20 名按四项数据分别排序，每个榜只比一项，资料较少的机场不参与，避免低价但不稳定的机场排到前面。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">榜单</th><th scope="col">第 1</th><th scope="col">第 2</th><th scope="col">第 3</th><th scope="col">第 4</th><th scope="col">第 5</th></tr></thead>
+        <tbody>{boards.map((b) => <tr><td><strong>{b.t}</strong><br /><span class="fj-muted">{b.note}</span></td>{b.list.map((r) => <td><a href={`/jichang/${r.brand.slug}/`}>{r.brand.name}</a><br /><span class="fj-muted">{b.v(r)}</span></td>)}</tr>)}</tbody>
+      </table></div>
+    </section>
+
+    <section class="fj-section">
+      <h2>第 11–20 名：备选机场</h2>
+      <p class="fj-why">第 11–20 名和前十名的价格、流量差距不大，排在后面主要是资料较少或套餐选择不多。它们适合当备用机场，或者前十名里没有合适套餐时再看。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">排名</th><th scope="col">机场</th><th scope="col">点评</th><th scope="col">官网</th></tr></thead>
+        <tbody>
+          {next10.map((r) => <tr><td><span class="fj-rank">{r.brand.rank}</span></td><td><a class="fj-brand" href={`/jichang/${r.brand.slug}/`}><Logo slug={r.brand.slug} name={r.brand.name} size={28} />{r.brand.name}</a></td><td style="min-width:300px">{reasons[r.brand.slug] ?? `入门套餐 ${r.plan.month ? monthLabel(r.plan) : yearLabel(r.plan)}，详情见测评页。`}</td><td><Go slug={r.brand.slug} from={path} placement="comparison-table" label="官网" small /></td></tr>)}
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="fj-section">
       <h2>完整机场排行榜（{brands.length} 家）</h2>
+      <p class="fj-why">这里是本站收录的全部 {brands.length} 家机场，按推荐顺序排列。排名靠后不等于不能用，有些价格很低，只是资料少或套餐选择不多；按自己的预算和用量选最重要。</p>
       <RankTable rows={rows} from={path} mode="rank" />
     </section>
 
     <section class="fj-section">
-      <h2>怎么用这份排行榜</h2>
-      <div class="fj-grid">
-        <a class="fj-box" href="/"><strong>不知道怎么选</strong><span>看机场推荐，按预算、追剧、轻度使用和 AI 需求直接给答案。</span></a>
-        <a class="fj-box" href="/cheap-airport/"><strong>只看价格</strong><span>便宜机场页按月付、年付价格从低到高排列。</span></a>
-        <a class="fj-box" href="/best-value-airport/"><strong>想比单价</strong><span>性价比机场页按每 GB 单价排序，流量用得多的人看这个。</span></a>
-        <a class="fj-box" href="/compare/"><strong>想并排比较</strong><span>机场对比表把所有机场的资料和测评入口放在一张表里。</span></a>
-      </div>
+      <h2>机场排行榜的排名依据</h2>
+      <p class="fj-why">排行榜不是速度测试排名，而是综合下面五项后的推荐顺序。之所以不只看速度，是因为同一家机场在不同地区、不同时段的速度差别很大，而价格、流量和资料是可以核对的。每家的原始数据都写在测评页里，完整说明见 <a href="/methodology/">评测与测速资料方法</a>。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">维度</th><th scope="col">看什么</th><th scope="col">数据来源</th></tr></thead>
+        <tbody>{criteria.map((c) => <tr><td><strong>{c.k}</strong></td><td>{c.d}</td><td>{c.s}</td></tr>)}</tbody>
+      </table></div>
     </section>
 
-    <Faq items={faq} title="机场排行榜常见问题" />
+    <section class="fj-section">
+      <h2>排名靠前也要注意：跑路与涨价风险</h2>
+      <p class="fj-why">机场行业变化快，今天排在前面的机场，几个月后也可能涨价、缩水甚至停运。排行榜只能反映当前的情况，所以下表列出四个常见风险和对应的防范方法。发现榜单里的机场停运或涨价，可以通过 <a href="/contact/">联系页</a> 告诉我们。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">风险</th><th scope="col">为什么危险</th><th scope="col">怎么防</th><th scope="col">延伸阅读</th></tr></thead>
+        <tbody>{risks.map((x) => <tr><td><strong>{x.k}</strong></td><td>{x.d}</td><td>{x.f}</td><td><a href={x.href}>{x.l}</a></td></tr>)}</tbody>
+      </table></div>
+    </section>
+
+    <section class="fj-section">
+      <h2>怎么用这份排行榜</h2>
+      <p class="fj-why">排行榜适合快速缩小范围，但最后决定买哪家，最好再看一下详细资料。下表列出看完排行榜之后，按不同需求可以继续看的内容。</p>
+      <div class="fj-table-wrap"><table class="fj-table">
+        <thead><tr><th scope="col">你想</th><th scope="col">去看</th><th scope="col">内容</th></tr></thead>
+        <tbody>{uses.map((x) => <tr><td><strong>{x.t}</strong></td><td><a href={x.href}>{x.l}</a></td><td>{x.d}</td></tr>)}</tbody>
+      </table></div>
+    </section>
+
+    <Faq items={faq} title="机场排行榜常见问题" intro="关于排行榜的名次、更新频率和怎么看，读者问得最多的是下面这些。" />
   </main>
 </BaseLayout>
