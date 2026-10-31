@@ -9,20 +9,20 @@
 
 月付 = 最便宜的月付套餐；年付 = 最便宜的年付套餐（流量为每月）；折合月价 = 月付、季付、年付中最便宜的折合每月价格。
 
-| # | 机场 | 月付 | 年付 | 折合月价 | 优惠码 | 官网 |
-|:-:|---|---|---|:-:|---|:-:|
-| 1 | **[SOGO云](https://www.findjichang.com/jichang/sogo-yun/)** 主推 | ¥25 · 150GB | ¥98 · 每月60GB | ¥8.2 | `sogo10000` | [官网](https://www.findjichang.com/go/sogo-yun/?from=/github/) |
-| 2 | [微风](https://www.findjichang.com/jichang/weifeng/) | ¥27 · 200GB | ¥137 · 每月100GB | ¥11.4 | `weifeng90` | [官网](https://www.findjichang.com/go/weifeng/?from=/github/) |
-| 3 | [飞猫云](https://www.findjichang.com/jichang/feimao-yun/) | ¥25 · 150GB | ¥84 · 每月50GB | ¥7 | `flycat888` | [官网](https://www.findjichang.com/go/feimao-yun/?from=/github/) |
-| 4 | [Firefly](https://www.findjichang.com/jichang/firefly/) | ¥25 · 150GB | ¥96 · 每月60GB | ¥8 | `firefly` | [官网](https://www.findjichang.com/go/firefly/?from=/github/) |
-| 5 | [无忧](https://www.findjichang.com/jichang/wuyou/) | ¥19 · 100GB | ¥79 · 每月40GB | ¥6.6 | `wuyou` | [官网](https://www.findjichang.com/go/wuyou/?from=/github/) |
-| 6 | [跨界云](https://www.findjichang.com/jichang/kuajie-yun/) | ¥20 · 120GB | ¥96 · 每月60GB | ¥8 | `kuajie` | [官网](https://www.findjichang.com/go/kuajie-yun/?from=/github/) |
-| 7 | [灵猫](https://www.findjichang.com/jichang/lingmao/) | — | ¥85 · 每月45GB | ¥7.1 | `lingmao` | [官网](https://www.findjichang.com/go/lingmao/?from=/github/) |
-| 8 | [闪跃](https://www.findjichang.com/jichang/shanyue/) | ¥24 · 150GB | ¥96 · 每月60GB | ¥8 | `shanyue` | [官网](https://www.findjichang.com/go/shanyue/?from=/github/) |
-| 9 | [极连云](https://www.findjichang.com/jichang/jilian-cloud/) | ¥18 · 100GB | ¥96 · 每月60GB | ¥8 | — | [官网](https://www.findjichang.com/go/jilian-cloud/?from=/github/) |
-| 10 | [U1S1](https://www.findjichang.com/jichang/u1s1/) | ¥20 · 120GB | ¥96 · 每月60GB | ¥8 | — | [官网](https://www.findjichang.com/go/u1s1/?from=/github/) |
-| 11 | [飞V](https://www.findjichang.com/jichang/flyv/) | ¥25 · 150GB | ¥99 · 每月65GB | ¥8.3 | — | [官网](https://www.findjichang.com/go/flyv/?from=/github/) |
-| 12 | [Flybit](https://www.findjichang.com/jichang/flybit/) | ¥15 · 128GB | — | ¥15 | — | [官网](https://www.findjichang.com/go/flybit/?from=/github/) |
+| # | 机场 | 月付 | 年付 | 折合月价 | 优惠码 |
+|:-:|---|---|---|:-:|---|
+| 1 | **[SOGO云](https://www.findjichang.com/jichang/sogo-yun/)** 主推 | ¥25 · 150GB | ¥98 · 每月60GB | ¥8.2 | `sogo10000` |
+| 2 | [微风](https://www.findjichang.com/jichang/weifeng/) | ¥27 · 200GB | ¥137 · 每月100GB | ¥11.4 | `weifeng90` |
+| 3 | [飞猫云](https://www.findjichang.com/jichang/feimao-yun/) | ¥25 · 150GB | ¥84 · 每月50GB | ¥7 | `flycat888` |
+| 4 | [Firefly](https://www.findjichang.com/jichang/firefly/) | ¥25 · 150GB | ¥96 · 每月60GB | ¥8 | `firefly` |
+| 5 | [无忧](https://www.findjichang.com/jichang/wuyou/) | ¥19 · 100GB | ¥79 · 每月40GB | ¥6.6 | `wuyou` |
+| 6 | [跨界云](https://www.findjichang.com/jichang/kuajie-yun/) | ¥20 · 120GB | ¥96 · 每月60GB | ¥8 | `kuajie` |
+| 7 | [灵猫](https://www.findjichang.com/jichang/lingmao/) | — | ¥85 · 每月45GB | ¥7.1 | `lingmao` |
+| 8 | [闪跃](https://www.findjichang.com/jichang/shanyue/) | ¥24 · 150GB | ¥96 · 每月60GB | ¥8 | `shanyue` |
+| 9 | [极连云](https://www.findjichang.com/jichang/jilian-cloud/) | ¥18 · 100GB | ¥96 · 每月60GB | ¥8 | — |
+| 10 | [U1S1](https://www.findjichang.com/jichang/u1s1/) | ¥20 · 120GB | ¥96 · 每月60GB | ¥8 | — |
+| 11 | [飞V](https://www.findjichang.com/jichang/flyv/) | ¥25 · 150GB | ¥99 · 每月65GB | ¥8.3 | — |
+| 12 | [Flybit](https://www.findjichang.com/jichang/flybit/) | ¥15 · 128GB | — | ¥15 | — |
 
 完整 38 家排名见 **[机场排行榜](https://www.findjichang.com/ranking/)**。
 
@@ -76,7 +76,7 @@
 ## 声明
 
 - 数据来源：各机场官网公开套餐，价格以官网实时显示为准。
-- 表格中的「官网」为推广链接，通过它购买本站可能获得佣金，不影响你的购买价格；详见 [推广关系与链接说明](https://www.findjichang.com/affiliate-disclosure/)。
+- 网站内的部分链接为推广链接，通过它购买本站可能获得佣金，不影响你的购买价格；详见 [推广关系与链接说明](https://www.findjichang.com/affiliate-disclosure/)。
 - 请遵守当地法律法规，合理使用网络服务。
 - 网站开发说明见 [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)。
 

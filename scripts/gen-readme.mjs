@@ -34,7 +34,6 @@ const eqOf = (p) => {
   if (p.quarter) c.push(p.quarter.price / 3);
   return c.length ? Math.min(...c) : null;
 };
-const go = (slug) => `${SITE}/go/${slug}/?from=/github/`; // from 必须以 / 开头，见 functions/go/[brand].ts
 const review = (slug) => `${SITE}/jichang/${slug}/`;
 
 const rows = brands.map((b) => ({ ...b, p: plans[b.slug] ?? {} })).map((r) => ({ ...r, eq: eqOf(r.p) }));
@@ -45,7 +44,7 @@ const table = top.map((r, i) => {
   const m = r.p.month ? `${yuan(r.p.month.price)} · ${gb(r.p.month.gb)}` : '—';
   const y = r.p.year ? `${yuan(r.p.year.price)} · 每月${gb(r.p.year.gb)}` : r.p.quarter ? `季付 ${yuan(r.p.quarter.price)}` : '—';
   const eq = r.eq !== null ? `¥${Math.round(r.eq * 10) / 10}` : '不限时包';
-  return `| ${i + 1} | ${name} | ${m} | ${y} | ${eq} | ${r.p.promo ? `\`${r.p.promo}\`` : '—'} | [官网](${go(r.slug)}) |`;
+  return `| ${i + 1} | ${name} | ${m} | ${y} | ${eq} | ${r.p.promo ? `\`${r.p.promo}\`` : '—'} |`;
 }).join('\n');
 
 const reasonList = rows.filter((r) => reasons[r.slug]).slice(0, 5)
@@ -70,8 +69,8 @@ const md = `# ${year} 机场推荐｜${rows.length} 家机场排行榜与价格�
 
 月付 = 最便宜的月付套餐；年付 = 最便宜的年付套餐（流量为每月）；折合月价 = 月付、季付、年付中最便宜的折合每月价格。
 
-| # | 机场 | 月付 | 年付 | 折合月价 | 优惠码 | 官网 |
-|:-:|---|---|---|:-:|---|:-:|
+| # | 机场 | 月付 | 年付 | 折合月价 | 优惠码 |
+|:-:|---|---|---|:-:|---|
 ${table}
 
 完整 ${rows.length} 家排名见 **[机场排行榜](${SITE}/ranking/)**。
@@ -122,7 +121,7 @@ ${reasonList}
 ## 声明
 
 - 数据来源：各机场官网公开套餐，价格以官网实时显示为准。
-- 表格中的「官网」为推广链接，通过它购买本站可能获得佣金，不影响你的购买价格；详见 [推广关系与链接说明](${SITE}/affiliate-disclosure/)。
+- 网站内的部分链接为推广链接，通过它购买本站可能获得佣金，不影响你的购买价格；详见 [推广关系与链接说明](${SITE}/affiliate-disclosure/)。
 - 请遵守当地法律法规，合理使用网络服务。
 - 网站开发说明见 [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)。
 
