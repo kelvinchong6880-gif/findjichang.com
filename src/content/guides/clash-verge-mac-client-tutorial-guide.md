@@ -3,7 +3,7 @@ title: "Mac苹果电脑翻墙怎么选？2026最新Clash Verge Mac版下载与�
 description: "2026最新 Mac 苹果电脑科学上网保姆级指南！深度解析为何首选 Clash Verge Rev，全面覆盖 M 系列/Intel 安全下载、机场订阅导入、TUN 增强模式接管、终端代理与断网排障 Q&A，带您轻松玩转 macOS 翻墙。"
 createdAt: 2026-08-23T20:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供 Clash Verge Rev Mac 版的深度评测、安装指南、TUN模式配置及常见问题排障。"

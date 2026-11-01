@@ -3,7 +3,7 @@ title: "NekoRay Windows 已停更：旧用户配置识别与迁移指南"
 description: "NekoRay 官方项目已经归档、停止维护。本文帮助还在用 NekoRay 的 Windows 用户识别原有节点和分流配置，导出订阅链接等必要参数，并迁移到仍在维护的 Clash Verge Rev 或 v2rayN，避免继续使用无人修复的客户端。"
 createdAt: 2026-08-23T05:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供详细的 NekoRay Windows 客户端下载、安装及双内核配置教程。"

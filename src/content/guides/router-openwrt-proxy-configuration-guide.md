@@ -3,7 +3,7 @@ title: "2026 进阶网络与路由器翻墙教程：软路由与全屋科学上�
 description: "寻找路由器翻墙教程？本文为您带来2026最新全屋科学上网进阶指南。深度解析硬路由与软路由选型，手把手教您配置 OpenWrt 旁路由、OpenClash 与 PassWall，用于解决 Apple TV 与 PS5 翻墙难题。"
 createdAt: 2026-08-23T00:30:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供硬核的软路由、旁路由配置指南，帮助用户实现全屋科学上网及特殊设备（Apple TV/PS5）的网络优化。"

@@ -3,7 +3,7 @@ title: "Shadowrocket Mac版下载与配置教程：支持M1/M2/M3苹果电脑"
 description: "2026最新苹果电脑翻墙指南！教您如何在 Mac (M1/M2/M3/M4 芯片) 上免费安装 iOS 版 Shadowrocket (小火箭)。涵盖外区 ID 下载技巧、机场节点订阅导入、全局路由分流及断网排障 Q&A。"
 createdAt: 2026-08-23T00:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "指导 Apple Silicon Mac 用户如何下载、安装并配置 iOS 版的 Shadowrocket（小火箭）。"

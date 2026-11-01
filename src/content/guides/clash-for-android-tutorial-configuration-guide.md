@@ -3,7 +3,7 @@ title: "Clash for Android 已停更：旧版配置与安全迁移教程"
 description: "Clash for Android 原项目已经停更，新用户不建议再安装。本文说明旧版 CFA 的配置文件位置、订阅更新方法、安装包风险，以及怎样把订阅迁移到仍在维护的 Clash Meta for Android 或 v2rayNG，并在卸载前恢复手机网络设置。"
 createdAt: 2026-08-23T13:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供 Clash for Android (CFA) 的安全下载、机场节点订阅导入、分流模式选择及应用绕过设置等基础配置教程。"

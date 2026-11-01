@@ -12,9 +12,9 @@ export interface PlanSet {
   note?: string;
 }
 
-export const UPDATED = '2026-10-19';
-export const UPDATED_LABEL = '2026 年 10 月 19 日';
-export const UPDATED_MONTH = '2026年10月';
+export const UPDATED = '2026-11-01';
+export const UPDATED_LABEL = '2026 年 11 月 1 日';
+export const UPDATED_MONTH = '2026年11月';
 
 export const plans: Record<string, PlanSet> = {
   weifeng: { month: { name: '乘风', price: 27, gb: 200 }, year: { name: '清风', price: 137, gb: 100 }, once: { name: '信风', price: 200, gb: 270 }, promo: 'weifeng90' },

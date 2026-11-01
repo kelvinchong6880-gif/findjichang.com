@@ -3,7 +3,7 @@ title: "新一代翻墙神器：Sing-box Windows 客户端新手配置与节点�
 description: "全面解析 2026 年新一代科学上网神器 Sing-box。本文提供详细的 Sing-box Windows 客户端 (GUI.for.SingBox/Hiddify) 下载、安装及节点订阅导入保姆级教程。深入讲解分流规则配置、TUN 虚拟网卡开启及常见报错解决，助您轻松驾驭全协议网络代理。"
 createdAt: 2026-08-23T04:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供详细的 Sing-box GUI for Windows 下载、安装及配置图文教程。"

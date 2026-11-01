@@ -3,7 +3,7 @@ title: "Quantumult X (圈X) 教程：2026新手小白保姆级配置与分流规
 description: "寻找最全的 Quantumult X 教程？本文提供2026年最新圈X新手小白配置指南，详细讲解机场节点导入、分流规则添加、Rewrite重写及MITM证书安装。保姆级教学，带你轻松玩转圈X高级代理。"
 createdAt: 2026-08-23T10:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供 Quantumult X (圈X) 的全面配置教程，包括节点导入、分流规则及重写功能。"

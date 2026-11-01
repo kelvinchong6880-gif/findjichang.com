@@ -26,14 +26,14 @@ const article = articleSchema({ title: `${brands.length} 家机场对比表：�
 const detailedComparisons = (await getCollection('comparisons')).map((entry) => ({ href: `/compare/${entry.id}/`, title: entry.data.title, description: entry.data.description }));
 ---
 
-<BaseLayout title={`机场对比表：${brands.length}家机场价格、流量与测评一览（2026）｜找机场`} description={`机场对比表（2026年10月更新）：把 ${brands.length} 家机场的入门价格、付款周期、测评页和官网入口放在同一张表里，可以按名称、预算和月付、季付、年付筛选，方便快速比较；另附微风、SOGO云、飞猫云的两两对比文章。`} ogType="article">
+<BaseLayout title={`机场对比表：${brands.length}家机场价格、流量与测评一览（2026）｜找机场`} description={`机场对比表（2026年11月更新）：把 ${brands.length} 家机场的入门价格、付款周期、测评页和官网入口放在同一张表里，可以按名称、预算和月付、季付、年付筛选，方便快速比较；另附微风、SOGO云、飞猫云的两两对比文章。`} ogType="article">
   <JsonLd data={[schema, article]} />
   <main class="page-shell section-page compare-page">
     <Breadcrumbs items={[{ label: '首页', href: '/' }, { label: '机场对比' }]} />
     <header class="compare-heading">
       <p class="eyebrow">{brands.length} 家资料总览</p><h1>机场对比表</h1>
       <p class="section-lead">把 {brands.length} 家机场的公开入口放在同一张表里，按本站推荐顺序排列，一眼看清每家的月付入门价和年付最低价，再点进测评页看完整套餐。</p>
-      <div class="compare-notice"><strong>说明：</strong>价格整理于 2026 年 10 月 4 日，套餐可能调整；付款前请在官网结算页核对价格、流量、倍率和退款规则。排序是本站推荐顺序，不是速度测试排名。</div>
+      <div class="compare-notice"><strong>说明：</strong>价格整理于 2026 年 11 月 1 日，套餐可能调整；付款前请在官网结算页核对价格、流量、倍率和退款规则。排序是本站推荐顺序，不是速度测试排名。</div>
     </header>
 
     <section aria-labelledby="comparison-table-title">
@@ -92,7 +92,7 @@ const detailedComparisons = (await getCollection('comparisons')).map((entry) => 
 
       <h2>结论：先缩小范围，再用自己的网络验证</h2>
       <p>面对 {brands.length} 家服务，最有效的顺序是：先按预算和用途缩小到三至五家，再查看品牌资料和测速条件，最后选择短周期进行自己的多时段测试。这样即使服务表现与预期不同，损失也更容易控制。注册链接只是资料流程的最后一步，不应代替前面的核对。</p>
-      <p><strong>最后更新：</strong>2026 年 10 月 4 日。本文不构成购买保证或法律意见；使用相关网络服务前，请了解所在地规则并遵守第三方平台条款。</p>
+      <p><strong>最后更新：</strong>2026 年 11 月 1 日。本文不构成购买保证或法律意见；使用相关网络服务前，请了解所在地规则并遵守第三方平台条款。</p>
       <RelatedLinks links={detailedComparisons} title="查看详细机场对比" />
     </article>
   </main>

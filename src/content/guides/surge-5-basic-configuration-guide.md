@@ -3,7 +3,7 @@ title: "完整极客神器 Surge 5 基础配置与机场节点导入保姆级教
 description: "想要真正发挥极客神器 Surge 5 的强大功能？本文为您提供2026年最新 Surge 5 基础配置教程，从零开始详细讲解机场节点订阅导入、策略组设置、分流规则添加及模块使用，保姆级教学带你轻松接管网络。"
 createdAt: 2026-08-23T11:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供 Surge 5 的基础配置、机场节点订阅导入、策略组设置及分流规则配置教程。"

@@ -3,7 +3,7 @@ title: "Loon 客户端入门教程：2026苹果手机科学上网轻量化选择
 description: "想要寻找高颜值且轻量化的 iOS 代理工具？本文为您提供2026年最新 Loon 客户端新手保姆级教程。从苹果外区下载、机场节点订阅导入、策略组分流配置，到强大的 Loon 插件与 MITM 证书安装，手把手带您轻松科学上网。"
 createdAt: 2026-08-23T12:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供 Loon 客户端的基础配置、机场节点订阅导入、策略组设置、插件配置及 MITM 证书安装教程。"

@@ -3,7 +3,7 @@ title: "V2rayN 客户端下载与节点订阅导入图文教程（支持 Vmess/V
 description: "全面解析 2026 年最新版 V2rayN 电脑端下载、安装及配置教程。手把手教你一键导入 Vmess、VLESS (Reality)、Trojan 机场节点订阅。内含绕过大陆路由规则设置、TUN 虚拟网卡游戏加速及全套连不上网报错排查指南，Windows 科学上网必看。"
 createdAt: 2026-08-23T03:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供详尽的 V2rayN 下载、安装与配置图文教程，解决新手配置多协议代理时的疑难杂症。"

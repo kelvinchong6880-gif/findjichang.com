@@ -3,7 +3,7 @@ title: "2026节点排障与流媒体/AI解锁教程：搞定ChatGPT与Netflix报
 description: "科学上网节点故障排查与分流配置参考。本文分析 ChatGPT、Claude 拒绝访问以及 Netflix 流媒体锁区报错的常见原理，提供优化代理分流规则、检查 DNS 防泄露与系统时间同步的排障步骤，帮助用户定位节点超时原因并改善跨区网络连接体验。"
 createdAt: 2026-08-23T03:30:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "指导用户排查科学上网节点常见故障，并解决 AI（ChatGPT/Claude）和流媒体（Netflix/Disney+）的解锁与封控问题。"

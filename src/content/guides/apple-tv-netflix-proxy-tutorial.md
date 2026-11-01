@@ -3,7 +3,7 @@ title: "Apple TV怎么看Netflix？2026翻墙路由器与客户端配置教程"
 description: "在 Apple TV 观看 Netflix 的网络配置指南。本文介绍 tvOS 原生代理客户端的设置流程以及软路由旁网关的分流策略。内容涵盖常见的流媒体代理检测报错排查、字幕下发逻辑调整以及提升 Apple TV 网络环境稳定性的基础操作方案。"
 createdAt: 2026-08-23T02:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "指导用户如何在 Apple TV 上配置翻墙节点以顺利观看 Netflix，涵盖客户端与软路由双方案。"

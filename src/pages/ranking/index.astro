@@ -23,7 +23,7 @@ const change = (slug: string, now: number) => {
   if (prev < now) return { t: `↓ ${now - prev}`, c: 'down' };
   return { t: '持平', c: '' };
 };
-const risers = top20.filter((r) => (prevRank[r.brand.slug] ?? 99) - r.brand.rank >= 5);
+const risers = top20.filter((r) => (prevRank[r.brand.slug] ?? 99) - r.brand.rank >= 2);
 // 分类小榜：只在前二十名里比较
 const withMonth = top20.filter((r) => r.plan.month);
 const boards = [

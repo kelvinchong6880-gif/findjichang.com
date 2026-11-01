@@ -3,7 +3,7 @@ title: "OpenClash插件图文教程：八步实现全家设备无感科学上网
 description: "OpenClash 软路由图文教程（2026）：用八个步骤完成 Meta 内核安装、机场订阅导入、Fake-IP 与 DNS 防污染设置和分流规则配置，让家里的电视、游戏机和手机不装客户端也能自动科学上网。"
 createdAt: 2026-08-23T01:30:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供在 OpenWRT 软路由上安装和配置 OpenClash 插件的分步指南。"

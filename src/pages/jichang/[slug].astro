@@ -32,7 +32,7 @@ const planCount = planRows > 0 ? planRows : null;
 
 const priceBits = [p.month && `月付 ${yuan(p.month.price)} 起（${fmtGB(p.month.gb)}）`, p.year && `年付 ${yuan(p.year.price)}（每月 ${fmtGB(p.year.gb)}）`, !p.month && !p.year && p.once && `不限时 ${yuan(p.once.price)} / ${fmtGB(p.once.gb)}`].filter(Boolean).join('，');
 const title = `${n}机场怎么样？${n}测评：套餐价格、节点与购买建议（2026）`;
-const baseDesc = `${n}机场怎么样？本页整理${n}官网${planCount ? ` ${planCount} 档` : ''}套餐：${priceBits}${nodes ? `，后台记录 ${nodes} 个节点` : ''}${p.promo ? `，结算可用优惠码 ${p.promo}` : ''}。附适合人群、套餐怎么选、注意事项和常见问题，2026年10月更新。`;
+const baseDesc = `${n}机场怎么样？本页整理${n}官网${planCount ? ` ${planCount} 档` : ''}套餐：${priceBits}${nodes ? `，后台记录 ${nodes} 个节点` : ''}${p.promo ? `，结算可用优惠码 ${p.promo}` : ''}。附适合人群、套餐怎么选、注意事项和常见问题，2026年11月更新。`;
 const description = baseDesc.length < 95 ? baseDesc.replace('。附适合人群', '。本文还整理了适合人群、购买前注意事项、买完怎么导入 Clash 和小火箭') .replace('、套餐怎么选、注意事项和常见问题', '，以及常见问题') : baseDesc;
 
 const fits: string[] = [];

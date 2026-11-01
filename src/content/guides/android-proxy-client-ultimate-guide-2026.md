@@ -3,7 +3,7 @@ title: "2026安卓手机科学上网完整指南：主流翻墙客户端横测�
 description: "寻找最全的安卓翻墙教程？本文为您提供2026年最新Android科学上网完整指南！深度横向对比 Clash、v2rayNG、Sing-box 与 Surfboard，详解机场节点订阅导入、分流规则配置、分应用代理及防断流杀后台技巧，保姆级实操带您一文精通。"
 createdAt: 2026-08-23T18:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供2026年最新的安卓科学上网完整指南，横评主流客户端并给出通用配置与优化教程。"

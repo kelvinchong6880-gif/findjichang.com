@@ -3,7 +3,7 @@ title: "软路由翻墙入门：2026 OpenWRT安装PassWall与节点配置指南"
 description: "2026最新 OpenWRT 软路由翻墙入门保姆级教程！详解 PassWall 依赖环境补全、ipk 安装包部署、机场节点订阅导入、DNS 防污染分流设置及断网排障 Q&A，手把手教您搭建全屋较快科学上网。"
 createdAt: 2026-08-23T01:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供针对 OpenWRT 软路由安装和配置 PassWall 翻墙插件的深度指南。"

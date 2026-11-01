@@ -3,7 +3,7 @@ title: "Mac开启翻墙代理后终端无法联网？2026命令行代理设置�
 description: "2026最新 Mac 终端命令行代理设置指南！解决 Mac 开启代理后 Terminal、Git、Brew、Pip 依然断网问题。详解临时 export、zshrc 永久别名函数、SSH 代理配置与 Q&A 排障，手把手带您搞定命令行出海。"
 createdAt: 2026-08-23T23:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "提供解决 Mac 开启代理后终端仍无法连网问题的完整指南，包括配置终端代理环境变量和特殊开发工具的配置。"

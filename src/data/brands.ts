@@ -17,9 +17,10 @@ export const brands: Brand[] = [
   ['微风', 'weifeng', 'https://edp01.breezenetaff.com/#/?code=hM8APccJ'],
   ['宇宙云', 'yuzhou-cloud', 'https://wzjc.yuzoucloud.cc/#/?code=IWowgER5'],
   ['二猫云', 'ermao', 'https://wzjc.2maoyunaff.cc/#/?code=bvsFDmSt'],
-  ['光速云', 'guangsu', 'https://mdlky.gsyaff.com/#/?code=5PLKd4WN'],
-  ['星岛梦', 'xingdaomeng', 'https://kfccbb.xingdaomeng.com/#/?code=0YcwWgSw'],
   ['Firefly', 'firefly', 'https://vip02.fireflyaff.com/#/?code=8nDg6OEY'],
+  ['飞V', 'flyv', 'https://varnexa.flyvaff.com/#/?code=XsiIuDgj'],
+  ['光速云', 'guangsu', 'https://mdlky.gsyaff.com/#/?code=5PLKd4WN'],
+  ['星岛梦', 'xingdaomeng', 'https://vip06.xdmaffvip.com/#/?code=0YcwWgSw'],
   ['无忧', 'wuyou', 'https://wep01.worryfreeaff.com/#/?code=s1kH64A8'],
   ['一翻云', 'yifan', 'https://wzjc.1flyunaff.cc/#/?code=0tH3Mmch'],
   ['全球云', 'quanqiu-cloud', 'https://sswdh.gcvipaff.com/#/?code=SHjBKSgm'],
@@ -28,7 +29,6 @@ export const brands: Brand[] = [
   ['跨界云', 'kuajie-yun', 'https://vip02.kuajieaff.com/#/?code=hh3QezsW'],
   ['闪跃', 'shanyue', 'https://wep01.flashleapaff.com/#/?code=cs0ekCMG'],
   ['灵猫', 'lingmao', 'https://edp01.civetaff.com/#/?code=CYg7QSJo'],
-  ['飞V', 'flyv', 'https://varnexa.flyvaff.com/#/?code=XsiIuDgj'],
   ['梯子云', 'tizi-cloud', 'https://varnexa.ladderaff.com/#/?code=zUCoDtv6'],
   ['边缘节点', 'edgenova', 'https://work.edgenovaaff.cc/#/?code=k7VCKPvN'],
   ['极连云', 'jilian-cloud', 'https://reuire23oure.jilianat.homes/#/?code=b2OTDcAo'],
@@ -78,7 +78,7 @@ export const brands: Brand[] = [
     "quanqiu-cloud": "¥8.25/月起",
     "shanshui-cloud": "¥7.3/月起",
     "shanyue": "¥8/月起",
-    "sogo-yun": "¥8.1/月起",
+    "sogo-yun": "¥8.2/月起",
     "sujie": "¥25/月起",
     "tizi-cloud": "¥25/月起",
     "u1s1": "¥8/月起",
@@ -88,7 +88,7 @@ export const brands: Brand[] = [
     "xingdaomeng": "¥8/月起",
     "xsus": "¥12/月起",
     "xxyun": "¥9.99/月起",
-    "yifan": "¥8.1/月起",
+    "yifan": "¥8.2/月起",
     "yuzhou-cloud": "¥25/月起"
 };
   const minPriceStr = minPrices[slug];

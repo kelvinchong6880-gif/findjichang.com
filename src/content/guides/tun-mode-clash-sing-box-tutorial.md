@@ -3,7 +3,7 @@ title: "什么是TUN模式？2026 Clash与Sing-box虚拟网卡全局教程"
 description: "2026最新TUN模式原理解析与配置指南。详解虚拟网卡如何接管系统全局流量，手把手教您在Clash Verge与Sing-box中开启TUN模式，解决终端与游戏断网难题。"
 createdAt: 2026-08-23T02:30:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-08-24T15:45:00+08:00
+updatedAt: 2026-11-01T12:00:00+08:00
 draft: false
 status: published
 primaryIntent: "解释 TUN 模式的原理，并指导用户如何在 Clash Verge 和 Sing-box 客户端中正确配置开启虚拟网卡全局接管。"

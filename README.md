@@ -1,9 +1,9 @@
-# 2026 机场推荐｜38 家机场排行榜与价格对比（10月更新）
+# 2026 机场推荐｜38 家机场排行榜与价格对比（11月更新）
 
 > 本仓库是 [找机场（findjichang.com）](https://www.findjichang.com/) 的网站源码，首页是「机场推荐」榜单精简版，随官网数据同步更新。
 > 完整榜单、每家机场的测评、测速资料与新手教程请看：**[机场推荐 · 2026](https://www.findjichang.com/)**
 
-收录 **38 家**机场，按本站推荐顺序排名，综合考虑套餐价格、流量、节点数量和资料完整度。价格整理于 2026-10-04，以各机场官网实时价格为准。
+收录 **38 家**机场，按本站推荐顺序排名，综合考虑套餐价格、流量、节点数量和资料完整度。价格整理于 2026-11-01，以各机场官网实时价格为准。
 
 ## 2026 机场推荐 TOP 12
 
@@ -12,27 +12,27 @@
 | # | 机场 | 月付 | 年付 | 折合月价 | 优惠码 |
 |:-:|---|---|---|:-:|---|
 | 1 | **[SOGO云](https://www.findjichang.com/jichang/sogo-yun/)** 主推 | ¥25 · 150GB | ¥98 · 每月60GB | ¥8.2 | `sogo10000` |
-| 2 | [微风](https://www.findjichang.com/jichang/weifeng/) | ¥27 · 200GB | ¥137 · 每月100GB | ¥11.4 | `weifeng90` |
-| 3 | [飞猫云](https://www.findjichang.com/jichang/feimao-yun/) | ¥25 · 150GB | ¥84 · 每月50GB | ¥7 | `flycat888` |
-| 4 | [Firefly](https://www.findjichang.com/jichang/firefly/) | ¥25 · 150GB | ¥96 · 每月60GB | ¥8 | `firefly` |
-| 5 | [无忧](https://www.findjichang.com/jichang/wuyou/) | ¥19 · 100GB | ¥79 · 每月40GB | ¥6.6 | `wuyou` |
-| 6 | [跨界云](https://www.findjichang.com/jichang/kuajie-yun/) | ¥20 · 120GB | ¥96 · 每月60GB | ¥8 | `kuajie` |
-| 7 | [灵猫](https://www.findjichang.com/jichang/lingmao/) | — | ¥85 · 每月45GB | ¥7.1 | `lingmao` |
-| 8 | [闪跃](https://www.findjichang.com/jichang/shanyue/) | ¥24 · 150GB | ¥96 · 每月60GB | ¥8 | `shanyue` |
-| 9 | [极连云](https://www.findjichang.com/jichang/jilian-cloud/) | ¥18 · 100GB | ¥96 · 每月60GB | ¥8 | — |
-| 10 | [U1S1](https://www.findjichang.com/jichang/u1s1/) | ¥20 · 120GB | ¥96 · 每月60GB | ¥8 | — |
-| 11 | [飞V](https://www.findjichang.com/jichang/flyv/) | ¥25 · 150GB | ¥99 · 每月65GB | ¥8.3 | — |
-| 12 | [Flybit](https://www.findjichang.com/jichang/flybit/) | ¥15 · 128GB | — | ¥15 | — |
+| 2 | [飞猫云](https://www.findjichang.com/jichang/feimao-yun/) | ¥25 · 150GB | ¥84 · 每月50GB | ¥7 | `flycat888` |
+| 3 | [暮光](https://www.findjichang.com/jichang/muguang/) | ¥20 · 120GB | ¥109 · 每月70GB | ¥9.1 | — |
+| 4 | [微风](https://www.findjichang.com/jichang/weifeng/) | ¥27 · 200GB | ¥137 · 每月100GB | ¥11.4 | `weifeng90` |
+| 5 | [宇宙云](https://www.findjichang.com/jichang/yuzhou-cloud/) | ¥25 · 160GB | ¥96 · 每月60GB | ¥8 | — |
+| 6 | [二猫云](https://www.findjichang.com/jichang/ermao/) | ¥20 · 130GB | ¥89 · 每月60GB | ¥7.4 | — |
+| 7 | [Firefly](https://www.findjichang.com/jichang/firefly/) | ¥25 · 150GB | ¥96 · 每月60GB | ¥8 | `firefly` |
+| 8 | [飞V](https://www.findjichang.com/jichang/flyv/) | ¥25 · 150GB | ¥99 · 每月65GB | ¥8.3 | — |
+| 9 | [光速云](https://www.findjichang.com/jichang/guangsu/) | ¥23 · 148GB | ¥99 · 每月59GB | ¥8.3 | — |
+| 10 | [星岛梦](https://www.findjichang.com/jichang/xingdaomeng/) | ¥25 · 150GB | ¥96 · 每月60GB | ¥8 | — |
+| 11 | [无忧](https://www.findjichang.com/jichang/wuyou/) | ¥19 · 100GB | ¥79 · 每月40GB | ¥6.6 | `wuyou` |
+| 12 | [一翻云](https://www.findjichang.com/jichang/yifan/) | ¥20 · 150GB | ¥98 · 每月60GB | ¥8.2 | — |
 
 完整 38 家排名见 **[机场排行榜](https://www.findjichang.com/ranking/)**。
 
 ## 前五名推荐理由
 
 1. **[SOGO云](https://www.findjichang.com/jichang/sogo-yun/)**：月付基础版 ¥25 / 150GB，年付小包 ¥98（每月 60GB，折合约 ¥8.2/月），新手最容易入手；月付从 150GB 到 1.1TB 共 4 档，流量不够可以直接升级，结算时可用优惠码 sogo10000。
-2. **[微风](https://www.findjichang.com/jichang/weifeng/)**：月付「乘风」¥27 每月 200GB，是前十名里月付流量给得最多的入门套餐；另有不限时「信风」¥200 / 270GB，可以当备用。本站记录到 62 个节点。
-3. **[飞猫云](https://www.findjichang.com/jichang/feimao-yun/)**：学生版 ¥84/年（每月 50GB）适合轻度用户，月付星耀版 ¥25 / 150GB 适合日常刷视频；本站记录到 71 个节点，地区覆盖最广，还有 1000GB 不限时套餐。
-4. **[Firefly](https://www.findjichang.com/jichang/firefly/)**：月付 Lite ¥25 / 150GB，年付 ¥96 每月 60GB，套餐梯度清楚；本站记录到 50 个节点，另有 Firefly 流媒体与 AI 使用指南。
-5. **[无忧](https://www.findjichang.com/jichang/wuyou/)**：月付「舒心」¥19 / 100GB，年付 MINI ¥79（每月 40GB），是前十名里年付最便宜的一家，适合预算有限的新手。
+2. **[飞猫云](https://www.findjichang.com/jichang/feimao-yun/)**：学生版 ¥84/年（每月 50GB）适合轻度用户，月付星耀版 ¥25 / 150GB 适合日常刷视频；本站记录到 71 个节点，地区覆盖最广，还有 1000GB 不限时套餐。
+3. **[暮光](https://www.findjichang.com/jichang/muguang/)**：月付基础版 ¥20 / 120GB，入门门槛比多数前十名低；年付轻量版 ¥109 每月 70GB，是前十名年付小包里每月流量给得较多的一家。
+4. **[微风](https://www.findjichang.com/jichang/weifeng/)**：月付「乘风」¥27 每月 200GB，是前十名里月付流量给得最多的入门套餐；另有不限时「信风」¥200 / 270GB，可以当备用。本站记录到 62 个节点。
+5. **[宇宙云](https://www.findjichang.com/jichang/yuzhou-cloud/)**：月付行星基础版 ¥25 / 160GB，同价位比常见的 150GB 档多 10GB；年付星云小包 ¥96（每月 60GB），适合想先月付试用、再转年付的人。
 
 ## 按预算选机场
 
@@ -82,4 +82,4 @@
 
 ---
 
-最后更新：2026-10-04　·　完整版：**[findjichang.com](https://www.findjichang.com/)**
+最后更新：2026-11-01　·　完整版：**[findjichang.com](https://www.findjichang.com/)**

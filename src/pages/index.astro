@@ -29,7 +29,7 @@ const proscons: Record<string, { good: string; watch: string }> = {
   'feimao-yun': { good: '本站记录到 71 个节点，地区覆盖最广；学生版 ¥84/年。', watch: '学生版每月 50GB，只适合轻度使用；追剧要选月付星耀版。' },
   muguang: { good: '月付基础版 ¥20 / 120GB，前三名里入门门槛最低。', watch: '年付轻量版 ¥109，在前十名的年付小包里价格偏高。' },
 };
-const movers = rows.slice(0, 10).filter((r) => (prevRank[r.brand.slug] ?? 99) - r.brand.rank >= 3);
+const movers = rows.slice(0, 10).filter((r) => (prevRank[r.brand.slug] ?? 99) - r.brand.rank >= 2);
 const needs = [
   { t: '想直接看前十名单', l: '找机场前十名单', href: '/recommend/', d: '从全部机场里挑出的 10 家，附适合人群和优惠码。' },
   { t: '用 ChatGPT、看 Netflix', l: 'Firefly 流媒体与 AI 指南', href: '/recommend/firefly-streaming-ai/', d: '讲清楚 AI 和流媒体该选哪些地区的节点。' },
@@ -148,7 +148,8 @@ const description = `找机场整理${brands.length}家机场的测评、套餐�
         <div class="fj-table-wrap"><table class="fj-table">
           <thead><tr><th scope="col">日期</th><th scope="col">更新内容</th></tr></thead>
           <tbody>
-            <tr><td class="fj-num"><strong>{UPDATED_LABEL}</strong></td><td>复核 {brands.length} 家机场的套餐价格，调整推荐排名。{movers.length > 0 && <>排名上升较多的有 {movers.map((r, i) => <>{i > 0 && '、'}<a href={`/jichang/${r.brand.slug}/`}>{r.brand.name}</a>（第 {prevRank[r.brand.slug]} → 第 {r.brand.rank} 名）</>)}。</>}</td></tr>
+            <tr><td class="fj-num"><strong>{UPDATED_LABEL}</strong></td><td>调整推荐排名，补充 Firefly、SOGO云、飞V 测速记录。{movers.length > 0 && <>排名上升较多的有 {movers.map((r, i) => <>{i > 0 && '、'}<a href={`/jichang/${r.brand.slug}/`}>{r.brand.name}</a>（第 {prevRank[r.brand.slug]} → 第 {r.brand.rank} 名）</>)}。</>}</td></tr>
+            <tr><td class="fj-num"><strong>2026 年 10 月 19 日</strong></td><td>复核 {brands.length} 家机场的套餐价格，调整推荐排名。</td></tr>
             <tr><td class="fj-num"><strong>2026 年 10 月 4 日</strong></td><td>整理各家入门套餐价格，新增按价格、单价和排名分类的页面。</td></tr>
           </tbody>
         </table></div>
