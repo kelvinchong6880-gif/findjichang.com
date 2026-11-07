@@ -3,7 +3,7 @@ title: "Surge Mac版进阶使用教程：2026从节点导入到接管系统网�
 description: "2026最新 Surge for Mac 进阶保姆级教程！深度讲解机场托管订阅导入、增强模式(Enhanced Mode)全局接管、旁路网关设置、模块化配置与 Q&A 断网排障，带您彻底掌握 Mac 代理天花板。"
 createdAt: 2026-08-23T21:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-11-01T12:00:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
 status: published
 primaryIntent: "提供针对 Surge Mac 版的进阶使用指南，包括订阅导入、Enhanced Mode 增强模式接管、网关模式与模块配置。"

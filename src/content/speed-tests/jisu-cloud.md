@@ -3,7 +3,7 @@ title: "极速cloud测速与节点报告：三网优化、原生IP与流媒体�
 description: "极速cloud最新测速与节点资料页：基于官网宣称的“三网优化精品线路”与“10倍节点倍率”，我们将为您公开最严谨的晚高峰下载速度、网络延迟、丢包率测试报告，以及针对各大流媒体（Netflix、TikTok）与 AI 平台（ChatGPT）的原生IP解锁验证方法，提供最客观的极速云性能参考。"
 createdAt: 2026-09-07
 publishedAt: 2026-09-07T12:00:00+08:00
-updatedAt: 2026-11-01T12:00:00+08:00
+updatedAt: 2026-09-07T12:00:00+08:00
 draft: false
 status: published
 keywords:

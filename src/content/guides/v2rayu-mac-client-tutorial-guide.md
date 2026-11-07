@@ -3,7 +3,7 @@ title: "V2rayU Mac客户端下载与配置教程：2026适配Apple Silicon M芯�
 description: "2026最新 V2rayU Mac 版保姆级使用教程！全面支持苹果 M1/M2/M3/M4 芯片与 Intel 机型，详解最新版安全下载、解决“App已损坏”报错、机场订阅导入、PAC 智能分流与排障 Q&A，轻松搞定 Mac 科学上网。"
 createdAt: 2026-08-23T22:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-11-01T12:00:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
 status: published
 primaryIntent: "提供 V2rayU Mac 版的全面使用教程，重点解决下载、架构选择、App已损坏报错及 PAC 分流配置问题。"

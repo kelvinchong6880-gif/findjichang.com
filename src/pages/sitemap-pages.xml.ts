@@ -27,7 +27,7 @@ export const GET: APIRoute = async () => {
   // 榜单类页面的数据来自 plans.ts，跟随价格更新日期；其他静态页保持原日期
   const plansPaths = ['/', '/recommend/', '/ranking/', '/cheap-airport/', '/best-value-airport/', '/compare/'];
   const plansUpdated = new Date(`${UPDATED}T00:00:00.000Z`).toISOString();
-  const staticUpdated = '2026-11-01T00:00:00.000Z';
+  const staticUpdated = '2026-10-04T00:00:00.000Z';
   const staticUrls = staticPaths.map((path) => `<url><loc>${escapeXml(new URL(path, site.url).toString())}</loc><lastmod>${plansPaths.includes(path) ? plansUpdated : staticUpdated}</lastmod></url>`);
   const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${[...staticUrls, ...articleUrls].join('')}</urlset>`;
   return new Response(body, { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });

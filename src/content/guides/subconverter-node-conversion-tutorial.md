@@ -3,7 +3,7 @@ title: "机场订阅格式不支持？2026 Subconverter节点转换教程"
 description: "机场订阅链接导入 Clash 或 Sing-box 时提示格式不支持？本文介绍 Subconverter 订阅转换工具的用法，一步步教你把不同协议的节点转换成目标客户端能识别的格式，并把多个机场订阅合并成一个，附隐私注意事项。"
 createdAt: 2026-08-23T03:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-11-01T12:00:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
 status: published
 primaryIntent: "指导用户使用 Subconverter 工具解决机场订阅链接格式不兼容的问题，包括节点转换与多机场订阅合并。"

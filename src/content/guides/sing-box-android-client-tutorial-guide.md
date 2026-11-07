@@ -3,7 +3,7 @@ title: "Sing-box 安卓客户端使用教程：低耗电、高性能科学上网
 description: "2026最新 Sing-box for Android (SFA) 新手小白配置教程！手把手教您最新 APK 安全下载安装、机场 JSON 订阅导入、VLESS-Reality 协议配置、智能分流与防杀后台设置，附带常见问题排障 Q&A，打造较快低耗电安卓翻墙体验。"
 createdAt: 2026-08-23T16:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-11-01T12:00:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
 status: published
 primaryIntent: "提供 Sing-box for Android (SFA) 的安全下载安装、JSON 订阅导入、协议配置及后台防杀设置等教程。"

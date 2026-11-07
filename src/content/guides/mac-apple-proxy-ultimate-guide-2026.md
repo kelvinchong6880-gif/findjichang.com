@@ -3,7 +3,7 @@ title: "2026 Mac苹果电脑翻墙完整指南：Clash Verge Rev与Surge配置�
 description: "2026最新 Mac 苹果电脑科学上网保姆级教程！深度横测 Clash Verge Rev、Surge Mac、Sing-box，详解机场订阅导入、TUN 增强模式接管、终端代理与断网排障 Q&A，带您轻松搞定 macOS 科学上网。"
 createdAt: 2026-08-23T19:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-11-01T12:00:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
 status: published
 primaryIntent: "提供针对 Mac macOS 系统的翻墙完整指南，详解 Clash Verge Rev 和 Surge 的配置、TUN 模式及终端代理设置。"

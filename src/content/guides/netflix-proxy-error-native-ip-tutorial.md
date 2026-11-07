@@ -3,7 +3,7 @@ title: "Netflix提示使用代理怎么破？流媒体原生IP解锁原理与检
 description: "Netflix 提示使用了代理的排障指南。本文说明机房 IP 与原生住宅 IP 的基础区别、跨区锁区机制与自制剧判定逻辑。我们介绍鉴别节点网络类型的常规方法与 DNS 防泄漏配置思路，协助读者理解流媒体平台的代理检测方式，并提供改善连接质量的参考建议。"
 createdAt: 2026-08-23T06:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-11-01T12:00:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
 status: published
 primaryIntent: "指导用户解决 Netflix 提示使用了代理的问题，科普原生住宅 IP 与机房 IP 的区别，并提供解锁流媒体的实操方案。"

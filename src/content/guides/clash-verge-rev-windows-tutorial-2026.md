@@ -3,7 +3,7 @@ title: "Clash Verge Rev Windows 下载与配置教程（替代 Clash for Windows
 description: "Clash Verge Rev Windows 使用教程（2026）：从官方 GitHub 下载并核对版本，一步步完成机场订阅导入、规则模式与全局模式切换、系统代理和 TUN 模式设置，并附断网、节点超时和代理残留等常见问题的回滚方法。"
 createdAt: 2026-08-23T02:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-11-01T12:00:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
 status: published
 primaryIntent: "提供最新的 Clash Verge Rev Windows 版下载与配置详细教程，帮助用户替代已停更的 CFW。"

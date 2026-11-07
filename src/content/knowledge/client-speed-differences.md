@@ -3,7 +3,7 @@ title: "为什么同一个机场在不同客户端速度不一样？"
 description: "为什么同一个机场、同一个节点，在 Clash、小火箭和 v2rayN 里速度不一样？本文解释代理内核、DNS 设置、分流规则和测速方式对结果的影响，并告诉你怎样排除客户端因素，判断到底是机场慢还是设置有问题。"
 createdAt: 2026-08-23T19:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-11-01T12:00:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
 status: published
 primaryIntent: "解释内核、DNS、路由和测试方式造成的差异。"

@@ -3,7 +3,7 @@ title: "开启翻墙后国内网站打不开或速度慢？Clash智能分流教�
 description: "2026最新科学上网排障指南。开启代理后国内网站加载慢、打不开怎么办？详解Clash/Sing-box智能分流规则设置、DNS分流与Fake-IP排障，实现海内外流量较好隔离。"
 createdAt: 2026-08-23T05:30:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-11-01T12:00:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
 status: published
 primaryIntent: "解决用户开启代理后导致国内网络变慢或无法访问的痛点，指导如何配置正确的路由分流与 DNS 隔离。"

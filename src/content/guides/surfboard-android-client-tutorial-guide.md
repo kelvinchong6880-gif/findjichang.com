@@ -3,7 +3,7 @@ title: "Surfboard (冲浪板) 安卓端使用教程：较好兼容 Surge 格式�
 description: "2026最新 Surfboard (冲浪板) 安卓新手保姆级教程！全面解析最新版 APK 安全下载、Surge 格式托管订阅导入、策略组与分流规则配置、分应用代理及后台防杀保活设置，附带详尽 Q&A 排障，带您轻松玩转安卓端科学上网。"
 createdAt: 2026-08-23T15:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-11-01T12:00:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
 status: published
 primaryIntent: "提供 Surfboard (冲浪板) 安卓端的最新 APK 下载、Surge 格式订阅导入、分流规则配置及后台保活设置教程。"

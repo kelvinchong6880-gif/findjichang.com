@@ -3,7 +3,7 @@ title: "翻墙后打不开ChatGPT？解决Access Denied与1020报错"
 description: "ChatGPT 访问报错（如 Access Denied、Error 1020）排障参考。本文解析常见的网络拦截原因与 IP 风险控制机制，介绍如何检查代理节点属性及清理浏览器本地环境，为无法加载 OpenAI 界面的情况提供常规的排查步骤。"
 createdAt: 2026-08-23T05:00:00
 publishedAt: 2026-08-24T15:45:00+08:00
-updatedAt: 2026-11-01T12:00:00+08:00
+updatedAt: 2026-08-24T15:45:00+08:00
 draft: false
 status: published
 primaryIntent: "指导用户排查因翻墙节点导致的 ChatGPT 无法访问问题，重点解决 1020 报错和 Access Denied 拦截。"
