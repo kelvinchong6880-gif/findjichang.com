@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
+import RecommendCallout from '../../components/fj/RecommendCallout.astro';
 import { isPublishable } from '../../lib/seo';
 import { relatedContent, toCandidate } from '../../lib/related-content';
 import JsonLd from '../../components/JsonLd.astro';
@@ -45,6 +46,7 @@ const updatedText = (entry.data.updatedAt ?? entry.data.createdAt).toISOString()
     <section class="content-layout" style="grid-template-columns: 1fr;">
       <article class="article-content">
         <Content />
+        <RecommendCallout />
         <RelatedLinks links={related} title="相关教程与知识" />
       </article>
     </section>

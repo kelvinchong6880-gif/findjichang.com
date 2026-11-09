@@ -10,6 +10,7 @@ import { reasons } from '../data/picks';
 import { prevRank } from '../data/rank-history';
 import { planOf } from '../data/plans';
 import { itemListSchema } from '../lib/structured-data';
+import { speedUpdates, HOME_UPDATED_LABEL } from '../data/speed-updates';
 
 const top3 = rows.slice(0, 3);
 const top10 = rows.slice(0, 10);
@@ -29,6 +30,10 @@ const proscons: Record<string, { good: string; watch: string }> = {
   'feimao-yun': { good: '本站记录到 71 个节点，地区覆盖最广；学生版 ¥84/年。', watch: '学生版每月 50GB，只适合轻度使用；追剧要选月付星耀版。' },
   muguang: { good: '月付基础版 ¥20 / 120GB，前三名里入门门槛最低。', watch: '年付轻量版 ¥109，在前十名的年付小包里价格偏高。' },
 };
+const speedRows = speedUpdates
+  .map((s) => ({ ...s, brand: brands.find((b) => b.slug === s.slug)! }))
+  .filter((s) => s.brand)
+  .sort((a, b) => a.brand.rank - b.brand.rank);
 const movers = rows.slice(0, 10).filter((r) => (prevRank[r.brand.slug] ?? 99) - r.brand.rank >= 2);
 const needs = [
   { t: '想直接看前十名单', l: '找机场前十名单', href: '/recommend/', d: '从全部机场里挑出的 10 家，附适合人群和优惠码。' },
@@ -125,6 +130,15 @@ const description = `找机场整理${brands.length}家机场的测评、套餐�
       </section>
 
       <section class="fj-section">
+        <h2>最新机场测速更新</h2>
+        <p class="fj-why">只看价格选不出好机场，还要看实际速度。{HOME_UPDATED_LABEL}本站新增了 {speedRows.length} 家机场的节点测速截图，下表按推荐顺序列出每家的测试时间、节点数和香港节点平均速度。截图由站点管理者提供，本站没有独立复测；速度单位沿用截图里的 MB，标 * 的两家用 9Gbps 测速后端，数字不能和其他家直接比。点“看测速”可以查看分地区数据和原图。</p>
+        <div class="fj-table-wrap"><table class="fj-table">
+          <thead><tr><th scope="col">机场</th><th scope="col">测试时间</th><th scope="col">节点数</th><th scope="col">香港平均速度</th><th scope="col">这一轮的表现</th><th scope="col">详细数据</th></tr></thead>
+          <tbody>{speedRows.map((s) => <tr><td><a href={`/jichang/${s.slug}/`}><strong>{s.brand.name}</strong></a></td><td>{s.when}</td><td class="fj-num">{s.nodes}</td><td class="fj-num">{s.hk}{s.backend9g && ' *'}</td><td>{s.note}</td><td><a href={`/speed-test/${s.slug}/`}>看测速</a></td></tr>)}</tbody>
+        </table></div>
+      </section>
+
+      <section class="fj-section">
         <h2>新手怎么选机场</h2>
         <p class="fj-why">第一次买机场最常见的问题是买错套餐：流量不够、一次买太久、买完不会用。按下面四步走，基本可以避开这些坑。每一步都附了详细说明的文章。</p>
         <div class="fj-table-wrap"><table class="fj-table">
@@ -148,6 +162,7 @@ const description = `找机场整理${brands.length}家机场的测评、套餐�
         <div class="fj-table-wrap"><table class="fj-table">
           <thead><tr><th scope="col">日期</th><th scope="col">更新内容</th></tr></thead>
           <tbody>
+            <tr><td class="fj-num"><strong>{HOME_UPDATED_LABEL}</strong></td><td>新增 {speedRows.length} 家机场的节点测速截图，首页加入“最新机场测速更新”表；价格未变动，仍以 {UPDATED_LABEL} 的整理为准。</td></tr>
             <tr><td class="fj-num"><strong>{UPDATED_LABEL}</strong></td><td>调整推荐排名，补充 Firefly、SOGO云、飞V 测速记录。{movers.length > 0 && <>排名上升较多的有 {movers.map((r, i) => <>{i > 0 && '、'}<a href={`/jichang/${r.brand.slug}/`}>{r.brand.name}</a>（第 {prevRank[r.brand.slug]} → 第 {r.brand.rank} 名）</>)}。</>}</td></tr>
             <tr><td class="fj-num"><strong>2026 年 10 月 19 日</strong></td><td>复核 {brands.length} 家机场的套餐价格，调整推荐排名。</td></tr>
             <tr><td class="fj-num"><strong>2026 年 10 月 4 日</strong></td><td>整理各家入门套餐价格，新增按价格、单价和排名分类的页面。</td></tr>

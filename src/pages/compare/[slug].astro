@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import RecommendCallout from '../../components/fj/RecommendCallout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
 import JsonLd from '../../components/JsonLd.astro';
@@ -23,6 +24,6 @@ const schema = articleSchema({ title: entry.data.title, description: entry.data.
   <main class="page-shell detail-page">
     <Breadcrumbs items={[{label:'首页',href:'/'},{label:'机场对比',href:'/compare/'},{label:entry.data.title}]}/>
     <section class="review-hero" style="grid-template-columns:1fr"><div><span class="badge">资料对比</span><h1>{entry.data.title}</h1><p>{entry.data.description}</p></div></section>
-    <section class="content-layout" style="grid-template-columns:1fr"><article class="article-content"><Content/><RelatedLinks links={comparisonLinks} title="继续比较与核验" /></article></section>
+    <section class="content-layout" style="grid-template-columns:1fr"><article class="article-content"><Content/><RecommendCallout /><RelatedLinks links={comparisonLinks} title="继续比较与核验" /></article></section>
   </main>
 </BaseLayout>
